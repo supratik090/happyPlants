@@ -3,6 +3,7 @@ package com.hos.happy.plants.data.sensor
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageProxy
 import java.nio.ByteBuffer
+import kotlin.math.pow
 
 class CameraLightMeter(
     private val onLightCalculated: (LightReading) -> Unit
@@ -39,7 +40,7 @@ class CameraLightMeter(
                 // Normalizing avgLuminance (0 - 255) to realistic indoor/window lux range (~50 to 12,000 lx)
                 // Using non-linear perceived brightness curve: Lux = base * (Y/255)^2.2
                 val normalized = (avgLuminance / 255f).coerceIn(0f, 1f)
-                val estimatedLux = kotlin.math.pow(normalized.toDouble(), 2.2).toFloat() * 12000f + (normalized * 80f)
+                val estimatedLux = normalized.toDouble().pow(2.2).toFloat() * 12000f + (normalized * 80f)
 
                 onLightCalculated(
                     LightReading(
