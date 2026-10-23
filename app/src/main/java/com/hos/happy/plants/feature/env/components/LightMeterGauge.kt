@@ -124,18 +124,12 @@ fun LightMeterGauge(
                         )
                     }
                     Spacer(modifier = Modifier.width(8.dp))
-                    Column {
-                        Text(
-                            text = if (settings.preferredMode == LightMeterMode.SENSOR) "Hardware Light Sensor" else "Camera Light Meter",
-                            style = MaterialTheme.typography.titleMedium,
-                            color = Forest
-                        )
-                        Text(
-                            text = if (settings.hasHardwareSensor) "Auto-saved in preferences" else "No ambient sensor on phone",
-                            style = MaterialTheme.typography.labelSmall,
-                            color = Mute
-                        )
-                    }
+                    Text(
+                        text = if (settings.preferredMode == LightMeterMode.SENSOR) "Ambient Light Sensor" else "Camera Light Meter",
+                        style = MaterialTheme.typography.titleMedium,
+                        color = Forest,
+                        fontWeight = FontWeight.SemiBold
+                    )
                 }
 
                 // Toggle Mode button (Sensor ⇄ Camera)

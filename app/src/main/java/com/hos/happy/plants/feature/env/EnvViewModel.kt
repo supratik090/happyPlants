@@ -81,6 +81,12 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
         snapshotDao.getDistinctRoomsFlow(profileId)
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
+    val recordedSnapshotTimestamps: StateFlow<List<Long>> = _uiState.flatMapLatest { state ->
+        val profileId = state.currentProfileId ?: ""
+        val roomTag = state.historyFilterRoom
+        snapshotDao.getRecordedTimestampsFlow(profileId, roomTag)
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
     val filteredSnapshots: StateFlow<List<RoomEnvSnapshotEntity>> = _uiState.flatMapLatest { state ->
         val profileId = state.currentProfileId ?: ""
         val roomTag = state.historyFilterRoom

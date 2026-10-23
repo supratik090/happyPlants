@@ -45,6 +45,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Snackbar
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
@@ -95,6 +96,7 @@ fun EnvScreen(
     val authState by authViewModel.uiState.collectAsState()
     val roomTags by envViewModel.availableRoomTags.collectAsState()
     val distinctRooms by envViewModel.distinctRecordedRooms.collectAsState()
+    val recordedTimestamps by envViewModel.recordedSnapshotTimestamps.collectAsState()
     val filteredSnapshots by envViewModel.filteredSnapshots.collectAsState()
 
     val snackbarHostState = remember { SnackbarHostState() }
@@ -178,7 +180,16 @@ fun EnvScreen(
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = PaperDark)
             )
         },
-        snackbarHost = { SnackbarHost(snackbarHostState) },
+        snackbarHost = {
+            SnackbarHost(snackbarHostState) { data ->
+                Snackbar(
+                    snackbarData = data,
+                    containerColor = Forest,
+                    contentColor = SurfaceWarm,
+                    shape = RoundedCornerShape(12.dp)
+                )
+            }
+        },
         containerColor = PaperDark
     ) { padding ->
         Column(
@@ -318,6 +329,7 @@ fun EnvScreen(
             SnapshotHistorySection(
                 snapshots = filteredSnapshots,
                 distinctRooms = distinctRooms,
+                recordedTimestamps = recordedTimestamps,
                 selectedRoom = uiState.historyFilterRoom,
                 selectedDateMillis = uiState.historyFilterDateMillis,
                 onSelectRoom = { envViewModel.setHistoryFilterRoom(it) },
