@@ -24,7 +24,8 @@ import androidx.compose.ui.unit.dp
 import com.hos.happy.plants.feature.auth.AuthViewModel
 import com.hos.happy.plants.feature.env.EnvScreen
 import com.hos.happy.plants.feature.env.EnvViewModel
-import com.hos.happy.plants.feature.garden.GardenPlaceholderScreen
+import com.hos.happy.plants.feature.garden.GardenScreen
+import com.hos.happy.plants.feature.garden.GardenViewModel
 import com.hos.happy.plants.feature.research.ResearchPlaceholderScreen
 import com.hos.happy.plants.ui.theme.Bark
 import com.hos.happy.plants.ui.theme.Forest
@@ -42,13 +43,13 @@ sealed class NavTab(val title: String, val icon: ImageVector) {
 
 @Composable
 fun MainScreen(
+    gardenViewModel: GardenViewModel,
     envViewModel: EnvViewModel,
     authViewModel: AuthViewModel,
     onSwitchProfile: () -> Unit
 ) {
     val tabs = remember { listOf(NavTab.Garden, NavTab.Research, NavTab.Env) }
-    // Start on Env tab as requested
-    var selectedTabIndex by remember { mutableIntStateOf(2) }
+    var selectedTabIndex by remember { mutableIntStateOf(0) }
 
     Scaffold(
         bottomBar = {
@@ -81,7 +82,11 @@ fun MainScreen(
                 .padding(padding)
         ) {
             when (selectedTabIndex) {
-                0 -> GardenPlaceholderScreen()
+                0 -> GardenScreen(
+                    gardenViewModel = gardenViewModel,
+                    authViewModel = authViewModel,
+                    onSwitchProfile = onSwitchProfile
+                )
                 1 -> ResearchPlaceholderScreen()
                 2 -> EnvScreen(
                     envViewModel = envViewModel,

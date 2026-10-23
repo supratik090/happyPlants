@@ -1,0 +1,2228 @@
+{
+  "meta": {
+    "title": "Indoor plants for Indian cities (Mumbai, Delhi, Bengaluru, Kolkata, Pune)",
+    "version": 1,
+    "units": {
+      "watering": "days",
+      "light": "lux",
+      "humidity": "percent",
+      "temperature": "degrees Celsius",
+      "intervals": "days"
+    },
+    "notes": [
+      "Values are standard horticultural guidelines; always check soil dryness before watering.",
+      "Hot/dry months = Mar–Jun; monsoon/winter = Jul–Feb.",
+      "Local-name fields are the names used at Indian nurseries (transliterations) except Aloe vera, which has genuine traditional names; verify spellings locally.",
+      "Run resolve_images.py to fill image.direct_image_url (and optionally download the files)."
+    ]
+  },
+  "plants": [
+    {
+      "id": 1,
+      "botanical_name": "Dracaena trifasciata (Sansevieria)",
+      "common_name": "Snake Plant",
+      "local_names": {
+        "hindi": "स्नेक प्लांट",
+        "marathi": "स्नेक प्लांट",
+        "bengali": "স্নেক প্ল্যান্ট",
+        "kannada": "ಸ್ನೇಕ್ ಪ್ಲಾಂಟ್"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 10,
+          "max": 14
+        },
+        "monsoon_and_winter": {
+          "min": 18,
+          "max": 25
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 300,
+        "ideal_min": 1000,
+        "ideal_max": 10000,
+        "max_tolerated": 25000
+      },
+      "humidity_percent": {
+        "min": 30,
+        "max": 60
+      },
+      "temperature_c": {
+        "tolerable_min": 10,
+        "tolerable_max": 35,
+        "ideal_min": 18,
+        "ideal_max": 32
+      },
+      "soil": {
+        "in_simple_words": "Loose, sandy soil that drains fast. Water should run out of the pot within seconds.",
+        "mix_recipe": "3 parts garden soil + 2 parts coarse sand + 1 part cocopeat (or perlite)",
+        "ph_min": 6,
+        "ph_max": 7.5
+      },
+      "fertilise_or_manure_every_days": 60,
+      "refresh_top_soil_every_days": 180,
+      "repot_every_days": 730,
+      "pet_and_child_safety": {
+        "level": "mildly_toxic",
+        "note": "Mildly toxic"
+      },
+      "common_problems": [
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "1-root_rot"
+        },
+        {
+          "problem": "Mealybugs",
+          "do_you_see_this_problem": "Do you see small white cotton-like blobs on stems or under leaves, or sticky leaves?",
+          "solve_it_like_this": [
+            "Isolate the plant from others.",
+            "Wipe each bug off with cotton dipped in rubbing alcohol (diluted 1:1 with water).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 3 weeks."
+          ],
+          "id": "1-mealybugs"
+        },
+        {
+          "problem": "Spider mites",
+          "do_you_see_this_problem": "Do you see fine webbing under the leaves and tiny pale yellow dots on the leaf surface?",
+          "solve_it_like_this": [
+            "Rinse the whole plant under a gentle shower.",
+            "Raise the humidity around the plant (pebble tray or regular misting).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 5–7 days for 3 weeks."
+          ],
+          "id": "1-spider_mites"
+        },
+        {
+          "problem": "Leaf spot (fungal or bacterial)",
+          "do_you_see_this_problem": "Do you see brown or black spots, sometimes with a yellow ring, on the leaves?",
+          "solve_it_like_this": [
+            "Cut off badly spotted leaves and throw them away (not in compost).",
+            "Stop wetting the leaves; water only the soil.",
+            "Move the plant where air moves freely.",
+            "Spray copper oxychloride (3 g per litre) every 7–10 days, 2–3 times."
+          ],
+          "id": "1-leaf_spot"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Dracaena_trifasciata",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Dracaena_trifasciata",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Snake_Plant_%28Sansevieria_trifasciata_%27Laurentii%27%29.jpg/3840px-Snake_Plant_%28Sansevieria_trifasciata_%27Laurentii%27%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Snake_Plant_%28Sansevieria_trifasciata_%27Laurentii%27%29.jpg/330px-Snake_Plant_%28Sansevieria_trifasciata_%27Laurentii%27%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 2,
+      "botanical_name": "Epipremnum aureum",
+      "common_name": "Money Plant (Pothos)",
+      "local_names": {
+        "hindi": "मनी प्लांट",
+        "marathi": "मनी प्लांट",
+        "bengali": "মানি প্ল্যান্ট",
+        "kannada": "ಮನಿ ಪ್ಲಾಂಟ್"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 5,
+          "max": 7
+        },
+        "monsoon_and_winter": {
+          "min": 10,
+          "max": 14
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 300,
+        "ideal_min": 1000,
+        "ideal_max": 6000,
+        "max_tolerated": 15000
+      },
+      "humidity_percent": {
+        "min": 40,
+        "max": 70
+      },
+      "temperature_c": {
+        "tolerable_min": 12,
+        "tolerable_max": 35,
+        "ideal_min": 18,
+        "ideal_max": 32
+      },
+      "soil": {
+        "in_simple_words": "Light, soft soil with some compost. It also grows happily in plain water.",
+        "mix_recipe": "2 parts garden soil + 1 part cocopeat + 1 part compost",
+        "ph_min": null,
+        "ph_max": null
+      },
+      "fertilise_or_manure_every_days": 30,
+      "refresh_top_soil_every_days": 120,
+      "repot_every_days": 365,
+      "pet_and_child_safety": {
+        "level": "toxic",
+        "note": "Toxic"
+      },
+      "common_problems": [
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "2-root_rot"
+        },
+        {
+          "problem": "Leaf spot (fungal or bacterial)",
+          "do_you_see_this_problem": "Do you see brown or black spots, sometimes with a yellow ring, on the leaves?",
+          "solve_it_like_this": [
+            "Cut off badly spotted leaves and throw them away (not in compost).",
+            "Stop wetting the leaves; water only the soil.",
+            "Move the plant where air moves freely.",
+            "Spray copper oxychloride (3 g per litre) every 7–10 days, 2–3 times."
+          ],
+          "id": "2-leaf_spot"
+        },
+        {
+          "problem": "Mealybugs",
+          "do_you_see_this_problem": "Do you see small white cotton-like blobs on stems or under leaves, or sticky leaves?",
+          "solve_it_like_this": [
+            "Isolate the plant from others.",
+            "Wipe each bug off with cotton dipped in rubbing alcohol (diluted 1:1 with water).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 3 weeks."
+          ],
+          "id": "2-mealybugs"
+        },
+        {
+          "problem": "Aphids",
+          "do_you_see_this_problem": "Do you see small green or black insects clustered on new shoots, with curled or sticky new leaves?",
+          "solve_it_like_this": [
+            "Wash them off with a strong stream of water or wipe with a damp cloth.",
+            "Spray soapy water (1 ml mild liquid soap per litre) or neem oil (5 ml per litre).",
+            "Repeat every 5–7 days until gone."
+          ],
+          "id": "2-aphids"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Epipremnum_aureum",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Epipremnum_aureum",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Money_Plant_%28Epipremnum_aureum%29_4.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Money_Plant_%28Epipremnum_aureum%29_4.jpg/330px-Money_Plant_%28Epipremnum_aureum%29_4.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 3,
+      "botanical_name": "Zamioculcas zamiifolia",
+      "common_name": "ZZ Plant",
+      "local_names": {
+        "hindi": "ज़ेड ज़ेड प्लांट",
+        "marathi": "झेडझेड प्लांट",
+        "bengali": "জেড জেড প্ল্যান্ট",
+        "kannada": "ಝಡ್‌ಝಡ್ ಪ್ಲಾಂಟ್"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 14,
+          "max": 21
+        },
+        "monsoon_and_winter": {
+          "min": 21,
+          "max": 30
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 300,
+        "ideal_min": 800,
+        "ideal_max": 5000,
+        "max_tolerated": 15000
+      },
+      "humidity_percent": {
+        "min": 30,
+        "max": 60
+      },
+      "temperature_c": {
+        "tolerable_min": 15,
+        "tolerable_max": 35,
+        "ideal_min": 18,
+        "ideal_max": 30
+      },
+      "soil": {
+        "in_simple_words": "Loose, gritty soil that dries out quickly. It should never stay wet.",
+        "mix_recipe": "2 parts cactus/succulent mix + 1 part perlite (or coarse sand)",
+        "ph_min": 6,
+        "ph_max": 7
+      },
+      "fertilise_or_manure_every_days": 60,
+      "refresh_top_soil_every_days": 180,
+      "repot_every_days": 730,
+      "pet_and_child_safety": {
+        "level": "toxic",
+        "note": "Toxic"
+      },
+      "common_problems": [
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "3-root_rot"
+        },
+        {
+          "problem": "Scale insects",
+          "do_you_see_this_problem": "Do you see small hard brown bumps on stems or leaves that you can scrape off with a fingernail?",
+          "solve_it_like_this": [
+            "Scrape or wipe them off with cotton dipped in rubbing alcohol.",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 4 weeks."
+          ],
+          "id": "3-scale"
+        },
+        {
+          "problem": "Mealybugs",
+          "do_you_see_this_problem": "Do you see small white cotton-like blobs on stems or under leaves, or sticky leaves?",
+          "solve_it_like_this": [
+            "Isolate the plant from others.",
+            "Wipe each bug off with cotton dipped in rubbing alcohol (diluted 1:1 with water).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 3 weeks."
+          ],
+          "id": "3-mealybugs"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Zamioculcas",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Zamioculcas",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Zamioculcas_zamiifolia_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Zamioculcas_zamiifolia_1.jpg/330px-Zamioculcas_zamiifolia_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 4,
+      "botanical_name": "Chlorophytum comosum",
+      "common_name": "Spider Plant",
+      "local_names": {
+        "hindi": "स्पाइडर प्लांट",
+        "marathi": "स्पायडर प्लांट",
+        "bengali": "স্পাইডার প্ল্যান্ট",
+        "kannada": "ಸ್ಪೈಡರ್ ಪ್ಲಾಂಟ್"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 4,
+          "max": 6
+        },
+        "monsoon_and_winter": {
+          "min": 8,
+          "max": 12
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 500,
+        "ideal_min": 1500,
+        "ideal_max": 6000,
+        "max_tolerated": 15000
+      },
+      "humidity_percent": {
+        "min": 40,
+        "max": 60
+      },
+      "temperature_c": {
+        "tolerable_min": 10,
+        "tolerable_max": 32,
+        "ideal_min": 18,
+        "ideal_max": 28
+      },
+      "soil": {
+        "in_simple_words": "Normal soft garden-type soil with compost. Holds a little moisture but drains well.",
+        "mix_recipe": "2 parts garden soil + 1 part compost + 1 part cocopeat",
+        "ph_min": 6,
+        "ph_max": 7
+      },
+      "fertilise_or_manure_every_days": 30,
+      "refresh_top_soil_every_days": 120,
+      "repot_every_days": 365,
+      "pet_and_child_safety": {
+        "level": "pet_safe",
+        "note": "Pet-safe"
+      },
+      "common_problems": [
+        {
+          "problem": "Brown, crispy leaf tips or edges",
+          "do_you_see_this_problem": "Are the tips or edges of leaves turning brown and dry?",
+          "solve_it_like_this": [
+            "Check air: keep the plant away from fans, AC vents and heaters.",
+            "Use RO, rain or tap water that has stood overnight (tap water salts and fluoride burn tips).",
+            "Flush the soil with plain water once a month.",
+            "Raise humidity (mist or pebble tray) in dry months.",
+            "Trim brown tips with clean scissors; they will not turn green again."
+          ],
+          "id": "4-brown_tips"
+        },
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "4-root_rot"
+        },
+        {
+          "problem": "Leaf spot (fungal or bacterial)",
+          "do_you_see_this_problem": "Do you see brown or black spots, sometimes with a yellow ring, on the leaves?",
+          "solve_it_like_this": [
+            "Cut off badly spotted leaves and throw them away (not in compost).",
+            "Stop wetting the leaves; water only the soil.",
+            "Move the plant where air moves freely.",
+            "Spray copper oxychloride (3 g per litre) every 7–10 days, 2–3 times."
+          ],
+          "id": "4-leaf_spot"
+        },
+        {
+          "problem": "Aphids",
+          "do_you_see_this_problem": "Do you see small green or black insects clustered on new shoots, with curled or sticky new leaves?",
+          "solve_it_like_this": [
+            "Wash them off with a strong stream of water or wipe with a damp cloth.",
+            "Spray soapy water (1 ml mild liquid soap per litre) or neem oil (5 ml per litre).",
+            "Repeat every 5–7 days until gone."
+          ],
+          "id": "4-aphids"
+        },
+        {
+          "problem": "Spider mites",
+          "do_you_see_this_problem": "Do you see fine webbing under the leaves and tiny pale yellow dots on the leaf surface?",
+          "solve_it_like_this": [
+            "Rinse the whole plant under a gentle shower.",
+            "Raise the humidity around the plant (pebble tray or regular misting).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 5–7 days for 3 weeks."
+          ],
+          "id": "4-spider_mites"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Chlorophytum_comosum",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Chlorophytum_comosum",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Hierbabuena_0611_Revised.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Hierbabuena_0611_Revised.jpg/330px-Hierbabuena_0611_Revised.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 5,
+      "botanical_name": "Spathiphyllum wallisii",
+      "common_name": "Peace Lily",
+      "local_names": {
+        "hindi": "पीस लिली",
+        "marathi": "पीस लिली",
+        "bengali": "পিস লিলি",
+        "kannada": "ಪೀಸ್ ಲಿಲಿ"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 3,
+          "max": 5
+        },
+        "monsoon_and_winter": {
+          "min": 6,
+          "max": 9
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 400,
+        "ideal_min": 1000,
+        "ideal_max": 4000,
+        "max_tolerated": 10000
+      },
+      "humidity_percent": {
+        "min": 50,
+        "max": 70
+      },
+      "temperature_c": {
+        "tolerable_min": 15,
+        "tolerable_max": 32,
+        "ideal_min": 18,
+        "ideal_max": 28
+      },
+      "soil": {
+        "in_simple_words": "Rich, soft soil that stays slightly moist but is never soggy.",
+        "mix_recipe": "2 parts cocopeat + 1 part compost + 1 part perlite",
+        "ph_min": 5.5,
+        "ph_max": 6.5
+      },
+      "fertilise_or_manure_every_days": 30,
+      "refresh_top_soil_every_days": 90,
+      "repot_every_days": 365,
+      "pet_and_child_safety": {
+        "level": "toxic",
+        "note": "Toxic"
+      },
+      "common_problems": [
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "5-root_rot"
+        },
+        {
+          "problem": "Brown, crispy leaf tips or edges",
+          "do_you_see_this_problem": "Are the tips or edges of leaves turning brown and dry?",
+          "solve_it_like_this": [
+            "Check air: keep the plant away from fans, AC vents and heaters.",
+            "Use RO, rain or tap water that has stood overnight (tap water salts and fluoride burn tips).",
+            "Flush the soil with plain water once a month.",
+            "Raise humidity (mist or pebble tray) in dry months.",
+            "Trim brown tips with clean scissors; they will not turn green again."
+          ],
+          "id": "5-brown_tips"
+        },
+        {
+          "problem": "Leaf spot (fungal or bacterial)",
+          "do_you_see_this_problem": "Do you see brown or black spots, sometimes with a yellow ring, on the leaves?",
+          "solve_it_like_this": [
+            "Cut off badly spotted leaves and throw them away (not in compost).",
+            "Stop wetting the leaves; water only the soil.",
+            "Move the plant where air moves freely.",
+            "Spray copper oxychloride (3 g per litre) every 7–10 days, 2–3 times."
+          ],
+          "id": "5-leaf_spot"
+        },
+        {
+          "problem": "Spider mites",
+          "do_you_see_this_problem": "Do you see fine webbing under the leaves and tiny pale yellow dots on the leaf surface?",
+          "solve_it_like_this": [
+            "Rinse the whole plant under a gentle shower.",
+            "Raise the humidity around the plant (pebble tray or regular misting).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 5–7 days for 3 weeks."
+          ],
+          "id": "5-spider_mites"
+        },
+        {
+          "problem": "Mealybugs",
+          "do_you_see_this_problem": "Do you see small white cotton-like blobs on stems or under leaves, or sticky leaves?",
+          "solve_it_like_this": [
+            "Isolate the plant from others.",
+            "Wipe each bug off with cotton dipped in rubbing alcohol (diluted 1:1 with water).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 3 weeks."
+          ],
+          "id": "5-mealybugs"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Spathiphyllum",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Spathiphyllum",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Spathiphyllum_cochlearispathum_RTBG.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Spathiphyllum_cochlearispathum_RTBG.jpg/330px-Spathiphyllum_cochlearispathum_RTBG.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 6,
+      "botanical_name": "Aloe vera (Aloe barbadensis)",
+      "common_name": "Aloe Vera",
+      "local_names": {
+        "hindi": "घृतकुमारी / ग्वारपाठा",
+        "marathi": "कोरफड",
+        "bengali": "ঘৃতকুমারী",
+        "kannada": "ಲೋಳೆಸರ"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 8,
+          "max": 12
+        },
+        "monsoon_and_winter": {
+          "min": 14,
+          "max": 21
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 2000,
+        "ideal_min": 5000,
+        "ideal_max": 20000,
+        "max_tolerated": 40000
+      },
+      "humidity_percent": {
+        "min": 30,
+        "max": 50
+      },
+      "temperature_c": {
+        "tolerable_min": 10,
+        "tolerable_max": 38,
+        "ideal_min": 15,
+        "ideal_max": 32
+      },
+      "soil": {
+        "in_simple_words": "Sandy, gritty soil like cactus soil. It must dry out fully between waterings.",
+        "mix_recipe": "5 parts coarse sand/grit + 3 parts garden soil + 2 parts compost",
+        "ph_min": 6,
+        "ph_max": 7.5
+      },
+      "fertilise_or_manure_every_days": 90,
+      "refresh_top_soil_every_days": 180,
+      "repot_every_days": 540,
+      "pet_and_child_safety": {
+        "level": "mildly_toxic",
+        "note": "Mildly toxic (latex)"
+      },
+      "common_problems": [
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "6-root_rot"
+        },
+        {
+          "problem": "Sunburn",
+          "do_you_see_this_problem": "Are the leaves turning red-brown, orange or bleached white on the side facing the window?",
+          "solve_it_like_this": [
+            "Move the plant a little back from the window or add a thin curtain.",
+            "Rotate the pot every week.",
+            "Cut off badly burnt leaves; new growth will be fine."
+          ],
+          "id": "6-sunburn"
+        },
+        {
+          "problem": "Leaf spot (fungal or bacterial)",
+          "do_you_see_this_problem": "Do you see brown or black spots, sometimes with a yellow ring, on the leaves?",
+          "solve_it_like_this": [
+            "Cut off badly spotted leaves and throw them away (not in compost).",
+            "Stop wetting the leaves; water only the soil.",
+            "Move the plant where air moves freely.",
+            "Spray copper oxychloride (3 g per litre) every 7–10 days, 2–3 times."
+          ],
+          "id": "6-leaf_spot"
+        },
+        {
+          "problem": "Mealybugs",
+          "do_you_see_this_problem": "Do you see small white cotton-like blobs on stems or under leaves, or sticky leaves?",
+          "solve_it_like_this": [
+            "Isolate the plant from others.",
+            "Wipe each bug off with cotton dipped in rubbing alcohol (diluted 1:1 with water).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 3 weeks."
+          ],
+          "id": "6-mealybugs"
+        },
+        {
+          "problem": "Scale insects",
+          "do_you_see_this_problem": "Do you see small hard brown bumps on stems or leaves that you can scrape off with a fingernail?",
+          "solve_it_like_this": [
+            "Scrape or wipe them off with cotton dipped in rubbing alcohol.",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 4 weeks."
+          ],
+          "id": "6-scale"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Aloe_vera",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Aloe_vera",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Aloe_vera_flower_inset.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Aloe_vera_flower_inset.png/330px-Aloe_vera_flower_inset.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 7,
+      "botanical_name": "Dypsis lutescens",
+      "common_name": "Areca Palm",
+      "local_names": {
+        "hindi": "एरिका पाम",
+        "marathi": "अरेका पाम",
+        "bengali": "অ্যারেকা পাম",
+        "kannada": "ಅರೇಕಾ ಪಾಮ್"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 3,
+          "max": 5
+        },
+        "monsoon_and_winter": {
+          "min": 7,
+          "max": 10
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 1000,
+        "ideal_min": 3000,
+        "ideal_max": 10000,
+        "max_tolerated": 25000
+      },
+      "humidity_percent": {
+        "min": 50,
+        "max": 70
+      },
+      "temperature_c": {
+        "tolerable_min": 15,
+        "tolerable_max": 35,
+        "ideal_min": 20,
+        "ideal_max": 30
+      },
+      "soil": {
+        "in_simple_words": "Rich, soft soil that holds some moisture but still drains well.",
+        "mix_recipe": "2 parts garden soil + 1 part cocopeat + 1 part compost",
+        "ph_min": 6,
+        "ph_max": 6.5
+      },
+      "fertilise_or_manure_every_days": 30,
+      "refresh_top_soil_every_days": 120,
+      "repot_every_days": 540,
+      "pet_and_child_safety": {
+        "level": "pet_safe",
+        "note": "Pet-safe"
+      },
+      "common_problems": [
+        {
+          "problem": "Brown, crispy leaf tips or edges",
+          "do_you_see_this_problem": "Are the tips or edges of leaves turning brown and dry?",
+          "solve_it_like_this": [
+            "Check air: keep the plant away from fans, AC vents and heaters.",
+            "Use RO, rain or tap water that has stood overnight (tap water salts and fluoride burn tips).",
+            "Flush the soil with plain water once a month.",
+            "Raise humidity (mist or pebble tray) in dry months.",
+            "Trim brown tips with clean scissors; they will not turn green again."
+          ],
+          "id": "7-brown_tips"
+        },
+        {
+          "problem": "Leaf spot (fungal or bacterial)",
+          "do_you_see_this_problem": "Do you see brown or black spots, sometimes with a yellow ring, on the leaves?",
+          "solve_it_like_this": [
+            "Cut off badly spotted leaves and throw them away (not in compost).",
+            "Stop wetting the leaves; water only the soil.",
+            "Move the plant where air moves freely.",
+            "Spray copper oxychloride (3 g per litre) every 7–10 days, 2–3 times."
+          ],
+          "id": "7-leaf_spot"
+        },
+        {
+          "problem": "Spider mites",
+          "do_you_see_this_problem": "Do you see fine webbing under the leaves and tiny pale yellow dots on the leaf surface?",
+          "solve_it_like_this": [
+            "Rinse the whole plant under a gentle shower.",
+            "Raise the humidity around the plant (pebble tray or regular misting).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 5–7 days for 3 weeks."
+          ],
+          "id": "7-spider_mites"
+        },
+        {
+          "problem": "Mealybugs",
+          "do_you_see_this_problem": "Do you see small white cotton-like blobs on stems or under leaves, or sticky leaves?",
+          "solve_it_like_this": [
+            "Isolate the plant from others.",
+            "Wipe each bug off with cotton dipped in rubbing alcohol (diluted 1:1 with water).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 3 weeks."
+          ],
+          "id": "7-mealybugs"
+        },
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "7-root_rot"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Dypsis_lutescens",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Dypsis_lutescens",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/%E6%95%A3%E5%B0%BE%E8%91%B5Dypsis_lutescens_20210511145013_05.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/%E6%95%A3%E5%B0%BE%E8%91%B5Dypsis_lutescens_20210511145013_05.jpg/330px-%E6%95%A3%E5%B0%BE%E8%91%B5Dypsis_lutescens_20210511145013_05.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 8,
+      "botanical_name": "Ficus elastica",
+      "common_name": "Rubber Plant",
+      "local_names": {
+        "hindi": "रबर प्लांट",
+        "marathi": "रबर प्लांट",
+        "bengali": "রাবার প্ল্যান্ট",
+        "kannada": "ರಬ್ಬರ್ ಪ್ಲಾಂಟ್"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 6,
+          "max": 8
+        },
+        "monsoon_and_winter": {
+          "min": 12,
+          "max": 18
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 800,
+        "ideal_min": 2000,
+        "ideal_max": 10000,
+        "max_tolerated": 25000
+      },
+      "humidity_percent": {
+        "min": 40,
+        "max": 60
+      },
+      "temperature_c": {
+        "tolerable_min": 15,
+        "tolerable_max": 32,
+        "ideal_min": 18,
+        "ideal_max": 30
+      },
+      "soil": {
+        "in_simple_words": "Soft, well-draining soil that is not too heavy.",
+        "mix_recipe": "2 parts garden soil + 1 part cocopeat + 1 part perlite",
+        "ph_min": 6,
+        "ph_max": 7
+      },
+      "fertilise_or_manure_every_days": 45,
+      "refresh_top_soil_every_days": 120,
+      "repot_every_days": 540,
+      "pet_and_child_safety": {
+        "level": "toxic",
+        "note": "Toxic sap (irritant)"
+      },
+      "common_problems": [
+        {
+          "problem": "Sudden leaf drop",
+          "do_you_see_this_problem": "Are healthy-looking leaves falling off suddenly?",
+          "solve_it_like_this": [
+            "Check the soil: wet means overwatering, bone dry for weeks means underwatering.",
+            "Check light: too dark a spot also causes leaf drop; move closer to a bright window.",
+            "Avoid moving the plant often or exposing it to cold AC air.",
+            "Keep care steady; new leaves usually appear within a few weeks."
+          ],
+          "id": "8-leaf_drop"
+        },
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "8-root_rot"
+        },
+        {
+          "problem": "Leaf spot (fungal or bacterial)",
+          "do_you_see_this_problem": "Do you see brown or black spots, sometimes with a yellow ring, on the leaves?",
+          "solve_it_like_this": [
+            "Cut off badly spotted leaves and throw them away (not in compost).",
+            "Stop wetting the leaves; water only the soil.",
+            "Move the plant where air moves freely.",
+            "Spray copper oxychloride (3 g per litre) every 7–10 days, 2–3 times."
+          ],
+          "id": "8-leaf_spot"
+        },
+        {
+          "problem": "Scale insects",
+          "do_you_see_this_problem": "Do you see small hard brown bumps on stems or leaves that you can scrape off with a fingernail?",
+          "solve_it_like_this": [
+            "Scrape or wipe them off with cotton dipped in rubbing alcohol.",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 4 weeks."
+          ],
+          "id": "8-scale"
+        },
+        {
+          "problem": "Mealybugs",
+          "do_you_see_this_problem": "Do you see small white cotton-like blobs on stems or under leaves, or sticky leaves?",
+          "solve_it_like_this": [
+            "Isolate the plant from others.",
+            "Wipe each bug off with cotton dipped in rubbing alcohol (diluted 1:1 with water).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 3 weeks."
+          ],
+          "id": "8-mealybugs"
+        },
+        {
+          "problem": "Spider mites",
+          "do_you_see_this_problem": "Do you see fine webbing under the leaves and tiny pale yellow dots on the leaf surface?",
+          "solve_it_like_this": [
+            "Rinse the whole plant under a gentle shower.",
+            "Raise the humidity around the plant (pebble tray or regular misting).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 5–7 days for 3 weeks."
+          ],
+          "id": "8-spider_mites"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Ficus_elastica",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Ficus_elastica",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Ficus_elastica_leaves_02.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Ficus_elastica_leaves_02.JPG/330px-Ficus_elastica_leaves_02.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 9,
+      "botanical_name": "Aglaonema commutatum",
+      "common_name": "Chinese Evergreen",
+      "local_names": {
+        "hindi": "चाइनीज़ एवरग्रीन",
+        "marathi": "चायनीज एव्हरग्रीन",
+        "bengali": "চাইনিজ এভারগ্রিন",
+        "kannada": "ಚೈನೀಸ್ ಎವರ್‌ಗ್ರೀನ್"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 5,
+          "max": 7
+        },
+        "monsoon_and_winter": {
+          "min": 10,
+          "max": 14
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 300,
+        "ideal_min": 800,
+        "ideal_max": 3000,
+        "max_tolerated": 8000
+      },
+      "humidity_percent": {
+        "min": 50,
+        "max": 70
+      },
+      "temperature_c": {
+        "tolerable_min": 16,
+        "tolerable_max": 33,
+        "ideal_min": 20,
+        "ideal_max": 30
+      },
+      "soil": {
+        "in_simple_words": "Light, airy, rich soil that stays slightly moist.",
+        "mix_recipe": "2 parts cocopeat + 1 part compost + 1 part perlite",
+        "ph_min": 5.5,
+        "ph_max": 6.5
+      },
+      "fertilise_or_manure_every_days": 45,
+      "refresh_top_soil_every_days": 120,
+      "repot_every_days": 450,
+      "pet_and_child_safety": {
+        "level": "toxic",
+        "note": "Toxic"
+      },
+      "common_problems": [
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "9-root_rot"
+        },
+        {
+          "problem": "Cold damage",
+          "do_you_see_this_problem": "Did the leaves turn pale, dark or limp after cold nights or direct AC/cooler air?",
+          "solve_it_like_this": [
+            "Move the plant away from AC vents, open windows and cold floors.",
+            "Keep the room above 15°C.",
+            "Cut off damaged leaves and water only lightly until new growth shows."
+          ],
+          "id": "9-cold_damage"
+        },
+        {
+          "problem": "Leaf spot (fungal or bacterial)",
+          "do_you_see_this_problem": "Do you see brown or black spots, sometimes with a yellow ring, on the leaves?",
+          "solve_it_like_this": [
+            "Cut off badly spotted leaves and throw them away (not in compost).",
+            "Stop wetting the leaves; water only the soil.",
+            "Move the plant where air moves freely.",
+            "Spray copper oxychloride (3 g per litre) every 7–10 days, 2–3 times."
+          ],
+          "id": "9-leaf_spot"
+        },
+        {
+          "problem": "Mealybugs",
+          "do_you_see_this_problem": "Do you see small white cotton-like blobs on stems or under leaves, or sticky leaves?",
+          "solve_it_like_this": [
+            "Isolate the plant from others.",
+            "Wipe each bug off with cotton dipped in rubbing alcohol (diluted 1:1 with water).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 3 weeks."
+          ],
+          "id": "9-mealybugs"
+        },
+        {
+          "problem": "Spider mites",
+          "do_you_see_this_problem": "Do you see fine webbing under the leaves and tiny pale yellow dots on the leaf surface?",
+          "solve_it_like_this": [
+            "Rinse the whole plant under a gentle shower.",
+            "Raise the humidity around the plant (pebble tray or regular misting).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 5–7 days for 3 weeks."
+          ],
+          "id": "9-spider_mites"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Aglaonema",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Aglaonema",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Aglaonema_commutatum2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Aglaonema_commutatum2.jpg/330px-Aglaonema_commutatum2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 10,
+      "botanical_name": "Crassula ovata",
+      "common_name": "Jade Plant",
+      "local_names": {
+        "hindi": "जेड प्लांट",
+        "marathi": "जेड प्लांट",
+        "bengali": "জেড প্ল্যান্ট",
+        "kannada": "ಜೇಡ್ ಪ್ಲಾಂಟ್"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 7,
+          "max": 10
+        },
+        "monsoon_and_winter": {
+          "min": 14,
+          "max": 21
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 2000,
+        "ideal_min": 5000,
+        "ideal_max": 20000,
+        "max_tolerated": 40000
+      },
+      "humidity_percent": {
+        "min": 30,
+        "max": 50
+      },
+      "temperature_c": {
+        "tolerable_min": 10,
+        "tolerable_max": 32,
+        "ideal_min": 15,
+        "ideal_max": 28
+      },
+      "soil": {
+        "in_simple_words": "Gritty, sandy soil like cactus soil. Water should drain out immediately.",
+        "mix_recipe": "1 part garden soil + 1 part coarse sand + 1 part perlite",
+        "ph_min": 6,
+        "ph_max": 7
+      },
+      "fertilise_or_manure_every_days": 90,
+      "refresh_top_soil_every_days": 180,
+      "repot_every_days": 730,
+      "pet_and_child_safety": {
+        "level": "mildly_toxic",
+        "note": "Mildly toxic"
+      },
+      "common_problems": [
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "10-root_rot"
+        },
+        {
+          "problem": "Mealybugs",
+          "do_you_see_this_problem": "Do you see small white cotton-like blobs on stems or under leaves, or sticky leaves?",
+          "solve_it_like_this": [
+            "Isolate the plant from others.",
+            "Wipe each bug off with cotton dipped in rubbing alcohol (diluted 1:1 with water).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 3 weeks."
+          ],
+          "id": "10-mealybugs"
+        },
+        {
+          "problem": "Powdery mildew",
+          "do_you_see_this_problem": "Do you see a white powdery coating on leaves or stems?",
+          "solve_it_like_this": [
+            "Cut off badly coated parts.",
+            "Improve air movement and reduce humidity around the plant.",
+            "Spray 1 g baking soda + 1 ml liquid soap per litre of water, or neem oil (5 ml per litre), weekly for 3 weeks."
+          ],
+          "id": "10-powdery_mildew"
+        },
+        {
+          "problem": "Sudden leaf drop",
+          "do_you_see_this_problem": "Are healthy-looking leaves falling off suddenly?",
+          "solve_it_like_this": [
+            "Check the soil: wet means overwatering, bone dry for weeks means underwatering.",
+            "Check light: too dark a spot also causes leaf drop; move closer to a bright window.",
+            "Avoid moving the plant often or exposing it to cold AC air.",
+            "Keep care steady; new leaves usually appear within a few weeks."
+          ],
+          "id": "10-leaf_drop"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Crassula_ovata",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Crassula_ovata",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Crassula_ovata_700.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Crassula_ovata_700.jpg/330px-Crassula_ovata_700.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 11,
+      "botanical_name": "Nephrolepis exaltata",
+      "common_name": "Boston Fern",
+      "local_names": {
+        "hindi": "बोस्टन फ़र्न",
+        "marathi": "बोस्टन फर्न",
+        "bengali": "বোস্টন ফার্ন",
+        "kannada": "ಬೋಸ್ಟನ್ ಫರ್ನ್"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 2,
+          "max": 3
+        },
+        "monsoon_and_winter": {
+          "min": 4,
+          "max": 6
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 500,
+        "ideal_min": 1500,
+        "ideal_max": 4000,
+        "max_tolerated": 8000
+      },
+      "humidity_percent": {
+        "min": 60,
+        "max": 80
+      },
+      "temperature_c": {
+        "tolerable_min": 15,
+        "tolerable_max": 30,
+        "ideal_min": 18,
+        "ideal_max": 26
+      },
+      "soil": {
+        "in_simple_words": "Spongy soil that holds moisture and never fully dries out.",
+        "mix_recipe": "2 parts cocopeat + 1 part leaf compost (leaf mould) + 1 part compost",
+        "ph_min": 5,
+        "ph_max": 6.5
+      },
+      "fertilise_or_manure_every_days": 30,
+      "refresh_top_soil_every_days": 90,
+      "repot_every_days": 365,
+      "pet_and_child_safety": {
+        "level": "pet_safe",
+        "note": "Pet-safe"
+      },
+      "common_problems": [
+        {
+          "problem": "Brown, crispy leaf tips or edges",
+          "do_you_see_this_problem": "Are the tips or edges of leaves turning brown and dry?",
+          "solve_it_like_this": [
+            "Check air: keep the plant away from fans, AC vents and heaters.",
+            "Use RO, rain or tap water that has stood overnight (tap water salts and fluoride burn tips).",
+            "Flush the soil with plain water once a month.",
+            "Raise humidity (mist or pebble tray) in dry months.",
+            "Trim brown tips with clean scissors; they will not turn green again."
+          ],
+          "id": "11-brown_tips"
+        },
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "11-root_rot"
+        },
+        {
+          "problem": "Scale insects",
+          "do_you_see_this_problem": "Do you see small hard brown bumps on stems or leaves that you can scrape off with a fingernail?",
+          "solve_it_like_this": [
+            "Scrape or wipe them off with cotton dipped in rubbing alcohol.",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 4 weeks."
+          ],
+          "id": "11-scale"
+        },
+        {
+          "problem": "Mealybugs",
+          "do_you_see_this_problem": "Do you see small white cotton-like blobs on stems or under leaves, or sticky leaves?",
+          "solve_it_like_this": [
+            "Isolate the plant from others.",
+            "Wipe each bug off with cotton dipped in rubbing alcohol (diluted 1:1 with water).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 3 weeks."
+          ],
+          "id": "11-mealybugs"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Nephrolepis_exaltata",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Nephrolepis_exaltata",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Boston_Fern_%282873392811%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Boston_Fern_%282873392811%29.png/330px-Boston_Fern_%282873392811%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 12,
+      "botanical_name": "Philodendron hederaceum",
+      "common_name": "Heartleaf Philodendron",
+      "local_names": {
+        "hindi": "फिलोडेंड्रॉन",
+        "marathi": "फिलोडेंड्रॉन",
+        "bengali": "ফিলোডেনড্রন",
+        "kannada": "ಫಿಲೋಡೆಂಡ್ರಾನ್"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 5,
+          "max": 7
+        },
+        "monsoon_and_winter": {
+          "min": 10,
+          "max": 14
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 300,
+        "ideal_min": 1000,
+        "ideal_max": 4000,
+        "max_tolerated": 12000
+      },
+      "humidity_percent": {
+        "min": 50,
+        "max": 70
+      },
+      "temperature_c": {
+        "tolerable_min": 15,
+        "tolerable_max": 32,
+        "ideal_min": 18,
+        "ideal_max": 30
+      },
+      "soil": {
+        "in_simple_words": "Light, soft soil that holds a little moisture.",
+        "mix_recipe": "2 parts cocopeat + 1 part compost + 1 part garden soil",
+        "ph_min": 5.5,
+        "ph_max": 6.5
+      },
+      "fertilise_or_manure_every_days": 30,
+      "refresh_top_soil_every_days": 120,
+      "repot_every_days": 365,
+      "pet_and_child_safety": {
+        "level": "toxic",
+        "note": "Toxic"
+      },
+      "common_problems": [
+        {
+          "problem": "Leaf spot (fungal or bacterial)",
+          "do_you_see_this_problem": "Do you see brown or black spots, sometimes with a yellow ring, on the leaves?",
+          "solve_it_like_this": [
+            "Cut off badly spotted leaves and throw them away (not in compost).",
+            "Stop wetting the leaves; water only the soil.",
+            "Move the plant where air moves freely.",
+            "Spray copper oxychloride (3 g per litre) every 7–10 days, 2–3 times."
+          ],
+          "id": "12-leaf_spot"
+        },
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "12-root_rot"
+        },
+        {
+          "problem": "Aphids",
+          "do_you_see_this_problem": "Do you see small green or black insects clustered on new shoots, with curled or sticky new leaves?",
+          "solve_it_like_this": [
+            "Wash them off with a strong stream of water or wipe with a damp cloth.",
+            "Spray soapy water (1 ml mild liquid soap per litre) or neem oil (5 ml per litre).",
+            "Repeat every 5–7 days until gone."
+          ],
+          "id": "12-aphids"
+        },
+        {
+          "problem": "Mealybugs",
+          "do_you_see_this_problem": "Do you see small white cotton-like blobs on stems or under leaves, or sticky leaves?",
+          "solve_it_like_this": [
+            "Isolate the plant from others.",
+            "Wipe each bug off with cotton dipped in rubbing alcohol (diluted 1:1 with water).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 3 weeks."
+          ],
+          "id": "12-mealybugs"
+        },
+        {
+          "problem": "Spider mites",
+          "do_you_see_this_problem": "Do you see fine webbing under the leaves and tiny pale yellow dots on the leaf surface?",
+          "solve_it_like_this": [
+            "Rinse the whole plant under a gentle shower.",
+            "Raise the humidity around the plant (pebble tray or regular misting).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 5–7 days for 3 weeks."
+          ],
+          "id": "12-spider_mites"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Philodendron_hederaceum",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Philodendron_hederaceum",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Philodendron_scandens_subsp_oxycardium2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Philodendron_scandens_subsp_oxycardium2.jpg/330px-Philodendron_scandens_subsp_oxycardium2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 13,
+      "botanical_name": "Monstera deliciosa",
+      "common_name": "Monstera",
+      "local_names": {
+        "hindi": "मॉन्स्टेरा",
+        "marathi": "मॉन्स्टेरा",
+        "bengali": "মনস্টেরা",
+        "kannada": "ಮಾನ್‌ಸ್ಟೆರಾ"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 5,
+          "max": 7
+        },
+        "monsoon_and_winter": {
+          "min": 10,
+          "max": 14
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 800,
+        "ideal_min": 2000,
+        "ideal_max": 8000,
+        "max_tolerated": 15000
+      },
+      "humidity_percent": {
+        "min": 50,
+        "max": 70
+      },
+      "temperature_c": {
+        "tolerable_min": 18,
+        "tolerable_max": 32,
+        "ideal_min": 20,
+        "ideal_max": 30
+      },
+      "soil": {
+        "in_simple_words": "Chunky, airy soil so the roots can breathe.",
+        "mix_recipe": "2 parts cocopeat + 1 part coconut chips/orchid bark + 1 part perlite + 1 part compost",
+        "ph_min": 5.5,
+        "ph_max": 7
+      },
+      "fertilise_or_manure_every_days": 30,
+      "refresh_top_soil_every_days": 120,
+      "repot_every_days": 450,
+      "pet_and_child_safety": {
+        "level": "toxic",
+        "note": "Toxic"
+      },
+      "common_problems": [
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "13-root_rot"
+        },
+        {
+          "problem": "Leaf spot (fungal or bacterial)",
+          "do_you_see_this_problem": "Do you see brown or black spots, sometimes with a yellow ring, on the leaves?",
+          "solve_it_like_this": [
+            "Cut off badly spotted leaves and throw them away (not in compost).",
+            "Stop wetting the leaves; water only the soil.",
+            "Move the plant where air moves freely.",
+            "Spray copper oxychloride (3 g per litre) every 7–10 days, 2–3 times."
+          ],
+          "id": "13-leaf_spot"
+        },
+        {
+          "problem": "Brown, crispy leaf tips or edges",
+          "do_you_see_this_problem": "Are the tips or edges of leaves turning brown and dry?",
+          "solve_it_like_this": [
+            "Check air: keep the plant away from fans, AC vents and heaters.",
+            "Use RO, rain or tap water that has stood overnight (tap water salts and fluoride burn tips).",
+            "Flush the soil with plain water once a month.",
+            "Raise humidity (mist or pebble tray) in dry months.",
+            "Trim brown tips with clean scissors; they will not turn green again."
+          ],
+          "id": "13-brown_tips"
+        },
+        {
+          "problem": "Spider mites",
+          "do_you_see_this_problem": "Do you see fine webbing under the leaves and tiny pale yellow dots on the leaf surface?",
+          "solve_it_like_this": [
+            "Rinse the whole plant under a gentle shower.",
+            "Raise the humidity around the plant (pebble tray or regular misting).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 5–7 days for 3 weeks."
+          ],
+          "id": "13-spider_mites"
+        },
+        {
+          "problem": "Thrips",
+          "do_you_see_this_problem": "Do you see silvery streaks or tiny black dots on the leaves, with new leaves looking twisted?",
+          "solve_it_like_this": [
+            "Isolate the plant.",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 5–7 days for 3 weeks.",
+            "Remove badly damaged leaves."
+          ],
+          "id": "13-thrips"
+        },
+        {
+          "problem": "Scale insects",
+          "do_you_see_this_problem": "Do you see small hard brown bumps on stems or leaves that you can scrape off with a fingernail?",
+          "solve_it_like_this": [
+            "Scrape or wipe them off with cotton dipped in rubbing alcohol.",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 4 weeks."
+          ],
+          "id": "13-scale"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Monstera_deliciosa",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Monstera_deliciosa",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Monstera_deliciosa2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Monstera_deliciosa2.jpg/330px-Monstera_deliciosa2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 14,
+      "botanical_name": "Dracaena marginata",
+      "common_name": "Dragon Tree",
+      "local_names": {
+        "hindi": "ड्रेसीना",
+        "marathi": "ड्रॅसिना",
+        "bengali": "ড্রাসিনা",
+        "kannada": "ಡ್ರೇಸಿನಾ"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 7,
+          "max": 10
+        },
+        "monsoon_and_winter": {
+          "min": 14,
+          "max": 18
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 500,
+        "ideal_min": 1500,
+        "ideal_max": 6000,
+        "max_tolerated": 15000
+      },
+      "humidity_percent": {
+        "min": 40,
+        "max": 60
+      },
+      "temperature_c": {
+        "tolerable_min": 15,
+        "tolerable_max": 32,
+        "ideal_min": 18,
+        "ideal_max": 30
+      },
+      "soil": {
+        "in_simple_words": "Well-draining soil with some sand mixed in.",
+        "mix_recipe": "2 parts garden soil + 1 part coarse sand + 1 part compost",
+        "ph_min": 6,
+        "ph_max": 6.5
+      },
+      "fertilise_or_manure_every_days": 60,
+      "refresh_top_soil_every_days": 180,
+      "repot_every_days": 540,
+      "pet_and_child_safety": {
+        "level": "toxic",
+        "note": "Toxic"
+      },
+      "common_problems": [
+        {
+          "problem": "Brown, crispy leaf tips or edges",
+          "do_you_see_this_problem": "Are the tips or edges of leaves turning brown and dry?",
+          "solve_it_like_this": [
+            "Check air: keep the plant away from fans, AC vents and heaters.",
+            "Use RO, rain or tap water that has stood overnight (tap water salts and fluoride burn tips).",
+            "Flush the soil with plain water once a month.",
+            "Raise humidity (mist or pebble tray) in dry months.",
+            "Trim brown tips with clean scissors; they will not turn green again."
+          ],
+          "id": "14-brown_tips"
+        },
+        {
+          "problem": "Leaf spot (fungal or bacterial)",
+          "do_you_see_this_problem": "Do you see brown or black spots, sometimes with a yellow ring, on the leaves?",
+          "solve_it_like_this": [
+            "Cut off badly spotted leaves and throw them away (not in compost).",
+            "Stop wetting the leaves; water only the soil.",
+            "Move the plant where air moves freely.",
+            "Spray copper oxychloride (3 g per litre) every 7–10 days, 2–3 times."
+          ],
+          "id": "14-leaf_spot"
+        },
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "14-root_rot"
+        },
+        {
+          "problem": "Scale insects",
+          "do_you_see_this_problem": "Do you see small hard brown bumps on stems or leaves that you can scrape off with a fingernail?",
+          "solve_it_like_this": [
+            "Scrape or wipe them off with cotton dipped in rubbing alcohol.",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 4 weeks."
+          ],
+          "id": "14-scale"
+        },
+        {
+          "problem": "Mealybugs",
+          "do_you_see_this_problem": "Do you see small white cotton-like blobs on stems or under leaves, or sticky leaves?",
+          "solve_it_like_this": [
+            "Isolate the plant from others.",
+            "Wipe each bug off with cotton dipped in rubbing alcohol (diluted 1:1 with water).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 3 weeks."
+          ],
+          "id": "14-mealybugs"
+        },
+        {
+          "problem": "Spider mites",
+          "do_you_see_this_problem": "Do you see fine webbing under the leaves and tiny pale yellow dots on the leaf surface?",
+          "solve_it_like_this": [
+            "Rinse the whole plant under a gentle shower.",
+            "Raise the humidity around the plant (pebble tray or regular misting).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 5–7 days for 3 weeks."
+          ],
+          "id": "14-spider_mites"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Dracaena_marginata",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Dracaena_marginata",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Dracaena_reflexa.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Dracaena_reflexa.JPG/330px-Dracaena_reflexa.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 15,
+      "botanical_name": "Dracaena sanderiana",
+      "common_name": "Lucky Bamboo",
+      "local_names": {
+        "hindi": "लकी बैंबू",
+        "marathi": "लकी बांबू",
+        "bengali": "লাকি বাম্বু",
+        "kannada": "ಲಕ್ಕಿ ಬಾಂಬೂ"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 5,
+          "max": 7
+        },
+        "monsoon_and_winter": {
+          "min": 10,
+          "max": 14
+        },
+        "note": "Water is changed, not added; change the water completely this often."
+      },
+      "light_lux": {
+        "min_tolerated": 300,
+        "ideal_min": 800,
+        "ideal_max": 3000,
+        "max_tolerated": 8000
+      },
+      "humidity_percent": {
+        "min": 40,
+        "max": 70
+      },
+      "temperature_c": {
+        "tolerable_min": 18,
+        "tolerable_max": 32,
+        "ideal_min": 20,
+        "ideal_max": 30
+      },
+      "soil": {
+        "in_simple_words": "Grows in a pot of pebbles and water (roots always covered). It can also grow in always-slightly-moist soil.",
+        "mix_recipe": "Clean pebbles + water; or 2 parts garden soil + 1 part cocopeat",
+        "ph_min": null,
+        "ph_max": null
+      },
+      "fertilise_or_manure_every_days": 60,
+      "refresh_top_soil_every_days": null,
+      "repot_every_days": 365,
+      "pet_and_child_safety": {
+        "level": "toxic",
+        "note": "Toxic to pets"
+      },
+      "common_problems": [
+        {
+          "problem": "Yellow stalk or green slimy water",
+          "do_you_see_this_problem": "Is the stalk turning yellow, or is the water green, cloudy or smelly?",
+          "solve_it_like_this": [
+            "Take the plant out and wash the stalks and pebbles under running water.",
+            "Cut away any soft yellow part of the stalk with clean scissors.",
+            "Refill with RO or overnight-settled water and change it every 7 days.",
+            "Keep the plant out of direct sun to stop algae."
+          ],
+          "id": "15-algae_yellow"
+        },
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "15-root_rot"
+        },
+        {
+          "problem": "Mealybugs",
+          "do_you_see_this_problem": "Do you see small white cotton-like blobs on stems or under leaves, or sticky leaves?",
+          "solve_it_like_this": [
+            "Isolate the plant from others.",
+            "Wipe each bug off with cotton dipped in rubbing alcohol (diluted 1:1 with water).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 3 weeks."
+          ],
+          "id": "15-mealybugs"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Dracaena_sanderiana",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Dracaena_sanderiana",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Dracaena_sanderiana_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Dracaena_sanderiana_2.jpg/330px-Dracaena_sanderiana_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 16,
+      "botanical_name": "Peperomia obtusifolia",
+      "common_name": "Baby Rubber Plant",
+      "local_names": {
+        "hindi": "पेपेरोमिया",
+        "marathi": "पेपेरोमिया",
+        "bengali": "পেপারোমিয়া",
+        "kannada": "ಪೆಪೆರೋಮಿಯಾ"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 6,
+          "max": 8
+        },
+        "monsoon_and_winter": {
+          "min": 12,
+          "max": 16
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 500,
+        "ideal_min": 1500,
+        "ideal_max": 4000,
+        "max_tolerated": 10000
+      },
+      "humidity_percent": {
+        "min": 40,
+        "max": 60
+      },
+      "temperature_c": {
+        "tolerable_min": 15,
+        "tolerable_max": 30,
+        "ideal_min": 18,
+        "ideal_max": 28
+      },
+      "soil": {
+        "in_simple_words": "Very light, airy soil. The roots are small and rot easily in heavy soil.",
+        "mix_recipe": "2 parts cocopeat + 1 part perlite + 1 part sand",
+        "ph_min": 5.5,
+        "ph_max": 6.5
+      },
+      "fertilise_or_manure_every_days": 45,
+      "refresh_top_soil_every_days": 120,
+      "repot_every_days": 540,
+      "pet_and_child_safety": {
+        "level": "pet_safe",
+        "note": "Pet-safe"
+      },
+      "common_problems": [
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "16-root_rot"
+        },
+        {
+          "problem": "Leaf spot (fungal or bacterial)",
+          "do_you_see_this_problem": "Do you see brown or black spots, sometimes with a yellow ring, on the leaves?",
+          "solve_it_like_this": [
+            "Cut off badly spotted leaves and throw them away (not in compost).",
+            "Stop wetting the leaves; water only the soil.",
+            "Move the plant where air moves freely.",
+            "Spray copper oxychloride (3 g per litre) every 7–10 days, 2–3 times."
+          ],
+          "id": "16-leaf_spot"
+        },
+        {
+          "problem": "Mealybugs",
+          "do_you_see_this_problem": "Do you see small white cotton-like blobs on stems or under leaves, or sticky leaves?",
+          "solve_it_like_this": [
+            "Isolate the plant from others.",
+            "Wipe each bug off with cotton dipped in rubbing alcohol (diluted 1:1 with water).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 3 weeks."
+          ],
+          "id": "16-mealybugs"
+        },
+        {
+          "problem": "Spider mites",
+          "do_you_see_this_problem": "Do you see fine webbing under the leaves and tiny pale yellow dots on the leaf surface?",
+          "solve_it_like_this": [
+            "Rinse the whole plant under a gentle shower.",
+            "Raise the humidity around the plant (pebble tray or regular misting).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 5–7 days for 3 weeks."
+          ],
+          "id": "16-spider_mites"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Peperomia_obtusifolia",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Peperomia_obtusifolia",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Peperomia_obtusifolia_3-OB9.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Peperomia_obtusifolia_3-OB9.jpg/330px-Peperomia_obtusifolia_3-OB9.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 17,
+      "botanical_name": "Chamaedorea elegans",
+      "common_name": "Parlor Palm",
+      "local_names": {
+        "hindi": "पार्लर पाम",
+        "marathi": "पार्लर पाम",
+        "bengali": "পার্লার পাম",
+        "kannada": "ಪಾರ್ಲರ್ ಪಾಮ್"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 4,
+          "max": 6
+        },
+        "monsoon_and_winter": {
+          "min": 8,
+          "max": 12
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 300,
+        "ideal_min": 800,
+        "ideal_max": 3000,
+        "max_tolerated": 8000
+      },
+      "humidity_percent": {
+        "min": 50,
+        "max": 70
+      },
+      "temperature_c": {
+        "tolerable_min": 15,
+        "tolerable_max": 30,
+        "ideal_min": 18,
+        "ideal_max": 27
+      },
+      "soil": {
+        "in_simple_words": "Rich, soft soil that stays lightly moist.",
+        "mix_recipe": "2 parts garden soil + 1 part cocopeat + 1 part compost",
+        "ph_min": 6,
+        "ph_max": 6.5
+      },
+      "fertilise_or_manure_every_days": 45,
+      "refresh_top_soil_every_days": 120,
+      "repot_every_days": 540,
+      "pet_and_child_safety": {
+        "level": "pet_safe",
+        "note": "Pet-safe"
+      },
+      "common_problems": [
+        {
+          "problem": "Spider mites",
+          "do_you_see_this_problem": "Do you see fine webbing under the leaves and tiny pale yellow dots on the leaf surface?",
+          "solve_it_like_this": [
+            "Rinse the whole plant under a gentle shower.",
+            "Raise the humidity around the plant (pebble tray or regular misting).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 5–7 days for 3 weeks."
+          ],
+          "id": "17-spider_mites"
+        },
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "17-root_rot"
+        },
+        {
+          "problem": "Brown, crispy leaf tips or edges",
+          "do_you_see_this_problem": "Are the tips or edges of leaves turning brown and dry?",
+          "solve_it_like_this": [
+            "Check air: keep the plant away from fans, AC vents and heaters.",
+            "Use RO, rain or tap water that has stood overnight (tap water salts and fluoride burn tips).",
+            "Flush the soil with plain water once a month.",
+            "Raise humidity (mist or pebble tray) in dry months.",
+            "Trim brown tips with clean scissors; they will not turn green again."
+          ],
+          "id": "17-brown_tips"
+        },
+        {
+          "problem": "Leaf spot (fungal or bacterial)",
+          "do_you_see_this_problem": "Do you see brown or black spots, sometimes with a yellow ring, on the leaves?",
+          "solve_it_like_this": [
+            "Cut off badly spotted leaves and throw them away (not in compost).",
+            "Stop wetting the leaves; water only the soil.",
+            "Move the plant where air moves freely.",
+            "Spray copper oxychloride (3 g per litre) every 7–10 days, 2–3 times."
+          ],
+          "id": "17-leaf_spot"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Chamaedorea_elegans",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Chamaedorea_elegans",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Chamaedorea_elegans_Mart.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Chamaedorea_elegans_Mart.JPG/330px-Chamaedorea_elegans_Mart.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 18,
+      "botanical_name": "Syngonium podophyllum",
+      "common_name": "Arrowhead Plant",
+      "local_names": {
+        "hindi": "सिंगोनियम",
+        "marathi": "सिंगोनियम",
+        "bengali": "সিনগোনিয়াম",
+        "kannada": "ಸಿಂಗೋನಿಯಮ್"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 5,
+          "max": 7
+        },
+        "monsoon_and_winter": {
+          "min": 9,
+          "max": 14
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 400,
+        "ideal_min": 1000,
+        "ideal_max": 4000,
+        "max_tolerated": 10000
+      },
+      "humidity_percent": {
+        "min": 50,
+        "max": 70
+      },
+      "temperature_c": {
+        "tolerable_min": 15,
+        "tolerable_max": 32,
+        "ideal_min": 18,
+        "ideal_max": 30
+      },
+      "soil": {
+        "in_simple_words": "Light soil with compost that drains well.",
+        "mix_recipe": "2 parts cocopeat + 2 parts compost + 2 parts garden soil + 1 part perlite",
+        "ph_min": 5.5,
+        "ph_max": 6.5
+      },
+      "fertilise_or_manure_every_days": 30,
+      "refresh_top_soil_every_days": 120,
+      "repot_every_days": 365,
+      "pet_and_child_safety": {
+        "level": "toxic",
+        "note": "Toxic"
+      },
+      "common_problems": [
+        {
+          "problem": "Bacterial blight",
+          "do_you_see_this_problem": "Do you see dark, water-soaked patches that spread fast, often with a yellow edge, and sometimes a bad smell?",
+          "solve_it_like_this": [
+            "Remove affected leaves right away and discard them.",
+            "Stop misting; water only the soil.",
+            "Spray copper oxychloride (3 g per litre) every 7 days for 3 weeks.",
+            "Wash your scissors with alcohol after cutting."
+          ],
+          "id": "18-bacterial_blight"
+        },
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "18-root_rot"
+        },
+        {
+          "problem": "Mealybugs",
+          "do_you_see_this_problem": "Do you see small white cotton-like blobs on stems or under leaves, or sticky leaves?",
+          "solve_it_like_this": [
+            "Isolate the plant from others.",
+            "Wipe each bug off with cotton dipped in rubbing alcohol (diluted 1:1 with water).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 3 weeks."
+          ],
+          "id": "18-mealybugs"
+        },
+        {
+          "problem": "Aphids",
+          "do_you_see_this_problem": "Do you see small green or black insects clustered on new shoots, with curled or sticky new leaves?",
+          "solve_it_like_this": [
+            "Wash them off with a strong stream of water or wipe with a damp cloth.",
+            "Spray soapy water (1 ml mild liquid soap per litre) or neem oil (5 ml per litre).",
+            "Repeat every 5–7 days until gone."
+          ],
+          "id": "18-aphids"
+        },
+        {
+          "problem": "Spider mites",
+          "do_you_see_this_problem": "Do you see fine webbing under the leaves and tiny pale yellow dots on the leaf surface?",
+          "solve_it_like_this": [
+            "Rinse the whole plant under a gentle shower.",
+            "Raise the humidity around the plant (pebble tray or regular misting).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 5–7 days for 3 weeks."
+          ],
+          "id": "18-spider_mites"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Syngonium_podophyllum",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Syngonium_podophyllum",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Zingiber_malaysianum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Zingiber_malaysianum.jpg/330px-Zingiber_malaysianum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 19,
+      "botanical_name": "Dieffenbachia seguine",
+      "common_name": "Dumb Cane",
+      "local_names": {
+        "hindi": "डायफेनबेकिया",
+        "marathi": "डायफेनबॅकिया",
+        "bengali": "ডিফেনবাচিয়া",
+        "kannada": "ಡೀಫೆನ್‌ಬೇಕಿಯಾ"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 5,
+          "max": 7
+        },
+        "monsoon_and_winter": {
+          "min": 10,
+          "max": 14
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 500,
+        "ideal_min": 1500,
+        "ideal_max": 5000,
+        "max_tolerated": 12000
+      },
+      "humidity_percent": {
+        "min": 50,
+        "max": 70
+      },
+      "temperature_c": {
+        "tolerable_min": 16,
+        "tolerable_max": 32,
+        "ideal_min": 20,
+        "ideal_max": 30
+      },
+      "soil": {
+        "in_simple_words": "Rich soil that drains well.",
+        "mix_recipe": "4 parts garden soil + 2 parts compost + 2 parts cocopeat + 1 part sand",
+        "ph_min": null,
+        "ph_max": null
+      },
+      "fertilise_or_manure_every_days": 30,
+      "refresh_top_soil_every_days": 120,
+      "repot_every_days": 365,
+      "pet_and_child_safety": {
+        "level": "toxic",
+        "note": "Toxic (sap irritant)"
+      },
+      "common_problems": [
+        {
+          "problem": "Soft stem rot",
+          "do_you_see_this_problem": "Is the stem soft, mushy and smelly, with leaves collapsing?",
+          "solve_it_like_this": [
+            "Cut the stem above the rotten part, using a clean knife.",
+            "Dry the healthy top piece for a few hours, dip in cinnamon powder, then plant in fresh moist cocopeat to re-root.",
+            "Discard the rotten soil and wash the pot before reusing."
+          ],
+          "id": "19-stem_rot"
+        },
+        {
+          "problem": "Leaf spot (fungal or bacterial)",
+          "do_you_see_this_problem": "Do you see brown or black spots, sometimes with a yellow ring, on the leaves?",
+          "solve_it_like_this": [
+            "Cut off badly spotted leaves and throw them away (not in compost).",
+            "Stop wetting the leaves; water only the soil.",
+            "Move the plant where air moves freely.",
+            "Spray copper oxychloride (3 g per litre) every 7–10 days, 2–3 times."
+          ],
+          "id": "19-leaf_spot"
+        },
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "19-root_rot"
+        },
+        {
+          "problem": "Mealybugs",
+          "do_you_see_this_problem": "Do you see small white cotton-like blobs on stems or under leaves, or sticky leaves?",
+          "solve_it_like_this": [
+            "Isolate the plant from others.",
+            "Wipe each bug off with cotton dipped in rubbing alcohol (diluted 1:1 with water).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 3 weeks."
+          ],
+          "id": "19-mealybugs"
+        },
+        {
+          "problem": "Spider mites",
+          "do_you_see_this_problem": "Do you see fine webbing under the leaves and tiny pale yellow dots on the leaf surface?",
+          "solve_it_like_this": [
+            "Rinse the whole plant under a gentle shower.",
+            "Raise the humidity around the plant (pebble tray or regular misting).",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 5–7 days for 3 weeks."
+          ],
+          "id": "19-spider_mites"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Dieffenbachia_seguine",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Dieffenbachia_seguine",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Starr_061212-2331_Dieffenbachia_seguine.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Starr_061212-2331_Dieffenbachia_seguine.jpg/330px-Starr_061212-2331_Dieffenbachia_seguine.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    },
+    {
+      "id": 20,
+      "botanical_name": "Anthurium andraeanum",
+      "common_name": "Anthurium",
+      "local_names": {
+        "hindi": "एंथूरियम",
+        "marathi": "अँथुरियम",
+        "bengali": "অ্যান্থুরিয়াম",
+        "kannada": "ಆಂಥೂರಿಯಂ"
+      },
+      "watering_every_days": {
+        "hot_dry_months_mar_jun": {
+          "min": 4,
+          "max": 6
+        },
+        "monsoon_and_winter": {
+          "min": 7,
+          "max": 10
+        },
+        "note": "Check first: water only when the top 2–3 cm of soil feels dry."
+      },
+      "light_lux": {
+        "min_tolerated": 1000,
+        "ideal_min": 2500,
+        "ideal_max": 8000,
+        "max_tolerated": 15000
+      },
+      "humidity_percent": {
+        "min": 60,
+        "max": 80
+      },
+      "temperature_c": {
+        "tolerable_min": 18,
+        "tolerable_max": 30,
+        "ideal_min": 20,
+        "ideal_max": 28
+      },
+      "soil": {
+        "in_simple_words": "Very airy, chunky soil. The roots need a lot of air.",
+        "mix_recipe": "2 parts coconut chips/orchid bark + 1 part cocopeat + 1 part perlite",
+        "ph_min": 5.5,
+        "ph_max": 6.5
+      },
+      "fertilise_or_manure_every_days": 30,
+      "refresh_top_soil_every_days": 90,
+      "repot_every_days": 365,
+      "pet_and_child_safety": {
+        "level": "toxic",
+        "note": "Toxic"
+      },
+      "common_problems": [
+        {
+          "problem": "Bacterial blight",
+          "do_you_see_this_problem": "Do you see dark, water-soaked patches that spread fast, often with a yellow edge, and sometimes a bad smell?",
+          "solve_it_like_this": [
+            "Remove affected leaves right away and discard them.",
+            "Stop misting; water only the soil.",
+            "Spray copper oxychloride (3 g per litre) every 7 days for 3 weeks.",
+            "Wash your scissors with alcohol after cutting."
+          ],
+          "id": "20-bacterial_blight"
+        },
+        {
+          "problem": "Root rot (too much water)",
+          "do_you_see_this_problem": "Are the lower leaves turning yellow, does the soil stay wet for many days, or does the plant base feel soft and smell bad?",
+          "solve_it_like_this": [
+            "Stop watering immediately.",
+            "Take the plant out of the pot and cut off all black, soft, smelly roots with clean scissors.",
+            "Repot in fresh, dry, well-draining soil in a pot with drainage holes.",
+            "Spray or drench with copper oxychloride (3 g per litre of water) or carbendazim (1 g per litre).",
+            "Water again only when the top 2–3 cm of soil is dry."
+          ],
+          "id": "20-root_rot"
+        },
+        {
+          "problem": "Leaf spot (fungal or bacterial)",
+          "do_you_see_this_problem": "Do you see brown or black spots, sometimes with a yellow ring, on the leaves?",
+          "solve_it_like_this": [
+            "Cut off badly spotted leaves and throw them away (not in compost).",
+            "Stop wetting the leaves; water only the soil.",
+            "Move the plant where air moves freely.",
+            "Spray copper oxychloride (3 g per litre) every 7–10 days, 2–3 times."
+          ],
+          "id": "20-leaf_spot"
+        },
+        {
+          "problem": "Aphids",
+          "do_you_see_this_problem": "Do you see small green or black insects clustered on new shoots, with curled or sticky new leaves?",
+          "solve_it_like_this": [
+            "Wash them off with a strong stream of water or wipe with a damp cloth.",
+            "Spray soapy water (1 ml mild liquid soap per litre) or neem oil (5 ml per litre).",
+            "Repeat every 5–7 days until gone."
+          ],
+          "id": "20-aphids"
+        },
+        {
+          "problem": "Thrips",
+          "do_you_see_this_problem": "Do you see silvery streaks or tiny black dots on the leaves, with new leaves looking twisted?",
+          "solve_it_like_this": [
+            "Isolate the plant.",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 5–7 days for 3 weeks.",
+            "Remove badly damaged leaves."
+          ],
+          "id": "20-thrips"
+        },
+        {
+          "problem": "Scale insects",
+          "do_you_see_this_problem": "Do you see small hard brown bumps on stems or leaves that you can scrape off with a fingernail?",
+          "solve_it_like_this": [
+            "Scrape or wipe them off with cotton dipped in rubbing alcohol.",
+            "Spray neem oil (5 ml + 1 ml mild soap per litre) every 7 days for 4 weeks."
+          ],
+          "id": "20-scale"
+        }
+      ],
+      "image": {
+        "wikipedia_page": "https://en.wikipedia.org/wiki/Anthurium_andraeanum",
+        "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Anthurium_andraeanum",
+        "direct_image_json_path": "originalimage.source",
+        "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/AnthuriumAndraenum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/AnthuriumAndraenum.jpg/330px-AnthuriumAndraenum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      }
+    }
+  ]
+}

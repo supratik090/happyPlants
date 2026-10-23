@@ -15,6 +15,7 @@ import com.hos.happy.plants.feature.auth.AuthViewModel
 import com.hos.happy.plants.feature.auth.ProfileChooserScreen
 import com.hos.happy.plants.feature.auth.RegisterProfileScreen
 import com.hos.happy.plants.feature.env.EnvViewModel
+import com.hos.happy.plants.feature.garden.GardenViewModel
 import com.hos.happy.plants.feature.main.MainScreen
 import com.hos.happy.plants.ui.theme.HappyPlantsTheme
 
@@ -22,6 +23,7 @@ class MainActivity : ComponentActivity() {
 
     private val authViewModel: AuthViewModel by viewModels()
     private val envViewModel: EnvViewModel by viewModels()
+    private val gardenViewModel: GardenViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +33,8 @@ class MainActivity : ComponentActivity() {
             HappyPlantsTheme {
                 AppNavigation(
                     authViewModel = authViewModel,
-                    envViewModel = envViewModel
+                    envViewModel = envViewModel,
+                    gardenViewModel = gardenViewModel
                 )
             }
         }
@@ -41,7 +44,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun AppNavigation(
     authViewModel: AuthViewModel,
-    envViewModel: EnvViewModel
+    envViewModel: EnvViewModel,
+    gardenViewModel: GardenViewModel
 ) {
     val navController = rememberNavController()
     val authState by authViewModel.uiState.collectAsState()
@@ -81,6 +85,7 @@ fun AppNavigation(
 
         composable("main") {
             MainScreen(
+                gardenViewModel = gardenViewModel,
                 envViewModel = envViewModel,
                 authViewModel = authViewModel,
                 onSwitchProfile = {

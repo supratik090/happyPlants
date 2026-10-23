@@ -16,3 +16,4 @@ val Mute = Color(0xFF6B5D4D)        // Subdued / secondary text
 val AmberLight = Color(0xFFE89828)   // High light / direct sun indicator
 val SkyBlue = Color(0xFF4A89A6)      // Weather / humidity accent
 val LeafBright = Color(0xFF558B2F)   // Positive indicators
+val Terracotta = Color(0xFF8A4B22)   // Warnings, overdue indicators (matches design doc --warn)
