@@ -60,17 +60,17 @@ fun CareActionDialog(
         onDismissRequest = onDismiss,
         title = {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Text(task.careType.icon, fontSize = 22.sp)
+                Text(task.activity.icon, fontSize = 22.sp)
                 Spacer(modifier = Modifier.width(8.dp))
                 Column {
                     Text(
-                        text = "Mark ${task.careType.title} Complete",
+                        text = "Mark ${task.activity.title} Done",
                         style = MaterialTheme.typography.titleMedium,
                         color = Forest,
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = "${task.plant.nickname} (${task.plant.roomTag})",
+                        text = "${task.plant.nickname} • ${task.plant.roomTag}",
                         style = MaterialTheme.typography.labelSmall,
                         color = Bark
                     )
@@ -80,13 +80,15 @@ fun CareActionDialog(
         text = {
             Column {
                 Text(
-                    text = "Add an optional remark or observation to keep in your plant's care timeline.",
+                    text = "💡 ${task.goldenRule}",
                     style = MaterialTheme.typography.bodyMedium,
-                    color = Mute,
-                    fontSize = 12.sp
+                    color = Forest,
+                    fontWeight = FontWeight.Medium,
+                    fontSize = 12.sp,
+                    lineHeight = 16.sp
                 )
 
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(10.dp))
 
                 OutlinedTextField(
                     value = remarkInput,

@@ -28,12 +28,20 @@ data class PlantEntity(
     val fertilizeIntervalDays: Int = 60,
     val refreshSoilIntervalDays: Int = 180,
     val repotIntervalDays: Int = 730,
+    val rotateIntervalDays: Int = 7,
+    val inspectIntervalDays: Int = 7,
+    val cleanIntervalDays: Int = 14,
+    val pruneIntervalDays: Int = 14,
 
     // Last recorded care actions (epoch millis)
     val lastWateredAt: Long? = null,
     val lastFertilizedAt: Long? = null,
     val lastSoilRefreshedAt: Long? = null,
     val lastRepottedAt: Long? = null,
+    val lastRotatedAt: Long? = null,
+    val lastInspectedAt: Long? = null,
+    val lastCleanedAt: Long? = null,
+    val lastPrunedAt: Long? = null,
 
     // Environmental & Care Guidelines (cached from master plant)
     val lightIdealMinLux: Float? = null,

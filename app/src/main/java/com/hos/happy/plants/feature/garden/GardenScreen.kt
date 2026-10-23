@@ -218,7 +218,7 @@ fun GardenScreen(
                 onConfirm = { remark, photoUri ->
                     gardenViewModel.logCareAction(
                         plant = task.plant,
-                        careType = task.careType,
+                        activity = task.activity,
                         remark = remark,
                         photoUri = photoUri
                     )

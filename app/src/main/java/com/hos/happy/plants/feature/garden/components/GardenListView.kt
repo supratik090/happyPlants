@@ -24,11 +24,10 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.History
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.Place
-import androidx.compose.material.icons.filled.Spa
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -37,7 +36,6 @@ import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -53,6 +51,8 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.hos.happy.plants.data.local.entity.PlantEntity
 import com.hos.happy.plants.feature.garden.GardenViewModel
+import com.hos.happy.plants.feature.garden.PlantActivityStatus
+import com.hos.happy.plants.feature.garden.PlantActivityType
 import com.hos.happy.plants.ui.theme.AmberLight
 import com.hos.happy.plants.ui.theme.Bark
 import com.hos.happy.plants.ui.theme.Forest
@@ -202,20 +202,12 @@ private fun PlantGardenCard(
     onOpenJourney: () -> Unit,
     viewModel: GardenViewModel
 ) {
-    val now = System.currentTimeMillis()
-    val oneDay = 86_400_000L
+    val activityStatuses = remember(plant) {
+        viewModel.calculatePlantActivities(plant)
+    }
 
-    val daysSinceWater = ((now - (plant.lastWateredAt ?: plant.createdAt)) / oneDay).toInt()
-    val daysSinceFert = ((now - (plant.lastFertilizedAt ?: plant.createdAt)) / oneDay).toInt()
-    val daysSinceSoil = ((now - (plant.lastSoilRefreshedAt ?: plant.createdAt)) / oneDay).toInt()
-    val daysSinceRepot = ((now - (plant.lastRepottedAt ?: plant.createdAt)) / oneDay).toInt()
-
-    val isThirsty = daysSinceWater >= plant.wateringIntervalDays
-    val isFertDue = daysSinceFert >= plant.fertilizeIntervalDays
-    val isSoilDue = daysSinceSoil >= plant.refreshSoilIntervalDays
-    val isRepotDue = daysSinceRepot >= plant.repotIntervalDays
-
-    val hasAnyNeed = isThirsty || isFertDue || isSoilDue || isRepotDue
+    val dueActivities = activityStatuses.filter { it.isDueNow }
+    val hasWaterDue = activityStatuses.any { it.activity == PlantActivityType.WATER && it.isDueNow }
 
     Card(
         modifier = Modifier
@@ -287,25 +279,22 @@ private fun PlantGardenCard(
 
                         Spacer(modifier = Modifier.height(6.dp))
 
-                        // Status Pills Row
+                        // Status Pills Row based on calculated activities
                         Row(
                             horizontalArrangement = Arrangement.spacedBy(4.dp),
                             verticalAlignment = Alignment.CenterVertically
                         ) {
-                            if (isThirsty) {
+                            if (hasWaterDue) {
                                 StatusPill(text = "💧 Thirsty", color = Terracotta)
                             }
-                            if (isSoilDue) {
-                                StatusPill(text = "🪵 Soil Change", color = AmberLight)
+                            dueActivities.filter { it.activity != PlantActivityType.WATER }.take(2).forEach { status ->
+                                StatusPill(
+                                    text = "${status.activity.icon} ${status.activity.title}",
+                                    color = AmberLight
+                                )
                             }
-                            if (isRepotDue) {
-                                StatusPill(text = "🪴 Repot Needed", color = AmberLight)
-                            }
-                            if (isFertDue) {
-                                StatusPill(text = "🌱 Feed Due", color = AmberLight)
-                            }
-                            if (!hasAnyNeed) {
-                                StatusPill(text = "🌿 Thriving", color = Moss)
+                            if (dueActivities.isEmpty()) {
+                                StatusPill(text = "🌿 All Good", color = Moss)
                             }
                         }
                     }
@@ -369,7 +358,7 @@ private fun PlantGardenCard(
                         }
                     }
 
-                    Spacer(modifier = Modifier.height(14.dp))
+                    Spacer(modifier = Modifier.height(16.dp))
 
                     // Soil Mix Guidance
                     plant.soilSimpleWords?.let { soilWords ->
@@ -404,50 +393,38 @@ private fun PlantGardenCard(
                                 }
                             }
                         }
-                        Spacer(modifier = Modifier.height(10.dp))
+                        Spacer(modifier = Modifier.height(14.dp))
                     }
 
-                    // Care Schedule Breakdown
-                    Card(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .border(1.dp, Sand.copy(alpha = 0.5f), RoundedCornerShape(12.dp)),
-                        colors = CardDefaults.cardColors(containerColor = Paper)
-                    ) {
-                        Column(modifier = Modifier.padding(10.dp)) {
-                            Text(
-                                text = "⏱️ Care Schedule",
-                                fontSize = 11.sp,
-                                fontWeight = FontWeight.Bold,
-                                color = Forest
-                            )
-                            Spacer(modifier = Modifier.height(4.dp))
+                    // 7 Activities Calculated Schedule & Status
+                    Text(
+                        text = "⏱️ Activity Schedule & Calculated Days",
+                        fontSize = 13.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Forest
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
 
-                            Row(
-                                modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.SpaceBetween
-                            ) {
-                                Text("Water: Every ${plant.wateringIntervalDays} days", fontSize = 11.sp, color = Ink)
-                                Text("Last: ${daysSinceWater}d ago", fontSize = 11.sp, color = if (isThirsty) Terracotta else Moss, fontWeight = FontWeight.SemiBold)
-                            }
-                            Row(
-                                modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.SpaceBetween
-                            ) {
-                                Text("Fertilize: Every ${plant.fertilizeIntervalDays} days", fontSize = 11.sp, color = Ink)
-                                Text("Last: ${daysSinceFert}d ago", fontSize = 11.sp, color = Mute)
-                            }
-                            Row(
-                                modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.SpaceBetween
-                            ) {
-                                Text("Repot: Every ${plant.repotIntervalDays} days", fontSize = 11.sp, color = Ink)
-                                Text("Last: ${daysSinceRepot}d ago", fontSize = 11.sp, color = Mute)
-                            }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        activityStatuses.forEach { status ->
+                            ActivityRowItem(
+                                status = status,
+                                onMarkDone = {
+                                    viewModel.logCareAction(
+                                        plant = plant,
+                                        activity = status.activity,
+                                        remark = "Logged from Garden",
+                                        photoUri = null
+                                    )
+                                }
+                            )
                         }
                     }
 
-                    Spacer(modifier = Modifier.height(10.dp))
+                    Spacer(modifier = Modifier.height(16.dp))
 
                     // Recent Care Logs
                     val careLogs by viewModel.getCareLogsForPlantFlow(plant.id).collectAsState(initial = emptyList())
@@ -460,7 +437,7 @@ private fun PlantGardenCard(
                         )
                         Spacer(modifier = Modifier.height(4.dp))
 
-                        careLogs.take(3).forEach { log ->
+                        careLogs.take(4).forEach { log ->
                             val logDate = remember(log.timestamp) {
                                 SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(Date(log.timestamp))
                             }
@@ -477,6 +454,103 @@ private fun PlantGardenCard(
                     }
                 }
             }
+        }
+    }
+}
+
+@Composable
+private fun ActivityRowItem(
+    status: PlantActivityStatus,
+    onMarkDone: () -> Unit
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .border(
+                1.dp,
+                if (status.isDueNow) (if (status.activity == PlantActivityType.WATER) Terracotta.copy(alpha = 0.5f) else AmberLight.copy(alpha = 0.5f)) else Sand.copy(alpha = 0.5f),
+                RoundedCornerShape(12.dp)
+            ),
+        colors = CardDefaults.cardColors(
+            containerColor = if (status.isDueNow) Paper else SurfaceWarm
+        ),
+        shape = RoundedCornerShape(12.dp)
+    ) {
+        Column(modifier = Modifier.padding(10.dp)) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(status.activity.icon, fontSize = 16.sp)
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Column {
+                        Text(
+                            text = status.activity.title,
+                            fontSize = 13.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = Forest
+                        )
+                        Text(
+                            text = "Every ${status.intervalDays} days",
+                            fontSize = 10.sp,
+                            color = Mute
+                        )
+                    }
+                }
+
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    // Calculated Days Status Badge
+                    val badgeColor = when {
+                        status.isOverdue -> Terracotta
+                        status.isDueNow -> if (status.activity == PlantActivityType.WATER) Terracotta else AmberLight
+                        else -> Moss
+                    }
+                    val badgeText = when {
+                        status.isOverdue -> "Overdue ${status.overdueDays}d"
+                        status.isDueNow -> "Due Today"
+                        else -> "Due in ${status.daysRemaining}d"
+                    }
+
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(6.dp))
+                            .background(badgeColor.copy(alpha = 0.15f))
+                            .padding(horizontal = 6.dp, vertical = 2.dp)
+                    ) {
+                        Text(
+                            text = badgeText,
+                            fontSize = 10.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = badgeColor
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.width(8.dp))
+
+                    Button(
+                        onClick = onMarkDone,
+                        colors = ButtonDefaults.buttonColors(containerColor = Moss),
+                        shape = RoundedCornerShape(8.dp),
+                        contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 8.dp, vertical = 2.dp)
+                    ) {
+                        Icon(Icons.Default.Check, contentDescription = null, tint = SurfaceWarm, modifier = Modifier.size(12.dp))
+                        Spacer(modifier = Modifier.width(2.dp))
+                        Text("Done", fontSize = 10.sp, color = SurfaceWarm, fontWeight = FontWeight.Bold)
+                    }
+                }
+            }
+
+            Spacer(modifier = Modifier.height(4.dp))
+
+            // Golden Rule / Advice
+            Text(
+                text = "💡 ${status.activity.goldenRule}",
+                fontSize = 10.sp,
+                color = Ink,
+                lineHeight = 14.sp
+            )
         }
     }
 }
