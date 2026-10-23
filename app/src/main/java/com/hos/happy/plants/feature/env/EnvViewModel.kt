@@ -27,7 +27,12 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import com.hos.happy.plants.data.local.util.EnvCalculators
+import com.hos.happy.plants.feature.env.components.DaySlotStatus
+import com.hos.happy.plants.feature.env.components.RoomDailyAnalytics
+import java.text.SimpleDateFormat
 import java.util.Calendar
+import java.util.Date
 import java.util.Locale
 
 data class EnvUiState(
@@ -80,6 +85,14 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
         val profileId = state.currentProfileId ?: ""
         snapshotDao.getDistinctRoomsFlow(profileId)
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
+    val roomAnalytics: StateFlow<RoomDailyAnalytics?> = _uiState.flatMapLatest { state ->
+        val profileId = state.currentProfileId ?: ""
+        val roomTag = state.selectedRoomTag
+        snapshotDao.getAllSnapshotsForRoomFlow(profileId, roomTag).map { allSnapshots ->
+            computeRoomAnalytics(roomTag, allSnapshots)
+        }
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), null)
 
     val recordedSnapshotTimestamps: StateFlow<List<Long>> = _uiState.flatMapLatest { state ->
         val profileId = state.currentProfileId ?: ""
@@ -305,6 +318,99 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
 
     fun setHistoryFilterDate(dateMillis: Long?) {
         _uiState.value = _uiState.value.copy(historyFilterDateMillis = dateMillis)
+    }
+
+    private fun computeRoomAnalytics(roomTag: String, allSnapshots: List<RoomEnvSnapshotEntity>): RoomDailyAnalytics {
+        val timeFormat = SimpleDateFormat("h:mm a", Locale.getDefault())
+        val dateFormat = SimpleDateFormat("MMM d, yyyy", Locale.getDefault())
+
+        val todayCal = Calendar.getInstance().apply {
+            set(Calendar.HOUR_OF_DAY, 0)
+            set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0)
+            set(Calendar.MILLISECOND, 0)
+        }
+        val todayStart = todayCal.timeInMillis
+        val todaySnapshots = allSnapshots.filter { it.recordedAt >= todayStart }
+
+        var morningSnap: RoomEnvSnapshotEntity? = null
+        var noonSnap: RoomEnvSnapshotEntity? = null
+        var afternoonSnap: RoomEnvSnapshotEntity? = null
+
+        todaySnapshots.forEach { snap ->
+            val cal = Calendar.getInstance().apply { timeInMillis = snap.recordedAt }
+            val hour = cal.get(Calendar.HOUR_OF_DAY)
+            when {
+                hour < 12 -> if (morningSnap == null) morningSnap = snap
+                hour in 12..15 -> if (noonSnap == null) noonSnap = snap
+                else -> if (afternoonSnap == null) afternoonSnap = snap
+            }
+        }
+
+        val slots = listOf(
+            DaySlotStatus(
+                title = "Morning",
+                timeRange = "Before 12 PM",
+                isRecorded = morningSnap != null,
+                recordedTimeStr = morningSnap?.let { timeFormat.format(Date(it.recordedAt)) }
+            ),
+            DaySlotStatus(
+                title = "Noon",
+                timeRange = "12 – 4 PM",
+                isRecorded = noonSnap != null,
+                recordedTimeStr = noonSnap?.let { timeFormat.format(Date(it.recordedAt)) }
+            ),
+            DaySlotStatus(
+                title = "Afternoon",
+                timeRange = "After 4 PM",
+                isRecorded = afternoonSnap != null,
+                recordedTimeStr = afternoonSnap?.let { timeFormat.format(Date(it.recordedAt)) }
+            )
+        )
+
+        val isUnlockedToday = todaySnapshots.size >= 3
+        val todayVpd = if (isUnlockedToday) EnvCalculators.calculateAverageVpd(todaySnapshots) else null
+        val todayDli = if (isUnlockedToday) {
+            val luxList = todaySnapshots.map { it.lightLux }
+            val daylight = todaySnapshots.mapNotNull { it.daylightHours }.firstOrNull()
+            EnvCalculators.calculateDliMol(luxList, daylight)
+        } else null
+
+        // If today is not unlocked, check if this room had an unlocked day in the past
+        var lastSavedDateStr: String? = null
+        var lastSavedVpd: Float? = null
+        var lastSavedDli: Float? = null
+
+        if (!isUnlockedToday) {
+            val pastDaysWith3Plus = allSnapshots
+                .filter { it.recordedAt < todayStart }
+                .groupBy { snap ->
+                    val cal = Calendar.getInstance().apply { timeInMillis = snap.recordedAt }
+                    "${cal.get(Calendar.YEAR)}-${cal.get(Calendar.MONTH)}-${cal.get(Calendar.DAY_OF_MONTH)}"
+                }
+                .filter { it.value.size >= 3 }
+
+            val mostRecentDay = pastDaysWith3Plus.maxByOrNull { it.value.first().recordedAt }?.value
+            if (mostRecentDay != null) {
+                lastSavedDateStr = dateFormat.format(Date(mostRecentDay.first().recordedAt))
+                lastSavedVpd = EnvCalculators.calculateAverageVpd(mostRecentDay)
+                val luxList = mostRecentDay.map { it.lightLux }
+                val daylight = mostRecentDay.mapNotNull { it.daylightHours }.firstOrNull()
+                lastSavedDli = EnvCalculators.calculateDliMol(luxList, daylight)
+            }
+        }
+
+        return RoomDailyAnalytics(
+            roomTag = roomTag,
+            totalTodaySnapshots = todaySnapshots.size,
+            isUnlockedToday = isUnlockedToday,
+            todayVpdKpa = todayVpd,
+            todayDliMol = todayDli,
+            slots = slots,
+            lastSavedDateStr = lastSavedDateStr,
+            lastSavedVpdKpa = lastSavedVpd,
+            lastSavedDliMol = lastSavedDli
+        )
     }
 
     override fun onCleared() {

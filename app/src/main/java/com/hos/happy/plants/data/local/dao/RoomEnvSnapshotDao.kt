@@ -42,6 +42,9 @@ interface RoomEnvSnapshotDao {
     """)
     fun getRecordedTimestampsFlow(profileId: String, roomTag: String?): Flow<List<Long>>
 
+    @Query("SELECT * FROM room_env_snapshots WHERE profileId = :profileId AND roomTag = :roomTag ORDER BY recordedAt DESC")
+    fun getAllSnapshotsForRoomFlow(profileId: String, roomTag: String): Flow<List<RoomEnvSnapshotEntity>>
+
     @Query("SELECT * FROM room_env_snapshots WHERE profileId = :profileId ORDER BY recordedAt DESC LIMIT 1")
     suspend fun getLatestSnapshot(profileId: String): RoomEnvSnapshotEntity?
 }

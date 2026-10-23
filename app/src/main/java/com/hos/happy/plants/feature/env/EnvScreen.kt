@@ -69,6 +69,7 @@ import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import com.hos.happy.plants.data.preferences.LightMeterMode
 import com.hos.happy.plants.feature.auth.AuthViewModel
+import com.hos.happy.plants.feature.env.components.AdvancedRoomAnalyticsCard
 import com.hos.happy.plants.feature.env.components.CameraMeterPreview
 import com.hos.happy.plants.feature.env.components.LightMeterGauge
 import com.hos.happy.plants.feature.env.components.LiveWeatherCards
@@ -97,6 +98,7 @@ fun EnvScreen(
     val roomTags by envViewModel.availableRoomTags.collectAsState()
     val distinctRooms by envViewModel.distinctRecordedRooms.collectAsState()
     val recordedTimestamps by envViewModel.recordedSnapshotTimestamps.collectAsState()
+    val roomAnalytics by envViewModel.roomAnalytics.collectAsState()
     val filteredSnapshots by envViewModel.filteredSnapshots.collectAsState()
 
     val snackbarHostState = remember { SnackbarHostState() }
@@ -323,9 +325,14 @@ fun EnvScreen(
                 }
             }
 
+            Spacer(modifier = Modifier.height(20.dp))
+
+            // Section 4: Advanced Room Analytics (VPD & DLI with Morning/Noon/Afternoon progress)
+            AdvancedRoomAnalyticsCard(analytics = roomAnalytics)
+
             Spacer(modifier = Modifier.height(28.dp))
 
-            // Section 4: Historical Snapshots Lookup
+            // Section 5: Historical Snapshots Lookup
             SnapshotHistorySection(
                 snapshots = filteredSnapshots,
                 distinctRooms = distinctRooms,
