@@ -103,7 +103,7 @@ fun SnapshotHistorySection(
     }
 
     Column(modifier = modifier.fillMaxWidth()) {
-        // Section Header
+        // Section Header: Shows auto-filtered room name & calendar trigger
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -117,11 +117,19 @@ fun SnapshotHistorySection(
                     modifier = Modifier.size(20.dp)
                 )
                 Spacer(modifier = Modifier.width(6.dp))
-                Text(
-                    text = "Room Snapshots",
-                    style = MaterialTheme.typography.headlineSmall,
-                    color = Forest
-                )
+                Column {
+                    Text(
+                        text = "Room Snapshots",
+                        style = MaterialTheme.typography.headlineSmall,
+                        color = Forest
+                    )
+                    Text(
+                        text = "Filtered for: ${selectedRoom ?: "All Rooms"}",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = Bark,
+                        fontWeight = FontWeight.Medium
+                    )
+                }
             }
 
             // Calendar trigger button: opens calendar with only snapshot dates enabled
@@ -164,48 +172,6 @@ fun SnapshotHistorySection(
                         )
                     }
                 }
-            }
-        }
-
-        Spacer(modifier = Modifier.height(10.dp))
-
-        // Room filter chips
-        FlowRow(
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            FilterChip(
-                selected = selectedRoom == null,
-                onClick = { onSelectRoom(null) },
-                label = { Text("All Rooms", fontSize = 12.sp) },
-                colors = FilterChipDefaults.filterChipColors(
-                    selectedContainerColor = Moss,
-                    selectedLabelColor = SurfaceWarm,
-                    containerColor = SurfaceWarm
-                ),
-                border = FilterChipDefaults.filterChipBorder(
-                    enabled = true,
-                    selected = selectedRoom == null,
-                    borderColor = Sand
-                )
-            )
-
-            distinctRooms.forEach { room ->
-                FilterChip(
-                    selected = selectedRoom == room,
-                    onClick = { onSelectRoom(if (selectedRoom == room) null else room) },
-                    label = { Text(room, fontSize = 12.sp) },
-                    colors = FilterChipDefaults.filterChipColors(
-                        selectedContainerColor = Moss,
-                        selectedLabelColor = SurfaceWarm,
-                        containerColor = SurfaceWarm
-                    ),
-                    border = FilterChipDefaults.filterChipBorder(
-                        enabled = true,
-                        selected = selectedRoom == room,
-                        borderColor = Sand
-                    )
-                )
             }
         }
 

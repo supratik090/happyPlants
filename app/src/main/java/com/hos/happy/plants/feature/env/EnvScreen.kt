@@ -201,6 +201,66 @@ fun EnvScreen(
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 18.dp, vertical = 12.dp)
         ) {
+            // Master Section: Active Room Selector (Auto-filters entire screen)
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .border(1.dp, Sand, RoundedCornerShape(16.dp)),
+                colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
+                shape = RoundedCornerShape(16.dp),
+                elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
+            ) {
+                Column(modifier = Modifier.padding(14.dp)) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(Icons.Default.Place, contentDescription = null, tint = Moss, modifier = Modifier.size(18.dp))
+                            Spacer(modifier = Modifier.width(6.dp))
+                            Text("Select Room", style = MaterialTheme.typography.titleMedium, color = Forest, fontWeight = FontWeight.Bold)
+                        }
+
+                        TextButton(
+                            onClick = { showCustomTagDialog = true },
+                            contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 8.dp)
+                        ) {
+                            Icon(Icons.Default.Add, contentDescription = null, tint = Moss, modifier = Modifier.size(16.dp))
+                            Spacer(modifier = Modifier.width(2.dp))
+                            Text("New Room", color = Moss, fontSize = 12.sp, fontWeight = FontWeight.Medium)
+                        }
+                    }
+
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    FlowRow(
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        roomTags.forEach { tag ->
+                            FilterChip(
+                                selected = uiState.selectedRoomTag == tag,
+                                onClick = { envViewModel.selectRoomTag(tag) },
+                                label = { Text(tag, fontSize = 12.sp) },
+                                colors = FilterChipDefaults.filterChipColors(
+                                    selectedContainerColor = Moss,
+                                    selectedLabelColor = SurfaceWarm,
+                                    containerColor = SurfaceWarm
+                                ),
+                                border = FilterChipDefaults.filterChipBorder(
+                                    enabled = true,
+                                    selected = uiState.selectedRoomTag == tag,
+                                    borderColor = Sand
+                                )
+                            )
+                        }
+                    }
+                }
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
             // Section 1: Live Macro-climate (Temperature, Humidity, AQI, UV, Daylight)
             LiveWeatherCards(
                 snapshot = uiState.weatherSnapshot,
@@ -239,9 +299,14 @@ fun EnvScreen(
                 )
             }
 
-            Spacer(modifier = Modifier.height(22.dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
-            // Section 3: Room Tag & Save Snapshot
+            // Section 3: Advanced Room Analytics (VPD & DLI for selected room)
+            AdvancedRoomAnalyticsCard(analytics = roomAnalytics)
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            // Section 4: Capture Snapshot for Selected Room
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -250,47 +315,21 @@ fun EnvScreen(
                 shape = RoundedCornerShape(16.dp)
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            Icon(Icons.Default.Place, contentDescription = null, tint = Moss, modifier = Modifier.size(18.dp))
-                            Spacer(modifier = Modifier.width(6.dp))
-                            Text("Select Room / Location", style = MaterialTheme.typography.titleMedium, color = Forest)
-                        }
+                    Text(
+                        text = "Take Snapshot — ${uiState.selectedRoomTag}",
+                        style = MaterialTheme.typography.titleMedium,
+                        color = Forest,
+                        fontWeight = FontWeight.Bold
+                    )
+                    Spacer(modifier = Modifier.height(6.dp))
+                    Text(
+                        text = "Records live light, temperature, humidity and AQI for this room.",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = Mute,
+                        fontSize = 12.sp
+                    )
 
-                        TextButton(
-                            onClick = { showCustomTagDialog = true },
-                            contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 8.dp)
-                        ) {
-                            Icon(Icons.Default.Add, contentDescription = null, tint = Moss, modifier = Modifier.size(16.dp))
-                            Spacer(modifier = Modifier.width(2.dp))
-                            Text("New Tag", color = Moss, fontSize = 12.sp)
-                        }
-                    }
-
-                    Spacer(modifier = Modifier.height(8.dp))
-
-                    FlowRow(
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        roomTags.forEach { tag ->
-                            FilterChip(
-                                selected = uiState.selectedRoomTag == tag,
-                                onClick = { envViewModel.selectRoomTag(tag) },
-                                label = { Text(tag, fontSize = 12.sp) },
-                                colors = FilterChipDefaults.filterChipColors(
-                                    selectedContainerColor = Moss,
-                                    selectedLabelColor = SurfaceWarm
-                                )
-                            )
-                        }
-                    }
-
-                    Spacer(modifier = Modifier.height(12.dp))
+                    Spacer(modifier = Modifier.height(10.dp))
 
                     OutlinedTextField(
                         value = noteInput,
@@ -325,14 +364,9 @@ fun EnvScreen(
                 }
             }
 
-            Spacer(modifier = Modifier.height(20.dp))
-
-            // Section 4: Advanced Room Analytics (VPD & DLI with Morning/Noon/Afternoon progress)
-            AdvancedRoomAnalyticsCard(analytics = roomAnalytics)
-
             Spacer(modifier = Modifier.height(28.dp))
 
-            // Section 5: Historical Snapshots Lookup
+            // Section 5: Historical Snapshots Lookup (Auto-filtered for selected room)
             SnapshotHistorySection(
                 snapshots = filteredSnapshots,
                 distinctRooms = distinctRooms,

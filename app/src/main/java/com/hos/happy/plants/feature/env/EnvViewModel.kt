@@ -48,8 +48,8 @@ data class EnvUiState(
     val selectedRoomTag: String = "Living Room",
     val snapshotSavedSuccess: Boolean = false,
     
-    // History filtering
-    val historyFilterRoom: String? = null, // null means "All Rooms"
+    // History filtering (auto-synced with selected room)
+    val historyFilterRoom: String? = "Living Room",
     val historyFilterDateMillis: Long? = null // timestamp representing start of day
 )
 
@@ -219,14 +219,20 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun selectRoomTag(tag: String) {
-        _uiState.value = _uiState.value.copy(selectedRoomTag = tag)
+        _uiState.value = _uiState.value.copy(
+            selectedRoomTag = tag,
+            historyFilterRoom = tag
+        )
     }
 
     fun addCustomRoomTag(tag: String) {
         if (tag.isNotBlank()) {
             viewModelScope.launch {
                 prefs.addCustomRoomTag(tag.trim())
-                _uiState.value = _uiState.value.copy(selectedRoomTag = tag.trim())
+                _uiState.value = _uiState.value.copy(
+                    selectedRoomTag = tag.trim(),
+                    historyFilterRoom = tag.trim()
+                )
             }
         }
     }
