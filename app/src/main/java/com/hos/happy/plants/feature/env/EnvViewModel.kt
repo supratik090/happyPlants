@@ -22,11 +22,14 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import com.hos.happy.plants.data.local.entity.RoomAnalyticsEntity
 import com.hos.happy.plants.data.local.util.EnvCalculators
 import com.hos.happy.plants.feature.env.components.DaySlotStatus
 import com.hos.happy.plants.feature.env.components.RoomDailyAnalytics
@@ -45,18 +48,20 @@ data class EnvUiState(
     val isWeatherLoading: Boolean = false,
     val weatherErrorMessage: String? = null,
     val locationName: String? = null,
-    val selectedRoomTag: String = "Living Room",
+    val selectedRoomTag: String = "Living",
     val snapshotSavedSuccess: Boolean = false,
     
     // History filtering (auto-synced with selected room)
-    val historyFilterRoom: String? = "Living Room",
+    val historyFilterRoom: String? = "Living",
     val historyFilterDateMillis: Long? = null // timestamp representing start of day
 )
 
+@OptIn(kotlinx.coroutines.ExperimentalCoroutinesApi::class)
 class EnvViewModel(application: Application) : AndroidViewModel(application) {
 
     private val db = AppDatabase.getInstance(application)
     private val snapshotDao = db.roomEnvSnapshotDao()
+    private val roomAnalyticsDao = db.roomAnalyticsDao()
     private val prefs = UserPreferencesRepository(application)
     private val openMeteoApi = OpenMeteoApiService()
     private val sensorManager = LightSensorManager(application)
@@ -67,15 +72,9 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
 
     private var sensorJob: Job? = null
 
-    // Room tags
-    private val defaultTags = listOf("Living Room", "Balcony", "Bedroom", "Study Desk", "Kitchen", "Patio")
-    val availableRoomTags: StateFlow<List<String>> = prefs.customRoomTagsFlow
-        .map { customTags -> (defaultTags + customTags).distinct() }
-        .stateIn(
-            viewModelScope,
-            SharingStarted.WhileSubscribed(5000),
-            defaultTags
-        )
+    // Fixed Room tags: Living, Bed, Bathroom, Balcony
+    val fixedRoomTags = listOf("Living", "Bed", "Bathroom", "Balcony")
+    val availableRoomTags: StateFlow<List<String>> = MutableStateFlow(fixedRoomTags).asStateFlow()
 
     // Distinct rooms with recorded snapshots
     private val _historyRoomFilter = MutableStateFlow<String?>(null)
@@ -89,8 +88,11 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
     val roomAnalytics: StateFlow<RoomDailyAnalytics?> = _uiState.flatMapLatest { state ->
         val profileId = state.currentProfileId ?: ""
         val roomTag = state.selectedRoomTag
-        snapshotDao.getAllSnapshotsForRoomFlow(profileId, roomTag).map { allSnapshots ->
-            computeRoomAnalytics(roomTag, allSnapshots)
+        combine(
+            snapshotDao.getAllSnapshotsForRoomFlow(profileId, roomTag),
+            roomAnalyticsDao.getAnalyticsForRoomFlow(profileId, roomTag)
+        ) { allSnapshots, savedAnalytics ->
+            computeRoomAnalytics(roomTag, allSnapshots, savedAnalytics)
         }
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), null)
 
@@ -310,6 +312,39 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
             )
 
             snapshotDao.insertSnapshot(entity)
+
+            // Check if 3 snapshots are now available today for this room to persist in room_analytics
+            val todayCal = Calendar.getInstance().apply {
+                set(Calendar.HOUR_OF_DAY, 0)
+                set(Calendar.MINUTE, 0)
+                set(Calendar.SECOND, 0)
+                set(Calendar.MILLISECOND, 0)
+            }
+            val todayStart = todayCal.timeInMillis
+            val allRoomSnaps = snapshotDao.getAllSnapshotsForRoomFlow(profileId, state.selectedRoomTag).first()
+            val todaySnaps = allRoomSnaps.filter { it.recordedAt >= todayStart }
+
+            if (todaySnaps.size >= 3) {
+                val vpd = EnvCalculators.calculateAverageVpd(todaySnaps)
+                val dli = EnvCalculators.calculateDliMol(
+                    todaySnaps.map { it.lightLux },
+                    todaySnaps.mapNotNull { it.daylightHours }.firstOrNull()
+                )
+                if (vpd != null && dli != null) {
+                    val analyticsEntity = RoomAnalyticsEntity(
+                        id = "${profileId}_${state.selectedRoomTag}",
+                        profileId = profileId,
+                        roomTag = state.selectedRoomTag,
+                        calculatedAt = System.currentTimeMillis(),
+                        calculatedDateStr = SimpleDateFormat("MMM d, yyyy", Locale.getDefault()).format(Date()),
+                        vpdKpa = vpd,
+                        dliMol = dli,
+                        snapshotCount = todaySnaps.size
+                    )
+                    roomAnalyticsDao.upsertAnalytics(analyticsEntity)
+                }
+            }
+
             _uiState.value = _uiState.value.copy(snapshotSavedSuccess = true)
         }
     }
@@ -326,7 +361,11 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
         _uiState.value = _uiState.value.copy(historyFilterDateMillis = dateMillis)
     }
 
-    private fun computeRoomAnalytics(roomTag: String, allSnapshots: List<RoomEnvSnapshotEntity>): RoomDailyAnalytics {
+    private fun computeRoomAnalytics(
+        roomTag: String,
+        allSnapshots: List<RoomEnvSnapshotEntity>,
+        savedAnalytics: RoomAnalyticsEntity?
+    ): RoomDailyAnalytics {
         val timeFormat = SimpleDateFormat("h:mm a", Locale.getDefault())
         val dateFormat = SimpleDateFormat("MMM d, yyyy", Locale.getDefault())
 
@@ -382,12 +421,13 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
             EnvCalculators.calculateDliMol(luxList, daylight)
         } else null
 
-        // If today is not unlocked, check if this room had an unlocked day in the past
-        var lastSavedDateStr: String? = null
-        var lastSavedVpd: Float? = null
-        var lastSavedDli: Float? = null
+        // Check last calculated values from the dedicated room_analytics table!
+        var lastSavedDateStr: String? = savedAnalytics?.calculatedDateStr
+        var lastSavedVpd: Float? = savedAnalytics?.vpdKpa
+        var lastSavedDli: Float? = savedAnalytics?.dliMol
 
-        if (!isUnlockedToday) {
+        // Fallback: check historical days if not yet cached in room_analytics
+        if (!isUnlockedToday && (lastSavedVpd == null || lastSavedDli == null)) {
             val pastDaysWith3Plus = allSnapshots
                 .filter { it.recordedAt < todayStart }
                 .groupBy { snap ->

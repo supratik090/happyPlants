@@ -69,6 +69,7 @@ data class RoomDailyAnalytics(
 @Composable
 fun AdvancedRoomAnalyticsCard(
     analytics: RoomDailyAnalytics?,
+    onShowMetricInfo: (MetricType) -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     if (analytics == null) return
@@ -160,7 +161,8 @@ fun AdvancedRoomAnalyticsCard(
                 MetricsDisplaySection(
                     title = "Today's Unlocked Values",
                     vpdKpa = analytics.todayVpdKpa,
-                    dliMol = analytics.todayDliMol
+                    dliMol = analytics.todayDliMol,
+                    onShowMetricInfo = onShowMetricInfo
                 )
             } else {
                 // LOCKED TODAY: Explanatory banner
@@ -197,7 +199,8 @@ fun AdvancedRoomAnalyticsCard(
                     MetricsDisplaySection(
                         title = "Last Saved Values (${analytics.lastSavedDateStr})",
                         vpdKpa = analytics.lastSavedVpdKpa,
-                        dliMol = analytics.lastSavedDliMol
+                        dliMol = analytics.lastSavedDliMol,
+                        onShowMetricInfo = onShowMetricInfo
                     )
                 }
             }
@@ -273,7 +276,8 @@ private fun TimingSlotItem(
 private fun MetricsDisplaySection(
     title: String,
     vpdKpa: Float?,
-    dliMol: Float?
+    dliMol: Float?,
+    onShowMetricInfo: (MetricType) -> Unit = {}
 ) {
     Column(modifier = Modifier.fillMaxWidth()) {
         Text(
@@ -297,19 +301,26 @@ private fun MetricsDisplaySection(
                 shape = RoundedCornerShape(14.dp)
             ) {
                 Column(modifier = Modifier.padding(12.dp)) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(
-                            imageVector = Icons.Default.Spa,
-                            contentDescription = null,
-                            tint = Moss,
-                            modifier = Modifier.size(16.dp)
-                        )
-                        Spacer(modifier = Modifier.width(4.dp))
-                        Text(
-                            text = "VPD (kPa)",
-                            style = MaterialTheme.typography.labelSmall,
-                            color = Mute
-                        )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(
+                                imageVector = Icons.Default.Spa,
+                                contentDescription = null,
+                                tint = Moss,
+                                modifier = Modifier.size(16.dp)
+                            )
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text(
+                                text = "VPD (kPa)",
+                                style = MaterialTheme.typography.labelSmall,
+                                color = Mute
+                            )
+                        }
+                        InfoHelpButton(metricType = MetricType.VPD, onShowInfo = onShowMetricInfo)
                     }
 
                     Spacer(modifier = Modifier.height(6.dp))
@@ -339,19 +350,26 @@ private fun MetricsDisplaySection(
                 shape = RoundedCornerShape(14.dp)
             ) {
                 Column(modifier = Modifier.padding(12.dp)) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(
-                            imageVector = Icons.Default.WbSunny,
-                            contentDescription = null,
-                            tint = AmberLight,
-                            modifier = Modifier.size(16.dp)
-                        )
-                        Spacer(modifier = Modifier.width(4.dp))
-                        Text(
-                            text = "DLI (mol/m²/d)",
-                            style = MaterialTheme.typography.labelSmall,
-                            color = Mute
-                        )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(
+                                imageVector = Icons.Default.WbSunny,
+                                contentDescription = null,
+                                tint = AmberLight,
+                                modifier = Modifier.size(16.dp)
+                            )
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text(
+                                text = "DLI (mol/m²/d)",
+                                style = MaterialTheme.typography.labelSmall,
+                                color = Mute
+                            )
+                        }
+                        InfoHelpButton(metricType = MetricType.DLI, onShowInfo = onShowMetricInfo)
                     }
 
                     Spacer(modifier = Modifier.height(6.dp))

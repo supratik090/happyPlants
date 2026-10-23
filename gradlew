@@ -33,7 +33,8 @@ case "`uname`" in
   OS400* ) os400=true ;;
 esac
 
-CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
+APP_HOME="`pwd -P`"
+CLASSPATH="$APP_HOME/gradle/wrapper/gradle-wrapper.jar"
 
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then
@@ -44,14 +45,13 @@ if [ -n "$JAVA_HOME" ] ; then
         JAVACMD="$JAVA_HOME/bin/java"
     fi
 else
-    JAVACMD="java"
-    which java >/dev/null 2>&1 || {
-        if [ -x "/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java" ]; then
-            JAVACMD="/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java"
-        fi
-    }
+    if [ -x "/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/bin/java" ]; then
+        JAVACMD="/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/bin/java"
+    elif [ -x "/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java" ]; then
+        JAVACMD="/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java"
+    else
+        JAVACMD="java"
+    fi
 fi
-
-APP_HOME="`pwd -P`"
 
 exec "$JAVACMD" "-Dorg.gradle.appname=$APP_BASE_NAME" -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"

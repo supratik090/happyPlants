@@ -4,23 +4,27 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.hos.happy.plants.data.local.dao.RoomAnalyticsDao
 import com.hos.happy.plants.data.local.dao.RoomEnvSnapshotDao
 import com.hos.happy.plants.data.local.dao.UserProfileDao
+import com.hos.happy.plants.data.local.entity.RoomAnalyticsEntity
 import com.hos.happy.plants.data.local.entity.RoomEnvSnapshotEntity
 import com.hos.happy.plants.data.local.entity.UserProfileEntity
 
 @Database(
     entities = [
         UserProfileEntity::class,
-        RoomEnvSnapshotEntity::class
+        RoomEnvSnapshotEntity::class,
+        RoomAnalyticsEntity::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun userProfileDao(): UserProfileDao
     abstract fun roomEnvSnapshotDao(): RoomEnvSnapshotDao
+    abstract fun roomAnalyticsDao(): RoomAnalyticsDao
 
     companion object {
         @Volatile

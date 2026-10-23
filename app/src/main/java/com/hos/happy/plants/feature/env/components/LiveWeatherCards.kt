@@ -57,6 +57,7 @@ fun LiveWeatherCards(
     locationName: String?,
     isLoading: Boolean,
     onRefresh: () -> Unit,
+    onShowMetricInfo: (MetricType) -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     Column(modifier = modifier.fillMaxWidth()) {
@@ -114,6 +115,8 @@ fun LiveWeatherCards(
                 iconColor = Bark,
                 label = "Temperature",
                 value = snapshot?.temperatureCelsius?.let { String.format(Locale.US, "%.1f°C", it) } ?: "--",
+                metricType = MetricType.TEMPERATURE,
+                onShowMetricInfo = onShowMetricInfo,
                 modifier = Modifier.weight(1f)
             )
 
@@ -122,6 +125,8 @@ fun LiveWeatherCards(
                 iconColor = SkyBlue,
                 label = "Humidity",
                 value = snapshot?.humidityPercentage?.let { String.format(Locale.US, "%.0f%%", it) } ?: "--",
+                metricType = MetricType.HUMIDITY,
+                onShowMetricInfo = onShowMetricInfo,
                 modifier = Modifier.weight(1f)
             )
         }
@@ -137,6 +142,8 @@ fun LiveWeatherCards(
                 iconColor = Moss,
                 label = "Air Quality (AQI)",
                 value = snapshot?.aqi?.let { "$it" } ?: "--",
+                metricType = MetricType.AQI,
+                onShowMetricInfo = onShowMetricInfo,
                 modifier = Modifier.weight(1f)
             )
 
@@ -145,6 +152,8 @@ fun LiveWeatherCards(
                 iconColor = Bark,
                 label = "UV Index",
                 value = snapshot?.uvIndex?.let { String.format(Locale.US, "%.1f", it) } ?: "--",
+                metricType = MetricType.UV_INDEX,
+                onShowMetricInfo = onShowMetricInfo,
                 modifier = Modifier.weight(1f)
             )
         }
@@ -167,11 +176,15 @@ fun LiveWeatherCards(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Column {
-                        Text(
-                            text = "Natural Daylight",
-                            style = MaterialTheme.typography.labelSmall,
-                            color = Mute
-                        )
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Text(
+                                text = "Natural Daylight",
+                                style = MaterialTheme.typography.labelSmall,
+                                color = Mute
+                            )
+                            Spacer(modifier = Modifier.width(4.dp))
+                            InfoHelpButton(metricType = MetricType.DAYLIGHT, onShowInfo = onShowMetricInfo)
+                        }
                         val daylightStr = snapshot.daylightHours?.let {
                             val hours = it.toInt()
                             val minutes = ((it - hours) * 60).toInt()
@@ -202,6 +215,8 @@ private fun MetricCard(
     iconColor: Color,
     label: String,
     value: String,
+    metricType: MetricType? = null,
+    onShowMetricInfo: ((MetricType) -> Unit)? = null,
     modifier: Modifier = Modifier
 ) {
     Card(
@@ -216,27 +231,37 @@ private fun MetricCard(
                 .fillMaxWidth()
                 .padding(14.dp)
         ) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Box(
-                    modifier = Modifier
-                        .size(30.dp)
-                        .clip(CircleShape)
-                        .background(iconColor.copy(alpha = 0.15f)),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Icon(
-                        imageVector = icon,
-                        contentDescription = null,
-                        tint = iconColor,
-                        modifier = Modifier.size(16.dp)
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Box(
+                        modifier = Modifier
+                            .size(28.dp)
+                            .clip(CircleShape)
+                            .background(iconColor.copy(alpha = 0.15f)),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = icon,
+                            contentDescription = null,
+                            tint = iconColor,
+                            modifier = Modifier.size(15.dp)
+                        )
+                    }
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text(
+                        text = label,
+                        style = MaterialTheme.typography.labelSmall,
+                        color = Mute
                     )
                 }
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(
-                    text = label,
-                    style = MaterialTheme.typography.labelSmall,
-                    color = Mute
-                )
+
+                if (metricType != null && onShowMetricInfo != null) {
+                    InfoHelpButton(metricType = metricType, onShowInfo = onShowMetricInfo)
+                }
             }
 
             Spacer(modifier = Modifier.height(10.dp))

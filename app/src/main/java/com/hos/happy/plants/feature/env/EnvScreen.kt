@@ -25,12 +25,10 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Place
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -73,6 +71,8 @@ import com.hos.happy.plants.feature.env.components.AdvancedRoomAnalyticsCard
 import com.hos.happy.plants.feature.env.components.CameraMeterPreview
 import com.hos.happy.plants.feature.env.components.LightMeterGauge
 import com.hos.happy.plants.feature.env.components.LiveWeatherCards
+import com.hos.happy.plants.feature.env.components.MetricInfoModal
+import com.hos.happy.plants.feature.env.components.MetricType
 import com.hos.happy.plants.feature.env.components.SnapshotHistorySection
 import com.hos.happy.plants.ui.theme.Bark
 import com.hos.happy.plants.ui.theme.Forest
@@ -102,8 +102,7 @@ fun EnvScreen(
     val filteredSnapshots by envViewModel.filteredSnapshots.collectAsState()
 
     val snackbarHostState = remember { SnackbarHostState() }
-    var showCustomTagDialog by remember { mutableStateOf(false) }
-    var customTagInput by remember { mutableStateOf("") }
+    var selectedMetricInfo by remember { mutableStateOf<MetricType?>(null) }
     var noteInput by remember { mutableStateOf("") }
 
     // Location permission handling for Live Weather
@@ -213,23 +212,11 @@ fun EnvScreen(
                 Column(modifier = Modifier.padding(14.dp)) {
                     Row(
                         modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            Icon(Icons.Default.Place, contentDescription = null, tint = Moss, modifier = Modifier.size(18.dp))
-                            Spacer(modifier = Modifier.width(6.dp))
-                            Text("Select Room", style = MaterialTheme.typography.titleMedium, color = Forest, fontWeight = FontWeight.Bold)
-                        }
-
-                        TextButton(
-                            onClick = { showCustomTagDialog = true },
-                            contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 8.dp)
-                        ) {
-                            Icon(Icons.Default.Add, contentDescription = null, tint = Moss, modifier = Modifier.size(16.dp))
-                            Spacer(modifier = Modifier.width(2.dp))
-                            Text("New Room", color = Moss, fontSize = 12.sp, fontWeight = FontWeight.Medium)
-                        }
+                        Icon(Icons.Default.Place, contentDescription = null, tint = Moss, modifier = Modifier.size(18.dp))
+                        Spacer(modifier = Modifier.width(6.dp))
+                        Text("Select Room", style = MaterialTheme.typography.titleMedium, color = Forest, fontWeight = FontWeight.Bold)
                     }
 
                     Spacer(modifier = Modifier.height(8.dp))
@@ -268,7 +255,8 @@ fun EnvScreen(
                 isLoading = uiState.isWeatherLoading,
                 onRefresh = {
                     envViewModel.refreshLiveEnvironment(hasLocationPermission)
-                }
+                },
+                onShowMetricInfo = { selectedMetricInfo = it }
             )
 
             Spacer(modifier = Modifier.height(20.dp))
@@ -286,7 +274,8 @@ fun EnvScreen(
                 currentReading = uiState.liveLightReading,
                 isFrozen = uiState.isLightFrozen,
                 onToggleMode = { envViewModel.toggleLightMeterMode() },
-                onToggleFreeze = { envViewModel.toggleLightFreeze() }
+                onToggleFreeze = { envViewModel.toggleLightFreeze() },
+                onShowMetricInfo = { selectedMetricInfo = it }
             )
 
             // If Camera mode is active, render CameraX preview analyzer
@@ -302,7 +291,10 @@ fun EnvScreen(
             Spacer(modifier = Modifier.height(20.dp))
 
             // Section 3: Advanced Room Analytics (VPD & DLI for selected room)
-            AdvancedRoomAnalyticsCard(analytics = roomAnalytics)
+            AdvancedRoomAnalyticsCard(
+                analytics = roomAnalytics,
+                onShowMetricInfo = { selectedMetricInfo = it }
+            )
 
             Spacer(modifier = Modifier.height(20.dp))
 
@@ -380,46 +372,10 @@ fun EnvScreen(
             Spacer(modifier = Modifier.height(40.dp))
         }
 
-        // Add Custom Room Tag Dialog
-        if (showCustomTagDialog) {
-            AlertDialog(
-                onDismissRequest = { showCustomTagDialog = false },
-                title = { Text("Add Room Tag", style = MaterialTheme.typography.titleLarge, color = Forest) },
-                text = {
-                    OutlinedTextField(
-                        value = customTagInput,
-                        onValueChange = { customTagInput = it },
-                        label = { Text("Room or Spot Name") },
-                        singleLine = true,
-                        colors = OutlinedTextFieldDefaults.colors(
-                            focusedBorderColor = Moss,
-                            focusedLabelColor = Moss
-                        ),
-                        modifier = Modifier.fillMaxWidth()
-                    )
-                },
-                confirmButton = {
-                    Button(
-                        onClick = {
-                            if (customTagInput.isNotBlank()) {
-                                envViewModel.addCustomRoomTag(customTagInput)
-                                customTagInput = ""
-                                showCustomTagDialog = false
-                            }
-                        },
-                        colors = ButtonDefaults.buttonColors(containerColor = Moss)
-                    ) {
-                        Text("Add", color = SurfaceWarm)
-                    }
-                },
-                dismissButton = {
-                    TextButton(onClick = { showCustomTagDialog = false }) {
-                        Text("Cancel", color = Mute)
-                    }
-                },
-                containerColor = SurfaceWarm,
-                shape = RoundedCornerShape(16.dp)
-            )
-        }
+        // Metric Info Help Modal (auto-closes in 5 seconds or on dismiss)
+        MetricInfoModal(
+            metricType = selectedMetricInfo,
+            onDismiss = { selectedMetricInfo = null }
+        )
     }
 }

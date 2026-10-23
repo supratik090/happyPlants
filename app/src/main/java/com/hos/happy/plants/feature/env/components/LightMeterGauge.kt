@@ -67,6 +67,7 @@ fun LightMeterGauge(
     isFrozen: Boolean,
     onToggleMode: () -> Unit,
     onToggleFreeze: () -> Unit,
+    onShowMetricInfo: (MetricType) -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     // Normalizing lux to an arc progress (0 to 12,000 lux max scale for indoor plants)
@@ -203,13 +204,17 @@ fun LightMeterGauge(
                         fontFamily = FontFamily.Serif,
                         color = Forest
                     )
-                    Text(
-                        text = "LUX (lx)",
-                        fontSize = 12.sp,
-                        fontWeight = FontWeight.SemiBold,
-                        color = Mute,
-                        letterSpacing = 1.sp
-                    )
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Text(
+                            text = "LUX (lx)",
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color = Mute,
+                            letterSpacing = 1.sp
+                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        InfoHelpButton(metricType = MetricType.LIGHT_LUX, onShowInfo = onShowMetricInfo)
+                    }
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(
                         text = String.format(Locale.US, "%.1f fc", currentReading.footCandles),
