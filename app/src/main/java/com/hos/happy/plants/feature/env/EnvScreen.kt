@@ -25,10 +25,12 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Place
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -104,6 +106,8 @@ fun EnvScreen(
     val snackbarHostState = remember { SnackbarHostState() }
     var selectedMetricInfo by remember { mutableStateOf<MetricType?>(null) }
     var noteInput by remember { mutableStateOf("") }
+    var showAddRoomDialog by remember { mutableStateOf(false) }
+    var newRoomInput by remember { mutableStateOf("") }
 
     // Location permission handling for Live Weather
     var hasLocationPermission by remember {
@@ -212,11 +216,23 @@ fun EnvScreen(
                 Column(modifier = Modifier.padding(14.dp)) {
                     Row(
                         modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Icon(Icons.Default.Place, contentDescription = null, tint = Moss, modifier = Modifier.size(18.dp))
-                        Spacer(modifier = Modifier.width(6.dp))
-                        Text("Select Room", style = MaterialTheme.typography.titleMedium, color = Forest, fontWeight = FontWeight.Bold)
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(Icons.Default.Place, contentDescription = null, tint = Moss, modifier = Modifier.size(18.dp))
+                            Spacer(modifier = Modifier.width(6.dp))
+                            Text("Select Room", style = MaterialTheme.typography.titleMedium, color = Forest, fontWeight = FontWeight.Bold)
+                        }
+
+                        TextButton(
+                            onClick = { showAddRoomDialog = true },
+                            contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 8.dp, vertical = 2.dp)
+                        ) {
+                            Icon(Icons.Default.Add, contentDescription = null, tint = Moss, modifier = Modifier.size(16.dp))
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text("Add Room", color = Moss, fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
+                        }
                     }
 
                     Spacer(modifier = Modifier.height(8.dp))
@@ -242,6 +258,27 @@ fun EnvScreen(
                                 )
                             )
                         }
+
+                        // Inline quick add chip
+                        FilterChip(
+                            selected = false,
+                            onClick = { showAddRoomDialog = true },
+                            label = {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Icon(Icons.Default.Add, contentDescription = null, tint = Moss, modifier = Modifier.size(14.dp))
+                                    Spacer(modifier = Modifier.width(4.dp))
+                                    Text("Add", fontSize = 12.sp, color = Moss, fontWeight = FontWeight.Medium)
+                                }
+                            },
+                            colors = FilterChipDefaults.filterChipColors(
+                                containerColor = Paper
+                            ),
+                            border = FilterChipDefaults.filterChipBorder(
+                                enabled = true,
+                                selected = false,
+                                borderColor = Sand
+                            )
+                        )
                     }
                 }
             }
@@ -377,5 +414,73 @@ fun EnvScreen(
             metricType = selectedMetricInfo,
             onDismiss = { selectedMetricInfo = null }
         )
+
+        // Add New Room Dialog
+        if (showAddRoomDialog) {
+            AlertDialog(
+                onDismissRequest = {
+                    showAddRoomDialog = false
+                    newRoomInput = ""
+                },
+                title = {
+                    Text(
+                        text = "Add New Room",
+                        style = MaterialTheme.typography.titleMedium,
+                        color = Forest,
+                        fontWeight = FontWeight.Bold
+                    )
+                },
+                text = {
+                    Column {
+                        Text(
+                            text = "Name your room or growing spot (e.g. Study, Patio, Kitchen, Office).",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = Mute,
+                            fontSize = 13.sp
+                        )
+                        Spacer(modifier = Modifier.height(12.dp))
+                        OutlinedTextField(
+                            value = newRoomInput,
+                            onValueChange = { newRoomInput = it },
+                            placeholder = { Text("Room name") },
+                            singleLine = true,
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedBorderColor = Moss,
+                                focusedLabelColor = Moss,
+                                cursorColor = Moss
+                            ),
+                            shape = RoundedCornerShape(12.dp),
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                    }
+                },
+                confirmButton = {
+                    Button(
+                        onClick = {
+                            val trimmed = newRoomInput.trim()
+                            if (trimmed.isNotBlank()) {
+                                envViewModel.addCustomRoomTag(trimmed)
+                                newRoomInput = ""
+                                showAddRoomDialog = false
+                            }
+                        },
+                        colors = ButtonDefaults.buttonColors(containerColor = Moss),
+                        shape = RoundedCornerShape(10.dp)
+                    ) {
+                        Text("Add Room", color = SurfaceWarm, fontWeight = FontWeight.SemiBold)
+                    }
+                },
+                dismissButton = {
+                    TextButton(onClick = {
+                        showAddRoomDialog = false
+                        newRoomInput = ""
+                    }) {
+                        Text("Cancel", color = Mute)
+                    }
+                },
+                containerColor = SurfaceWarm,
+                shape = RoundedCornerShape(18.dp)
+            )
+        }
     }
 }

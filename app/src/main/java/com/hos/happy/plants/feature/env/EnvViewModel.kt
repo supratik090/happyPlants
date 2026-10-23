@@ -72,9 +72,11 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
 
     private var sensorJob: Job? = null
 
-    // Fixed Room tags: Living, Bed, Bathroom, Balcony
-    val fixedRoomTags = listOf("Living", "Bed", "Bathroom", "Balcony")
-    val availableRoomTags: StateFlow<List<String>> = MutableStateFlow(fixedRoomTags).asStateFlow()
+    // Room tags: default 4 rooms + any user added rooms
+    val defaultRoomTags = listOf("Living", "Bed", "Bathroom", "Balcony")
+    val availableRoomTags: StateFlow<List<String>> = prefs.customRoomTagsFlow.map { customTags ->
+        (defaultRoomTags + customTags).distinct()
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), defaultRoomTags)
 
     // Distinct rooms with recorded snapshots
     private val _historyRoomFilter = MutableStateFlow<String?>(null)
