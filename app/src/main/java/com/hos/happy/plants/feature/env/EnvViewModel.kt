@@ -23,6 +23,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
@@ -64,6 +65,7 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
     // Room tags
     private val defaultTags = listOf("Living Room", "Balcony", "Bedroom", "Study Desk", "Kitchen", "Patio")
     val availableRoomTags: StateFlow<List<String>> = prefs.customRoomTagsFlow
+        .map { customTags -> (defaultTags + customTags).distinct() }
         .stateIn(
             viewModelScope,
             SharingStarted.WhileSubscribed(5000),
