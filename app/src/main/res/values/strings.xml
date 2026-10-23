@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Happy Plants</string>
+    <string name="tagline">Calm, mindful care for indoor greenery</string>
+    <string name="tab_garden">Garden</string>
+    <string name="tab_research">Research</string>
+    <string name="tab_env">Env</string>
+</resources>
