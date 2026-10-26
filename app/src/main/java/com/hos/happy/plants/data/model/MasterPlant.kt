@@ -28,7 +28,10 @@ data class MasterPlant(
     @SerializedName("pet_and_child_safety") val petSafety: PetSafetyInfo? = null,
     @SerializedName("common_problems") val commonProblems: List<CommonProblem> = emptyList(),
     @SerializedName("image") val image: MasterPlantImage? = null
-)
+) {
+    val displayImageUrl: String?
+        get() = image?.bestImageUrl
+}
 
 data class WateringInfo(
     @SerializedName("hot_dry_months_mar_jun") val hotDryMonths: MinMaxDays? = null,
@@ -83,5 +86,13 @@ data class MasterPlantImage(
     @SerializedName("wikipedia_page") val wikipediaPage: String? = null,
     @SerializedName("resolver_api_url") val resolverApiUrl: String? = null,
     @SerializedName("direct_image_url") val directImageUrl: String? = null,
-    @SerializedName("thumbnail_url") val thumbnailUrl: String? = null
-)
+    @SerializedName("thumbnail_url") val thumbnailUrl: String? = null,
+    @SerializedName("local_file") val localFile: String? = null,
+    @SerializedName("asset_path") val assetPath: String? = null
+) {
+    val bestImageUrl: String?
+        get() = assetPath
+            ?: localFile?.let { if (it.startsWith("file:///android_asset/")) it else "file:///android_asset/$it" }
+            ?: thumbnailUrl
+            ?: directImageUrl
+}

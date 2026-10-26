@@ -22,4 +22,10 @@ interface PlantPhotoDao {
 
     @Query("SELECT * FROM plant_photos WHERE plantId = :plantId ORDER BY capturedAt ASC")
     suspend fun getPhotosForPlant(plantId: String): List<PlantPhotoEntity>
+
+    @Query("SELECT COUNT(*) FROM plant_photos WHERE profileId = :profileId AND capturedAt >= :sinceTimestamp")
+    suspend fun getPhotoCountSince(profileId: String, sinceTimestamp: Long): Int
+
+    @Query("SELECT * FROM plant_photos WHERE profileId = :profileId ORDER BY capturedAt DESC LIMIT 1")
+    suspend fun getLatestPhotoForProfile(profileId: String): PlantPhotoEntity?
 }

@@ -4,13 +4,16 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.hos.happy.plants.data.local.AppDatabase
+import com.hos.happy.plants.data.local.entity.DailyCareTaskEntity
 import com.hos.happy.plants.data.local.entity.PlantCareLogEntity
 import com.hos.happy.plants.data.local.entity.PlantEntity
 import com.hos.happy.plants.data.local.entity.PlantPhotoEntity
+import com.hos.happy.plants.data.local.entity.RoomEnvSnapshotEntity
 import com.hos.happy.plants.data.model.CommonProblem
 import com.hos.happy.plants.data.model.MasterPlant
 import com.hos.happy.plants.data.preferences.UserPreferencesRepository
 import com.hos.happy.plants.data.repository.PlantMasterRepository
+import com.hos.happy.plants.data.repository.TaskRuleEngine
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -52,6 +55,12 @@ enum class PlantActivityType(
         icon = "🌱",
         isEssentialByDefault = false,
         goldenRule = "Manure or diluted fertiliser every 30–90 days during growing season."
+    ),
+    FEED_MANURE(
+        title = "Feeding Manure",
+        icon = "🌱",
+        isEssentialByDefault = false,
+        goldenRule = "Manure or organic fertilizer every 30–90 days during growing season."
     ),
     INSPECT(
         title = "Pest Inspection",
@@ -99,11 +108,30 @@ data class TodayCareTask(
     val goldenRule: String
 )
 
+enum class PlantGardenTag(
+    val label: String,
+    val icon: String
+) {
+    HAPPY("Happy", "✓"),
+    THIRSTY("Thirsty", "💧"),
+    DUSTY("Dusty", "✦"),
+    HUNGRY("Hungry", "🪣")
+}
+
+
+enum class TodayActionViewMode {
+    DECK,
+    LIST
+}
+
 data class GardenUiState(
     val activeTab: GardenTab = GardenTab.TODAY,
+    val todayViewMode: TodayActionViewMode = TodayActionViewMode.DECK,
     val currentProfileId: String? = null,
     val selectedRoomFilter: String = "All",
     val expandedPlantId: String? = null,
+    val selectedPlantDetailId: String? = null,
+    val showAddSpaceDialog: Boolean = false,
     val activeDoctorPlant: PlantEntity? = null,
     val activeJourneyPlant: PlantEntity? = null,
     val showAddPlantDialog: Boolean = false,
@@ -117,25 +145,53 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
     private val plantDao = db.plantDao()
     private val careLogDao = db.plantCareLogDao()
     private val photoDao = db.plantPhotoDao()
+    private val snapshotDao = db.roomEnvSnapshotDao()
+    private val taskDao = db.dailyCareTaskDao()
     private val prefs = UserPreferencesRepository(application)
     val masterRepo = PlantMasterRepository(application)
+    val ruleEngine = TaskRuleEngine(application)
 
     private val _uiState = MutableStateFlow(GardenUiState())
     val uiState: StateFlow<GardenUiState> = _uiState.asStateFlow()
 
-    // Room tags: default 4 + custom
-    val defaultRoomTags = listOf("Living", "Bed", "Bathroom", "Balcony")
+    // Room tags: default locations + custom
+    val defaultRoomTags = listOf("Living", "Bed", "Bathroom", "Balcony", "Outdoors")
     val availableRoomTags: StateFlow<List<String>> = prefs.customRoomTagsFlow.map { customTags ->
         (defaultRoomTags + customTags).distinct()
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), defaultRoomTags)
+
+    // Latest snapshot per room tag
+    val latestSnapshotByRoom: StateFlow<Map<String, RoomEnvSnapshotEntity>> = _uiState.flatMapLatest { state ->
+        val profileId = state.currentProfileId ?: return@flatMapLatest flowOf(emptyMap())
+        snapshotDao.getAllSnapshotsForProfileFlow(profileId).map { snaps ->
+            snaps.groupBy { it.roomTag }.mapValues { (_, roomSnaps) -> roomSnaps.first() }
+        }
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyMap())
 
     init {
         viewModelScope.launch {
             prefs.activeProfileIdFlow.collect { profileId ->
                 _uiState.value = _uiState.value.copy(currentProfileId = profileId)
+                if (!profileId.isNullOrBlank()) {
+                    ruleEngine.evaluateDailyRules(profileId)
+                }
             }
         }
     }
+
+    // Daily evaluated tasks from Room DB (Pending vs Completed)
+    val pendingDailyTasks: StateFlow<List<DailyCareTaskEntity>> = _uiState.flatMapLatest { state ->
+        val profileId = state.currentProfileId ?: return@flatMapLatest flowOf(emptyList())
+        ruleEngine.observePendingTasksForToday(profileId)
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
+    val completedDailyTasks: StateFlow<List<DailyCareTaskEntity>> = _uiState.flatMapLatest { state ->
+        val profileId = state.currentProfileId ?: return@flatMapLatest flowOf(emptyList())
+        ruleEngine.observeCompletedTasksForToday(profileId)
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
+    // Backwards compatibility alias for deck tasks
+    val dailyDeckTasks: StateFlow<List<DailyCareTaskEntity>> = pendingDailyTasks
 
     // Plants for current profile
     val allPlants: StateFlow<List<PlantEntity>> = _uiState.flatMapLatest { state ->
@@ -301,6 +357,120 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
         }
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
+    // Reactive selected plant for detail screen
+    val selectedPlantDetail: StateFlow<PlantEntity?> = combine(allPlants, _uiState) { plants, state ->
+        state.selectedPlantDetailId?.let { id -> plants.find { it.id == id } }
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), null)
+
+
+    fun getTagsForPlant(plant: PlantEntity): List<PlantGardenTag> {
+        val tags = mutableListOf<PlantGardenTag>()
+        val now = System.currentTimeMillis()
+        val oneDay = 86_400_000L
+
+        // 1. Thirsty: if never watered or days since water >= interval
+        val isThirsty = if (plant.lastWateredAt == null) {
+            true
+        } else {
+            val days = ((now - plant.lastWateredAt) / oneDay).toInt()
+            days >= plant.wateringIntervalDays
+        }
+        if (isThirsty) {
+            tags.add(PlantGardenTag.THIRSTY)
+        }
+
+        // 2. Dusty: only if cleaned date is known and days since clean >= interval
+        if (plant.lastCleanedAt != null) {
+            val daysClean = ((now - plant.lastCleanedAt) / oneDay).toInt()
+            if (daysClean >= plant.cleanIntervalDays) {
+                tags.add(PlantGardenTag.DUSTY)
+            }
+        }
+
+        // 3. Hungry: only if fertilized date is known and days since fert >= interval
+        if (plant.lastFertilizedAt != null) {
+            val daysFert = ((now - plant.lastFertilizedAt) / oneDay).toInt()
+            if (daysFert >= plant.fertilizeIntervalDays) {
+                tags.add(PlantGardenTag.HUNGRY)
+            }
+        }
+
+        // 4. Happy: if none of the above are due!
+        if (tags.isEmpty()) {
+            tags.add(PlantGardenTag.HAPPY)
+        }
+
+        return tags
+    }
+
+    fun openPlantDetail(plantId: String) {
+        _uiState.value = _uiState.value.copy(selectedPlantDetailId = plantId)
+    }
+
+    fun closePlantDetail() {
+        _uiState.value = _uiState.value.copy(selectedPlantDetailId = null)
+    }
+
+    fun openAddSpaceDialog() {
+        _uiState.value = _uiState.value.copy(showAddSpaceDialog = true)
+    }
+
+    fun closeAddSpaceDialog() {
+        _uiState.value = _uiState.value.copy(showAddSpaceDialog = false)
+    }
+
+    fun waterPlantNow(plant: PlantEntity, note: String? = null) {
+        logCareAction(
+            plant = plant,
+            activity = PlantActivityType.WATER,
+            remark = note ?: "Watered now",
+            photoUri = null
+        )
+    }
+
+    fun addPlantPhoto(plantId: String, photoUri: String, caption: String? = null) {
+        viewModelScope.launch {
+            val profileId = _uiState.value.currentProfileId ?: return@launch
+            val now = System.currentTimeMillis()
+            val photo = PlantPhotoEntity(
+                plantId = plantId,
+                profileId = profileId,
+                photoUri = photoUri,
+                capturedAt = now,
+                caption = caption ?: "Photo added"
+            )
+            photoDao.insertPhoto(photo)
+
+            val log = PlantCareLogEntity(
+                plantId = plantId,
+                profileId = profileId,
+                careType = "PHOTO",
+                timestamp = now,
+                remark = caption ?: "Photo added",
+                photoUri = photoUri
+            )
+            careLogDao.insertLog(log)
+            completeGardenPhotoTask()
+        }
+    }
+
+    private fun completeGardenPhotoTask() {
+        viewModelScope.launch {
+            val profileId = _uiState.value.currentProfileId ?: return@launch
+            val todayKey = TaskRuleEngine.getTodayDateKey()
+            taskDao.markGardenPhotoTaskCompleted(profileId, todayKey)
+        }
+    }
+
+    fun logCareActionQuick(plant: PlantEntity, activity: PlantActivityType, remark: String? = null) {
+        logCareAction(
+            plant = plant,
+            activity = activity,
+            remark = remark ?: "Logged from details",
+            photoUri = null
+        )
+    }
+
     fun selectTab(tab: GardenTab) {
         _uiState.value = _uiState.value.copy(activeTab = tab)
     }
@@ -381,7 +551,7 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
             when (activity) {
                 PlantActivityType.WATER -> plantDao.updateLastWatered(plant.id, now)
                 PlantActivityType.ROTATE -> plantDao.updateLastRotated(plant.id, now)
-                PlantActivityType.FEED -> plantDao.updateLastFertilized(plant.id, now)
+                PlantActivityType.FEED, PlantActivityType.FEED_MANURE -> plantDao.updateLastFertilized(plant.id, now)
                 PlantActivityType.INSPECT -> plantDao.updateLastInspected(plant.id, now)
                 PlantActivityType.CLEAN -> plantDao.updateLastCleaned(plant.id, now)
                 PlantActivityType.PRUNE -> plantDao.updateLastPruned(plant.id, now)
@@ -399,6 +569,7 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
                     careLogId = log.id
                 )
                 photoDao.insertPhoto(photo)
+                completeGardenPhotoTask()
             }
 
             closeActionDialog()
@@ -420,7 +591,7 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
     ) {
         viewModelScope.launch {
             val profileId = _uiState.value.currentProfileId ?: return@launch
-            val photo = customPhotoUri ?: masterPlant?.image?.directImageUrl ?: masterPlant?.image?.thumbnailUrl
+            val photo = customPhotoUri ?: masterPlant?.displayImageUrl ?: masterPlant?.image?.thumbnailUrl ?: masterPlant?.image?.directImageUrl
             val now = System.currentTimeMillis()
 
             // AT DAY 1: Assume all activities are done apart from watering!
@@ -442,13 +613,13 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
                 cleanIntervalDays = 14,
                 pruneIntervalDays = 14,
                 lastWateredAt = null, // DAY 1: Watering is due!
-                lastFertilizedAt = now,
-                lastSoilRefreshedAt = now,
-                lastRepottedAt = now,
-                lastRotatedAt = now,
-                lastInspectedAt = now,
-                lastCleanedAt = now,
-                lastPrunedAt = now,
+                lastFertilizedAt = null,
+                lastSoilRefreshedAt = null,
+                lastRepottedAt = null,
+                lastRotatedAt = null,
+                lastInspectedAt = null,
+                lastCleanedAt = null,
+                lastPrunedAt = null,
                 lightIdealMinLux = masterPlant?.lightLux?.idealMin,
                 lightIdealMaxLux = masterPlant?.lightLux?.idealMax,
                 soilSimpleWords = masterPlant?.soil?.inSimpleWords,
@@ -457,6 +628,7 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
                 notes = notes
             )
             plantDao.insertPlant(plant)
+            ruleEngine.onPlantAdded(plant)
 
             // Seed first photo for journey if image exists
             if (!photo.isNullOrBlank()) {
@@ -469,9 +641,79 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
                         caption = "Added to Garden (${plant.roomTag})"
                     )
                 )
+                completeGardenPhotoTask()
             }
 
             closeAddPlantDialog()
+        }
+    }
+
+    fun setTodayViewMode(mode: TodayActionViewMode) {
+        _uiState.value = _uiState.value.copy(todayViewMode = mode)
+    }
+
+    fun completeDailyTask(task: DailyCareTaskEntity) {
+        viewModelScope.launch {
+            val now = System.currentTimeMillis()
+            if (task.taskType == "SNAPSHOT") {
+                ruleEngine.completeTask(task.id)
+            } else {
+                val activity = runCatching { PlantActivityType.valueOf(task.taskType) }.getOrNull()
+                if (activity != null) {
+                    val profileId = _uiState.value.currentProfileId ?: return@launch
+                    val log = PlantCareLogEntity(
+                        plantId = task.targetId,
+                        profileId = profileId,
+                        careType = activity.name,
+                        timestamp = now,
+                        remark = "Completed via daily care deck",
+                        photoUri = null
+                    )
+                    careLogDao.insertLog(log)
+                    when (activity) {
+                        PlantActivityType.WATER -> plantDao.updateLastWatered(task.targetId, now)
+                        PlantActivityType.ROTATE -> plantDao.updateLastRotated(task.targetId, now)
+                        PlantActivityType.FEED, PlantActivityType.FEED_MANURE -> plantDao.updateLastFertilized(task.targetId, now)
+                        PlantActivityType.INSPECT -> plantDao.updateLastInspected(task.targetId, now)
+                        PlantActivityType.CLEAN -> plantDao.updateLastCleaned(task.targetId, now)
+                        PlantActivityType.PRUNE -> plantDao.updateLastPruned(task.targetId, now)
+                        PlantActivityType.REPOT -> plantDao.updateLastRepotted(task.targetId, now)
+                    }
+                }
+                ruleEngine.completeTask(task.id)
+            }
+        }
+    }
+
+    fun skipDailyTask(task: DailyCareTaskEntity) {
+        viewModelScope.launch {
+            ruleEngine.skipTask(task.id)
+        }
+    }
+
+    fun undoCompleteDailyTask(task: DailyCareTaskEntity) {
+        viewModelScope.launch {
+            ruleEngine.undoCompleteTask(task.id)
+        }
+    }
+
+    fun markAllDoneForSpace(taskType: String, spaceName: String) {
+        viewModelScope.launch {
+            val matching = pendingDailyTasks.value.filter {
+                (it.taskType.equals(taskType, ignoreCase = true) ||
+                 (taskType == "FEED_MANURE" && it.taskType.equals("FEED", ignoreCase = true))) &&
+                (it.spaceName.equals(spaceName, ignoreCase = true) || (it.spaceName.isBlank() && spaceName.equals("Other", ignoreCase = true)))
+            }
+            for (task in matching) {
+                completeDailyTask(task)
+            }
+        }
+    }
+
+    fun refreshDailyRules() {
+        val profileId = _uiState.value.currentProfileId ?: return
+        viewModelScope.launch {
+            ruleEngine.evaluateDailyRules(profileId, forceRefresh = true)
         }
     }
 

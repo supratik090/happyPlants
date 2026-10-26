@@ -4,6 +4,14 @@ import android.Manifest
 import android.content.pm.PackageManager
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.animation.animateColor
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.tween
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -69,17 +77,24 @@ import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import com.hos.happy.plants.data.preferences.LightMeterMode
 import com.hos.happy.plants.feature.auth.AuthViewModel
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.relocation.BringIntoViewRequester
+import androidx.compose.foundation.relocation.bringIntoViewRequester
 import com.hos.happy.plants.feature.env.components.AdvancedRoomAnalyticsCard
 import com.hos.happy.plants.feature.env.components.CameraMeterPreview
 import com.hos.happy.plants.feature.env.components.LightMeterGauge
 import com.hos.happy.plants.feature.env.components.LiveWeatherCards
 import com.hos.happy.plants.feature.env.components.MetricInfoModal
 import com.hos.happy.plants.feature.env.components.MetricType
+import com.hos.happy.plants.feature.env.components.SnapshotConfirmationBottomSheet
 import com.hos.happy.plants.feature.env.components.SnapshotHistorySection
+import com.hos.happy.plants.feature.env.components.WeeklyClimateCareCard
+import androidx.compose.ui.graphics.graphicsLayer
 import com.hos.happy.plants.ui.theme.Bark
 import com.hos.happy.plants.ui.theme.Forest
 import com.hos.happy.plants.ui.theme.Ink
 import com.hos.happy.plants.ui.theme.Leaf
+import com.hos.happy.plants.ui.theme.LeafBright
 import com.hos.happy.plants.ui.theme.Moss
 import com.hos.happy.plants.ui.theme.Mute
 import com.hos.happy.plants.ui.theme.Paper
@@ -87,7 +102,7 @@ import com.hos.happy.plants.ui.theme.PaperDark
 import com.hos.happy.plants.ui.theme.Sand
 import com.hos.happy.plants.ui.theme.SurfaceWarm
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class, ExperimentalFoundationApi::class)
 @Composable
 fun EnvScreen(
     envViewModel: EnvViewModel,
@@ -108,6 +123,37 @@ fun EnvScreen(
     var noteInput by remember { mutableStateOf("") }
     var showAddRoomDialog by remember { mutableStateOf(false) }
     var newRoomInput by remember { mutableStateOf("") }
+
+    val noSnapshotsToday = roomAnalytics?.let { it.totalTodaySnapshots == 0 } ?: true
+
+    val infiniteTransition = rememberInfiniteTransition(label = "snapshotHighlight")
+    val snapPulseScale by infiniteTransition.animateFloat(
+        initialValue = 1f,
+        targetValue = 1.04f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(750, easing = FastOutSlowInEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "snapPulseScale"
+    )
+    val snapGlowColor by infiniteTransition.animateColor(
+        initialValue = Moss,
+        targetValue = LeafBright,
+        animationSpec = infiniteRepeatable(
+            animation = tween(750, easing = FastOutSlowInEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "snapGlowColor"
+    )
+    val snapBorderColor by infiniteTransition.animateColor(
+        initialValue = Sand,
+        targetValue = Leaf,
+        animationSpec = infiniteRepeatable(
+            animation = tween(750, easing = FastOutSlowInEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "snapBorderColor"
+    )
 
     // Location permission handling for Live Weather
     var hasLocationPermission by remember {
@@ -138,11 +184,19 @@ fun EnvScreen(
         }
     }
 
+    val bringIntoViewRequester = remember { BringIntoViewRequester() }
+
     LaunchedEffect(uiState.snapshotSavedSuccess) {
         if (uiState.snapshotSavedSuccess) {
-            snackbarHostState.showSnackbar("Room snapshot saved successfully!")
             noteInput = ""
             envViewModel.resetSnapshotSavedSuccess()
+        }
+    }
+
+    LaunchedEffect(uiState.scrollToLightMeterTrigger) {
+        if (uiState.scrollToLightMeterTrigger > 0L) {
+            bringIntoViewRequester.bringIntoView()
+            envViewModel.onScrolledToLightMeter()
         }
     }
 
@@ -222,7 +276,7 @@ fun EnvScreen(
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Icon(Icons.Default.Place, contentDescription = null, tint = Moss, modifier = Modifier.size(18.dp))
                             Spacer(modifier = Modifier.width(6.dp))
-                            Text("Select Room", style = MaterialTheme.typography.titleMedium, color = Forest, fontWeight = FontWeight.Bold)
+                            Text("Growing Space", style = MaterialTheme.typography.titleMedium, color = Forest, fontWeight = FontWeight.Bold)
                         }
 
                         TextButton(
@@ -231,7 +285,7 @@ fun EnvScreen(
                         ) {
                             Icon(Icons.Default.Add, contentDescription = null, tint = Moss, modifier = Modifier.size(16.dp))
                             Spacer(modifier = Modifier.width(4.dp))
-                            Text("Add Room", color = Moss, fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
+                            Text("Add Space", color = Moss, fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
                         }
                     }
 
@@ -306,14 +360,17 @@ fun EnvScreen(
             )
             Spacer(modifier = Modifier.height(8.dp))
 
-            LightMeterGauge(
-                settings = uiState.lightSettings,
-                currentReading = uiState.liveLightReading,
-                isFrozen = uiState.isLightFrozen,
-                onToggleMode = { envViewModel.toggleLightMeterMode() },
-                onToggleFreeze = { envViewModel.toggleLightFreeze() },
-                onShowMetricInfo = { selectedMetricInfo = it }
-            )
+            Box(modifier = Modifier.bringIntoViewRequester(bringIntoViewRequester)) {
+                LightMeterGauge(
+                    settings = uiState.lightSettings,
+                    currentReading = uiState.liveLightReading,
+                    isFrozen = uiState.isLightFrozen,
+                    onToggleMode = { envViewModel.toggleLightMeterMode() },
+                    onToggleFreeze = { envViewModel.toggleLightFreeze() },
+                    onShowMetricInfo = { selectedMetricInfo = it },
+                    isHighlighted = noSnapshotsToday || uiState.highlightLightMeter
+                )
+            }
 
             // If Camera mode is active, render CameraX preview analyzer
             if (uiState.lightSettings.preferredMode == LightMeterMode.CAMERA) {
@@ -327,29 +384,47 @@ fun EnvScreen(
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            // Section 3: Advanced Room Analytics (VPD & DLI for selected room)
-            AdvancedRoomAnalyticsCard(
-                analytics = roomAnalytics,
-                onShowMetricInfo = { selectedMetricInfo = it }
-            )
-
-            Spacer(modifier = Modifier.height(20.dp))
-
-            // Section 4: Capture Snapshot for Selected Room
+            // Section 3: Take Snapshot for Selected Room (Highlighted if no snapshot taken today)
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .border(1.dp, Sand, RoundedCornerShape(16.dp)),
+                    .border(
+                        width = if (noSnapshotsToday) 2.dp else 1.dp,
+                        color = if (noSnapshotsToday) snapBorderColor else Sand,
+                        shape = RoundedCornerShape(16.dp)
+                    ),
                 colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
-                shape = RoundedCornerShape(16.dp)
+                shape = RoundedCornerShape(16.dp),
+                elevation = CardDefaults.cardElevation(defaultElevation = if (noSnapshotsToday) 3.dp else 1.dp)
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
-                    Text(
-                        text = "Take Snapshot — ${uiState.selectedRoomTag}",
-                        style = MaterialTheme.typography.titleMedium,
-                        color = Forest,
-                        fontWeight = FontWeight.Bold
-                    )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = "Take Snapshot — ${uiState.selectedRoomTag}",
+                            style = MaterialTheme.typography.titleMedium,
+                            color = Forest,
+                            fontWeight = FontWeight.Bold
+                        )
+                        if (noSnapshotsToday) {
+                            Box(
+                                modifier = Modifier
+                                    .clip(RoundedCornerShape(8.dp))
+                                    .background(Leaf.copy(alpha = 0.25f))
+                                    .padding(horizontal = 8.dp, vertical = 3.dp)
+                            ) {
+                                Text(
+                                    text = "First snapshot today",
+                                    fontSize = 11.sp,
+                                    color = Forest,
+                                    fontWeight = FontWeight.SemiBold
+                                )
+                            }
+                        }
+                    }
                     Spacer(modifier = Modifier.height(6.dp))
                     Text(
                         text = "Records live light, temperature, humidity and AQI for this room.",
@@ -376,26 +451,52 @@ fun EnvScreen(
 
                     Button(
                         onClick = { envViewModel.saveSnapshot(noteInput) },
-                        colors = ButtonDefaults.buttonColors(containerColor = Moss),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = if (noSnapshotsToday) snapGlowColor else Moss
+                        ),
                         shape = RoundedCornerShape(12.dp),
+                        border = if (noSnapshotsToday) BorderStroke(2.dp, Leaf) else null,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(48.dp)
+                            .height(50.dp)
+                            .then(
+                                if (noSnapshotsToday) {
+                                    Modifier.graphicsLayer {
+                                        scaleX = snapPulseScale
+                                        scaleY = snapPulseScale
+                                    }
+                                } else Modifier
+                            )
                     ) {
                         Icon(Icons.Default.Bookmark, contentDescription = null, tint = SurfaceWarm)
                         Spacer(modifier = Modifier.width(8.dp))
                         Text(
-                            text = "Save Snapshot for ${uiState.selectedRoomTag}",
+                            text = "Take Snapshot for ${uiState.selectedRoomTag}",
                             color = SurfaceWarm,
-                            fontWeight = FontWeight.SemiBold
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 15.sp
                         )
                     }
                 }
             }
 
+            Spacer(modifier = Modifier.height(20.dp))
+
+            // Section 4: Advanced Room Analytics (VPD & DLI for selected room) - moved below Take Snapshot
+            AdvancedRoomAnalyticsCard(
+                analytics = roomAnalytics,
+                onShowMetricInfo = { selectedMetricInfo = it }
+            )
+
+            // Section 5: 7-Day Cumulative Climate & Adaptive Care Statements (Last 7 Days Stats) - moved below Take Snapshot
+            if (uiState.weatherSnapshot?.weeklyMacro != null) {
+                Spacer(modifier = Modifier.height(20.dp))
+                WeeklyClimateCareCard(weeklyData = uiState.weatherSnapshot?.weeklyMacro)
+            }
+
             Spacer(modifier = Modifier.height(28.dp))
 
-            // Section 5: Historical Snapshots Lookup (Auto-filtered for selected room)
+            // Section 6: Historical Snapshots Lookup (Auto-filtered for selected room)
             SnapshotHistorySection(
                 snapshots = filteredSnapshots,
                 distinctRooms = distinctRooms,
@@ -424,7 +525,7 @@ fun EnvScreen(
                 },
                 title = {
                     Text(
-                        text = "Add New Room",
+                        text = "Add Growing Space",
                         style = MaterialTheme.typography.titleMedium,
                         color = Forest,
                         fontWeight = FontWeight.Bold
@@ -433,7 +534,7 @@ fun EnvScreen(
                 text = {
                     Column {
                         Text(
-                            text = "Name your room or growing spot (e.g. Study, Patio, Kitchen, Office).",
+                            text = "Name your growing spot (e.g. Patio, Terrace, Greenhouse, Balcony).",
                             style = MaterialTheme.typography.bodyMedium,
                             color = Mute,
                             fontSize = 13.sp
@@ -442,7 +543,7 @@ fun EnvScreen(
                         OutlinedTextField(
                             value = newRoomInput,
                             onValueChange = { newRoomInput = it },
-                            placeholder = { Text("Room name") },
+                            placeholder = { Text("Space name (e.g. Patio)") },
                             singleLine = true,
                             colors = OutlinedTextFieldDefaults.colors(
                                 focusedBorderColor = Moss,
@@ -467,7 +568,7 @@ fun EnvScreen(
                         colors = ButtonDefaults.buttonColors(containerColor = Moss),
                         shape = RoundedCornerShape(10.dp)
                     ) {
-                        Text("Add Room", color = SurfaceWarm, fontWeight = FontWeight.SemiBold)
+                        Text("Add Space", color = SurfaceWarm, fontWeight = FontWeight.SemiBold)
                     }
                 },
                 dismissButton = {
@@ -480,6 +581,15 @@ fun EnvScreen(
                 },
                 containerColor = SurfaceWarm,
                 shape = RoundedCornerShape(18.dp)
+            )
+        }
+
+        // Snapshot Confirmation Bottom Sheet
+        uiState.snapshotConfirmation?.let { confirmationData ->
+            SnapshotConfirmationBottomSheet(
+                data = confirmationData,
+                onDismiss = { envViewModel.dismissSnapshotConfirmation() },
+                onAddLeafCleaning = { envViewModel.addLeafCleaningTaskForRoom() }
             )
         }
     }

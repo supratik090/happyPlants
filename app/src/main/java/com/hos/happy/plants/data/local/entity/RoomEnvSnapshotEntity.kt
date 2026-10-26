@@ -27,5 +27,6 @@ data class RoomEnvSnapshotEntity(
     val aqi: Int?,
     val uvIndex: Float?,
     val daylightHours: Float?,
+    val rainMm: Float? = null,
     val note: String? = null
 )

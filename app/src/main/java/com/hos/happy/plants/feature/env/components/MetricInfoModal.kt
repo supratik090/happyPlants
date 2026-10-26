@@ -63,7 +63,8 @@ enum class MetricType {
     DAYLIGHT,
     LIGHT_LUX,
     VPD,
-    DLI
+    DLI,
+    RAIN
 }
 
 data class MetricExplanation(
@@ -123,6 +124,12 @@ object MetricInfoProvider {
                 icon = Icons.Default.WbSunny,
                 simpleExplanation = "Daily Light Integral is the total amount of light energy accumulated by your plant across the entire day, from morning to evening.",
                 plantTip = "3 daily checks (Morning, Noon, Afternoon) calculate your room's full daily light score."
+            )
+            MetricType.RAIN -> MetricExplanation(
+                title = "Rain & Natural Precipitation",
+                icon = Icons.Default.WaterDrop,
+                simpleExplanation = "Rain provides soft, chemical-free hydration naturally. Outdoor plants love rainwater because it's oxygenated and at ambient temperature.",
+                plantTip = "Outdoor plants getting steady rain don't need manual watering today. Ensure outdoor pots have drainage holes so soil doesn't become waterlogged."
             )
         }
     }

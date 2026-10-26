@@ -29,14 +29,21 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import com.hos.happy.plants.data.local.entity.DailyCareTaskEntity
 import com.hos.happy.plants.data.local.entity.RoomAnalyticsEntity
 import com.hos.happy.plants.data.local.util.EnvCalculators
+import com.hos.happy.plants.data.repository.PlantMasterRepository
+import com.hos.happy.plants.data.repository.TaskRuleEngine
 import com.hos.happy.plants.feature.env.components.DaySlotStatus
 import com.hos.happy.plants.feature.env.components.RoomDailyAnalytics
+import com.hos.happy.plants.feature.env.components.SnapshotConfirmationData
+import com.hos.happy.plants.feature.research.evaluator.RoomPlantSuggestionEvaluator
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale
+import java.util.TimeZone
+import java.util.UUID
 
 data class EnvUiState(
     val currentProfileId: String? = null,
@@ -50,6 +57,9 @@ data class EnvUiState(
     val locationName: String? = null,
     val selectedRoomTag: String = "Living",
     val snapshotSavedSuccess: Boolean = false,
+    val snapshotConfirmation: SnapshotConfirmationData? = null,
+    val scrollToLightMeterTrigger: Long = 0L,
+    val highlightLightMeter: Boolean = false,
     
     // History filtering (auto-synced with selected room)
     val historyFilterRoom: String? = "Living",
@@ -62,6 +72,10 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
     private val db = AppDatabase.getInstance(application)
     private val snapshotDao = db.roomEnvSnapshotDao()
     private val roomAnalyticsDao = db.roomAnalyticsDao()
+    private val roomPlantSuggestionDao = db.roomPlantSuggestionDao()
+    private val plantDao = db.plantDao()
+    private val dailyCareTaskDao = db.dailyCareTaskDao()
+    private val masterRepo = PlantMasterRepository(application)
     private val prefs = UserPreferencesRepository(application)
     private val openMeteoApi = OpenMeteoApiService()
     private val sensorManager = LightSensorManager(application)
@@ -72,8 +86,8 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
 
     private var sensorJob: Job? = null
 
-    // Room tags: default 4 rooms + any user added rooms
-    val defaultRoomTags = listOf("Living", "Bed", "Bathroom", "Balcony")
+    // Room tags: default locations + any user added custom tags
+    val defaultRoomTags = listOf("Living", "Bed", "Bathroom", "Balcony", "Outdoors")
     val availableRoomTags: StateFlow<List<String>> = prefs.customRoomTagsFlow.map { customTags ->
         (defaultRoomTags + customTags).distinct()
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), defaultRoomTags)
@@ -229,6 +243,17 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
         )
     }
 
+    fun triggerNavigateToHoldReading() {
+        _uiState.value = _uiState.value.copy(
+            scrollToLightMeterTrigger = System.currentTimeMillis(),
+            highlightLightMeter = true
+        )
+    }
+
+    fun onScrolledToLightMeter() {
+        _uiState.value = _uiState.value.copy(scrollToLightMeterTrigger = 0L)
+    }
+
     fun addCustomRoomTag(tag: String) {
         if (tag.isNotBlank()) {
             viewModelScope.launch {
@@ -298,10 +323,18 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
         }
 
         viewModelScope.launch {
+            val previousSnapshot = snapshotDao.getLatestSnapshotForRoom(profileId, state.selectedRoomTag)
+            val plantsInRoom = plantDao.getPlantsForRoom(profileId, state.selectedRoomTag)
+            val plantCount = plantsInRoom.size
+            val now = System.currentTimeMillis()
+            val oneDayMillis = 86_400_000L
+            val mostRecentCleaned = plantsInRoom.mapNotNull { it.lastCleanedAt }.maxOrNull()
+            val daysSinceLeafClean = mostRecentCleaned?.let { ((now - it) / oneDayMillis).toInt().coerceAtLeast(0) }
+
             val entity = RoomEnvSnapshotEntity(
                 profileId = profileId,
                 roomTag = state.selectedRoomTag,
-                recordedAt = System.currentTimeMillis(),
+                recordedAt = now,
                 lightLux = activeReading.lux,
                 lightFootCandles = activeReading.footCandles,
                 lightSource = activeReading.source,
@@ -310,10 +343,40 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
                 aqi = state.weatherSnapshot?.aqi,
                 uvIndex = state.weatherSnapshot?.uvIndex,
                 daylightHours = state.weatherSnapshot?.daylightHours,
+                rainMm = state.weatherSnapshot?.currentRainMm ?: state.weatherSnapshot?.dailyRainMm,
                 note = note?.takeIf { it.isNotBlank() }
             )
 
             snapshotDao.insertSnapshot(entity)
+
+            // Complete any pending SNAPSHOT care task for this space
+            try {
+                val todayKey = TaskRuleEngine.getTodayDateKey()
+                dailyCareTaskDao.markSnapshotTaskCompleted(
+                    profileId = profileId,
+                    dateKey = todayKey,
+                    roomTag = state.selectedRoomTag,
+                    completedAt = now
+                )
+            } catch (e: Exception) {
+                // Ignore task completion error
+            }
+
+            // Recalculate plant suggestions for this space only and persist in Room DB
+            try {
+                val allMasterPlants = masterRepo.getAllPlants()
+                val existingGardenPlants = plantDao.getPlantsForProfile(profileId)
+                val suggestionEntity = RoomPlantSuggestionEvaluator.evaluate(
+                    profileId = profileId,
+                    roomTag = state.selectedRoomTag,
+                    snapshot = entity,
+                    allMasterPlants = allMasterPlants,
+                    existingGardenPlants = existingGardenPlants
+                )
+                roomPlantSuggestionDao.upsertSuggestion(suggestionEntity)
+            } catch (e: Exception) {
+                // Ignore error on background suggestion calculation
+            }
 
             // Check if 3 snapshots are now available today for this room to persist in room_analytics
             val todayCal = Calendar.getInstance().apply {
@@ -347,7 +410,82 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
                 }
             }
 
-            _uiState.value = _uiState.value.copy(snapshotSavedSuccess = true)
+            val confirmation = SnapshotConfirmationData(
+                snapshot = entity,
+                previousSnapshot = previousSnapshot,
+                roomName = state.selectedRoomTag,
+                plantCount = plantCount,
+                daysSinceLeafClean = daysSinceLeafClean,
+                leafCleaningTaskAdded = false
+            )
+
+            _uiState.value = _uiState.value.copy(
+                snapshotSavedSuccess = true,
+                snapshotConfirmation = confirmation
+            )
+        }
+    }
+
+    fun dismissSnapshotConfirmation() {
+        _uiState.value = _uiState.value.copy(snapshotConfirmation = null)
+    }
+
+    fun addLeafCleaningTaskForRoom() {
+        val state = _uiState.value
+        val profileId = state.currentProfileId ?: return
+        val confirmation = state.snapshotConfirmation ?: return
+        val roomTag = confirmation.roomName
+
+        viewModelScope.launch {
+            val todayKey = SimpleDateFormat("yyyy-MM-dd", Locale.US).apply {
+                timeZone = TimeZone.getTimeZone("Asia/Kolkata")
+            }.format(Date())
+
+            val plants = plantDao.getPlantsForRoom(profileId, roomTag)
+            val tasks = plants.map { plant ->
+                DailyCareTaskEntity(
+                    id = UUID.randomUUID().toString(),
+                    profileId = profileId,
+                    dateKey = todayKey,
+                    taskType = "CLEAN",
+                    targetId = plant.id,
+                    targetTitle = plant.nickname,
+                    targetSubtitle = "${plant.botanicalName} • $roomTag",
+                    targetPhotoUri = plant.photoUri,
+                    title = "Clean leaves",
+                    description = "Wipe leaves",
+                    priority = 3,
+                    urgencyDays = 1,
+                    spaceName = roomTag,
+                    isCompleted = false
+                )
+            }
+            if (tasks.isNotEmpty()) {
+                dailyCareTaskDao.insertTasks(tasks)
+            } else {
+                dailyCareTaskDao.insertTask(
+                    DailyCareTaskEntity(
+                        id = UUID.randomUUID().toString(),
+                        profileId = profileId,
+                        dateKey = todayKey,
+                        taskType = "CLEAN",
+                        targetId = roomTag,
+                        targetTitle = roomTag,
+                        targetSubtitle = "Clean leaves in $roomTag",
+                        targetPhotoUri = null,
+                        title = "Clean leaves in $roomTag",
+                        description = "Wipe leaves in $roomTag",
+                        priority = 3,
+                        urgencyDays = 1,
+                        spaceName = roomTag,
+                        isCompleted = false
+                    )
+                )
+            }
+
+            _uiState.value = _uiState.value.copy(
+                snapshotConfirmation = confirmation.copy(leafCleaningTaskAdded = true)
+            )
         }
     }
 

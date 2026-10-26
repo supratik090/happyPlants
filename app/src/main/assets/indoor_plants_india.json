@@ -25,7 +25,9 @@
         "hindi": "स्नेक प्लांट",
         "marathi": "स्नेक प्लांट",
         "bengali": "স্নেক প্ল্যান্ট",
-        "kannada": "ಸ್ನೇಕ್ ಪ್ಲಾಂಟ್"
+        "kannada": "ಸ್ನೇಕ್ ಪ್ಲಾಂಟ್",
+        "tamil": "பாம்பு கற்றாழை / ஸ்னேக் பிளாண்ட்",
+        "telugu": "స్నేక్ ప్లాంట్"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -117,7 +119,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Dracaena_trifasciata",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Snake_Plant_%28Sansevieria_trifasciata_%27Laurentii%27%29.jpg/3840px-Snake_Plant_%28Sansevieria_trifasciata_%27Laurentii%27%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Snake_Plant_%28Sansevieria_trifasciata_%27Laurentii%27%29.jpg/330px-Snake_Plant_%28Sansevieria_trifasciata_%27Laurentii%27%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Snake_Plant_%28Sansevieria_trifasciata_%27Laurentii%27%29.jpg/330px-Snake_Plant_%28Sansevieria_trifasciata_%27Laurentii%27%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/01_snake_plant.jpg",
+        "asset_path": "file:///android_asset/images/01_snake_plant.jpg"
       }
     },
     {
@@ -128,7 +132,9 @@
         "hindi": "मनी प्लांट",
         "marathi": "मनी प्लांट",
         "bengali": "মানি প্ল্যান্ট",
-        "kannada": "ಮನಿ ಪ್ಲಾಂಟ್"
+        "kannada": "ಮನಿ ಪ್ಲಾಂಟ್",
+        "tamil": "மணி பிளாண்ட்",
+        "telugu": "మనీ ప్లాంట్"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -220,7 +226,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Epipremnum_aureum",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Money_Plant_%28Epipremnum_aureum%29_4.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Money_Plant_%28Epipremnum_aureum%29_4.jpg/330px-Money_Plant_%28Epipremnum_aureum%29_4.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Money_Plant_%28Epipremnum_aureum%29_4.jpg/330px-Money_Plant_%28Epipremnum_aureum%29_4.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/02_money_plant_pothos.jpg",
+        "asset_path": "file:///android_asset/images/02_money_plant_pothos.jpg"
       }
     },
     {
@@ -231,7 +239,9 @@
         "hindi": "ज़ेड ज़ेड प्लांट",
         "marathi": "झेडझेड प्लांट",
         "bengali": "জেড জেড প্ল্যান্ট",
-        "kannada": "ಝಡ್‌ಝಡ್ ಪ್ಲಾಂಟ್"
+        "kannada": "ಝಡ್‌ಝಡ್ ಪ್ಲಾಂಟ್",
+        "tamil": "ஜி ஜி பிளாண்ட்",
+        "telugu": "జీజీ ప్లాంట్"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -311,7 +321,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Zamioculcas",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Zamioculcas_zamiifolia_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Zamioculcas_zamiifolia_1.jpg/330px-Zamioculcas_zamiifolia_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Zamioculcas_zamiifolia_1.jpg/330px-Zamioculcas_zamiifolia_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/03_zz_plant.jpg",
+        "asset_path": "file:///android_asset/images/03_zz_plant.jpg"
       }
     },
     {
@@ -322,7 +334,9 @@
         "hindi": "स्पाइडर प्लांट",
         "marathi": "स्पायडर प्लांट",
         "bengali": "স্পাইডার প্ল্যান্ট",
-        "kannada": "ಸ್ಪೈಡರ್ ಪ್ಲಾಂಟ್"
+        "kannada": "ಸ್ಪೈಡರ್ ಪ್ಲಾಂಟ್",
+        "tamil": "ஸ்பைடர் பிளாண்ட்",
+        "telugu": "స్పైడర్ ప్లాంట్"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -426,7 +440,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Chlorophytum_comosum",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Hierbabuena_0611_Revised.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Hierbabuena_0611_Revised.jpg/330px-Hierbabuena_0611_Revised.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Hierbabuena_0611_Revised.jpg/330px-Hierbabuena_0611_Revised.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/04_spider_plant.jpg",
+        "asset_path": "file:///android_asset/images/04_spider_plant.jpg"
       }
     },
     {
@@ -437,7 +453,9 @@
         "hindi": "पीस लिली",
         "marathi": "पीस लिली",
         "bengali": "পিস লিলি",
-        "kannada": "ಪೀಸ್ ಲಿಲಿ"
+        "kannada": "ಪೀಸ್ ಲಿಲಿ",
+        "tamil": "பீஸ் லில்லி",
+        "telugu": "పీస్ లిల్లీ"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -541,7 +559,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Spathiphyllum",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Spathiphyllum_cochlearispathum_RTBG.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Spathiphyllum_cochlearispathum_RTBG.jpg/330px-Spathiphyllum_cochlearispathum_RTBG.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Spathiphyllum_cochlearispathum_RTBG.jpg/330px-Spathiphyllum_cochlearispathum_RTBG.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/05_peace_lily.jpg",
+        "asset_path": "file:///android_asset/images/05_peace_lily.jpg"
       }
     },
     {
@@ -552,7 +572,9 @@
         "hindi": "घृतकुमारी / ग्वारपाठा",
         "marathi": "कोरफड",
         "bengali": "ঘৃতকুমারী",
-        "kannada": "ಲೋಳೆಸರ"
+        "kannada": "ಲೋಳೆಸರ",
+        "tamil": "கற்றாழை",
+        "telugu": "కలబంద"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -653,7 +675,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Aloe_vera",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Aloe_vera_flower_inset.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Aloe_vera_flower_inset.png/330px-Aloe_vera_flower_inset.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Aloe_vera_flower_inset.png/330px-Aloe_vera_flower_inset.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/06_aloe_vera.png",
+        "asset_path": "file:///android_asset/images/06_aloe_vera.png"
       }
     },
     {
@@ -664,7 +688,9 @@
         "hindi": "एरिका पाम",
         "marathi": "अरेका पाम",
         "bengali": "অ্যারেকা পাম",
-        "kannada": "ಅರೇಕಾ ಪಾಮ್"
+        "kannada": "ಅರೇಕಾ ಪಾಮ್",
+        "tamil": "அரேகா பாம் / பாக்கு பனை",
+        "telugu": "అరేకా పామ్ / పోక చెట్టు"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -768,7 +794,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Dypsis_lutescens",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/%E6%95%A3%E5%B0%BE%E8%91%B5Dypsis_lutescens_20210511145013_05.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/%E6%95%A3%E5%B0%BE%E8%91%B5Dypsis_lutescens_20210511145013_05.jpg/330px-%E6%95%A3%E5%B0%BE%E8%91%B5Dypsis_lutescens_20210511145013_05.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/%E6%95%A3%E5%B0%BE%E8%91%B5Dypsis_lutescens_20210511145013_05.jpg/330px-%E6%95%A3%E5%B0%BE%E8%91%B5Dypsis_lutescens_20210511145013_05.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/07_areca_palm.jpg",
+        "asset_path": "file:///android_asset/images/07_areca_palm.jpg"
       }
     },
     {
@@ -779,7 +807,9 @@
         "hindi": "रबर प्लांट",
         "marathi": "रबर प्लांट",
         "bengali": "রাবার প্ল্যান্ট",
-        "kannada": "ರಬ್ಬರ್ ಪ್ಲಾಂಟ್"
+        "kannada": "ರಬ್ಬರ್ ಪ್ಲಾಂಟ್",
+        "tamil": "ரப்பர் பிளாண்ட்",
+        "telugu": "రబ్బరు చెట్టు / రబ్బర్ ప్లాంట్"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -891,7 +921,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Ficus_elastica",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Ficus_elastica_leaves_02.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Ficus_elastica_leaves_02.JPG/330px-Ficus_elastica_leaves_02.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Ficus_elastica_leaves_02.JPG/330px-Ficus_elastica_leaves_02.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/08_rubber_plant.JPG",
+        "asset_path": "file:///android_asset/images/08_rubber_plant.JPG"
       }
     },
     {
@@ -902,7 +934,9 @@
         "hindi": "चाइनीज़ एवरग्रीन",
         "marathi": "चायनीज एव्हरग्रीन",
         "bengali": "চাইনিজ এভারগ্রিন",
-        "kannada": "ಚೈನೀಸ್ ಎವರ್‌ಗ್ರೀನ್"
+        "kannada": "ಚೈನೀಸ್ ಎವರ್‌ಗ್ರೀನ್",
+        "tamil": "சைனீஸ் எவர்கிரீன்",
+        "telugu": "చైనీస్ ఎవర్ గ్రీన్"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -1004,7 +1038,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Aglaonema",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Aglaonema_commutatum2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Aglaonema_commutatum2.jpg/330px-Aglaonema_commutatum2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Aglaonema_commutatum2.jpg/330px-Aglaonema_commutatum2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/09_chinese_evergreen.jpg",
+        "asset_path": "file:///android_asset/images/09_chinese_evergreen.jpg"
       }
     },
     {
@@ -1015,7 +1051,9 @@
         "hindi": "जेड प्लांट",
         "marathi": "जेड प्लांट",
         "bengali": "জেড প্ল্যান্ট",
-        "kannada": "ಜೇಡ್ ಪ್ಲಾಂಟ್"
+        "kannada": "ಜೇಡ್ ಪ್ಲಾಂಟ್",
+        "tamil": "ஜேட் பிளாண்ட்",
+        "telugu": "జేడ్ ప్లాంట్"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -1107,7 +1145,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Crassula_ovata",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Crassula_ovata_700.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Crassula_ovata_700.jpg/330px-Crassula_ovata_700.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Crassula_ovata_700.jpg/330px-Crassula_ovata_700.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/10_jade_plant.jpg",
+        "asset_path": "file:///android_asset/images/10_jade_plant.jpg"
       }
     },
     {
@@ -1118,7 +1158,9 @@
         "hindi": "बोस्टन फ़र्न",
         "marathi": "बोस्टन फर्न",
         "bengali": "বোস্টন ফার্ন",
-        "kannada": "ಬೋಸ್ಟನ್ ಫರ್ನ್"
+        "kannada": "ಬೋಸ್ಟನ್ ಫರ್ನ್",
+        "tamil": "பாஸ்டன் ஃபெர்ன்",
+        "telugu": "బోస్టన్ ఫెర్న్"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -1210,7 +1252,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Nephrolepis_exaltata",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Boston_Fern_%282873392811%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Boston_Fern_%282873392811%29.png/330px-Boston_Fern_%282873392811%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Boston_Fern_%282873392811%29.png/330px-Boston_Fern_%282873392811%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/11_boston_fern.png",
+        "asset_path": "file:///android_asset/images/11_boston_fern.png"
       }
     },
     {
@@ -1221,7 +1265,9 @@
         "hindi": "फिलोडेंड्रॉन",
         "marathi": "फिलोडेंड्रॉन",
         "bengali": "ফিলোডেনড্রন",
-        "kannada": "ಫಿಲೋಡೆಂಡ್ರಾನ್"
+        "kannada": "ಫಿಲೋಡೆಂಡ್ರಾನ್",
+        "tamil": "பிலோடென்ட்ரான்",
+        "telugu": "ఫిలోడెండ్రాన్"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -1323,7 +1369,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Philodendron_hederaceum",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Philodendron_scandens_subsp_oxycardium2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Philodendron_scandens_subsp_oxycardium2.jpg/330px-Philodendron_scandens_subsp_oxycardium2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Philodendron_scandens_subsp_oxycardium2.jpg/330px-Philodendron_scandens_subsp_oxycardium2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/12_heartleaf_philodendron.jpg",
+        "asset_path": "file:///android_asset/images/12_heartleaf_philodendron.jpg"
       }
     },
     {
@@ -1334,7 +1382,9 @@
         "hindi": "मॉन्स्टेरा",
         "marathi": "मॉन्स्टेरा",
         "bengali": "মনস্টেরা",
-        "kannada": "ಮಾನ್‌ಸ್ಟೆರಾ"
+        "kannada": "ಮಾನ್‌ಸ್ಟೆರಾ",
+        "tamil": "மான்ஸ்டெரா",
+        "telugu": "మాన్స్టెరా"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -1447,7 +1497,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Monstera_deliciosa",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Monstera_deliciosa2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Monstera_deliciosa2.jpg/330px-Monstera_deliciosa2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Monstera_deliciosa2.jpg/330px-Monstera_deliciosa2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/13_monstera.jpg",
+        "asset_path": "file:///android_asset/images/13_monstera.jpg"
       }
     },
     {
@@ -1458,7 +1510,9 @@
         "hindi": "ड्रेसीना",
         "marathi": "ड्रॅसिना",
         "bengali": "ড্রাসিনা",
-        "kannada": "ಡ್ರೇಸಿನಾ"
+        "kannada": "ಡ್ರೇಸಿನಾ",
+        "tamil": "டிரசீனா",
+        "telugu": "డ్రాసీనా"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -1571,7 +1625,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Dracaena_marginata",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Dracaena_reflexa.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Dracaena_reflexa.JPG/330px-Dracaena_reflexa.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Dracaena_reflexa.JPG/330px-Dracaena_reflexa.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/14_dragon_tree.JPG",
+        "asset_path": "file:///android_asset/images/14_dragon_tree.JPG"
       }
     },
     {
@@ -1582,7 +1638,9 @@
         "hindi": "लकी बैंबू",
         "marathi": "लकी बांबू",
         "bengali": "লাকি বাম্বু",
-        "kannada": "ಲಕ್ಕಿ ಬಾಂಬೂ"
+        "kannada": "ಲಕ್ಕಿ ಬಾಂಬೂ",
+        "tamil": "லக்கி மூங்கில்",
+        "telugu": "లక్కీ వెదురు / లక్కీ బాంబూ"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -1664,7 +1722,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Dracaena_sanderiana",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Dracaena_sanderiana_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Dracaena_sanderiana_2.jpg/330px-Dracaena_sanderiana_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Dracaena_sanderiana_2.jpg/330px-Dracaena_sanderiana_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/15_lucky_bamboo.jpg",
+        "asset_path": "file:///android_asset/images/15_lucky_bamboo.jpg"
       }
     },
     {
@@ -1675,7 +1735,9 @@
         "hindi": "पेपेरोमिया",
         "marathi": "पेपेरोमिया",
         "bengali": "পেপারোমিয়া",
-        "kannada": "ಪೆಪೆರೋಮಿಯಾ"
+        "kannada": "ಪೆಪೆರೋಮಿಯಾ",
+        "tamil": "பெபரோமியா",
+        "telugu": "పెపరోమియా"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -1767,7 +1829,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Peperomia_obtusifolia",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Peperomia_obtusifolia_3-OB9.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Peperomia_obtusifolia_3-OB9.jpg/330px-Peperomia_obtusifolia_3-OB9.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Peperomia_obtusifolia_3-OB9.jpg/330px-Peperomia_obtusifolia_3-OB9.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/16_baby_rubber_plant.jpg",
+        "asset_path": "file:///android_asset/images/16_baby_rubber_plant.jpg"
       }
     },
     {
@@ -1778,7 +1842,9 @@
         "hindi": "पार्लर पाम",
         "marathi": "पार्लर पाम",
         "bengali": "পার্লার পাম",
-        "kannada": "ಪಾರ್ಲರ್ ಪಾಮ್"
+        "kannada": "ಪಾರ್ಲರ್ ಪಾಮ್",
+        "tamil": "பார்லர் பாம்",
+        "telugu": "పార్లర్ పామ్"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -1872,7 +1938,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Chamaedorea_elegans",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Chamaedorea_elegans_Mart.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Chamaedorea_elegans_Mart.JPG/330px-Chamaedorea_elegans_Mart.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Chamaedorea_elegans_Mart.JPG/330px-Chamaedorea_elegans_Mart.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/17_parlor_palm.JPG",
+        "asset_path": "file:///android_asset/images/17_parlor_palm.JPG"
       }
     },
     {
@@ -1883,7 +1951,9 @@
         "hindi": "सिंगोनियम",
         "marathi": "सिंगोनियम",
         "bengali": "সিনগোনিয়াম",
-        "kannada": "ಸಿಂಗೋನಿಯಮ್"
+        "kannada": "ಸಿಂಗೋನಿಯಮ್",
+        "tamil": "சிங்கோனியம்",
+        "telugu": "సింగోనియం"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -1985,7 +2055,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Syngonium_podophyllum",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Zingiber_malaysianum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Zingiber_malaysianum.jpg/330px-Zingiber_malaysianum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Zingiber_malaysianum.jpg/330px-Zingiber_malaysianum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/18_arrowhead_plant.jpg",
+        "asset_path": "file:///android_asset/images/18_arrowhead_plant.jpg"
       }
     },
     {
@@ -1996,7 +2068,9 @@
         "hindi": "डायफेनबेकिया",
         "marathi": "डायफेनबॅकिया",
         "bengali": "ডিফেনবাচিয়া",
-        "kannada": "ಡೀಫೆನ್‌ಬೇಕಿಯಾ"
+        "kannada": "ಡೀಫೆನ್‌ಬೇಕಿಯಾ",
+        "tamil": "டிஃபென்பேக்கியா",
+        "telugu": "డిఫెన్‌బాకియా"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -2098,7 +2172,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Dieffenbachia_seguine",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Starr_061212-2331_Dieffenbachia_seguine.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Starr_061212-2331_Dieffenbachia_seguine.jpg/330px-Starr_061212-2331_Dieffenbachia_seguine.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Starr_061212-2331_Dieffenbachia_seguine.jpg/330px-Starr_061212-2331_Dieffenbachia_seguine.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/19_dumb_cane.jpg",
+        "asset_path": "file:///android_asset/images/19_dumb_cane.jpg"
       }
     },
     {
@@ -2109,7 +2185,9 @@
         "hindi": "एंथूरियम",
         "marathi": "अँथुरियम",
         "bengali": "অ্যান্থুরিয়াম",
-        "kannada": "ಆಂಥೂರಿಯಂ"
+        "kannada": "ಆಂಥೂರಿಯಂ",
+        "tamil": "அந்தூரியம்",
+        "telugu": "ఆంథూరియం"
       },
       "watering_every_days": {
         "hot_dry_months_mar_jun": {
@@ -2221,7 +2299,9 @@
         "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Anthurium_andraeanum",
         "direct_image_json_path": "originalimage.source",
         "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/AnthuriumAndraenum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/AnthuriumAndraenum.jpg/330px-AnthuriumAndraenum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/AnthuriumAndraenum.jpg/330px-AnthuriumAndraenum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "local_file": "images/20_anthurium.jpg",
+        "asset_path": "file:///android_asset/images/20_anthurium.jpg"
       }
     }
   ]

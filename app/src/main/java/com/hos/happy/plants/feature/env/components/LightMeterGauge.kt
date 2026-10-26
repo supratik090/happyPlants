@@ -57,6 +57,14 @@ import com.hos.happy.plants.ui.theme.Leaf
 import com.hos.happy.plants.ui.theme.Moss
 import com.hos.happy.plants.ui.theme.Mute
 import com.hos.happy.plants.ui.theme.Sand
+import androidx.compose.animation.animateColor
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.ui.graphics.graphicsLayer
+import com.hos.happy.plants.ui.theme.LeafBright
 import com.hos.happy.plants.ui.theme.SurfaceWarm
 import java.util.Locale
 
@@ -68,6 +76,7 @@ fun LightMeterGauge(
     onToggleMode: () -> Unit,
     onToggleFreeze: () -> Unit,
     onShowMetricInfo: (MetricType) -> Unit = {},
+    isHighlighted: Boolean = false,
     modifier: Modifier = Modifier
 ) {
     // Normalizing lux to an arc progress (0 to 12,000 lux max scale for indoor plants)
@@ -227,26 +236,80 @@ fun LightMeterGauge(
 
             Spacer(modifier = Modifier.height(8.dp))
 
+            val infiniteTransition = rememberInfiniteTransition(label = "holdHighlight")
+            val holdPulseScale by infiniteTransition.animateFloat(
+                initialValue = 1f,
+                targetValue = 1.06f,
+                animationSpec = infiniteRepeatable(
+                    animation = tween(750, easing = FastOutSlowInEasing),
+                    repeatMode = RepeatMode.Reverse
+                ),
+                label = "holdPulseScale"
+            )
+            val holdGlowBorder by infiniteTransition.animateColor(
+                initialValue = Moss,
+                targetValue = LeafBright,
+                animationSpec = infiniteRepeatable(
+                    animation = tween(750, easing = FastOutSlowInEasing),
+                    repeatMode = RepeatMode.Reverse
+                ),
+                label = "holdGlowBorder"
+            )
+            val holdBgColor by infiniteTransition.animateColor(
+                initialValue = Leaf.copy(alpha = 0.12f),
+                targetValue = Leaf.copy(alpha = 0.32f),
+                animationSpec = infiniteRepeatable(
+                    animation = tween(750, easing = FastOutSlowInEasing),
+                    repeatMode = RepeatMode.Reverse
+                ),
+                label = "holdBgColor"
+            )
+
             // Hold / Freeze Button
             OutlinedButton(
                 onClick = onToggleFreeze,
                 shape = RoundedCornerShape(12.dp),
-                border = androidx.compose.foundation.BorderStroke(1.dp, if (isFrozen) AmberLight else Sand),
+                border = androidx.compose.foundation.BorderStroke(
+                    width = if (isHighlighted && !isFrozen) 2.dp else 1.dp,
+                    color = when {
+                        isFrozen -> AmberLight
+                        isHighlighted -> holdGlowBorder
+                        else -> Sand
+                    }
+                ),
                 colors = ButtonDefaults.outlinedButtonColors(
-                    containerColor = if (isFrozen) AmberLight.copy(alpha = 0.15f) else Color.Transparent
-                )
+                    containerColor = when {
+                        isFrozen -> AmberLight.copy(alpha = 0.15f)
+                        isHighlighted -> holdBgColor
+                        else -> Color.Transparent
+                    }
+                ),
+                modifier = if (isHighlighted && !isFrozen) {
+                    Modifier.graphicsLayer {
+                        scaleX = holdPulseScale
+                        scaleY = holdPulseScale
+                    }
+                } else Modifier
             ) {
                 Icon(
                     imageVector = if (isFrozen) Icons.Default.Lock else Icons.Default.LockOpen,
                     contentDescription = null,
-                    tint = if (isFrozen) AmberLight else Moss,
+                    tint = when {
+                        isFrozen -> AmberLight
+                        isHighlighted -> Forest
+                        else -> Moss
+                    },
                     modifier = Modifier.size(16.dp)
                 )
                 Spacer(modifier = Modifier.width(6.dp))
                 Text(
                     text = if (isFrozen) "Reading Locked (Tap to Unlock)" else "Hold Reading",
-                    color = if (isFrozen) Bark else Moss,
-                    fontWeight = FontWeight.Medium,
+                    color = when {
+                        isFrozen -> Bark
+                        isHighlighted -> Forest
+                        else -> Moss
+                    },
+                    fontWeight = if (isHighlighted && !isFrozen) FontWeight.Bold else FontWeight.Medium,
                     fontSize = 13.sp
                 )
             }

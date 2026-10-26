@@ -34,6 +34,7 @@ class UserPreferencesRepository(private val context: Context) {
         val KEY_PREFERRED_LIGHT_METER_MODE = stringPreferencesKey("key_preferred_light_meter_mode")
         val KEY_ACTIVE_PROFILE_ID = stringPreferencesKey("key_active_profile_id")
         val KEY_CUSTOM_ROOM_TAGS = stringSetPreferencesKey("key_custom_room_tags")
+        val KEY_PLANTNET_API_KEY = stringPreferencesKey("key_plantnet_api_key")
     }
 
     /**
@@ -101,6 +102,23 @@ class UserPreferencesRepository(private val context: Context) {
         context.dataStore.edit { mutablePrefs ->
             val current = mutablePrefs[PreferencesKeys.KEY_CUSTOM_ROOM_TAGS] ?: emptySet()
             mutablePrefs[PreferencesKeys.KEY_CUSTOM_ROOM_TAGS] = current + tag.trim()
+        }
+    }
+
+    suspend fun getPlantNetApiKey(): String {
+        val prefs = context.dataStore.data.first()
+        val customKey = prefs[PreferencesKeys.KEY_PLANTNET_API_KEY]?.trim()
+        if (!customKey.isNullOrEmpty()) return customKey
+        return com.hos.happy.plants.BuildConfig.PLANTNET_API_KEY.trim()
+    }
+
+    suspend fun setPlantNetApiKey(apiKey: String) {
+        context.dataStore.edit { mutablePrefs ->
+            if (apiKey.isBlank()) {
+                mutablePrefs.remove(PreferencesKeys.KEY_PLANTNET_API_KEY)
+            } else {
+                mutablePrefs[PreferencesKeys.KEY_PLANTNET_API_KEY] = apiKey.trim()
+            }
         }
     }
 }

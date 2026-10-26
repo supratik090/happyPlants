@@ -17,3 +17,16 @@ val AmberLight = Color(0xFFE89828)   // High light / direct sun indicator
 val SkyBlue = Color(0xFF4A89A6)      // Weather / humidity accent
 val LeafBright = Color(0xFF558B2F)   // Positive indicators
 val Terracotta = Color(0xFF8A4B22)   // Warnings, overdue indicators (matches design doc --warn)
+
+// Status Tag Colors (Happy, Thirsty, Dusty, Hungry)
+val HappyTagBg = Color(0xFFE5EFE2)
+val HappyTagText = Color(0xFF2E6B34)
+
+val ThirstyTagBg = Color(0xFFFBECE8)
+val ThirstyTagText = Color(0xFFA0452E)
+
+val DustyTagBg = Color(0xFFEFE8F6)
+val DustyTagText = Color(0xFF6B478A)
+
+val HungryTagBg = Color(0xFFFBF1E2)
+val HungryTagText = Color(0xFF94621A)

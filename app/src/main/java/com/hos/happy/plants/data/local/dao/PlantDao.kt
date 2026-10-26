@@ -24,8 +24,14 @@ interface PlantDao {
     @Query("SELECT * FROM plants WHERE profileId = :profileId AND isArchived = 0 ORDER BY createdAt DESC")
     fun getPlantsForProfileFlow(profileId: String): Flow<List<PlantEntity>>
 
+    @Query("SELECT * FROM plants WHERE profileId = :profileId AND isArchived = 0 ORDER BY createdAt DESC")
+    suspend fun getPlantsForProfile(profileId: String): List<PlantEntity>
+
     @Query("SELECT * FROM plants WHERE profileId = :profileId AND roomTag = :roomTag AND isArchived = 0 ORDER BY createdAt DESC")
     fun getPlantsForRoomFlow(profileId: String, roomTag: String): Flow<List<PlantEntity>>
+
+    @Query("SELECT * FROM plants WHERE profileId = :profileId AND roomTag = :roomTag AND isArchived = 0 ORDER BY createdAt DESC")
+    suspend fun getPlantsForRoom(profileId: String, roomTag: String): List<PlantEntity>
 
     @Query("SELECT * FROM plants WHERE id = :id LIMIT 1")
     suspend fun getPlantById(id: String): PlantEntity?

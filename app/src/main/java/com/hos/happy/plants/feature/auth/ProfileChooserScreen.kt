@@ -121,8 +121,22 @@ fun ProfileChooserScreen(
                 modifier = Modifier.padding(top = 4.dp, bottom = 24.dp)
             )
 
-            if (profiles.isEmpty()) {
-                // First launch state
+            if (uiState.isLoading && profiles.isEmpty()) {
+                // Subtle loader while reading profiles from local DB
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 48.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    androidx.compose.material3.CircularProgressIndicator(
+                        modifier = Modifier.size(32.dp),
+                        color = Moss,
+                        strokeWidth = 2.5.dp
+                    )
+                }
+            } else if (profiles.isEmpty()) {
+                // First launch state - no profiles created yet
                 Card(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -162,7 +176,7 @@ fun ProfileChooserScreen(
                     }
                 }
             } else {
-                // List of existing profiles
+                // List of existing profiles that can be selected from
                 LazyColumn(
                     modifier = Modifier
                         .weight(1f)
@@ -172,7 +186,12 @@ fun ProfileChooserScreen(
                     items(profiles) { profile ->
                         ProfileCardItem(
                             profile = profile,
-                            onClick = {
+                            onSelect = {
+                                authViewModel.selectProfile(profile) {
+                                    onProfileSelected()
+                                }
+                            },
+                            onUnlockRequest = {
                                 selectedProfileForLogin = profile
                                 passwordInput = ""
                                 authViewModel.clearError()
@@ -277,7 +296,8 @@ fun ProfileChooserScreen(
 @Composable
 private fun ProfileCardItem(
     profile: UserProfileEntity,
-    onClick: () -> Unit
+    onSelect: () -> Unit,
+    onUnlockRequest: () -> Unit
 ) {
     val lastActiveStr = remember(profile.lastLoginAt) {
         val sdf = SimpleDateFormat("MMM d, yyyy", Locale.getDefault())
@@ -288,7 +308,7 @@ private fun ProfileCardItem(
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(16.dp))
-            .clickable { onClick() }
+            .clickable { onSelect() }
             .border(1.dp, Sand, RoundedCornerShape(16.dp)),
         colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
@@ -303,14 +323,14 @@ private fun ProfileCardItem(
                 modifier = Modifier
                     .size(52.dp)
                     .clip(CircleShape)
-                    .background(Paper),
+                    .background(Forest),
                 contentAlignment = Alignment.Center
             ) {
                 Text(
                     text = profile.name.take(1).uppercase(),
                     fontSize = 22.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Forest,
+                    color = Leaf,
                     fontFamily = FontFamily.Serif
                 )
             }
@@ -331,16 +351,18 @@ private fun ProfileCardItem(
                 Text(
                     text = "Last active: $lastActiveStr",
                     style = MaterialTheme.typography.labelSmall,
-                    color = Sand
+                    color = Bark
                 )
             }
 
-            Icon(
-                imageVector = Icons.Default.Lock,
-                contentDescription = "Unlock",
-                tint = Moss,
-                modifier = Modifier.size(20.dp)
-            )
+            Button(
+                onClick = onSelect,
+                colors = ButtonDefaults.buttonColors(containerColor = Moss),
+                shape = RoundedCornerShape(10.dp),
+                contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 16.dp, vertical = 8.dp)
+            ) {
+                Text("Select", color = SurfaceWarm, fontSize = 13.sp, fontWeight = FontWeight.SemiBold)
+            }
         }
     }
 }

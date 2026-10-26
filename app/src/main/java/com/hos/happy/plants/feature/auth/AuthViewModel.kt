@@ -10,12 +10,14 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import java.security.MessageDigest
 
 data class AuthUiState(
     val activeProfile: UserProfileEntity? = null,
+    val isSessionChecking: Boolean = true,
     val isLoading: Boolean = false,
     val errorMessage: String? = null,
     val isLoginSuccessful: Boolean = false
@@ -39,24 +41,56 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
 
     private fun checkPersistedSession() {
         viewModelScope.launch {
-            _uiState.value = _uiState.value.copy(isLoading = true)
+            _uiState.value = _uiState.value.copy(isSessionChecking = true, isLoading = true)
             // Initialize hardware light sensor check in preferences on startup
             prefs.getOrInitializeLightMeterSettings()
 
             // Check if there are profiles
             val profiles = profileDao.getAllProfiles()
             if (profiles.isNotEmpty()) {
-                // Read last active profile if available
-                prefs.activeProfileIdFlow.collect { activeId ->
-                    val matched = profiles.find { it.id == activeId }
+                val savedActiveId = runCatching { prefs.activeProfileIdFlow.first() }.getOrNull()
+                val matched = profiles.find { it.id == savedActiveId }
+                    ?: if (profiles.size == 1) profiles.first() else null
+
+                if (matched != null) {
+                    prefs.setActiveProfileId(matched.id)
                     _uiState.value = _uiState.value.copy(
                         activeProfile = matched,
+                        isSessionChecking = false,
+                        isLoading = false
+                    )
+                } else {
+                    _uiState.value = _uiState.value.copy(
+                        activeProfile = null,
+                        isSessionChecking = false,
                         isLoading = false
                     )
                 }
             } else {
-                _uiState.value = _uiState.value.copy(isLoading = false)
+                _uiState.value = _uiState.value.copy(
+                    activeProfile = null,
+                    isSessionChecking = false,
+                    isLoading = false
+                )
             }
+        }
+    }
+
+    /**
+     * 1-Tap profile selection from existing profile list
+     */
+    fun selectProfile(profile: UserProfileEntity, onComplete: () -> Unit) {
+        viewModelScope.launch {
+            _uiState.value = _uiState.value.copy(isLoading = true)
+            profileDao.updateLastLogin(profile.id)
+            prefs.setActiveProfileId(profile.id)
+            _uiState.value = _uiState.value.copy(
+                activeProfile = profile,
+                errorMessage = null,
+                isLoading = false,
+                isLoginSuccessful = true
+            )
+            onComplete()
         }
     }
 

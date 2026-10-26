@@ -78,6 +78,10 @@ fun AddPlantDialog(
     availableRooms: List<String>,
     onAddRoom: (String) -> Unit,
     onDismiss: () -> Unit,
+    initialMasterPlant: MasterPlant? = null,
+    initialCommonName: String? = null,
+    initialBotanicalName: String? = null,
+    initialPhotoUri: String? = null,
     onConfirm: (
         nickname: String,
         commonName: String,
@@ -92,18 +96,19 @@ fun AddPlantDialog(
         notes: String?
     ) -> Unit
 ) {
-    var searchQuery by remember { mutableStateOf("") }
-    var selectedMasterPlant by remember { mutableStateOf<MasterPlant?>(null) }
-    var nicknameInput by remember { mutableStateOf("") }
-    var botanicalNameInput by remember { mutableStateOf("") }
+    var selectedMasterPlant by remember { mutableStateOf<MasterPlant?>(initialMasterPlant) }
+    var searchQuery by remember { mutableStateOf(initialMasterPlant?.commonName ?: initialCommonName ?: "") }
+    var nicknameInput by remember { mutableStateOf(initialMasterPlant?.commonName ?: initialCommonName ?: "") }
+    var botanicalNameInput by remember { mutableStateOf(initialMasterPlant?.botanicalName ?: initialBotanicalName ?: "") }
+    var customPhotoUri by remember { mutableStateOf<String?>(initialPhotoUri) }
     var selectedRoom by remember { mutableStateOf(availableRooms.firstOrNull() ?: "Living") }
     var notesInput by remember { mutableStateOf("") }
 
     // Intervals
-    var wateringDays by remember { mutableIntStateOf(7) }
-    var fertilizeDays by remember { mutableIntStateOf(60) }
-    var refreshSoilDays by remember { mutableIntStateOf(180) }
-    var repotDays by remember { mutableIntStateOf(730) }
+    var wateringDays by remember { mutableIntStateOf(initialMasterPlant?.watering?.hotDryMonths?.min ?: 7) }
+    var fertilizeDays by remember { mutableIntStateOf(initialMasterPlant?.fertilizeEveryDays ?: 60) }
+    var refreshSoilDays by remember { mutableIntStateOf(initialMasterPlant?.refreshTopSoilEveryDays ?: 180) }
+    var repotDays by remember { mutableIntStateOf(initialMasterPlant?.repotEveryDays ?: 730) }
 
     // Add room dialog state
     var showInlineAddRoom by remember { mutableStateOf(false) }
@@ -233,7 +238,7 @@ fun AddPlantDialog(
                                         .padding(8.dp),
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
-                                    val imgUrl = plant.image?.thumbnailUrl ?: plant.image?.directImageUrl
+                                    val imgUrl = plant.displayImageUrl ?: plant.image?.thumbnailUrl ?: plant.image?.directImageUrl
                                     if (imgUrl != null) {
                                         AsyncImage(
                                             model = imgUrl,
@@ -277,7 +282,7 @@ fun AddPlantDialog(
                             .padding(10.dp)
                     ) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
-                            val imgUrl = plant.image?.thumbnailUrl ?: plant.image?.directImageUrl
+                            val imgUrl = plant.displayImageUrl ?: plant.image?.thumbnailUrl ?: plant.image?.directImageUrl
                             if (imgUrl != null) {
                                 AsyncImage(
                                     model = imgUrl,
@@ -338,7 +343,7 @@ fun AddPlantDialog(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = "Room / Growing Location",
+                        text = "Growing Space",
                         style = MaterialTheme.typography.labelMedium,
                         color = Bark,
                         fontWeight = FontWeight.SemiBold
@@ -350,7 +355,7 @@ fun AddPlantDialog(
                     ) {
                         Icon(Icons.Default.Add, contentDescription = null, tint = Moss, modifier = Modifier.size(14.dp))
                         Spacer(modifier = Modifier.width(2.dp))
-                        Text("Add Room", color = Moss, fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                        Text("Add Space", color = Moss, fontSize = 11.sp, fontWeight = FontWeight.Bold)
                     }
                 }
 
@@ -489,12 +494,12 @@ fun AddPlantDialog(
                     showInlineAddRoom = false
                     newRoomName = ""
                 },
-                title = { Text("Add Room", color = Forest, fontWeight = FontWeight.Bold) },
+                title = { Text("Add Space", color = Forest, fontWeight = FontWeight.Bold) },
                 text = {
                     OutlinedTextField(
                         value = newRoomName,
                         onValueChange = { newRoomName = it },
-                        placeholder = { Text("e.g. Study, Patio") },
+                        placeholder = { Text("e.g. Patio, Terrace, Greenhouse") },
                         singleLine = true,
                         colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = Moss)
                     )

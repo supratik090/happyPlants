@@ -5,6 +5,35 @@ plugins {
     alias(libs.plugins.ksp)
 }
 
+import java.io.FileInputStream
+import java.util.Properties
+
+val envProperties = Properties()
+val envFile = rootProject.file(".env")
+if (envFile.exists()) {
+    envFile.bufferedReader().use { reader ->
+        reader.forEachLine { line ->
+            val trimmed = line.trim()
+            if (trimmed.isNotEmpty() && !trimmed.startsWith("#") && trimmed.contains("=")) {
+                val parts = trimmed.split("=", limit = 2)
+                if (parts.size == 2) {
+                    envProperties[parts[0].trim()] = parts[1].trim()
+                }
+            }
+        }
+    }
+}
+
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(FileInputStream(localPropertiesFile))
+}
+
+val plantnetApiKey = (envProperties.getProperty("PLANTNET_API_KEY")
+    ?: localProperties.getProperty("PLANTNET_API_KEY")
+    ?: "").trim()
+
 android {
     namespace = "com.hos.happy.plants"
     compileSdk = 35
@@ -17,6 +46,8 @@ android {
         versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "PLANTNET_API_KEY", "\"$plantnetApiKey\"")
     }
 
     buildTypes {
@@ -37,6 +68,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 

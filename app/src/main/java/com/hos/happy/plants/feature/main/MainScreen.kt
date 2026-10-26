@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.MenuBook
+import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material.icons.filled.WbSunny
 import androidx.compose.material.icons.filled.Yard
 import androidx.compose.material3.Icon
@@ -21,12 +21,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.hos.happy.plants.feature.auth.AuthViewModel
 import com.hos.happy.plants.feature.env.EnvScreen
 import com.hos.happy.plants.feature.env.EnvViewModel
 import com.hos.happy.plants.feature.garden.GardenScreen
 import com.hos.happy.plants.feature.garden.GardenViewModel
-import com.hos.happy.plants.feature.research.ResearchPlaceholderScreen
+import com.hos.happy.plants.feature.research.ResearchScreen
+import com.hos.happy.plants.feature.research.ResearchViewModel
 import com.hos.happy.plants.ui.theme.Bark
 import com.hos.happy.plants.ui.theme.Forest
 import com.hos.happy.plants.ui.theme.Leaf
@@ -35,9 +37,19 @@ import com.hos.happy.plants.ui.theme.Mute
 import com.hos.happy.plants.ui.theme.PaperDark
 import com.hos.happy.plants.ui.theme.SurfaceWarm
 
+import androidx.compose.material.icons.filled.Checklist
+import androidx.compose.material3.Badge
+import androidx.compose.material3.BadgedBox
+import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
+import com.hos.happy.plants.feature.garden.TodayTasksScreen
+
 sealed class NavTab(val title: String, val icon: ImageVector) {
+    data object Task : NavTab("Task", Icons.Default.Checklist)
     data object Garden : NavTab("Garden", Icons.Default.Yard)
-    data object Research : NavTab("Research", Icons.Default.MenuBook)
+    data object Research : NavTab("Research", Icons.AutoMirrored.Filled.MenuBook)
     data object Env : NavTab("Env", Icons.Default.WbSunny)
 }
 
@@ -48,7 +60,12 @@ fun MainScreen(
     authViewModel: AuthViewModel,
     onSwitchProfile: () -> Unit
 ) {
-    val tabs = remember { listOf(NavTab.Garden, NavTab.Research, NavTab.Env) }
+    val pendingDailyTasks by gardenViewModel.pendingDailyTasks.collectAsState()
+    val envUiState by envViewModel.uiState.collectAsState()
+    val aqiVal = envUiState.weatherSnapshot?.aqi ?: 120
+    val isHighAqi = aqiVal >= 100
+
+    val tabs = remember { listOf(NavTab.Task, NavTab.Garden, NavTab.Research, NavTab.Env) }
     var selectedTabIndex by remember { mutableIntStateOf(0) }
 
     Scaffold(
@@ -58,10 +75,34 @@ fun MainScreen(
                 tonalElevation = 6.dp
             ) {
                 tabs.forEachIndexed { index, tab ->
+                    val isTaskTab = tab is NavTab.Task
+                    val pendingCount = pendingDailyTasks.size
+
                     NavigationBarItem(
                         selected = selectedTabIndex == index,
                         onClick = { selectedTabIndex = index },
-                        icon = { Icon(tab.icon, contentDescription = tab.title) },
+                        icon = {
+                            if (isTaskTab && pendingCount > 0) {
+                                BadgedBox(
+                                    badge = {
+                                        Badge(
+                                            containerColor = Leaf,
+                                            contentColor = Color.White
+                                        ) {
+                                            Text(
+                                                text = pendingCount.toString(),
+                                                fontSize = 10.sp,
+                                                fontWeight = FontWeight.Bold
+                                            )
+                                        }
+                                    }
+                                ) {
+                                    Icon(tab.icon, contentDescription = tab.title)
+                                }
+                            } else {
+                                Icon(tab.icon, contentDescription = tab.title)
+                            }
+                        },
                         label = { Text(tab.title) },
                         colors = NavigationBarItemDefaults.colors(
                             selectedIconColor = Forest,
@@ -82,13 +123,42 @@ fun MainScreen(
                 .padding(padding)
         ) {
             when (selectedTabIndex) {
-                0 -> GardenScreen(
+                0 -> TodayTasksScreen(
                     gardenViewModel = gardenViewModel,
                     authViewModel = authViewModel,
-                    onSwitchProfile = onSwitchProfile
+                    onSwitchProfile = onSwitchProfile,
+                    onNavigateToEnv = { roomTag ->
+                        if (!roomTag.isNullOrBlank()) {
+                            envViewModel.selectRoomTag(roomTag)
+                        }
+                        selectedTabIndex = 3
+                    },
+                    onNavigateToGarden = {
+                        selectedTabIndex = 1
+                    },
+                    isHighAqi = isHighAqi
                 )
-                1 -> ResearchPlaceholderScreen()
-                2 -> EnvScreen(
+                1 -> GardenScreen(
+                    gardenViewModel = gardenViewModel,
+                    authViewModel = authViewModel,
+                    onSwitchProfile = onSwitchProfile,
+                    onNavigateToEnv = { roomTag ->
+                        if (!roomTag.isNullOrBlank()) {
+                            envViewModel.selectRoomTag(roomTag)
+                            envViewModel.triggerNavigateToHoldReading()
+                        }
+                        selectedTabIndex = 3
+                    }
+                )
+                2 -> {
+                    val researchViewModel: ResearchViewModel = viewModel()
+                    ResearchScreen(
+                        researchViewModel = researchViewModel,
+                        gardenViewModel = gardenViewModel,
+                        onSwitchProfile = onSwitchProfile
+                    )
+                }
+                3 -> EnvScreen(
                     envViewModel = envViewModel,
                     authViewModel = authViewModel,
                     onSwitchProfile = onSwitchProfile

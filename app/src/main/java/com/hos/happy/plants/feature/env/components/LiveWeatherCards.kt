@@ -158,6 +158,83 @@ fun LiveWeatherCards(
             )
         }
 
+        Spacer(modifier = Modifier.height(10.dp))
+
+        // Rain & Outdoor Hydration Card
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .border(1.dp, Sand, RoundedCornerShape(14.dp)),
+            colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
+            shape = RoundedCornerShape(14.dp)
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 14.dp, vertical = 12.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Box(
+                        modifier = Modifier
+                            .size(32.dp)
+                            .clip(CircleShape)
+                            .background(SkyBlue.copy(alpha = 0.15f)),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.WaterDrop,
+                            contentDescription = null,
+                            tint = SkyBlue,
+                            modifier = Modifier.size(18.dp)
+                        )
+                    }
+                    Spacer(modifier = Modifier.width(10.dp))
+                    Column {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Text(
+                                text = "Rain & Precipitation",
+                                style = MaterialTheme.typography.labelSmall,
+                                color = Mute
+                            )
+                            Spacer(modifier = Modifier.width(4.dp))
+                            InfoHelpButton(metricType = MetricType.RAIN, onShowInfo = onShowMetricInfo)
+                        }
+                        val dailyRain = snapshot?.dailyRainMm ?: snapshot?.currentRainMm ?: 0f
+                        val rainText = if (dailyRain > 0f) {
+                            "${String.format(Locale.US, "%.1f mm", dailyRain)} expected today"
+                        } else {
+                            "No rain today (0.0 mm)"
+                        }
+                        Text(
+                            text = rainText,
+                            style = MaterialTheme.typography.titleMedium,
+                            color = Forest,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                }
+
+                snapshot?.rainProbability?.let { chance ->
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(if (chance >= 50) Leaf.copy(alpha = 0.2f) else Paper)
+                            .border(1.dp, if (chance >= 50) Moss else Sand, RoundedCornerShape(8.dp))
+                            .padding(horizontal = 8.dp, vertical = 4.dp)
+                    ) {
+                        Text(
+                            text = "🌧️ $chance% chance",
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color = if (chance >= 50) Forest else Mute
+                        )
+                    }
+                }
+            }
+        }
+
         // Daylight Info Bar
         if (snapshot?.sunriseTime != null && snapshot.sunsetTime != null) {
             Spacer(modifier = Modifier.height(10.dp))

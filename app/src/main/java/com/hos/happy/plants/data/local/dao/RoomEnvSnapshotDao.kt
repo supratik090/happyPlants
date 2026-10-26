@@ -19,6 +19,9 @@ interface RoomEnvSnapshotDao {
     @Query("SELECT DISTINCT roomTag FROM room_env_snapshots WHERE profileId = :profileId ORDER BY roomTag ASC")
     fun getDistinctRoomsFlow(profileId: String): Flow<List<String>>
 
+    @Query("SELECT DISTINCT roomTag FROM room_env_snapshots WHERE profileId = :profileId ORDER BY roomTag ASC")
+    suspend fun getDistinctRooms(profileId: String): List<String>
+
     @Query("""
         SELECT * FROM room_env_snapshots 
         WHERE profileId = :profileId 
@@ -47,4 +50,7 @@ interface RoomEnvSnapshotDao {
 
     @Query("SELECT * FROM room_env_snapshots WHERE profileId = :profileId ORDER BY recordedAt DESC LIMIT 1")
     suspend fun getLatestSnapshot(profileId: String): RoomEnvSnapshotEntity?
+
+    @Query("SELECT * FROM room_env_snapshots WHERE profileId = :profileId AND roomTag = :roomTag ORDER BY recordedAt DESC LIMIT 1")
+    suspend fun getLatestSnapshotForRoom(profileId: String, roomTag: String): RoomEnvSnapshotEntity?
 }
