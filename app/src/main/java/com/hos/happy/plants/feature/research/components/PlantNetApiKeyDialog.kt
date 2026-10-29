@@ -105,7 +105,7 @@ fun PlantNetApiKeyDialog(
                 Spacer(modifier = Modifier.height(14.dp))
 
                 Text(
-                    text = "To identify plants from camera or gallery photos, Happy Plants connects to the Pl@ntNet identification API.",
+                    text = "To identify plants from camera or gallery photos, Metro Greens connects to the Pl@ntNet identification API.",
                     fontSize = 12.sp,
                     color = Ink,
                     lineHeight = 17.sp

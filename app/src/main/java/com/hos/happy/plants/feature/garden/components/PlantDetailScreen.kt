@@ -32,12 +32,17 @@ import android.graphics.Bitmap
 import androidx.compose.ui.platform.LocalContext
 import com.hos.happy.plants.feature.research.components.LivePlantCameraDialog
 import java.io.File
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.StickyNote2
 import androidx.compose.material.icons.filled.AddAPhoto
+import androidx.compose.material.icons.filled.CalendarToday
 import androidx.compose.material.icons.filled.CameraAlt
 import androidx.compose.material.icons.filled.ChevronRight
+import androidx.compose.material.icons.filled.DeleteOutline
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Pause
 import androidx.compose.material.icons.filled.PhotoLibrary
 import androidx.compose.material.icons.filled.PlayArrow
@@ -50,8 +55,11 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -99,6 +107,12 @@ import com.hos.happy.plants.ui.theme.SurfaceWarm
 import com.hos.happy.plants.ui.theme.Terracotta
 import com.hos.happy.plants.ui.theme.ThirstyTagBg
 import com.hos.happy.plants.ui.theme.ThirstyTagText
+import com.hos.happy.plants.data.model.WateringSchedule
+import com.hos.happy.plants.data.model.WateringSchedule.Companion.fromEntity
+import com.hos.happy.plants.data.model.WateringSchedule.Companion.isDueToday
+import com.hos.happy.plants.data.model.WateringSchedule.Companion.daysUntilNext
+import com.hos.happy.plants.data.model.WateringSchedule.Companion.scheduleLabel
+import com.hos.happy.plants.data.model.WateringSchedule.Companion.nextWateringEpoch
 import kotlinx.coroutines.delay
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -112,6 +126,7 @@ fun PlantDetailScreen(
     viewModel: GardenViewModel,
     onBack: () -> Unit,
     onOpenDoctor: () -> Unit,
+    onOpenDiseaseScan: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val careLogs by viewModel.getCareLogsForPlantFlow(plant.id).collectAsState(initial = emptyList())
@@ -121,12 +136,33 @@ fun PlantDetailScreen(
 
     var showPhotoSourceDialog by remember { mutableStateOf(false) }
     var showLiveCamera by remember { mutableStateOf(false) }
+    var pendingPhotoUri by remember { mutableStateOf<String?>(null) }
+    var pendingPhotoNote by remember { mutableStateOf("") }
+    var showAddNoteDialog by remember { mutableStateOf(false) }
+    var showDeletePhotoDialog by remember { mutableStateOf(false) }
+    var showScheduleSheet by remember { mutableStateOf(false) }
+    var showEditNicknameDialog by remember { mutableStateOf(false) }
+    var editNicknameInput by remember { mutableStateOf(plant.nickname) }
 
     val photoPickerLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent()
     ) { uri: Uri? ->
-        uri?.let {
-            viewModel.addPlantPhoto(plant.id, it.toString(), "Photo added")
+        uri?.let { sourceUri ->
+            try {
+                val photosDir = File(context.filesDir, "plant_photos")
+                if (!photosDir.exists()) photosDir.mkdirs()
+                val photoFile = File(photosDir, "plant_${plant.id}_${System.currentTimeMillis()}.jpg")
+                context.contentResolver.openInputStream(sourceUri)?.use { input ->
+                    photoFile.outputStream().use { output ->
+                        input.copyTo(output)
+                    }
+                }
+                pendingPhotoUri = Uri.fromFile(photoFile).toString()
+            } catch (e: Exception) {
+                pendingPhotoUri = sourceUri.toString()
+            }
+            pendingPhotoNote = ""
+            showAddNoteDialog = true
         }
     }
 
@@ -142,7 +178,14 @@ fun PlantDetailScreen(
     val daysSinceWater = plant.lastWateredAt?.let { ((now - it) / oneDayMillis).toInt() }
     val daysSinceClean = (plant.lastCleanedAt ?: plant.createdAt).let { ((now - it) / oneDayMillis).toInt() }
     val daysSinceFeed = (plant.lastFertilizedAt ?: plant.createdAt).let { ((now - it) / oneDayMillis).toInt() }
-    val nextWaterRemaining = plant.wateringIntervalDays - (daysSinceWater ?: plant.wateringIntervalDays)
+    val customSchedule = remember(plant.waterScheduleType, plant.waterScheduleValue) {
+        fromEntity(plant.waterScheduleType, plant.waterScheduleValue)
+    }
+    val nextWaterRemaining = if (customSchedule != null) {
+        customSchedule.daysUntilNext(now, plant.lastWateredAt, plant.waterScheduleSetAt)
+    } else {
+        plant.wateringIntervalDays - (daysSinceWater ?: plant.wateringIntervalDays)
+    }
 
     // Care timeline active filter
     var selectedTimelineFilter by remember { mutableStateOf("All") }
@@ -216,9 +259,11 @@ fun PlantDetailScreen(
                         modifier = Modifier.fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        val resolvedPhoto = plant.photoUri?.takeIf { it.startsWith("file://") || it.startsWith("content://") }
+                        val latestUserPhoto = photos.lastOrNull()?.photoUri
+                        val defaultPhoto = plant.photoUri?.takeIf { it.startsWith("file://") || it.startsWith("content://") }
                             ?: plant.masterPlantId?.let { viewModel.masterRepo.getPlantById(it)?.displayImageUrl }
                             ?: plant.photoUri
+                        val resolvedPhoto = latestUserPhoto?.takeIf { it.isNotBlank() } ?: defaultPhoto
 
                         if (!resolvedPhoto.isNullOrBlank()) {
                             AsyncImage(
@@ -244,16 +289,41 @@ fun PlantDetailScreen(
                         Spacer(modifier = Modifier.width(14.dp))
 
                         Column(modifier = Modifier.weight(1f)) {
-                            Text(
-                                text = plant.nickname,
-                                style = MaterialTheme.typography.titleLarge,
-                                fontWeight = FontWeight.Bold,
-                                color = Forest,
-                                fontSize = 20.sp
-                            )
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.spacedBy(6.dp)
+                            ) {
+                                Text(
+                                    text = plant.nickname,
+                                    style = MaterialTheme.typography.titleLarge,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Forest,
+                                    fontSize = 20.sp,
+                                    modifier = Modifier.weight(1f, fill = false)
+                                )
+                                IconButton(
+                                    onClick = {
+                                        editNicknameInput = plant.nickname
+                                        showEditNicknameDialog = true
+                                    },
+                                    modifier = Modifier.size(28.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.Edit,
+                                        contentDescription = "Edit nickname",
+                                        tint = Moss,
+                                        modifier = Modifier.size(16.dp)
+                                    )
+                                }
+                            }
                             Spacer(modifier = Modifier.height(2.dp))
+                            val plantSubtitle = if (!plant.nickname.trim().equals(plant.commonName.trim(), ignoreCase = true)) {
+                                "${plant.roomTag} • ${plant.commonName} (${plant.botanicalName})"
+                            } else {
+                                "${plant.roomTag} • ${plant.botanicalName}"
+                            }
                             Text(
-                                text = "${plant.roomTag} • ${plant.botanicalName}",
+                                text = plantSubtitle,
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = Bark,
                                 fontSize = 12.sp,
@@ -343,12 +413,13 @@ fun PlantDetailScreen(
 
                 // 6. Next watering
                 if (plant.wateringIntervalDays > 0) {
+                    val schedSubtext = customSchedule?.scheduleLabel() ?: "every ${plant.wateringIntervalDays} days"
                     items.add(
                         CareStatItem(
                             icon = "💧",
                             countText = if (nextWaterRemaining <= 0) "Today" else "In ${nextWaterRemaining}d",
                             label = "Next watering",
-                            subtext = "every ${plant.wateringIntervalDays} days",
+                            subtext = schedSubtext,
                             isHighlighted = true
                         )
                     )
@@ -428,17 +499,67 @@ fun PlantDetailScreen(
                         verticalArrangement = Arrangement.spacedBy(10.dp)
                     ) {
                         // Water
+                        val (waterScheduleLabel, nextWaterDueStr) = remember(plant) {
+                            viewModel.getScheduleInfoForPlant(plant)
+                        }
+                        val customWaterSchedule = remember(plant) {
+                            fromEntity(plant.waterScheduleType, plant.waterScheduleValue)
+                        }
+                        val isWaterDue = if (customWaterSchedule != null) {
+                            customWaterSchedule.isDueToday(now, plant.lastWateredAt, plant.waterScheduleSetAt)
+                        } else {
+                            (daysSinceWater ?: plant.wateringIntervalDays) >= plant.wateringIntervalDays
+                        }
                         val waterLastStr = formatShortDate(plant.lastWateredAt)
-                        val isWaterDue = (daysSinceWater ?: plant.wateringIntervalDays) >= plant.wateringIntervalDays
-                        ComingUpItemRow(
-                            icon = "💧",
-                            iconColor = SkyBlueColor,
-                            title = "Water",
-                            subtitle = if (plant.lastWateredAt != null) "Last $waterLastStr • every ${plant.wateringIntervalDays} days" else "Day 1 • every ${plant.wateringIntervalDays} days",
-                            badgeTop = if (isWaterDue) "Today" else calculateDueDateStr(plant.lastWateredAt ?: (now - plant.wateringIntervalDays * oneDayMillis), plant.wateringIntervalDays),
-                            badgeBottom = if (isWaterDue) "Due now" else "in $nextWaterRemaining days",
-                            isUrgent = isWaterDue
-                        )
+                        val waterSubtitle = if (customWaterSchedule != null) {
+                            "$waterScheduleLabel · custom schedule"
+                        } else if (plant.lastWateredAt != null) {
+                            "Last $waterLastStr • every ${plant.wateringIntervalDays} days"
+                        } else {
+                            "Day 1 • every ${plant.wateringIntervalDays} days"
+                        }
+
+                        Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                            ComingUpItemRow(
+                                icon = "💧",
+                                iconColor = SkyBlueColor,
+                                title = "Water",
+                                subtitle = waterSubtitle,
+                                badgeTop = if (isWaterDue) "Today" else nextWaterDueStr,
+                                badgeBottom = if (isWaterDue) "Due now" else "Tap to edit",
+                                isUrgent = isWaterDue,
+                                onClick = { showScheduleSheet = true }
+                            )
+
+                            // Quick Edit Schedule Bar
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .clip(RoundedCornerShape(8.dp))
+                                    .background(Leaf.copy(alpha = 0.15f))
+                                    .clickable { showScheduleSheet = true }
+                                    .padding(horizontal = 10.dp, vertical = 7.dp),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Text("🗓️", fontSize = 12.sp)
+                                    Spacer(modifier = Modifier.width(6.dp))
+                                    Text(
+                                        text = "Schedule: $waterScheduleLabel",
+                                        fontSize = 12.sp,
+                                        fontWeight = FontWeight.SemiBold,
+                                        color = Forest
+                                    )
+                                }
+                                Text(
+                                    text = "Edit schedule ✏️",
+                                    fontSize = 11.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Moss
+                                )
+                            }
+                        }
 
                         // Clean leaves
                         if (plant.cleanIntervalDays > 0) {
@@ -556,26 +677,54 @@ fun PlantDetailScreen(
                                 text = "Start your plant's growth journey",
                                 fontWeight = FontWeight.Bold,
                                 color = Forest,
-                                fontSize = 14.sp
+                                fontSize = 15.sp
                             )
                             Spacer(modifier = Modifier.height(4.dp))
                             Text(
-                                text = "Tap 'Add photo' above to capture snapshots and watch your plant grow over time.",
+                                text = "Add photos with notes to track growth milestones, repotting, and new leaves over time.",
                                 color = Mute,
                                 fontSize = 12.sp,
                                 textAlign = androidx.compose.ui.text.style.TextAlign.Center
                             )
+                            Spacer(modifier = Modifier.height(14.dp))
+                            Button(
+                                onClick = { showPhotoSourceDialog = true },
+                                colors = ButtonDefaults.buttonColors(containerColor = Forest),
+                                shape = RoundedCornerShape(12.dp)
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.AddAPhoto,
+                                    contentDescription = null,
+                                    tint = SurfaceWarm,
+                                    modifier = Modifier.size(16.dp)
+                                )
+                                Spacer(modifier = Modifier.width(6.dp))
+                                Text(
+                                    text = "Add First Photo",
+                                    color = SurfaceWarm,
+                                    fontSize = 13.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
                         }
                     }
                 } else {
                     val safeIndex = selectedPhotoIndex.coerceIn(0, photos.lastIndex)
                     val activePhoto = photos[safeIndex]
 
-                    // Big Photo Card with Date Chip
+                    val photoDateStr = remember(activePhoto.capturedAt) {
+                        SimpleDateFormat("d MMM yyyy", Locale.getDefault()).format(Date(activePhoto.capturedAt))
+                    }
+                    val photoFullDateTimeStr = remember(activePhoto.capturedAt) {
+                        SimpleDateFormat("EEE, d MMM yyyy • h:mm a", Locale.getDefault()).format(Date(activePhoto.capturedAt))
+                    }
+                    val photoDayIndex = maxOf(1, ((activePhoto.capturedAt - plant.createdAt) / oneDayMillis).toInt())
+
+                    // 1. Big Main Photo Card
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(240.dp)
+                            .height(250.dp)
                             .border(1.dp, Sand, RoundedCornerShape(18.dp)),
                         colors = CardDefaults.cardColors(containerColor = Paper),
                         shape = RoundedCornerShape(18.dp)
@@ -594,33 +743,144 @@ fun PlantDetailScreen(
                                 )
                             }
 
-                            // Day badge chip on photo
-                            val photoDateStr = remember(activePhoto.capturedAt) {
-                                SimpleDateFormat("d MMM", Locale.getDefault()).format(Date(activePhoto.capturedAt))
-                            }
-                            val photoDayIndex = maxOf(1, ((activePhoto.capturedAt - plant.createdAt) / oneDayMillis).toInt())
-
-                            Box(
+                            // Top overlay row: Day badge on left, Quick Delete button on right
+                            Row(
                                 modifier = Modifier
-                                    .align(Alignment.TopStart)
-                                    .padding(12.dp)
-                                    .clip(RoundedCornerShape(8.dp))
-                                    .background(Forest.copy(alpha = 0.8f))
-                                    .padding(horizontal = 8.dp, vertical = 4.dp)
+                                    .fillMaxWidth()
+                                    .padding(12.dp),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
                             ) {
-                                Text(
-                                    text = "$photoDateStr • Day $photoDayIndex",
-                                    color = SurfaceWarm,
-                                    fontSize = 11.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
+                                Box(
+                                    modifier = Modifier
+                                        .clip(RoundedCornerShape(8.dp))
+                                        .background(Forest.copy(alpha = 0.85f))
+                                        .padding(horizontal = 8.dp, vertical = 4.dp)
+                                ) {
+                                    Text(
+                                        text = "$photoDateStr • Day $photoDayIndex",
+                                        color = SurfaceWarm,
+                                        fontSize = 11.sp,
+                                        fontWeight = FontWeight.Bold
+                                    )
+                                }
+
+                                Box(
+                                    modifier = Modifier
+                                        .size(36.dp)
+                                        .clip(CircleShape)
+                                        .background(SurfaceWarm.copy(alpha = 0.92f))
+                                        .clickable { showDeletePhotoDialog = true },
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.DeleteOutline,
+                                        contentDescription = "Delete photo",
+                                        tint = Terracotta,
+                                        modifier = Modifier.size(18.dp)
+                                    )
+                                }
                             }
                         }
                     }
 
                     Spacer(modifier = Modifier.height(10.dp))
 
-                    // "Watch it grow" playback bar
+                    // 2. Photo Notes and Date Card just below the photo
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .border(1.dp, Sand, RoundedCornerShape(14.dp)),
+                        colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
+                        shape = RoundedCornerShape(14.dp)
+                    ) {
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(14.dp)
+                        ) {
+                            // Date and Delete row
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Icon(
+                                        imageVector = Icons.Default.CalendarToday,
+                                        contentDescription = null,
+                                        tint = Forest,
+                                        modifier = Modifier.size(14.dp)
+                                    )
+                                    Spacer(modifier = Modifier.width(6.dp))
+                                    Text(
+                                        text = photoFullDateTimeStr,
+                                        fontSize = 12.sp,
+                                        fontWeight = FontWeight.SemiBold,
+                                        color = Forest
+                                    )
+                                }
+
+                                TextButton(
+                                    onClick = { showDeletePhotoDialog = true },
+                                    contentPadding = PaddingValues(horizontal = 6.dp, vertical = 0.dp),
+                                    modifier = Modifier.height(28.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.DeleteOutline,
+                                        contentDescription = "Delete",
+                                        tint = Terracotta,
+                                        modifier = Modifier.size(15.dp)
+                                    )
+                                    Spacer(modifier = Modifier.width(4.dp))
+                                    Text(
+                                        text = "Delete",
+                                        color = Terracotta,
+                                        fontSize = 12.sp,
+                                        fontWeight = FontWeight.SemiBold
+                                    )
+                                }
+                            }
+
+                            Spacer(modifier = Modifier.height(8.dp))
+
+                            // Note display section
+                            val noteText = activePhoto.caption?.takeIf { it.isNotBlank() } ?: "No note recorded for this photo."
+                            val hasCustomNote = !activePhoto.caption.isNullOrBlank() && activePhoto.caption != "Photo added"
+
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .clip(RoundedCornerShape(10.dp))
+                                    .background(Paper)
+                                    .border(1.dp, Sand.copy(alpha = 0.6f), RoundedCornerShape(10.dp))
+                                    .padding(horizontal = 12.dp, vertical = 10.dp)
+                            ) {
+                                Row(verticalAlignment = Alignment.Top) {
+                                    Icon(
+                                        imageVector = Icons.AutoMirrored.Filled.StickyNote2,
+                                        contentDescription = null,
+                                        tint = if (hasCustomNote) Moss else Sand,
+                                        modifier = Modifier
+                                            .size(16.dp)
+                                            .padding(top = 1.dp)
+                                    )
+                                    Spacer(modifier = Modifier.width(8.dp))
+                                    Text(
+                                        text = noteText,
+                                        fontSize = 13.sp,
+                                        color = if (hasCustomNote) Ink else Mute,
+                                        lineHeight = 18.sp,
+                                        fontStyle = if (hasCustomNote) FontStyle.Normal else FontStyle.Italic
+                                    )
+                                }
+                            }
+                        }
+                    }
+
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    // 3. "Watch it grow" playback bar
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -696,17 +956,48 @@ fun PlantDetailScreen(
 
                     Spacer(modifier = Modifier.height(10.dp))
 
-                    // Horizontal Thumbnail Strip
+                    // 4. Horizontal Thumbnail Strip with Add button and all thumbnails below
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
                             .horizontalScroll(rememberScrollState()),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                        horizontalArrangement = Arrangement.spacedBy(10.dp),
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
+                        // "+" Add Photo thumbnail card
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            modifier = Modifier.clickable { showPhotoSourceDialog = true }
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .size(56.dp)
+                                    .clip(RoundedCornerShape(12.dp))
+                                    .background(Paper)
+                                    .border(1.5.dp, Moss, RoundedCornerShape(12.dp)),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.AddAPhoto,
+                                    contentDescription = "Add photo",
+                                    tint = Forest,
+                                    modifier = Modifier.size(20.dp)
+                                )
+                            }
+                            Spacer(modifier = Modifier.height(3.dp))
+                            Text(
+                                text = "Add",
+                                fontSize = 10.sp,
+                                color = Forest,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+
+                        // Photo Thumbnails
                         photos.forEachIndexed { index, photo ->
-                            val isSelected = index == selectedPhotoIndex
-                            val monthStr = remember(photo.capturedAt) {
-                                SimpleDateFormat("MMM", Locale.getDefault()).format(Date(photo.capturedAt))
+                            val isSelected = index == safeIndex
+                            val thumbDateStr = remember(photo.capturedAt) {
+                                SimpleDateFormat("d MMM", Locale.getDefault()).format(Date(photo.capturedAt))
                             }
 
                             Column(
@@ -715,20 +1006,20 @@ fun PlantDetailScreen(
                             ) {
                                 AsyncImage(
                                     model = photo.photoUri,
-                                    contentDescription = null,
+                                    contentDescription = photo.caption,
                                     modifier = Modifier
-                                        .size(52.dp)
-                                        .clip(RoundedCornerShape(10.dp))
+                                        .size(56.dp)
+                                        .clip(RoundedCornerShape(12.dp))
                                         .border(
-                                            2.dp,
-                                            if (isSelected) Forest else Color.Transparent,
-                                            RoundedCornerShape(10.dp)
+                                            width = if (isSelected) 2.5.dp else 1.dp,
+                                            color = if (isSelected) Forest else Sand,
+                                            shape = RoundedCornerShape(12.dp)
                                         ),
                                     contentScale = ContentScale.Crop
                                 )
-                                Spacer(modifier = Modifier.height(2.dp))
+                                Spacer(modifier = Modifier.height(3.dp))
                                 Text(
-                                    text = monthStr,
+                                    text = thumbDateStr,
                                     fontSize = 10.sp,
                                     color = if (isSelected) Forest else Mute,
                                     fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal
@@ -855,7 +1146,7 @@ fun PlantDetailScreen(
                         )
                         Spacer(modifier = Modifier.height(2.dp))
                         Text(
-                            text = "Find the problem and how to fix it",
+                            text = "Find common problems and how to fix them",
                             style = MaterialTheme.typography.bodySmall,
                             color = LeafBright,
                             fontSize = 12.sp
@@ -870,6 +1161,12 @@ fun PlantDetailScreen(
                     )
                 }
             }
+
+            // 8. Plant Disease Diagnosis & Treatment (Below 'Something wrong with this plant')
+            PlantDiseaseSection(
+                plant = plant,
+                viewModel = viewModel
+            )
 
             Spacer(modifier = Modifier.height(24.dp))
         }
@@ -1021,10 +1318,212 @@ fun PlantDetailScreen(
                         photoFile.outputStream().use { out ->
                             bitmap.compress(Bitmap.CompressFormat.JPEG, 92, out)
                         }
-                        viewModel.addPlantPhoto(plant.id, Uri.fromFile(photoFile).toString(), "Photo added via camera")
+                        pendingPhotoUri = Uri.fromFile(photoFile).toString()
+                        pendingPhotoNote = ""
+                        showAddNoteDialog = true
                     } catch (e: Exception) {
                         // Ignore write error
                     }
+                }
+            )
+        }
+
+        // Add Photo with Note Dialog
+        if (showAddNoteDialog && pendingPhotoUri != null) {
+            AlertDialog(
+                onDismissRequest = {
+                    showAddNoteDialog = false
+                    pendingPhotoUri = null
+                    pendingPhotoNote = ""
+                },
+                title = {
+                    Text(
+                        text = "Add Photo & Note",
+                        fontWeight = FontWeight.Bold,
+                        color = Forest
+                    )
+                },
+                text = {
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        AsyncImage(
+                            model = pendingPhotoUri,
+                            contentDescription = "New photo preview",
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(160.dp)
+                                .clip(RoundedCornerShape(12.dp))
+                                .border(1.dp, Sand, RoundedCornerShape(12.dp)),
+                            contentScale = ContentScale.Crop
+                        )
+
+                        Spacer(modifier = Modifier.height(14.dp))
+
+                        OutlinedTextField(
+                            value = pendingPhotoNote,
+                            onValueChange = { pendingPhotoNote = it },
+                            label = { Text("Note (e.g. New leaf, repotted)") },
+                            placeholder = { Text("How is the plant looking today?") },
+                            singleLine = false,
+                            maxLines = 3,
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedBorderColor = Moss,
+                                focusedLabelColor = Moss,
+                                cursorColor = Moss
+                            ),
+                            shape = RoundedCornerShape(12.dp),
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                    }
+                },
+                confirmButton = {
+                    Button(
+                        onClick = {
+                            val note = pendingPhotoNote.trim().ifEmpty { "Photo added" }
+                            viewModel.addPlantPhoto(plant.id, pendingPhotoUri!!, note)
+                            selectedPhotoIndex = photos.size // select newly added photo
+                            showAddNoteDialog = false
+                            pendingPhotoUri = null
+                            pendingPhotoNote = ""
+                        },
+                        colors = ButtonDefaults.buttonColors(containerColor = Forest),
+                        shape = RoundedCornerShape(10.dp)
+                    ) {
+                        Text("Save Photo", color = SurfaceWarm, fontWeight = FontWeight.Bold)
+                    }
+                },
+                dismissButton = {
+                    TextButton(
+                        onClick = {
+                            showAddNoteDialog = false
+                            pendingPhotoUri = null
+                            pendingPhotoNote = ""
+                        }
+                    ) {
+                        Text("Cancel", color = Mute)
+                    }
+                },
+                containerColor = SurfaceWarm,
+                shape = RoundedCornerShape(18.dp)
+            )
+        }
+
+        // Delete Photo Confirmation Dialog
+        if (showDeletePhotoDialog && photos.isNotEmpty()) {
+            val safeIndex = selectedPhotoIndex.coerceIn(0, photos.lastIndex)
+            val photoToDelete = photos.getOrNull(safeIndex)
+            if (photoToDelete != null) {
+                AlertDialog(
+                    onDismissRequest = { showDeletePhotoDialog = false },
+                    title = {
+                        Text(
+                            text = "Delete Photo?",
+                            fontWeight = FontWeight.Bold,
+                            color = Forest
+                        )
+                    },
+                    text = {
+                        Text(
+                            text = "Are you sure you want to delete this photo and its note? This action cannot be undone.",
+                            color = Ink,
+                            fontSize = 13.sp
+                        )
+                    },
+                    confirmButton = {
+                        TextButton(
+                            onClick = {
+                                showDeletePhotoDialog = false
+                                viewModel.deletePlantPhoto(photoToDelete.id, photoToDelete.photoUri)
+                                if (selectedPhotoIndex >= photos.size - 1) {
+                                    selectedPhotoIndex = maxOf(0, photos.size - 2)
+                                }
+                            }
+                        ) {
+                            Text("Delete", color = Terracotta, fontWeight = FontWeight.Bold)
+                        }
+                    },
+                    dismissButton = {
+                        TextButton(onClick = { showDeletePhotoDialog = false }) {
+                            Text("Cancel", color = Forest)
+                        }
+                    },
+                    containerColor = SurfaceWarm,
+                    shape = RoundedCornerShape(18.dp)
+                )
+            }
+        }
+
+        // Edit Plant Nickname Dialog
+        if (showEditNicknameDialog) {
+            AlertDialog(
+                onDismissRequest = { showEditNicknameDialog = false },
+                title = {
+                    Text(
+                        text = "Edit Plant Nickname",
+                        fontWeight = FontWeight.Bold,
+                        color = Forest
+                    )
+                },
+                text = {
+                    Column {
+                        Text(
+                            text = "Give this plant a custom nickname to easily identify it in your garden (e.g. Balcony Pothos, Office Snake Plant):",
+                            fontSize = 13.sp,
+                            color = Bark,
+                            lineHeight = 18.sp
+                        )
+                        Spacer(modifier = Modifier.height(14.dp))
+                        OutlinedTextField(
+                            value = editNicknameInput,
+                            onValueChange = { editNicknameInput = it },
+                            label = { Text("Nickname") },
+                            placeholder = { Text(plant.commonName) },
+                            singleLine = true,
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedBorderColor = Moss,
+                                focusedLabelColor = Moss,
+                                cursorColor = Moss
+                            ),
+                            shape = RoundedCornerShape(12.dp),
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                    }
+                },
+                confirmButton = {
+                    Button(
+                        onClick = {
+                            val newName = editNicknameInput.trim()
+                            if (newName.isNotBlank()) {
+                                viewModel.updatePlantNickname(plant.id, newName)
+                                showEditNicknameDialog = false
+                            }
+                        },
+                        colors = ButtonDefaults.buttonColors(containerColor = Forest),
+                        shape = RoundedCornerShape(10.dp)
+                    ) {
+                        Text("Save", color = SurfaceWarm, fontWeight = FontWeight.Bold)
+                    }
+                },
+                dismissButton = {
+                    TextButton(onClick = { showEditNicknameDialog = false }) {
+                        Text("Cancel", color = Mute)
+                    }
+                },
+                containerColor = SurfaceWarm,
+                shape = RoundedCornerShape(18.dp)
+            )
+        }
+
+        if (showScheduleSheet) {
+            val masterDays = viewModel.getSuggestedWateringIntervalDays(plant)
+            WateringScheduleBottomSheet(
+                plant = plant,
+                masterIntervalDays = masterDays,
+                onDismiss = { showScheduleSheet = false },
+                onSave = { newSchedule ->
+                    viewModel.saveWaterSchedule(plant, newSchedule)
                 }
             )
         }
@@ -1126,10 +1625,21 @@ private fun ComingUpItemRow(
     subtitle: String,
     badgeTop: String,
     badgeBottom: String,
-    isUrgent: Boolean = false
+    isUrgent: Boolean = false,
+    onClick: (() -> Unit)? = null
 ) {
     Row(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .then(
+                if (onClick != null) {
+                    Modifier
+                        .clip(RoundedCornerShape(8.dp))
+                        .clickable { onClick() }
+                } else {
+                    Modifier
+                }
+            ),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {

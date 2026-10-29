@@ -78,7 +78,7 @@ fun SpacePlantSuggestionsSection(
 
     Column(
         modifier = modifier.fillMaxWidth(),
-        verticalArrangement = Arrangement.spacedBy(12.dp)
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         // Section Header Row
         Row(
@@ -92,14 +92,14 @@ fun SpacePlantSuggestionsSection(
             ) {
                 Box(
                     modifier = Modifier
-                        .size(26.dp)
+                        .size(28.dp)
                         .clip(RoundedCornerShape(8.dp))
                         .background(Leaf.copy(alpha = 0.25f)),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text("🪴", fontSize = 14.sp)
+                    Text("🪴", fontSize = 15.sp)
                 }
-                Spacer(modifier = Modifier.width(8.dp))
+                Spacer(modifier = Modifier.width(10.dp))
                 Column {
                     Text(
                         text = "Suggestions by Growing Space",
@@ -108,6 +108,7 @@ fun SpacePlantSuggestionsSection(
                         fontWeight = FontWeight.Bold,
                         fontSize = 15.sp
                     )
+                    Spacer(modifier = Modifier.height(2.dp))
                     Text(
                         text = "Matched to recorded snapshot readings",
                         style = MaterialTheme.typography.labelSmall,
@@ -169,7 +170,7 @@ private fun SpaceSuggestionCard(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(14.dp)
+                .padding(16.dp)
         ) {
             // Space Name & Snapshot Reading Labels Row
             Row(
@@ -208,25 +209,25 @@ private fun SpaceSuggestionCard(
                 }
             }
 
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(14.dp))
 
             // Suggestions List or Empty State
             if (spaceItem.suggestedPlants.isNotEmpty()) {
                 Text(
                     text = "Top ${spaceItem.suggestedPlants.size} recommended houseplants for this space:",
-                    fontSize = 11.sp,
+                    fontSize = 12.sp,
                     color = Bark,
                     fontWeight = FontWeight.Medium
                 )
 
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(10.dp))
 
                 // Horizontally scrollable row of suggested plants
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
                         .horizontalScroll(rememberScrollState()),
-                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                    horizontalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
                     spaceItem.suggestedPlants.forEach { plant ->
                         SuggestedPlantMiniCard(
@@ -263,7 +264,7 @@ private fun SuggestedPlantMiniCard(
 ) {
     Card(
         modifier = Modifier
-            .width(130.dp)
+            .width(136.dp)
             .clickable { onClick() }
             .border(1.dp, Sand.copy(alpha = 0.8f), RoundedCornerShape(12.dp)),
         colors = CardDefaults.cardColors(containerColor = Paper),
@@ -272,7 +273,7 @@ private fun SuggestedPlantMiniCard(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(8.dp)
+                .padding(10.dp)
         ) {
             val imgUrl = plant.displayImageUrl ?: plant.image?.thumbnailUrl ?: plant.image?.directImageUrl
             if (imgUrl != null) {
@@ -320,15 +321,29 @@ private fun SuggestedPlantMiniCard(
 
             Spacer(modifier = Modifier.height(4.dp))
 
-            // Light requirements hint
+            // Light requirements hint & Popularity score
             val idealMin = plant.lightLux?.idealMin?.toInt() ?: 1000
             val idealMax = plant.lightLux?.idealMax?.toInt() ?: 5000
-            Text(
-                text = "☀️ ${formatLuxK(idealMin)}–${formatLuxK(idealMax)} lux",
-                fontSize = 9.sp,
-                color = Moss,
-                fontWeight = FontWeight.SemiBold
-            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "☀️ ${formatLuxK(idealMin)}–${formatLuxK(idealMax)}",
+                    fontSize = 9.sp,
+                    color = Moss,
+                    fontWeight = FontWeight.SemiBold
+                )
+                if (plant.popularityScore > 0) {
+                    Text(
+                        text = "★ ${plant.popularityScore}/10",
+                        fontSize = 9.sp,
+                        color = Bark,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            }
         }
     }
 }

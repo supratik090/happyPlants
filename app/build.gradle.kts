@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.google.services)
 }
 
 import java.io.FileInputStream
@@ -36,14 +37,14 @@ val plantnetApiKey = (envProperties.getProperty("PLANTNET_API_KEY")
 
 android {
     namespace = "com.hos.happy.plants"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.hos.happy.plants"
         minSdk = 26
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0.0"
+        targetSdk = 36
+        versionCode = 2
+        versionName = "1.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -108,6 +109,14 @@ dependencies {
     implementation(libs.kotlinx.coroutines.play.services)
     implementation(libs.gson)
     implementation(libs.coil.compose)
+
+    // Lifecycle Process (App foreground/background session tracking)
+    implementation(libs.androidx.lifecycle.process)
+
+    // Firebase (BoM, Firestore, Analytics)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.analytics)
 
     debugImplementation(libs.androidx.ui.tooling)
 }

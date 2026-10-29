@@ -1,0 +1,1063 @@
+[
+  {
+    "id": 26,
+    "botanical_name": "Tagetes patula",
+    "common_name": "French Marigold",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "गेंदा / जाफरी गेंदा",
+      "marathi": "झेंडू / जाफरी झेंडू",
+      "bengali": "গাঁদা / ফরাসি গাঁদা",
+      "kannada": "ಚೆಂಡು ಹೂ",
+      "tamil": "துலுக்க சாமந்தி / சாமந்தி",
+      "telugu": "బంతి పూవు"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Check topsoil daily in hot summer as small balcony pots dry out rapidly. In monsoon, provide adequate shelter from torrential rains to prevent blossom blight and root rot."
+    },
+    "light_lux": {
+      "min_tolerated": 25000,
+      "ideal_min": 50000,
+      "ideal_max": 85000,
+      "max_tolerated": 100000
+    },
+    "humidity_percent": {
+      "min": 30,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 8,
+      "tolerable_max": 40,
+      "ideal_min": 16,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "Fertile, loamy, highly porous soil that holds slight moisture but allows all excess water to drain out quickly.",
+      "mix_recipe": "2 parts garden loam + 1 part vermicompost/aged cow manure + 1 part coarse sand + 1 part cocopeat",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 15,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 180,
+    "pet_and_child_safety": {
+      "level": "mildly_toxic",
+      "note": "Contains phototoxic thiophene compounds in sap. Ingesting leaves or stems can cause mild gastrointestinal upset, drooling, or skin redness in pets."
+    },
+    "common_problems": [
+      {
+        "id": "26-powdery_mildew",
+        "problem": "Powdery mildew (White fungal dust on leaves)",
+        "do_you_see_this_problem": "Do leaves look like they have been dusted with white or grayish talcum powder, especially in damp, crowded balcony corners?",
+        "solve_it_like_this": [
+          "Space pots apart to improve air circulation around foliage.",
+          "Spray thoroughly with organic neem oil (5 ml neem oil + 2 ml liquid soap per litre of water) or a potassium bicarbonate solution (3 g per litre).",
+          "Water only at the root base; avoid sprinkling water on leaves in the late afternoon or evening."
+        ]
+      },
+      {
+        "id": "26-spider_mites",
+        "problem": "Spider mites (Fine webs and speckled foliage)",
+        "do_you_see_this_problem": "Do leaves look dull, pale, or dusty with tiny yellow pinprick spots and fine silky webbing under leaf joints during dry summer weather?",
+        "solve_it_like_this": [
+          "Wash the plant vigorously with a jet of water early in the morning, focusing on the undersides of leaves.",
+          "Apply a foliar spray of neem oil solution (5 ml/L) every 5 days for 2–3 weeks.",
+          "Keep the surrounding air humid by placing a shallow water tray nearby during peak dry heat."
+        ]
+      },
+      {
+        "id": "26-flower_blossom_rot",
+        "problem": "Blossom blight and bud rot",
+        "do_you_see_this_problem": "Are flower buds and half-opened blossoms turning brown, mushy, or covered in fuzzy gray mold after rain or watering?",
+        "solve_it_like_this": [
+          "Immediately deadhead and discard all rotting blossoms and buds away from the plant.",
+          "Move the pot under cover during heavy monsoon rains.",
+          "Spray a systemic fungicide such as carbendazim (1 g per litre of water) or copper oxychloride."
+        ]
+      },
+      {
+        "id": "26-damping_off_stem_rot",
+        "problem": "Stem rot and collar rot",
+        "do_you_see_this_problem": "Is the base of the main stem near the soil turning dark brown, soft, and collapsing, causing the entire plant to wilt suddenly?",
+        "solve_it_like_this": [
+          "Stop watering immediately and check if pot drainage holes are blocked.",
+          "Scrape away mulch or heavy soil piled up against the stem base to expose collar to fresh air.",
+          "Drench root zone with Trichoderma viride bio-fungicide or metalaxyl/carbendazim solution.",
+          "Always use porous potting soil amended with coarse sand or perlite."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Tagetes_patula",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Tagetes_patula",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/French_marigold_Tagetes_patula.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/French_marigold_Tagetes_patula.jpg/330px-French_marigold_Tagetes_patula.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/26_french_marigold.jpg",
+      "asset_path": "file:///android_asset/images/26_french_marigold.jpg"
+    }
+  },
+  {
+    "id": 27,
+    "botanical_name": "Zinnia elegans",
+    "common_name": "Dwarf Zinnia",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "ज़िनिया",
+      "marathi": "जिनिया",
+      "bengali": "জিনিয়া",
+      "kannada": "ಜಿನ್ನಿಯಾ",
+      "tamil": "ஜீனியா",
+      "telugu": "జిన్నియా"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Always water at soil level around the root zone. Avoid wetting the leaves and blossoms directly, especially in humid conditions."
+    },
+    "light_lux": {
+      "min_tolerated": 25000,
+      "ideal_min": 45000,
+      "ideal_max": 85000,
+      "max_tolerated": 100000
+    },
+    "humidity_percent": {
+      "min": 35,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 42,
+      "ideal_min": 22,
+      "ideal_max": 35
+    },
+    "soil": {
+      "in_simple_words": "Rich, well-aerated potting mix that drains rapidly while keeping steady moderate moisture.",
+      "mix_recipe": "2 parts garden loam + 1 part vermicompost + 1 part coarse river sand + 1 part cocopeat",
+      "ph_min": 5.5,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 15,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 180,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to cats, dogs, and children according to the ASPCA. Completely safe for balconies and patios."
+    },
+    "common_problems": [
+      {
+        "id": "27-powdery_mildew",
+        "problem": "Powdery mildew (White powdery film)",
+        "do_you_see_this_problem": "Are upper and lower surfaces of leaves developing a powdery white coating, turning crisp and brown later?",
+        "solve_it_like_this": [
+          "Ensure the plant receives full sun and has plenty of ventilation between pots.",
+          "Never water leaves from above; water only the root zone.",
+          "Spray with a milk-water solution (1 part milk to 9 parts water) or wettable sulphur (2 g per litre)."
+        ]
+      },
+      {
+        "id": "27-alternaria_leaf_spot",
+        "problem": "Alternaria leaf spot (Target-like brown spots)",
+        "do_you_see_this_problem": "Do mature leaves show small round reddish-brown spots with concentric rings and yellow halos?",
+        "solve_it_like_this": [
+          "Clip off and destroy severely spotted lower leaves using clean pruners.",
+          "Avoid splashing muddy soil onto foliage during watering.",
+          "Spray mancozeb (2 g per litre) or copper hydroxide every 10–14 days during wet weather."
+        ]
+      },
+      {
+        "id": "27-leggy_stems_fewer_blooms",
+        "problem": "Tall, weak stems with sparse flowers",
+        "do_you_see_this_problem": "Is the plant stretching tall and floppy with thin stems and very few flower buds?",
+        "solve_it_like_this": [
+          "Relocate the container to the sunniest spot receiving at least 5–6 hours of direct sunlight.",
+          "Pinch back shoot tips when seedlings are 10–15 cm tall to encourage bushiness.",
+          "Switch to a bloom booster high in potassium and phosphorus, reducing nitrogen."
+        ]
+      },
+      {
+        "id": "27-caterpillars_and_leaf_chewers",
+        "problem": "Caterpillar chewing damage",
+        "do_you_see_this_problem": "Do you see jagged irregular holes chewed into leaves and petals along with tiny black droppings?",
+        "solve_it_like_this": [
+          "Handpick visible caterpillars during early morning or evening hours.",
+          "Spray Bacillus thuringiensis (Bt) or spinosad at recommended label rates.",
+          "Spray neem oil (5 ml per litre) regularly to repel adult moths and egg-laying."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Zinnia_elegans",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Zinnia_elegans",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Zinnienbl%C3%BCte_Zinnia_elegans_stack15_20190722-RM-7222254.jpg/3840px-Zinnienbl%C3%BCte_Zinnia_elegans_stack15_20190722-RM-7222254.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Zinnienbl%C3%BCte_Zinnia_elegans_stack15_20190722-RM-7222254.jpg/330px-Zinnienbl%C3%BCte_Zinnia_elegans_stack15_20190722-RM-7222254.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/27_dwarf_zinnia.jpg",
+      "asset_path": "file:///android_asset/images/27_dwarf_zinnia.jpg"
+    }
+  },
+  {
+    "id": 28,
+    "botanical_name": "Cosmos bipinnatus",
+    "common_name": "Dwarf Cosmos",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "कॉसमॉस",
+      "marathi": "कॉसमॉस",
+      "bengali": "কসমস",
+      "kannada": "ಕಾಸ್ಮಾಸ್",
+      "tamil": "காஸ்மோஸ்",
+      "telugu": "కాస్మోస్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 3
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 5
+      },
+      "note": "Drought hardy once established. Tolerates drying between waterings better than soggy soil, which quickly weakens fine root hairs."
+    },
+    "light_lux": {
+      "min_tolerated": 20000,
+      "ideal_min": 40000,
+      "ideal_max": 75000,
+      "max_tolerated": 95000
+    },
+    "humidity_percent": {
+      "min": 30,
+      "max": 65
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 38,
+      "ideal_min": 18,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "Moderately fertile, light, sandy, fast-draining soil. Does not prefer overly rich or heavily fertilized soils.",
+      "mix_recipe": "2 parts garden loam + 1 part coarse sand + 1 part vermicompost + 0.5 part cocopeat",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 25,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 180,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to dogs, cats, and humans (ASPCA verified). Safe around curious pets and children."
+    },
+    "common_problems": [
+      {
+        "id": "28-aphids_on_new_shoots",
+        "problem": "Aphid infestation on tender flower buds",
+        "do_you_see_this_problem": "Are clusters of tiny green, black, or brown insects congregating on young flower stems, causing buds to curl and drop?",
+        "solve_it_like_this": [
+          "Wash buds with a firm jet of water to dislodge aphid colonies.",
+          "Spray insecticidal soap or diluted neem oil (5 ml neem oil + 2 ml shampoo/soap per litre).",
+          "Encourage ladybirds or apply yellow sticky traps around the balcony."
+        ]
+      },
+      {
+        "id": "28-excess_leaves_no_flowers",
+        "problem": "Bushy lush foliage but no blooms",
+        "do_you_see_this_problem": "Is the plant producing huge volumes of feathery green leaves but failing to set any flower buds?",
+        "solve_it_like_this": [
+          "Immediately stop using high-nitrogen chemical or organic fertilizers like urea.",
+          "Feed with phosphorus-rich bone meal or wood ash / liquid banana peel extract.",
+          "Ensure the plant gets at least 5 hours of direct unbroken sunlight daily."
+        ]
+      },
+      {
+        "id": "28-powdery_mildew",
+        "problem": "Powdery mildew on feathery leaves",
+        "do_you_see_this_problem": "Are the delicate thin leaves turning greyish-white and dying back during winter or humid weather?",
+        "solve_it_like_this": [
+          "Thin out crowded growth to let light and wind reach inner stems.",
+          "Water only at ground level early in the morning.",
+          "Spray with systemic fungicide (carbendazim 1 g/L or hexaconazole 1 ml/L)."
+        ]
+      },
+      {
+        "id": "28-toppling_weak_stems",
+        "problem": "Flopping or bending stems",
+        "do_you_see_this_problem": "Are stems falling flat or breaking during mild balcony breezes?",
+        "solve_it_like_this": [
+          "Provide thin bamboo stakes or a circular support ring around the pot.",
+          "Move into stronger direct sunlight so stems grow sturdy rather than stretched.",
+          "Water more deeply but less frequently to encourage a deep, anchored root system."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Cosmos_bipinnatus",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Cosmos_bipinnatus",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Cosmos_bipinnatus_pink%2C_Burdwan%2C_West_Bengal%2C_India_10_01_2013.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Cosmos_bipinnatus_pink%2C_Burdwan%2C_West_Bengal%2C_India_10_01_2013.jpg/330px-Cosmos_bipinnatus_pink%2C_Burdwan%2C_West_Bengal%2C_India_10_01_2013.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/28_dwarf_cosmos.jpg",
+      "asset_path": "file:///android_asset/images/28_dwarf_cosmos.jpg"
+    }
+  },
+  {
+    "id": 29,
+    "botanical_name": "Impatiens balsamina",
+    "common_name": "Balsam",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "गुलमेंहदी",
+      "marathi": "तेरडा",
+      "bengali": "দোপাটী",
+      "kannada": "ಕರ್ಣಕುಂಡಲ / ಬಾಲ್ಸಮ್",
+      "tamil": "ஐவிரலி / காசிரத்னம்",
+      "telugu": "గులమెహందీ / చిలక ముక్కు పూవు"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 3
+      },
+      "note": "Balsams have fleshy, watery stems and wilt rapidly when dry. Keep soil uniformly moist but never waterlogged or stagnant."
+    },
+    "light_lux": {
+      "min_tolerated": 12000,
+      "ideal_min": 25000,
+      "ideal_max": 55000,
+      "max_tolerated": 75000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 90
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 38,
+      "ideal_min": 20,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Moisture-retentive, organic-rich, spongy soil mix that breathes well and drains excess moisture quickly.",
+      "mix_recipe": "2 parts garden loam + 1.5 parts vermicompost + 1 part cocopeat + 0.5 part coarse sand",
+      "ph_min": 5.8,
+      "ph_max": 6.8
+    },
+    "fertilise_or_manure_every_days": 15,
+    "refresh_top_soil_every_days": 45,
+    "repot_every_days": 120,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to pets and children. Plant extract and flowers are traditionally used in Indian folk medicine and herbal nail dyes."
+    },
+    "common_problems": [
+      {
+        "id": "29-sudden_wilting_desiccation",
+        "problem": "Sudden leaf drooping and stem collapse",
+        "do_you_see_this_problem": "Are succulent stems and leaves hanging limp and wrinkled during midday heat when soil surface is dry?",
+        "solve_it_like_this": [
+          "Water thoroughly until drainage holes drip, then place in afternoon shade.",
+          "Apply a 2 cm mulch layer of leaf mould or compost on top of soil to conserve moisture.",
+          "Avoid direct scorching afternoon sun; balsam prefers bright morning light or dappled shade."
+        ]
+      },
+      {
+        "id": "29-stem_collar_rot",
+        "problem": "Stem and collar rot (Rhizoctonia / Pythium)",
+        "do_you_see_this_problem": "Is the base of the succulent stem turning black, slimy, and pinched at ground level during the monsoon?",
+        "solve_it_like_this": [
+          "Improve drainage immediately by repotting into fresh, gritty soil with adequate holes.",
+          "Apply carbendazim or metalaxyl fungicide drench (1 g per litre of water).",
+          "Remove heavily infected plants to avoid spreading spores to nearby pots."
+        ]
+      },
+      {
+        "id": "29-powdery_mildew",
+        "problem": "Powdery mildew coating",
+        "do_you_see_this_problem": "Do leaves have chalky white fungal patches on both upper and lower sides towards the end of monsoon?",
+        "solve_it_like_this": [
+          "Ensure generous spacing between pots to facilitate wind movement.",
+          "Spray neem oil formulation (5 ml/L) or copper soap fungicide.",
+          "Prune off yellowing, heavily infected lower leaves."
+        ]
+      },
+      {
+        "id": "29-leaf_spots_fungal",
+        "problem": "Cercospora fungal leaf spot",
+        "do_you_see_this_problem": "Are circular brown spots with pale centres spreading across leaves during humid rainy spells?",
+        "solve_it_like_this": [
+          "Water strictly around roots and avoid overhead wetting.",
+          "Apply mancozeb spray (2 g per litre of water) at weekly intervals.",
+          "Keep balcony floor clean and clear of fallen dead foliage."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Impatiens_balsamina",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Impatiens_balsamina",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Impatiens_balsamina_28_08_2009.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Impatiens_balsamina_28_08_2009.JPG/330px-Impatiens_balsamina_28_08_2009.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/29_balsam.jpg",
+      "asset_path": "file:///android_asset/images/29_balsam.jpg"
+    }
+  },
+  {
+    "id": 30,
+    "botanical_name": "Portulaca grandiflora",
+    "common_name": "Portulaca",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "नौबजिया / 9 ओ'क्लॉक फूल",
+      "marathi": "चिमणवेल / नऊ वाजताचे फूल",
+      "bengali": "ন'ঘণ্টা ফুল / টাইম ফুল",
+      "kannada": "ಹತ್ತು ಗಂಟೆ ಹೂ",
+      "tamil": "பத்து மணி பூ",
+      "telugu": "పది గంటల పూలు"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 3
+      },
+      "monsoon_and_winter": {
+        "min": 4,
+        "max": 7
+      },
+      "note": "Semi-succulent plant that stores moisture in fleshy needle-like foliage. Water only when the top half of the soil has dried completely."
+    },
+    "light_lux": {
+      "min_tolerated": 30000,
+      "ideal_min": 60000,
+      "ideal_max": 95000,
+      "max_tolerated": 110000
+    },
+    "humidity_percent": {
+      "min": 20,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 45,
+      "ideal_min": 24,
+      "ideal_max": 38
+    },
+    "soil": {
+      "in_simple_words": "Sandy, gritty, fast-draining potting soil that dries rapidly and never holds standing moisture.",
+      "mix_recipe": "2 parts coarse river sand + 1 part garden soil + 1 part vermicompost + 0.5 part perlite",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Contains soluble calcium oxalates; toxic to dogs and cats if ingested in large quantities, potentially causing excessive salivation, tremors, or kidney distress."
+    },
+    "common_problems": [
+      {
+        "id": "30-stem_and_root_rot",
+        "problem": "Root and stem rot from overwatering",
+        "do_you_see_this_problem": "Are fleshy stems turning translucent, brown, squishy, and rotting off at the soil level?",
+        "solve_it_like_this": [
+          "Cease watering completely and let the pot dry in strong sunshine.",
+          "Cut healthy green stem tips above the rot and stick them into dry sandy soil; they root in 3–5 days.",
+          "Ensure potting mix contains at least 40% coarse sand or grit."
+        ]
+      },
+      {
+        "id": "30-flowers_failing_to_open",
+        "problem": "Flower buds not opening",
+        "do_you_see_this_problem": "Are buds staying closed and shriveling without displaying their bright petals in the morning?",
+        "solve_it_like_this": [
+          "Move the pot to the sunniest possible spot that receives full unshaded morning and midday sun.",
+          "Portulaca flowers only open in response to direct sunlight and temperatures above 22°C.",
+          "Cut back on water; soggy roots inhibit flower opening."
+        ]
+      },
+      {
+        "id": "30-mealybugs_in_nodes",
+        "problem": "Mealybugs hiding between cylindrical leaves",
+        "do_you_see_this_problem": "Do you see small sticky white cotton balls nested in leaf nodes and branch forks?",
+        "solve_it_like_this": [
+          "Spot treat with cotton swabs dipped in 70% isopropyl alcohol.",
+          "Spray the entire plant with neem oil solution (5 ml/L with mild detergent) every 5 days.",
+          "Prune heavily infested tips; new healthy shoots will sprout rapidly."
+        ]
+      },
+      {
+        "id": "30-leggy_sprawling_growth",
+        "problem": "Leggy, sparse stems with few blooms",
+        "do_you_see_this_problem": "Are stems stretching long, thin, and bare at the base with blossoms only on sparse tips?",
+        "solve_it_like_this": [
+          "Prune back long stems by half to encourage thick, branched cluster growth.",
+          "Insert the trimmed cuttings back into the same pot to create a fuller carpet of blooms.",
+          "Place in maximum available sunlight."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Portulaca_grandiflora",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Portulaca_grandiflora",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/PortulacaGrandiflora.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/PortulacaGrandiflora.jpg/330px-PortulacaGrandiflora.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/30_portulaca.jpg",
+      "asset_path": "file:///android_asset/images/30_portulaca.jpg"
+    }
+  },
+  {
+    "id": 31,
+    "botanical_name": "Catharanthus roseus",
+    "common_name": "Vinca / Sadabahar",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "सदाबहार / नयनतारा",
+      "marathi": "सदाफुली",
+      "bengali": "নয়নতারা",
+      "kannada": "ಸದಾಪುಷ್ಪ",
+      "tamil": "நித்திய கல்யாணி",
+      "telugu": "బిళ్ళ గన్నేరు / సదాబహార్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 3
+      },
+      "monsoon_and_winter": {
+        "min": 4,
+        "max": 7
+      },
+      "note": "Exceptionally drought tolerant. Highly prone to root rot and fungal dieback during heavy monsoon; ensure pots have unobstructed drainage holes."
+    },
+    "light_lux": {
+      "min_tolerated": 15000,
+      "ideal_min": 40000,
+      "ideal_max": 85000,
+      "max_tolerated": 100000
+    },
+    "humidity_percent": {
+      "min": 25,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 45,
+      "ideal_min": 20,
+      "ideal_max": 35
+    },
+    "soil": {
+      "in_simple_words": "Porous, aerated, well-draining garden soil; thrives even in low-nutrient and gritty soils.",
+      "mix_recipe": "2 parts garden loam + 1 part coarse sand + 1 part vermicompost + 0.5 part perlite",
+      "ph_min": 6.0,
+      "ph_max": 7.2
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Contains potent vinca alkaloids (vincristine, vinblastine). Toxic to dogs, cats, and humans; causes nausea, vomiting, lethargy, hypotension, and neurotoxicity if consumed."
+    },
+    "common_problems": [
+      {
+        "id": "31-stem_dieback_phytophthora",
+        "problem": "Vinca stem dieback (Phytophthora / Pythium)",
+        "do_you_see_this_problem": "Are upper shoots suddenly wilting while green, followed by dark lesions girdling the stems near the base during rainy days?",
+        "solve_it_like_this": [
+          "Immediately cut off wilted stems down to healthy green tissue using sanitized shears.",
+          "Shelter potted plants from prolonged continuous monsoon downpours.",
+          "Drench the soil with metalaxyl + mancozeb (2 g per litre of water) or copper oxychloride."
+        ]
+      },
+      {
+        "id": "31-yellowing_and_leaf_drop",
+        "problem": "Lower leaves turning yellow and dropping",
+        "do_you_see_this_problem": "Are the bottom leaves yellowing rapidly and falling off while the top looks normal, accompanied by damp soil?",
+        "solve_it_like_this": [
+          "Reduce watering frequency; allow the top 4 cm of potting mix to completely dry before watering.",
+          "Ensure pot drainage holes are free of roots and sludge.",
+          "Sadabahar thrives on benign neglect and suffers when over-pampered with excess water."
+        ]
+      },
+      {
+        "id": "31-aphids_and_spider_mites",
+        "problem": "Aphids and leaf curl on tips",
+        "do_you_see_this_problem": "Are tender young top leaves curling backwards with sticky drops and tiny insects clustered underneath?",
+        "solve_it_like_this": [
+          "Spray thoroughly with cold-pressed neem oil (5 ml per litre of water + 2 ml organic soap).",
+          "Rinse shoots with a pressurized water spray early in the morning.",
+          "Repeat neem spray every 7 days until foliage grows clean and flat."
+        ]
+      },
+      {
+        "id": "31-hawkmoth_caterpillar_damage",
+        "problem": "Oleander hawk-moth caterpillar defoliation",
+        "do_you_see_this_problem": "Are entire branches stripped of leaves overnight, leaving only bare stems and large dark frass pellets below?",
+        "solve_it_like_this": [
+          "Inspect stems closely for large green or brown hornworm caterpillars with false eye spots.",
+          "Handpick the caterpillars and relocate or dispose of them.",
+          "Prune stripped stems lightly; Vinca regenerates new leaf nodes within 10–14 days."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Catharanthus_roseus",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Catharanthus_roseus",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Vinca_%28Catharanthus_roseus%29_cultivada_em_Bag%C3%A9%2C_RS%2C_Brasil_-_55231652268.jpg/1920px-Vinca_%28Catharanthus_roseus%29_cultivada_em_Bag%C3%A9%2C_RS%2C_Brasil_-_55231652268.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Vinca_%28Catharanthus_roseus%29_cultivada_em_Bag%C3%A9%2C_RS%2C_Brasil_-_55231652268.jpg/330px-Vinca_%28Catharanthus_roseus%29_cultivada_em_Bag%C3%A9%2C_RS%2C_Brasil_-_55231652268.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/31_vinca_sadabahar.jpg",
+      "asset_path": "file:///android_asset/images/31_vinca_sadabahar.jpg"
+    }
+  },
+  {
+    "id": 32,
+    "botanical_name": "Petunia × atkinsiana",
+    "common_name": "Petunia",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "पिटूनिया",
+      "marathi": "पिटूनिया",
+      "bengali": "পিটুনিয়া",
+      "kannada": "ಪಿಟುನಿಯಾ",
+      "tamil": "பெட்டூனியா",
+      "telugu": "పెటునియా"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Keep potting mix evenly moist but not waterlogged. Water near the roots; direct overhead spray degrades the delicate petals and spreads grey mold."
+    },
+    "light_lux": {
+      "min_tolerated": 20000,
+      "ideal_min": 45000,
+      "ideal_max": 75000,
+      "max_tolerated": 90000
+    },
+    "humidity_percent": {
+      "min": 35,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 8,
+      "tolerable_max": 35,
+      "ideal_min": 14,
+      "ideal_max": 25
+    },
+    "soil": {
+      "in_simple_words": "Rich, airy, spongy potting mix high in compost that retains moisture without waterlogging.",
+      "mix_recipe": "2 parts garden loam + 1.5 parts vermicompost/cow manure + 1 part cocopeat + 0.5 part coarse sand",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 10,
+    "refresh_top_soil_every_days": 45,
+    "repot_every_days": 180,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to dogs, cats, and humans (ASPCA verified). Safe for household hanging baskets and low balcony ledges."
+    },
+    "common_problems": [
+      {
+        "id": "32-botrytis_petal_blight",
+        "problem": "Grey mold and petal rot (Botrytis cinerea)",
+        "do_you_see_this_problem": "Do flower petals turn mushy, translucent, and develop fuzzy brown or grey patches after rain or overhead watering?",
+        "solve_it_like_this": [
+          "Gently pick off all decaying flowers, including the swollen calyx behind the blossom.",
+          "Direct water exclusively into the soil using a long-spout watering can, keeping petals dry.",
+          "Ensure good spacing between hanging baskets for wind flow."
+        ]
+      },
+      {
+        "id": "32-sticky_leaves_aphid_infestation",
+        "problem": "Aphids on sticky flower buds and shoots",
+        "do_you_see_this_problem": "Are green or black aphids swarming around sticky bud pedicels, causing deformed blooms?",
+        "solve_it_like_this": [
+          "Wipe or rinse the shoots gently with lukewarm soapy water.",
+          "Spray diluted neem oil (5 ml neem oil + 2 ml mild soap per litre) in the evening.",
+          "Apply systemic imidacloprid (0.5 ml/L) or spinosad if infestation is severe."
+        ]
+      },
+      {
+        "id": "32-reduced_blooming_seed_set",
+        "problem": "Flowering stops and plant becomes leggy",
+        "do_you_see_this_problem": "Has the plant stopped creating new flower buds, leaving sticky bare branches with green seed pods?",
+        "solve_it_like_this": [
+          "Deadhead spent flowers twice weekly by pinching off the blossom together with the green base pod.",
+          "Prune back long straggly stems by one-third to trigger fresh bushy branching.",
+          "Feed every 10 days with a high-potash liquid fertilizer (e.g. steeped mustard cake or seaweed extract)."
+        ]
+      },
+      {
+        "id": "32-yellowing_leaves_iron_chlorosis",
+        "problem": "Yellowing leaves with dark green veins (Iron chlorosis)",
+        "do_you_see_this_problem": "Are upper young leaves turning pale lime-green or yellow while their veins remain dark green?",
+        "solve_it_like_this": [
+          "Check soil pH; petunias prefer slightly acidic soil and cannot absorb iron in alkaline soil.",
+          "Apply a foliar spray of chelated iron (Fe-EDTA 1 g per litre of water).",
+          "Top-dress with compost mixed with a spoonful of powdered sulfur or bone meal."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Petunia_%C3%97_atkinsiana",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Petunia_%C3%97_atkinsiana",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/PetuniaFlower.JPG/3840px-PetuniaFlower.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/PetuniaFlower.JPG/330px-PetuniaFlower.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/32_petunia.jpg",
+      "asset_path": "file:///android_asset/images/32_petunia.jpg"
+    }
+  },
+  {
+    "id": 33,
+    "botanical_name": "Dianthus chinensis",
+    "common_name": "Dianthus",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "डायन्थस",
+      "marathi": "डायन्थस",
+      "bengali": "ডায়ান্থাস",
+      "kannada": "ಡಯಾಂಥಸ್",
+      "tamil": "டயான்தஸ்",
+      "telugu": "డయాంథస్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 3
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 5
+      },
+      "note": "Prefers the top 2-3 cm of soil to dry out between waterings. Highly vulnerable to crown rot if planted too deep or sitting in stagnant dampness."
+    },
+    "light_lux": {
+      "min_tolerated": 20000,
+      "ideal_min": 40000,
+      "ideal_max": 70000,
+      "max_tolerated": 85000
+    },
+    "humidity_percent": {
+      "min": 30,
+      "max": 65
+    },
+    "temperature_c": {
+      "tolerable_min": 5,
+      "tolerable_max": 34,
+      "ideal_min": 15,
+      "ideal_max": 25
+    },
+    "soil": {
+      "in_simple_words": "Light, neutral to slightly alkaline, free-draining soil that prevents water retention at the crown.",
+      "mix_recipe": "2 parts garden loam + 1 part coarse river sand + 1 part vermicompost + 0.5 part perlite + 1 tsp garden lime or bone meal",
+      "ph_min": 6.5,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 15,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 180,
+    "pet_and_child_safety": {
+      "level": "mildly_toxic",
+      "note": "Contains triterpenoid saponins. Mildly toxic to dogs and cats; causes mild stomach upset, salivation, or contact dermatitis if chewed."
+    },
+    "common_problems": [
+      {
+        "id": "33-crown_and_root_rot",
+        "problem": "Crown rot (Fusarium / Rhizoctonia)",
+        "do_you_see_this_problem": "Are stems yellowing and turning mushy right at the soil line, causing clumps to pull out easily?",
+        "solve_it_like_this": [
+          "Plant crowns slightly elevated above the surrounding soil surface, never buried deeply.",
+          "Allow the top 2–3 cm of soil to dry between watering sessions.",
+          "Drench the base with carbendazim or copper oxychloride solution (1.5 g per litre)."
+        ]
+      },
+      {
+        "id": "33-rust_disease",
+        "problem": "Dianthus rust fungus (Puccinia arenariae)",
+        "do_you_see_this_problem": "Do narrow grass-like leaves display small reddish-orange or cinnamon-brown powdery pustules on their undersides?",
+        "solve_it_like_this": [
+          "Clip and discard infected leaves immediately to contain spore dispersal.",
+          "Avoid splashing water on the foliage; keep the plant in an airy, sunny spot.",
+          "Spray propiconazole or hexaconazole (1 ml per litre of water) every 10–14 days."
+        ]
+      },
+      {
+        "id": "33-cease_in_flowering",
+        "problem": "Faded blooms and cessation of flowering",
+        "do_you_see_this_problem": "Are flower petals turning brown and dry with seed capsules forming, followed by a stoppage of new blooms?",
+        "solve_it_like_this": [
+          "Deadhead spent flowers regularly by snipping stems down to the next healthy pair of leaves.",
+          "Shear back the entire clump by 3–4 cm once the primary flush ends to stimulate a second flush.",
+          "Feed with liquid seaweed or balanced NPK 19-19-19 (2 g/L) every 15 days."
+        ]
+      },
+      {
+        "id": "33-spider_mites_infestation",
+        "problem": "Spider mites in dry weather",
+        "do_you_see_this_problem": "Do the slender leaves look faded, dusty, and speckled with faint cobwebs during dry spring or summer?",
+        "solve_it_like_this": [
+          "Spray the underside of leaves with a forceful cold water spray.",
+          "Apply neem oil solution (5 ml/L) thoroughly at dusk.",
+          "Maintain reasonable humidity around balcony pots using water trays."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Dianthus_chinensis",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Dianthus_chinensis",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Dianthus_chinensis_korea_2010.JPG/3840px-Dianthus_chinensis_korea_2010.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Dianthus_chinensis_korea_2010.JPG/330px-Dianthus_chinensis_korea_2010.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/33_dianthus.jpg",
+      "asset_path": "file:///android_asset/images/33_dianthus.jpg"
+    }
+  },
+  {
+    "id": 34,
+    "botanical_name": "Chrysanthemum × morifolium",
+    "common_name": "Chrysanthemum",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "गुलदाउदी",
+      "marathi": "शेवंती",
+      "bengali": "চন্দ্রমল্লিকা",
+      "kannada": "ಸೇವಂತಿಗೆ",
+      "tamil": "சாமந்தி",
+      "telugu": "చామంతి"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 3
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Water thoroughly at the base when the top 2-3 cm of soil feels dry. Never wet foliage from above in evening as it encourages leaf spots and mildew."
+    },
+    "light_lux": {
+      "min_tolerated": 25000,
+      "ideal_min": 50000,
+      "ideal_max": 85000,
+      "max_tolerated": 100000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 8,
+      "tolerable_max": 38,
+      "ideal_min": 15,
+      "ideal_max": 28
+    },
+    "soil": {
+      "in_simple_words": "Rich, fertile, humus-heavy potting mix that holds balanced moisture and drains smoothly.",
+      "mix_recipe": "2 parts garden loam + 2 parts vermicompost/aged cow manure + 1 part coarse sand + 1 part cocopeat",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 15,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Contains pyrethrins, sesquiterpene lactones, and essential oils. Toxic to dogs, cats, and horses (ASPCA); causes vomiting, diarrhea, drooling, and dermatitis."
+    },
+    "common_problems": [
+      {
+        "id": "34-black_aphids_infestation",
+        "problem": "Black chrysanthemum aphids (Macrosiphoniella sanborni)",
+        "do_you_see_this_problem": "Do you see thick clusters of shiny black aphids coating the tender green stems and buds?",
+        "solve_it_like_this": [
+          "Wash infested tips with a firm spray of water to dislodge the majority of colonies.",
+          "Spray neem oil formulation (5 ml/L + 2 ml liquid dish soap) thoroughly every 4 days.",
+          "For severe infestations, apply imidacloprid (0.5 ml/L) or spinosad at bud stage."
+        ]
+      },
+      {
+        "id": "34-powdery_mildew",
+        "problem": "Powdery mildew in cool winter",
+        "do_you_see_this_problem": "Are leaves developing a chalky white powdery dusting during calm, dry winter days?",
+        "solve_it_like_this": [
+          "Place pots in full sunny spots with breezy air circulation.",
+          "Avoid evening watering so leaves do not stay damp overnight.",
+          "Spray wettable sulfur (2 g/L) or hexaconazole (1 ml/L) at the earliest sign."
+        ]
+      },
+      {
+        "id": "34-septoria_brown_leaf_spot",
+        "problem": "Septoria brown leaf spot",
+        "do_you_see_this_problem": "Are lower leaves developing dark brown or black circular spots with yellow borders that slowly dry up and cling to the stem?",
+        "solve_it_like_this": [
+          "Remove and safely burn or dispose of infected bottom leaves.",
+          "Water only at the root level; do not splash soil onto foliage.",
+          "Spray copper oxychloride (2.5 g per litre) or carbendazim every 10 days."
+        ]
+      },
+      {
+        "id": "34-bud_blast_drying_buds",
+        "problem": "Bud blast and unopened drying buds",
+        "do_you_see_this_problem": "Are tight flower buds turning brown, dry, and failing to expand into flowers?",
+        "solve_it_like_this": [
+          "Maintain regular watering; never let the root ball desiccate during bud development.",
+          "Check for thrips inside the tiny bud bracts and treat with neem oil spray.",
+          "Feed with liquid mustard cake solution or potash-rich liquid manure every 10–14 days."
+        ]
+      },
+      {
+        "id": "34-leaf_miners",
+        "problem": "Serpentine leaf miner tunnels",
+        "do_you_see_this_problem": "Do you see winding white or silvery squiggly lines etched across the green leaf surface?",
+        "solve_it_like_this": [
+          "Pinch off leaves that show early miner tunnels and crush the larva inside.",
+          "Spray neem seed kernel extract (NSKE 5%) or neem oil (5 ml/L) to deter egg laying.",
+          "Hang yellow sticky cards above the foliage to catch adult flies."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Chrysanthemum_%C3%97_morifolium",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Chrysanthemum_%C3%97_morifolium",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Chrysanthemum.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Chrysanthemum.JPG/330px-Chrysanthemum.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/34_chrysanthemum.jpg",
+      "asset_path": "file:///android_asset/images/34_chrysanthemum.jpg"
+    }
+  },
+  {
+    "id": 35,
+    "botanical_name": "Dahlia pinnata",
+    "common_name": "Dwarf Dahlia",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "डहलिया",
+      "marathi": "डेलिया",
+      "bengali": "ডালিয়া",
+      "kannada": "ಡೇಲಿಯಾ",
+      "tamil": "டாலியா",
+      "telugu": "డాలియా"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 3
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Keep potting mix moderately moist during active growth and flowering. Waterlogged soil quickly rots the fleshy tubers."
+    },
+    "light_lux": {
+      "min_tolerated": 25000,
+      "ideal_min": 45000,
+      "ideal_max": 80000,
+      "max_tolerated": 95000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 35,
+      "ideal_min": 15,
+      "ideal_max": 26
+    },
+    "soil": {
+      "in_simple_words": "Deep, rich, loose, nutrient-dense potting loam enriched with plenty of aged compost.",
+      "mix_recipe": "2 parts garden loam + 2 parts vermicompost/cow manure + 1 part coarse sand + 0.5 part cocopeat + 1 tbsp bone meal",
+      "ph_min": 6.5,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 15,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 180,
+    "pet_and_child_safety": {
+      "level": "mildly_toxic",
+      "note": "Mildly toxic to dogs and cats (ASPCA). Contains phototoxic polyacetylenes that can trigger gastrointestinal distress, drooling, or skin irritation."
+    },
+    "common_problems": [
+      {
+        "id": "35-tuber_and_root_rot",
+        "problem": "Tuber and root rot",
+        "do_you_see_this_problem": "Is the plant wilting despite wet soil, with stems soft at the base and tubers squishy and foul-smelling?",
+        "solve_it_like_this": [
+          "Unpot the plant immediately, wash tubers, and cut away all blackened soft portions with a sterile blade.",
+          "Dust the cut wounds generously with powdered sulfur or carbendazim.",
+          "Repot in well-aerated, sandy soil mix and ensure clear drainage holes."
+        ]
+      },
+      {
+        "id": "35-powdery_mildew",
+        "problem": "Powdery mildew in late winter/spring",
+        "do_you_see_this_problem": "Are dahlia leaves turning dull grey-white with powdery fungal spots spreading rapidly across the bush?",
+        "solve_it_like_this": [
+          "Space pots so morning sun penetrates the interior branches.",
+          "Never sprinkle water on leaves; water directly onto soil in the morning.",
+          "Spray wettable sulfur (2 g/L) or neem oil (5 ml/L) weekly."
+        ]
+      },
+      {
+        "id": "35-thrips_and_aphids_on_buds",
+        "problem": "Thrips and aphids causing deformed petals",
+        "do_you_see_this_problem": "Do new blooms open with distorted, curled, or browned petal tips and discolored streaks?",
+        "solve_it_like_this": [
+          "Spray the undersides of leaves and opening buds with blue/yellow sticky traps placed nearby.",
+          "Spray cold-pressed neem oil (5 ml/L + soap) every 5 days.",
+          "Use spinosad or acetamiprid spray if thrip numbers are high."
+        ]
+      },
+      {
+        "id": "35-caterpillar_petal_damage",
+        "problem": "Caterpillars and cutworms eating flower petals",
+        "do_you_see_this_problem": "Are large chunks chewed out of the colorful petals and buds during night time?",
+        "solve_it_like_this": [
+          "Check the flowers after dark with a flashlight and handpick hiding caterpillars.",
+          "Apply biological Bacillus thuringiensis (Bt) spray on foliage and buds.",
+          "Sprinkle diatomaceous earth around the pot rim to deter crawling pests."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Dahlia_pinnata",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Dahlia_pinnata",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Borboletas_em_Mini-D%C3%A1lias.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Borboletas_em_Mini-D%C3%A1lias.JPG/330px-Borboletas_em_Mini-D%C3%A1lias.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/35_dwarf_dahlia.jpg",
+      "asset_path": "file:///android_asset/images/35_dwarf_dahlia.jpg"
+    }
+  }
+]

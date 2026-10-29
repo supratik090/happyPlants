@@ -34,24 +34,40 @@ data class SpacePlantSuggestionItem(
     val suggestedPlants: List<MasterPlant>
 )
 
+data class PlantFilterCriteria(
+    val temperature: String? = null, // "Warm", "Cold", "Moderate"
+    val humidity: String? = null,    // "Low", "Moderate", "High"
+    val waterCare: String? = null,   // "Low", "Medium", "High"
+    val light: String? = null        // "Low", "Moderate", "Bright"
+) {
+    val isActive: Boolean
+        get() = temperature != null || humidity != null || waterCare != null || light != null
+
+    val activeCount: Int
+        get() = listOfNotNull(temperature, humidity, waterCare, light).size
+}
+
 data class ResearchUiState(
     val activeMode: ResearchMode = ResearchMode.SEARCH,
     val searchQuery: String = "",
     val selectedPlant: MasterPlant? = null,
     val selectedCategory: String = "All",
+    val filterCriteria: PlantFilterCriteria = PlantFilterCriteria(),
+    val totalPlantCount: Int = 0,
     val searchResults: List<MasterPlant> = emptyList(),
     val browsePlants: List<MasterPlant> = emptyList(),
     val popularPlants: List<MasterPlant> = emptyList(),
     // Plant Suggestions per Space based on snapshots
     val spaceSuggestions: List<SpacePlantSuggestionItem> = emptyList(),
     val isRefreshingSuggestions: Boolean = false,
+    val isBrowseLoading: Boolean = false,
     // Plant Identification state
     val isIdentifying: Boolean = false,
     val identificationError: String? = null,
     val identificationResult: PlantIdentificationResult? = null,
     val showApiKeyDialog: Boolean = false,
     val currentApiKey: String = "",
-    val remainingDailyIdentifications: Int = 5
+    val remainingDailyIdentifications: Int = 3
 )
 
 class ResearchViewModel(application: Application) : AndroidViewModel(application) {
@@ -70,6 +86,7 @@ class ResearchViewModel(application: Application) : AndroidViewModel(application
     private val _uiState = MutableStateFlow(
         ResearchUiState(
             browsePlants = allPlants,
+            totalPlantCount = allPlants.size,
             popularPlants = getInitialPopularPlants()
         )
     )
@@ -102,11 +119,14 @@ class ResearchViewModel(application: Application) : AndroidViewModel(application
                 val roomsWithSnapshots = snapshotDao.getDistinctRooms(profileId)
                 val cachedRooms = cachedSuggestions.map { it.roomTag }.toSet()
 
-                // If any room with snapshot is missing from cached suggestions, calculate & save
-                val missingRooms = roomsWithSnapshots.filter { it !in cachedRooms }
-                if (missingRooms.isNotEmpty()) {
+                // If any room with snapshot is missing from cached suggestions, or has 0 suggestions, calculate & save
+                val staleOrMissingRooms = roomsWithSnapshots.filter { room ->
+                    val existing = cachedSuggestions.firstOrNull { it.roomTag == room }
+                    existing == null || existing.suggestedMasterPlantIdsJson == "[]" || existing.suggestedMasterPlantIdsJson.isBlank()
+                }
+                if (staleOrMissingRooms.isNotEmpty()) {
                     val existingGardenPlants = plantDao.getPlantsForProfile(profileId)
-                    for (room in missingRooms) {
+                    for (room in staleOrMissingRooms) {
                         val latestSnap = snapshotDao.getLatestSnapshotForRoom(profileId, room)
                         if (latestSnap != null) {
                             val entity = RoomPlantSuggestionEvaluator.evaluate(
@@ -133,6 +153,10 @@ class ResearchViewModel(application: Application) : AndroidViewModel(application
                             emptyList()
                         }
                         val plants = plantIds.mapNotNull { plantMap[it] }
+                            .sortedWith(
+                                compareByDescending<MasterPlant> { it.popularityScore }
+                                    .thenBy { plantIds.indexOf(it.id) }
+                            )
                         SpacePlantSuggestionItem(
                             roomTag = suggestion.roomTag,
                             lightLabel = suggestion.lightLabel,
@@ -177,14 +201,21 @@ class ResearchViewModel(application: Application) : AndroidViewModel(application
     }
 
     private fun getInitialPopularPlants(): List<MasterPlant> {
-        val popularNames = listOf("Snake Plant", "Money Plant", "ZZ Plant", "Peace Lily", "Areca Palm", "Monstera")
-        return allPlants.filter { plant ->
-            popularNames.any { plant.commonName.contains(it, ignoreCase = true) }
-        }.take(6)
+        return allPlants
+            .sortedByDescending { it.popularityScore }
+            .take(6)
     }
 
     fun setMode(mode: ResearchMode) {
-        _uiState.value = _uiState.value.copy(activeMode = mode)
+        if (mode == ResearchMode.BROWSE && _uiState.value.activeMode != ResearchMode.BROWSE) {
+            _uiState.value = _uiState.value.copy(activeMode = mode, isBrowseLoading = true)
+            viewModelScope.launch {
+                kotlinx.coroutines.delay(200)
+                _uiState.value = _uiState.value.copy(isBrowseLoading = false)
+            }
+        } else {
+            _uiState.value = _uiState.value.copy(activeMode = mode)
+        }
     }
 
     fun onSearchQueryChanged(query: String) {
@@ -215,20 +246,131 @@ class ResearchViewModel(application: Application) : AndroidViewModel(application
         )
     }
 
-    fun selectCategory(category: String) {
-        val filtered = when (category) {
-            "Low Light" -> allPlants.filter { (it.lightLux?.minTolerated ?: 0f) < 800f || (it.lightLux?.idealMin ?: 0f) <= 1500f }
-            "Moderate Light" -> allPlants.filter { (it.lightLux?.idealMin ?: 0f) in 1000f..3000f }
-            "Bright Light" -> allPlants.filter { (it.lightLux?.idealMin ?: 0f) >= 2000f }
-            "Low Water" -> allPlants.filter {
-                (it.watering?.hotDryMonths?.min ?: 0) >= 10
+    fun setTemperatureFilter(temp: String?) {
+        val current = _uiState.value.filterCriteria.temperature
+        val newTemp = if (current == temp) null else temp
+        applyFilters(_uiState.value.filterCriteria.copy(temperature = newTemp))
+    }
+
+    fun setHumidityFilter(hum: String?) {
+        val current = _uiState.value.filterCriteria.humidity
+        val newHum = if (current == hum) null else hum
+        applyFilters(_uiState.value.filterCriteria.copy(humidity = newHum))
+    }
+
+    fun setWaterCareFilter(water: String?) {
+        val current = _uiState.value.filterCriteria.waterCare
+        val newWater = if (current == water) null else water
+        applyFilters(_uiState.value.filterCriteria.copy(waterCare = newWater))
+    }
+
+    fun setLightFilter(light: String?) {
+        val current = _uiState.value.filterCriteria.light
+        val newLight = if (current == light) null else light
+        applyFilters(_uiState.value.filterCriteria.copy(light = newLight))
+    }
+
+    fun clearAllFilters() {
+        applyFilters(PlantFilterCriteria())
+    }
+
+    private fun applyFilters(criteria: PlantFilterCriteria) {
+        _uiState.value = _uiState.value.copy(filterCriteria = criteria, isBrowseLoading = true)
+        viewModelScope.launch(kotlinx.coroutines.Dispatchers.Default) {
+            val filtered = allPlants.filter { plant ->
+                // 1. Temperature filter
+                val matchTemp = when (criteria.temperature) {
+                    "Warm" -> {
+                        val t = plant.temperature
+                        (t?.idealMax ?: 28f) >= 30f || (t?.tolerableMax ?: 35f) >= 36f
+                    }
+                    "Cold" -> {
+                        val t = plant.temperature
+                        (t?.tolerableMin ?: 15f) <= 12f || (t?.idealMin ?: 18f) <= 16f
+                    }
+                    "Moderate" -> {
+                        val t = plant.temperature
+                        (t?.idealMin ?: 18f) <= 20f && (t?.idealMax ?: 28f) <= 28f
+                    }
+                    else -> true
+                }
+
+                // 2. Humidity filter
+                val matchHum = when (criteria.humidity) {
+                    "Low" -> {
+                        val h = plant.humidity
+                        (h?.min ?: 40f) <= 35f
+                    }
+                    "Moderate" -> {
+                        val h = plant.humidity
+                        (h?.min ?: 40f) <= 50f && (h?.max ?: 70f) <= 75f
+                    }
+                    "High" -> {
+                        val h = plant.humidity
+                        (h?.max ?: 70f) >= 75f || (h?.min ?: 40f) >= 55f
+                    }
+                    else -> true
+                }
+
+                // 3. Water Care filter
+                val matchWater = when (criteria.waterCare) {
+                    "Low" -> {
+                        val minDays = plant.watering?.hotDryMonths?.min ?: 5
+                        val maxDays = plant.watering?.hotDryMonths?.max ?: 7
+                        minDays >= 7 || maxDays >= 10
+                    }
+                    "Medium" -> {
+                        val minDays = plant.watering?.hotDryMonths?.min ?: 5
+                        val maxDays = plant.watering?.hotDryMonths?.max ?: 7
+                        !(minDays >= 7 || maxDays >= 10) && !(minDays <= 3 || maxDays <= 4)
+                    }
+                    "High" -> {
+                        val minDays = plant.watering?.hotDryMonths?.min ?: 5
+                        val maxDays = plant.watering?.hotDryMonths?.max ?: 7
+                        minDays <= 3 || maxDays <= 4
+                    }
+                    else -> true
+                }
+
+                // 4. Light filter
+                val matchLight = when (criteria.light) {
+                    "Low" -> (plant.lightLux?.minTolerated ?: 0f) < 800f || (plant.lightLux?.idealMin ?: 0f) <= 1500f
+                    "Moderate" -> (plant.lightLux?.idealMin ?: 0f) in 1000f..3000f
+                    "Bright" -> (plant.lightLux?.idealMin ?: 0f) >= 2000f
+                    else -> true
+                }
+
+                matchTemp && matchHum && matchWater && matchLight
             }
-            else -> allPlants
+
+            kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Main) {
+                _uiState.value = _uiState.value.copy(
+                    filterCriteria = criteria,
+                    browsePlants = filtered,
+                    selectedCategory = if (criteria.isActive) "Filtered (${criteria.activeCount})" else "All",
+                    isBrowseLoading = false
+                )
+            }
         }
-        _uiState.value = _uiState.value.copy(
-            selectedCategory = category,
-            browsePlants = filtered
-        )
+    }
+
+    fun selectCategory(category: String) {
+        when (category) {
+            "All" -> clearAllFilters()
+            "Low Light" -> setLightFilter("Low")
+            "Moderate Light" -> setLightFilter("Moderate")
+            "Bright Light" -> setLightFilter("Bright")
+            "Low Water" -> setWaterCareFilter("Low")
+            "Medium Water" -> setWaterCareFilter("Medium")
+            "High Water" -> setWaterCareFilter("High")
+            "Warm" -> setTemperatureFilter("Warm")
+            "Cold" -> setTemperatureFilter("Cold")
+            "Moderate Temp" -> setTemperatureFilter("Moderate")
+            "Low Humidity" -> setHumidityFilter("Low")
+            "Moderate Humidity" -> setHumidityFilter("Moderate")
+            "High Humidity" -> setHumidityFilter("High")
+            else -> clearAllFilters()
+        }
     }
 
     /**
@@ -260,6 +402,7 @@ class ResearchViewModel(application: Application) : AndroidViewModel(application
 
             // Persist attempt to Room DB
             idRepo.recordAttempt()
+            com.hos.happy.plants.data.telemetry.FirebaseTelemetryManager.getInstance()?.recordPlantIdentityCall()
 
             val result = plantNetApi.identifyPlant(
                 bitmap = bitmap,

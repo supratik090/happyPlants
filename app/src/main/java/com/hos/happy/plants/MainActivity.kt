@@ -6,6 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -36,11 +38,21 @@ import com.hos.happy.plants.feature.auth.RegisterProfileScreen
 import com.hos.happy.plants.feature.env.EnvViewModel
 import com.hos.happy.plants.feature.garden.GardenViewModel
 import com.hos.happy.plants.feature.main.MainScreen
+import com.hos.happy.plants.ui.theme.Bark
 import com.hos.happy.plants.ui.theme.Forest
 import com.hos.happy.plants.ui.theme.HappyPlantsTheme
 import com.hos.happy.plants.ui.theme.Leaf
 import com.hos.happy.plants.ui.theme.Moss
 import com.hos.happy.plants.ui.theme.PaperDark
+import com.hos.happy.plants.ui.theme.Sand
+
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
+import com.hos.happy.plants.data.notification.DailyNotificationScheduler
 
 class MainActivity : ComponentActivity() {
 
@@ -48,12 +60,32 @@ class MainActivity : ComponentActivity() {
     private val envViewModel: EnvViewModel by viewModels()
     private val gardenViewModel: GardenViewModel by viewModels()
 
+    private val requestNotificationPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { _ -> }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        enableEdgeToEdge(
+            statusBarStyle = androidx.activity.SystemBarStyle.light(
+                android.graphics.Color.TRANSPARENT,
+                android.graphics.Color.TRANSPARENT
+            ),
+            navigationBarStyle = androidx.activity.SystemBarStyle.light(
+                android.graphics.Color.TRANSPARENT,
+                android.graphics.Color.TRANSPARENT
+            )
+        )
 
         // Seed master plants (including Tamil, Telugu, Kannada, etc.) into Room DB on startup/install
         PlantMasterRepository(applicationContext)
+
+        // Request POST_NOTIFICATIONS on Android 13+ (API 33+)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                requestNotificationPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+            }
+        }
 
         setContent {
             HappyPlantsTheme {
@@ -84,32 +116,36 @@ fun AppNavigation(
                 .background(PaperDark),
             contentAlignment = Alignment.Center
         ) {
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Box(
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                androidx.compose.foundation.Image(
+                    painter = androidx.compose.ui.res.painterResource(id = R.drawable.ic_app_splash),
+                    contentDescription = "Metro Greens Logo",
                     modifier = Modifier
-                        .size(68.dp)
-                        .clip(CircleShape)
-                        .background(Forest),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Eco,
-                        contentDescription = null,
-                        tint = Leaf,
-                        modifier = Modifier.size(36.dp)
-                    )
-                }
-                Spacer(modifier = Modifier.height(16.dp))
+                        .size(130.dp)
+                        .clip(androidx.compose.foundation.shape.RoundedCornerShape(26.dp))
+                        .border(1.dp, Sand, androidx.compose.foundation.shape.RoundedCornerShape(26.dp))
+                )
+                Spacer(modifier = Modifier.height(20.dp))
                 Text(
-                    text = "Happy Plants",
+                    text = "Metro Greens",
                     style = MaterialTheme.typography.displayMedium,
+                    fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
                     color = Forest
                 )
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(6.dp))
+                Text(
+                    text = "Urban Plant Care & Botanical Encyclopedia",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = Bark
+                )
+                Spacer(modifier = Modifier.height(28.dp))
                 CircularProgressIndicator(
-                    modifier = Modifier.size(24.dp),
+                    modifier = Modifier.size(28.dp),
                     color = Moss,
-                    strokeWidth = 2.dp
+                    strokeWidth = 2.5.dp
                 )
             }
         }

@@ -145,7 +145,7 @@ fun LivePlantCameraDialog(
                     Spacer(modifier = Modifier.height(8.dp))
 
                     Text(
-                        text = "To identify plants live from nature or home, Happy Plants needs camera access to take high-resolution plant photos.",
+                        text = "To identify plants live from nature or home, Metro Greens needs camera access to take high-resolution plant photos.",
                         color = Paper,
                         fontSize = 13.sp,
                         textAlign = TextAlign.Center,

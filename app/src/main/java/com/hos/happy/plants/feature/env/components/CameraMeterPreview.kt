@@ -11,21 +11,27 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CameraAlt
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -58,6 +64,8 @@ import java.util.concurrent.Executors
 @Composable
 fun CameraMeterPreview(
     onLightCalculated: (LightReading) -> Unit,
+    onDone: () -> Unit = {},
+    onClose: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
@@ -116,12 +124,46 @@ fun CameraMeterPreview(
                     Text("Enable Camera", color = SurfaceWarm, fontWeight = FontWeight.Medium)
                 }
             } else {
-                Text(
-                    text = "Live Camera Sensor View",
-                    style = MaterialTheme.typography.labelLarge,
-                    color = Forest,
-                    modifier = Modifier.padding(bottom = 8.dp)
-                )
+                val cameraExecutor = remember { Executors.newSingleThreadExecutor() }
+
+                DisposableEffect(lifecycleOwner) {
+                    onDispose {
+                        try {
+                            val cameraProviderFuture = ProcessCameraProvider.getInstance(context)
+                            if (cameraProviderFuture.isDone) {
+                                cameraProviderFuture.get().unbindAll()
+                            }
+                        } catch (_: Exception) {}
+                        cameraExecutor.shutdown()
+                    }
+                }
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "Live Camera Sensor View",
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = Forest
+                    )
+
+                    IconButton(
+                        onClick = onClose,
+                        modifier = Modifier.size(28.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Close,
+                            contentDescription = "Close Camera",
+                            tint = Bark,
+                            modifier = Modifier.size(18.dp)
+                        )
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(8.dp))
 
                 Box(
                     modifier = Modifier
@@ -133,7 +175,6 @@ fun CameraMeterPreview(
                     AndroidView(
                         factory = { ctx ->
                             val previewView = PreviewView(ctx)
-                            val cameraExecutor = Executors.newSingleThreadExecutor()
                             val cameraProviderFuture = ProcessCameraProvider.getInstance(ctx)
 
                             cameraProviderFuture.addListener({
@@ -179,6 +220,29 @@ fun CameraMeterPreview(
                     color = Mute,
                     modifier = Modifier.padding(top = 8.dp)
                 )
+
+                Spacer(modifier = Modifier.height(10.dp))
+
+                Button(
+                    onClick = onDone,
+                    colors = ButtonDefaults.buttonColors(containerColor = Moss),
+                    shape = RoundedCornerShape(12.dp),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Check,
+                        contentDescription = null,
+                        tint = SurfaceWarm,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text(
+                        text = "Done — Lock Reading & Turn Off Camera",
+                        color = SurfaceWarm,
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 13.sp
+                    )
+                }
             }
         }
     }

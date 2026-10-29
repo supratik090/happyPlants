@@ -29,7 +29,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -61,8 +63,10 @@ import com.hos.happy.plants.feature.auth.AuthViewModel
 import com.hos.happy.plants.feature.garden.components.AddPlantDialog
 import com.hos.happy.plants.feature.garden.components.CareActionDialog
 import com.hos.happy.plants.feature.garden.components.GardenListView
+import com.hos.happy.plants.feature.garden.components.GardenScheduleOverviewSheet
 import com.hos.happy.plants.feature.garden.components.PlantCareDoctorView
 import com.hos.happy.plants.feature.garden.components.PlantDetailScreen
+import com.hos.happy.plants.feature.garden.components.PlantDiseaseDiagnosisSheet
 import com.hos.happy.plants.feature.garden.components.PlantJourneySlideshow
 import com.hos.happy.plants.ui.theme.Bark
 import com.hos.happy.plants.ui.theme.Forest
@@ -89,17 +93,31 @@ fun GardenScreen(
     val latestSnapshots by gardenViewModel.latestSnapshotByRoom.collectAsState()
     val selectedPlantDetail by gardenViewModel.selectedPlantDetail.collectAsState()
 
-    // Handle back gesture to exit plant detail screen
-    BackHandler(enabled = selectedPlantDetail != null) {
-        gardenViewModel.closePlantDetail()
+    // Handle back gesture to exit plant detail screen or schedule sheet
+    BackHandler(enabled = selectedPlantDetail != null || uiState.showDiseaseScanForPlant != null || uiState.showGardenSchedule) {
+        if (uiState.showDiseaseScanForPlant != null) {
+            gardenViewModel.closeDiseaseScan()
+        } else if (uiState.showGardenSchedule) {
+            gardenViewModel.closeGardenSchedule()
+        } else {
+            gardenViewModel.closePlantDetail()
+        }
     }
 
-    if (selectedPlantDetail != null) {
+    // Disease scan sheet takes priority if open
+    if (uiState.showDiseaseScanForPlant != null) {
+        PlantDiseaseDiagnosisSheet(
+            plant = uiState.showDiseaseScanForPlant!!,
+            viewModel = gardenViewModel,
+            onBack = { gardenViewModel.closeDiseaseScan() }
+        )
+    } else if (selectedPlantDetail != null) {
         PlantDetailScreen(
             plant = selectedPlantDetail!!,
             viewModel = gardenViewModel,
             onBack = { gardenViewModel.closePlantDetail() },
-            onOpenDoctor = { gardenViewModel.openCareDoctor(selectedPlantDetail!!) }
+            onOpenDoctor = { gardenViewModel.openCareDoctor(selectedPlantDetail!!) },
+            onOpenDiseaseScan = { gardenViewModel.openDiseaseScan(selectedPlantDetail!!) }
         )
     } else {
         val isGardenEmpty = allPlants.isEmpty()
@@ -143,23 +161,29 @@ fun GardenScreen(
             topBar = {
                 TopAppBar(
                     title = {
-                        Column {
-                            Text(
-                                text = "Garden",
-                                style = MaterialTheme.typography.headlineSmall,
-                                color = Forest,
-                                fontWeight = FontWeight.Bold
-                            )
-                            authState.activeProfile?.let { profile ->
-                                Text(
-                                    text = "Profile: ${profile.name}",
-                                    style = MaterialTheme.typography.labelSmall,
-                                    color = Bark
-                                )
-                            }
-                        }
+                        Text(
+                            text = "Garden",
+                            style = MaterialTheme.typography.headlineSmall,
+                            color = Forest,
+                            fontWeight = FontWeight.Bold
+                        )
                     },
                     actions = {
+                        // 🗓️ Watering Schedules Overview Button
+                        IconButton(
+                            onClick = { gardenViewModel.openGardenSchedule() },
+                            modifier = Modifier.size(36.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.DateRange,
+                                contentDescription = "Watering Schedules",
+                                tint = Forest,
+                                modifier = Modifier.size(20.dp)
+                            )
+                        }
+
+                        Spacer(modifier = Modifier.width(4.dp))
+
                         // Prominent Header Button: + Add Plant
                         Button(
                             onClick = { gardenViewModel.openAddPlantDialog() },
@@ -177,24 +201,6 @@ fun GardenScreen(
                                 fontSize = 12.sp,
                                 fontWeight = FontWeight.Bold
                             )
-                        }
-
-                        Spacer(modifier = Modifier.width(8.dp))
-
-                        OutlinedButton(
-                            onClick = onSwitchProfile,
-                            shape = RoundedCornerShape(10.dp),
-                            border = androidx.compose.foundation.BorderStroke(1.dp, Sand),
-                            contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 8.dp, vertical = 4.dp)
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.Person,
-                                contentDescription = "Profiles",
-                                tint = Moss,
-                                modifier = Modifier.size(16.dp)
-                            )
-                            Spacer(modifier = Modifier.width(4.dp))
-                            Text("Switch", color = Moss, fontSize = 12.sp)
                         }
                     },
                     colors = TopAppBarDefaults.topAppBarColors(containerColor = PaperDark)
@@ -347,6 +353,15 @@ fun GardenScreen(
             plant = plant,
             photosFlow = gardenViewModel.getPhotosForPlantFlow(plant.id),
             onDismiss = { gardenViewModel.closePlantJourney() }
+        )
+    }
+
+    // Garden-level Watering Schedules Overview Sheet
+    if (uiState.showGardenSchedule) {
+        GardenScheduleOverviewSheet(
+            plants = allPlants,
+            viewModel = gardenViewModel,
+            onDismiss = { gardenViewModel.closeGardenSchedule() }
         )
     }
 }

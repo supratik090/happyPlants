@@ -1,0 +1,851 @@
+[
+  {
+    "id": 110,
+    "botanical_name": "Sedum rubrotinctum",
+    "common_name": "Jelly Bean Plant (Pork and Beans)",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "जेली बीन प्लांट",
+      "marathi": "जेली बीन प्लांट",
+      "bengali": "জেলি বিন প্ল্যান্ট",
+      "kannada": "ಜೆಲ್ಲಿ ಬೀನ್ ಪ್ಲಾಂಟ್",
+      "tamil": "ஜெல்லி பீன் பிளாண்ட்",
+      "telugu": "జెల్లీ బీన్ ప్లాంట్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 5,
+        "max": 8
+      },
+      "monsoon_and_winter": {
+        "min": 14,
+        "max": 21
+      },
+      "note": "Employ the soak-and-dry method: water thoroughly until moisture exits drainage holes, then let the gritty mix dry completely before watering again. During hot Indian summers, leaves may soften slightly when thirsty. Keep shielded from relentless monsoon rains to prevent instant leaf drop and stem rot."
+    },
+    "light_lux": {
+      "min_tolerated": 8000,
+      "ideal_min": 25000,
+      "ideal_max": 65000,
+      "max_tolerated": 85000
+    },
+    "humidity_percent": {
+      "min": 20,
+      "max": 60
+    },
+    "temperature_c": {
+      "tolerable_min": 5,
+      "tolerable_max": 42,
+      "ideal_min": 18,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Super gritty, highly porous, fast-drying succulent soil. It must dry out completely within 2–3 days to keep root hair follicles healthy.",
+      "mix_recipe": "70% mineral grit (coarse river sand, pumice, fine volcanic cinder, perlite) + 20% garden loam + 10% sieved vermicompost",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "mildly_toxic",
+      "note": "Mildly toxic to pets and children. Ingestion of jelly bean leaves can cause mild nausea, stomach irritation, drooling, and diarrhea. The sap can also provoke contact dermatitis in sensitive skin."
+    },
+    "common_problems": [
+      {
+        "id": "110-etiolation_and_loss_of_red_color",
+        "problem": "Etiolation and faded green leaves (Insufficient sunlight)",
+        "do_you_see_this_problem": "Are stems growing tall, weak, and spindly with wide spaces between jelly beans, and has the vibrant red or bronze blush completely faded to pale green?",
+        "solve_it_like_this": [
+          "Gradually shift the pot to receive 4–6 hours of direct morning or filtered sunlight daily.",
+          "Avoid keeping on deep indoor desks or dark corners without a dedicated grow light.",
+          "Prune leggy top stems with clean shears; propagate healthy cuttings in dry gritty mix."
+        ]
+      },
+      {
+        "id": "110-overwatering_and_leaf_drop",
+        "problem": "Translucent mushy leaves and sudden leaf dropping (Overwatering and root rot)",
+        "do_you_see_this_problem": "Are the bean-like leaves turning yellow, waterlogged, and jelly-soft, falling off at the slightest touch, with the stem turning black at the soil line?",
+        "solve_it_like_this": [
+          "Stop watering immediately and move the pot away from monsoon rain splashing into a well-ventilated dry area.",
+          "Unpot the plant, inspect roots, and cut away any black or mushy decayed tissue using sterilized shears.",
+          "Dust cut stems with cinnamon powder or carbendazim fungicide, let callus for 2 days, and repot in fresh dry gritty mix (70% grit/pumice).",
+          "Never water on a fixed calendar; wait until leaves wrinkle slightly."
+        ]
+      },
+      {
+        "id": "110-mealybug_infestation",
+        "problem": "Mealybugs in stem crevices (Cottony white pests)",
+        "do_you_see_this_problem": "Do you see tiny white, cotton-like fluffy clusters wedged tight between leaf nodes and stems, causing deformed new growth?",
+        "solve_it_like_this": [
+          "Dip an earbud/cotton swab in 70% isopropyl alcohol and dab directly onto each mealybug cluster to dissolve their protective waxy coat.",
+          "Spray the entire plant thoroughly with a diluted neem oil solution (3 ml/L with mild shampoo) during evening hours.",
+          "Isolate the pot from other succulents to prevent pests spreading across your collection."
+        ]
+      },
+      {
+        "id": "110-sun_scorch_summer",
+        "problem": "Brown sunburn patches (Sudden summer heat shock)",
+        "do_you_see_this_problem": "Are there bleached white, scabby, or dark dry brown scorch marks on top-facing leaves following intense 40°C+ summer midday sun?",
+        "solve_it_like_this": [
+          "Provide 30-50% green agro-net shade or shift behind taller balcony plants between 11 AM and 4 PM during May and June.",
+          "Always acclimate indoor or shaded nursery plants gradually over 10–14 days before exposing them to harsh direct afternoon sunlight.",
+          "Do not tear off scarred leaves prematurely; allow new healthy foliage to grow out."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Sedum_rubrotinctum",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Sedum_rubrotinctum",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Sedum_rubrotinctum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Sedum_rubrotinctum.jpg/330px-Sedum_rubrotinctum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/110_jelly_bean_plant.jpg",
+      "asset_path": "file:///android_asset/images/110_jelly_bean_plant.jpg"
+    }
+  },
+  {
+    "id": 111,
+    "botanical_name": "Kalanchoe tomentosa",
+    "common_name": "Panda Plant (Chocolate Soldier)",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "पांडा प्लांट",
+      "marathi": "पांडा प्लांट",
+      "bengali": "পান্ডা প্ল্যান্ট",
+      "kannada": "ಪಾಂಡಾ ಪ್ಲಾಂಟ್",
+      "tamil": "பாண்டா பிளாண்ட்",
+      "telugu": "పాండా ప్లాంట్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 7,
+        "max": 10
+      },
+      "monsoon_and_winter": {
+        "min": 15,
+        "max": 25
+      },
+      "note": "Water strictly into the soil around the rim of the pot. Never wet or mist the velvety leaves, as water trapped in the dense trichome hairs will cause leaf rot and black spots. Allow the entire soil volume to dry completely between waterings."
+    },
+    "light_lux": {
+      "min_tolerated": 7000,
+      "ideal_min": 20000,
+      "ideal_max": 55000,
+      "max_tolerated": 75000
+    },
+    "humidity_percent": {
+      "min": 20,
+      "max": 60
+    },
+    "temperature_c": {
+      "tolerable_min": 8,
+      "tolerable_max": 40,
+      "ideal_min": 18,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Airy, porous, gritty cactus and succulent mix that drains instantly and does not hold onto moisture.",
+      "mix_recipe": "70% mineral grit (coarse silica sand, pumice, crushed brick, perlite) + 20% garden soil + 10% vermicompost",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Toxic to cats, dogs, and birds. Contains bufadienolide cardiac glycosides that can cause drooling, vomiting, abdominal cramping, severe diarrhea, and potentially dangerous heart arrhythmias if chewed or swallowed."
+    },
+    "common_problems": [
+      {
+        "id": "111-fuzzy_leaf_fungal_rot",
+        "problem": "Fuzzy leaf rot and fungal black spots (Water sitting on foliage)",
+        "do_you_see_this_problem": "Are there dark, soggy, blackening patches forming on the velvety leaves, especially where water droplets were splashed during watering or monsoon mist?",
+        "solve_it_like_this": [
+          "Immediately remove blackened rotted leaves to prevent fungal spores from spreading into the stem core.",
+          "Never mist or overhead water; apply water directly to the soil surface around the edge of the pot.",
+          "Position the plant in an airy balcony with good cross-ventilation to evaporate any ambient moisture.",
+          "Dust affected stems with dry sulfur or spray a mild systemic fungicide (carbendazim 1.5 g/L) avoiding heavy leaf puddling."
+        ]
+      },
+      {
+        "id": "111-stretching_and_loss_of_chocolate_rims",
+        "problem": "Etiolation and faded brown rims (Insufficient light)",
+        "do_you_see_this_problem": "Are stems stretching upward with long gaps between leaves, while the distinct dark brown chocolate spots on the leaf tips turn pale green?",
+        "solve_it_like_this": [
+          "Relocate the pot to a spot receiving at least 4 hours of morning direct sunlight or very bright filtered light.",
+          "Behead severely stretched top rosettes with a sterile knife, allow cuttings to callus for 3 days, and plant into dry gritty mix to root.",
+          "Ensure window grills or balcony curtains are opened during the daytime."
+        ]
+      },
+      {
+        "id": "111-mealybugs_in_velvety_crevices",
+        "problem": "Mealybugs hiding in velvety foliage (Hidden sap-sucking pests)",
+        "do_you_see_this_problem": "Are mealybugs hiding under the velvety leaf rosettes and around the stem junctions, producing honeydew and causing leaf puckering?",
+        "solve_it_like_this": [
+          "Spot-treat directly with a cotton swab moistened with isopropyl alcohol (rubbing alcohol).",
+          "Avoid aggressive soap sprays that can mat or damage the delicate trichome velvet coat of the leaves.",
+          "Isolate plant and inspect the underside of the lowest leaves regularly."
+        ]
+      },
+      {
+        "id": "111-root_rot_from_waterlogging",
+        "problem": "Root collapse and stem mushiness (Waterlogged heavy potting soil)",
+        "do_you_see_this_problem": "Is the central stem feeling spongy or squishy near the soil line, with lower leaves turning limp, discolored, and falling off?",
+        "solve_it_like_this": [
+          "Unpot immediately, wash away heavy clay/soil, and prune away all dark, slimy rotted roots.",
+          "Let the plant air-dry on a paper towel in a shaded room for 24–48 hours until callous forms.",
+          "Replant in an unglazed terracotta pot filled with 70% gritty inorganic mix (pumice/coarse sand).",
+          "Withhold all water for the first 10 days after repotting to encourage dry root recovery."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Kalanchoe_tomentosa",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Kalanchoe_tomentosa",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Kalanchoe_tomentosa_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Kalanchoe_tomentosa_01.jpg/330px-Kalanchoe_tomentosa_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/111_panda_plant.jpg",
+      "asset_path": "file:///android_asset/images/111_panda_plant.jpg"
+    }
+  },
+  {
+    "id": 112,
+    "botanical_name": "Kalanchoe luciae",
+    "common_name": "Paddle Plant (Flapjack)",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "पैडल प्लांट (फ्लैपजैक)",
+      "marathi": "पॅडल प्लांट (फ्लॅपजॅक)",
+      "bengali": "প্যাডেল প্ল্যান্ট (ফ্ল্যাপজ্যাক)",
+      "kannada": "ಪ್ಯಾಡಲ್ ಪ್ಲಾಂಟ್",
+      "tamil": "பேடில் பிளாண்ட்",
+      "telugu": "ప్యాడల్ ప్లాంట్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 6,
+        "max": 10
+      },
+      "monsoon_and_winter": {
+        "min": 15,
+        "max": 25
+      },
+      "note": "Water thoroughly and allow to drain completely. Do not water again until soil is bone dry. During monsoon, shield from constant rainfall to avoid crown rot in the stacked leaf cups. Preserve the delicate white powdery coating (farina) by not wiping or touching the paddle leaves."
+    },
+    "light_lux": {
+      "min_tolerated": 10000,
+      "ideal_min": 35000,
+      "ideal_max": 75000,
+      "max_tolerated": 90000
+    },
+    "humidity_percent": {
+      "min": 20,
+      "max": 60
+    },
+    "temperature_c": {
+      "tolerable_min": 4,
+      "tolerable_max": 42,
+      "ideal_min": 18,
+      "ideal_max": 34
+    },
+    "soil": {
+      "in_simple_words": "Gritty, open, rocky potting medium that sheds surplus water rapidly and never compacts into a soggy clump.",
+      "mix_recipe": "70% coarse mineral grit (pumice, crushed gravel, coarse river sand, perlite) + 20% sandy loam + 10% vermicompost",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Toxic to dogs and cats. Leaves contain toxic cardiac glycosides that can induce digestive distress, vomiting, diarrhea, tremors, and irregular heartbeat if consumed."
+    },
+    "common_problems": [
+      {
+        "id": "112-loss_of_red_pigment_and_green_flattening",
+        "problem": "Loss of red blushing and paddle flattening (Insufficient direct sun)",
+        "do_you_see_this_problem": "Have the striking red and pink edges faded to a dull, uniform pale green, and are the stacked paddle leaves stretching out and drooping flat?",
+        "solve_it_like_this": [
+          "Move the plant to an open south- or west-facing balcony receiving 5–6 hours of direct sunshine.",
+          "Allow mild drought and full sun stress to naturally trigger anthocyanin pigment production, which generates the vibrant crimson margin.",
+          "Ensure the white powdery coating (farina) is not rubbed off, as it acts as natural sunscreen."
+        ]
+      },
+      {
+        "id": "112-farina_rubbed_off",
+        "problem": "Damaged white powdery coating (Mechanical friction or chemical sprays)",
+        "do_you_see_this_problem": "Are there ugly dark smudge marks, fingerprints, or bare patches on the paddle leaves where the delicate silvery-white powder has been wiped away?",
+        "solve_it_like_this": [
+          "Avoid touching or wiping paddle leaves; handle the plant strictly by the pot or base stem during transport.",
+          "Never use oil-based leaf shines or heavy horticultural soaps that strip farina.",
+          "Allow new leaves to grow naturally—once farina is rubbed off existing leaves, it will not regenerate on older foliage."
+        ]
+      },
+      {
+        "id": "112-crown_rot_in_monsoon",
+        "problem": "Basal crown rot and blackening (Trapped monsoon water at leaf axils)",
+        "do_you_see_this_problem": "Are the lower paddle bases turning black, soft, and slimy where water accumulated in the tight cup-like leaf rosettes?",
+        "solve_it_like_this": [
+          "Shelter the container under an overhead awning during monsoon to prevent water pooling inside leaf crevices.",
+          "Use a rubber bulb blower or towel corner to blow out any water caught between cupped leaves after heavy storms.",
+          "Treat infected stems with carbendazim or copper oxychloride fungicide, and discard hopelessly rotted leaves."
+        ]
+      },
+      {
+        "id": "112-snails_and_caterpillars",
+        "problem": "Holes and chewed margins on fleshy paddles (Snails and garden caterpillars)",
+        "do_you_see_this_problem": "Are there large irregular gouges, scalloped edges, or ragged holes chewed into the fleshy paddle surfaces accompanied by silvery slime trails?",
+        "solve_it_like_this": [
+          "Hand-pick garden snails, slugs, and caterpillars during late evening or after rain showers.",
+          "Sprinkle a barrier of crushed eggshells, diatomaceous earth, or coarse sand around the pot base.",
+          "Elevate pot on plant stands or pot feet off the terrace floor to deter crawling pests."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Kalanchoe_luciae",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Kalanchoe_luciae",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/San_Bartolom%C3%A9_-_LZ-20_-_Casa_Museo_del_Campesino_03_ies.jpg/3840px-San_Bartolom%C3%A9_-_LZ-20_-_Casa_Museo_del_Campesino_03_ies.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/San_Bartolom%C3%A9_-_LZ-20_-_Casa_Museo_del_Campesino_03_ies.jpg/330px-San_Bartolom%C3%A9_-_LZ-20_-_Casa_Museo_del_Campesino_03_ies.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/112_paddle_plant.jpg",
+      "asset_path": "file:///android_asset/images/112_paddle_plant.jpg"
+    }
+  },
+  {
+    "id": 113,
+    "botanical_name": "Lithops spp.",
+    "common_name": "Living Stones (Lithops)",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "लिविंग स्टोन्स (लिथॉप्स)",
+      "marathi": "लिव्हिंग स्टोन्स (लिथॉप्स)",
+      "bengali": "লিভিং স্টোনস (লিথপ্স)",
+      "kannada": "ಲಿವಿಂಗ್ ಸ್ಟೋನ್ಸ್ (ಲಿಥಾಪ್ಸ್)",
+      "tamil": "லிவிங் ஸ்டோன்ஸ் (லித்தோப்ஸ்)",
+      "telugu": "లివింగ్ స్టోన్స్ (లిథాప్స్)"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 20,
+        "max": 30
+      },
+      "monsoon_and_winter": {
+        "min": 35,
+        "max": 50
+      },
+      "note": "CRITICAL: Never water when Lithops is splitting (when a new leaf pair emerges from the central fissure to absorb the older outer leaves). Water only during active spring/autumn growth when the top window surface is concave and side bodies show vertical wrinkles. Keep 100% dry and protected during Indian monsoons."
+    },
+    "light_lux": {
+      "min_tolerated": 12000,
+      "ideal_min": 30000,
+      "ideal_max": 60000,
+      "max_tolerated": 75000
+    },
+    "humidity_percent": {
+      "min": 10,
+      "max": 50
+    },
+    "temperature_c": {
+      "tolerable_min": 7,
+      "tolerable_max": 38,
+      "ideal_min": 18,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "Almost exclusively mineral grit (85–90% rock, pumice, coarse sand) with only 10% organic soil. Any heavy or moist soil will rot Lithops within 48 hours.",
+      "mix_recipe": "40% pumice + 30% coarse river sand + 15% lava rock/fine gravel + 10% perlite + 5% sieved organic compost. Top dress with clean pea gravel.",
+      "ph_min": 6.5,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 120,
+    "refresh_top_soil_every_days": 365,
+    "repot_every_days": 1095,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to dogs, cats, and humans. However, due to their small size and resemblance to candies or pebbles, keep out of reach of young children and curious pets to prevent a choking hazard."
+    },
+    "common_problems": [
+      {
+        "id": "113-overwatering_and_body_bursting",
+        "problem": "Bursting epidermal skin and liquefied rot (Overwatering)",
+        "do_you_see_this_problem": "Has the stone-like body split wide open with watery tears, or turned into a mushy, yellowish-brown translucent puddle overnight?",
+        "solve_it_like_this": [
+          "Cease all watering immediately; unpot surviving specimens and check for healthy taproots.",
+          "Repot strictly into 85-90% mineral grit mix in an unglazed terracotta pot with large drainage holes.",
+          "Never water on a timetable; water only when the top window surface is sunken and side walls develop wrinkled accordion folds.",
+          "Keep bone dry throughout the monsoon and whenever new leaves are absorbing the old leaf pair."
+        ]
+      },
+      {
+        "id": "113-etiolation_stretching_chimney",
+        "problem": "Abnormal elongation and chimney stretching (Lack of direct sunlight)",
+        "do_you_see_this_problem": "Are the squat stone bodies stretching upwards like tall green cylinders or mini chimneys, losing their camouflage patterns?",
+        "solve_it_like_this": [
+          "Gradually increase sunlight exposure to 4–5 hours of direct morning sun.",
+          "Do not overwater an etiolated Lithops in an attempt to make it shrink—this will only cause it to rot.",
+          "Wait for the next splitting cycle; with proper high light, the new inner leaf pair will emerge much more compact."
+        ]
+      },
+      {
+        "id": "113-stacking_failed_splitting",
+        "problem": "Stacking / Multiple leaf pairs persisting (Watering during splitting cycle)",
+        "do_you_see_this_problem": "Does the plant have 2, 3, or more pairs of plump leaves at once instead of the normal single pair, because the outer leaves refuse to shrivel and dry up?",
+        "solve_it_like_this": [
+          "Withhold 100% of water until the outermost leaf pairs completely shrivel into dry, paper-thin husks.",
+          "The new inner plant must draw all its water and nutrients from the old outer leaves; adding water prevents this natural absorption.",
+          "Maintain bright sunny conditions and high ventilation to speed up natural leaf turnover."
+        ]
+      },
+      {
+        "id": "113-root_mealybugs",
+        "problem": "Root mealybugs (Hidden subterranean pests)",
+        "do_you_see_this_problem": "Is the Lithops failing to absorb water, looking permanently dull, with tiny white cottony specks clinging to its taproot when unpotted?",
+        "solve_it_like_this": [
+          "Unpot the plant and wash the roots under running water to dislodge all pests.",
+          "Dip roots for 10 minutes in a diluted systemic imidacloprid or neem oil solution.",
+          "Allow roots to dry thoroughly for 2 days, then replant into completely fresh, sterilized gritty mix."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Lithops",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Lithops",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Lithops_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Lithops_2.jpg/330px-Lithops_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/113_living_stones.jpg",
+      "asset_path": "file:///android_asset/images/113_living_stones.jpg"
+    }
+  },
+  {
+    "id": 114,
+    "botanical_name": "Gymnocalycium mihanovichii",
+    "common_name": "Moon Cactus (Ruby Ball)",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "मून कैक्टस (रूबी बॉल)",
+      "marathi": "मून कॅक्टस (रुबी बॉल)",
+      "bengali": "মুন ক্যাকটাস (রুবি বল)",
+      "kannada": "ಮೂನ್ ಕ್ಯಾಕ್ಟಸ್ (ರೂಬಿ ಬಾಲ್)",
+      "tamil": "மூன் கேக்டஸ் (ரூபி பால்)",
+      "telugu": "మూన్ కాక్టస్ (రూబీ బాల్)"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 7,
+        "max": 10
+      },
+      "monsoon_and_winter": {
+        "min": 15,
+        "max": 25
+      },
+      "note": "The green rootstock (Hylocereus) is a tropical epiphytic cactus that needs slightly more frequent moisture than desert cacti, but cannot tolerate waterlogged feet. Water when the top 3-4 cm of soil dries out. Never let water stand inside the horizontal graft junction."
+    },
+    "light_lux": {
+      "min_tolerated": 6000,
+      "ideal_min": 15000,
+      "ideal_max": 35000,
+      "max_tolerated": 50000
+    },
+    "humidity_percent": {
+      "min": 30,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 38,
+      "ideal_min": 18,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "Fast-draining, airy cactus mix with good porosity and moderate organic matter to support the dragon fruit rootstock.",
+      "mix_recipe": "60% mineral grit (coarse sand, perlite, pumice) + 25% garden loam + 15% leaf compost or cocopeat",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to pets and humans. However, both the colored scion and the green stock ribs bear small, sharp spines that can cause mechanical skin punctures."
+    },
+    "common_problems": [
+      {
+        "id": "114-graft_scion_separation_or_rot",
+        "problem": "Graft union decay or scion rot (Graft breakdown and lifespan limit)",
+        "do_you_see_this_problem": "Is the colored ruby ball turning brown, shrinking, or getting soft and detaching from the green stem at the graft joint line?",
+        "solve_it_like_this": [
+          "Note that grafted moon cacti naturally have a limited lifespan of 2 to 4 years due to rootstock and scion growth incompatibility.",
+          "Check for rootstock rot or fungal infection at the graft line; avoid getting water into the horizontal cut union.",
+          "If the scion is dying, slice off the top cleanly and let the green Hylocereus rootstock produce side shoots to grow into an independent dragon fruit cactus.",
+          "If scion is still healthy but rootstock rotted, re-graft the scion onto fresh columnar cactus stock."
+        ]
+      },
+      {
+        "id": "114-sunburn_and_color_bleaching",
+        "problem": "Sunburn and bleaching of the colored scion (Excessive direct sunlight)",
+        "do_you_see_this_problem": "Has the bright ruby red, orange, or yellow top ball turned pale, yellowish-white, or developed dry brown crispy scorch patches?",
+        "solve_it_like_this": [
+          "Move the cactus out of harsh midday direct sun into bright, filtered or indirect morning sunlight.",
+          "Never place a moon cactus under full unshaded 40°C Indian summer sun; its lack of chlorophyll leaves it vulnerable to UV damage.",
+          "Provide gentle ventilation and keep the plant hydrated to help tissue recover."
+        ]
+      },
+      {
+        "id": "114-rootstock_rot",
+        "problem": "Green base stem rotting (Overwatering and poorly draining soil)",
+        "do_you_see_this_problem": "Is the green triangular rootstock turning yellow, mushy, and translucent from the soil line upwards?",
+        "solve_it_like_this": [
+          "Stop watering immediately and take the cactus out of its pot.",
+          "Cut the green stem horizontally well above the rot using a sterilized razor blade until only clean, white tissue remains.",
+          "Allow the cut stem to callous in a dry, shaded room for 5–7 days, then set in dry pumice/sand to re-root.",
+          "Always use containers with drainage holes and never allow water to stand in decorative saucers."
+        ]
+      },
+      {
+        "id": "114-mealybugs_in_rib_folds",
+        "problem": "Mealybugs in cactus ribs and graft seam (Hidden waxy pests)",
+        "do_you_see_this_problem": "Do you see white waxy tufts nestled deep inside the vertical ribs of the ball or rootstock, or tucked into the graft joint?",
+        "solve_it_like_this": [
+          "Dab visible bugs with an alcohol-soaked Q-tip / cotton swab to penetrate their protective wax coating.",
+          "Use a spray bottle with water and 0.5% neem oil to flush crevices, taking care to shake out excess water afterwards.",
+          "Inspect neighboring plants and treat them simultaneously."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Gymnocalycium_mihanovichii",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Gymnocalycium_mihanovichii",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Gymnocalycium_mihanovichii_16.JPG/3840px-Gymnocalycium_mihanovichii_16.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Gymnocalycium_mihanovichii_16.JPG/330px-Gymnocalycium_mihanovichii_16.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/114_moon_cactus.jpg",
+      "asset_path": "file:///android_asset/images/114_moon_cactus.jpg"
+    }
+  },
+  {
+    "id": 115,
+    "botanical_name": "Opuntia microdasys",
+    "common_name": "Bunny Ears Cactus (Polka-Dot Cactus)",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "बनी इयर्स कैक्टस",
+      "marathi": "बनी इयर्स कॅक्टस",
+      "bengali": "বানি ইয়ার্স ক্যাকটাস",
+      "kannada": "ಬನ್ನಿ ಇಯರ್ಸ್ ಕ್ಯಾಕ್ಟಸ್",
+      "tamil": "பன்னி இயர்ஸ் கேக்டஸ்",
+      "telugu": "బన్నీ ఇయర్స్ కాక్టస్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 8,
+        "max": 14
+      },
+      "monsoon_and_winter": {
+        "min": 20,
+        "max": 35
+      },
+      "note": "Thoroughly saturate the soil until water flows out of drainage holes, then wait until the entire potting mix is completely dry before rewatering. In monsoon, move under covered balconies away from rainfall splashing to protect from pad rot."
+    },
+    "light_lux": {
+      "min_tolerated": 10000,
+      "ideal_min": 35000,
+      "ideal_max": 80000,
+      "max_tolerated": 100000
+    },
+    "humidity_percent": {
+      "min": 15,
+      "max": 55
+    },
+    "temperature_c": {
+      "tolerable_min": 5,
+      "tolerable_max": 45,
+      "ideal_min": 20,
+      "ideal_max": 36
+    },
+    "soil": {
+      "in_simple_words": "Very gritty, porous, lean desert soil that allows water to drain instantly without retaining excess moisture.",
+      "mix_recipe": "70% mineral grit (coarse river sand, volcanic pumice, crushed brick, pea gravel) + 20% garden soil + 10% vermicompost",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic chemically, but possesses dangerous, microscopic barbed glochids that detach at the slightest contact. They lodge tenaciously into skin, eyes, paws, and pet muzzles, provoking severe itching, painful rash, and difficult extraction. Keep strictly out of reach."
+    },
+    "common_problems": [
+      {
+        "id": "115-glochid_skin_irritation_hazard",
+        "problem": "Glochid barbed spine puncture hazard (Microscopic prick irritation)",
+        "do_you_see_this_problem": "Has someone brushed against the polka-dot pads, resulting in hundreds of invisible, prickly tiny hair-thorns stuck into skin that cause intense stinging and itching?",
+        "solve_it_like_this": [
+          "Never handle the cactus with bare hands or ordinary knitted cloth gloves (glochids penetrate cloth instantly); always use kitchen tongs, thick barbecue gloves, or wrapped newspaper folds.",
+          "To remove glochids from skin, apply medical adhesive tape, duct tape, or warm melted wax and peel off quickly.",
+          "Wash the irritated area with warm soapy water and apply 1% hydrocortisone cream or aloe vera gel.",
+          "Position the pot well above toddler and pet eye level on high plant racks."
+        ]
+      },
+      {
+        "id": "115-etiolated_skinny_pads",
+        "problem": "Skinny elongated pads (Insufficient sunlight)",
+        "do_you_see_this_problem": "Are new 'ear' pads growing out long, narrow, pencil-thin, and pale green instead of forming broad, rounded oval pads?",
+        "solve_it_like_this": [
+          "Relocate the pot to a location that receives at least 5–6 hours of direct unfiltered sunlight daily.",
+          "Prune off the misshapen, spindly pads using tongs and a clean knife—they will never widen and will cause the plant to topple.",
+          "Allow clean pad stumps to callus; subsequent pads grown in full sun will emerge stout and round."
+        ]
+      },
+      {
+        "id": "115-basal_stem_and_pad_rot",
+        "problem": "Basal pad rot and collapse (Overwatering in dense soil)",
+        "do_you_see_this_problem": "Are lower pads turning mushy, dark brown, and detaching from the base, with the entire plant slumping over in moist soil?",
+        "solve_it_like_this": [
+          "Immediately sever healthy upper pads above the decayed zone using a sterilized blade.",
+          "Allow harvested healthy pads to dry and callus in a warm, airy spot for 7–10 days.",
+          "Insert callused pad base 1-2 cm deep into bone-dry 70% mineral grit mix to generate new root systems.",
+          "Ensure containers have multiple drainage holes and never water during humid continuous rains."
+        ]
+      },
+      {
+        "id": "115-mealybugs_and_cochineal_scale",
+        "problem": "Scale insects and mealybugs (Sticky white sap-feeders)",
+        "do_you_see_this_problem": "Do you see white waxy dots or raised brown scales clustering around the pad areoles, or purple staining when crushed?",
+        "solve_it_like_this": [
+          "Dab each cluster with a cotton swab soaked in rubbing alcohol.",
+          "Spray with 5 ml/L neem oil solution mixed with mild dishwashing liquid during late evening.",
+          "Isolate plant immediately to prevent cochineal/scale spread to other cacti."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Opuntia_microdasys",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Opuntia_microdasys",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Opuntia_microdasys_3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Opuntia_microdasys_3.jpg/330px-Opuntia_microdasys_3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/115_bunny_ears_cactus.jpg",
+      "asset_path": "file:///android_asset/images/115_bunny_ears_cactus.jpg"
+    }
+  },
+  {
+    "id": 116,
+    "botanical_name": "Echinocactus grusonii",
+    "common_name": "Golden Barrel Cactus",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "गोल्डन बैरल कैक्टस",
+      "marathi": "गोल्डन बॅरल कॅक्टस",
+      "bengali": "গোল্ডেন ব্যারেল ক্যাকটাস",
+      "kannada": "ಗೋಲ್ಡನ್ ಬ್ಯಾರೆಲ್ ಕ್ಯಾಕ್ಟಸ್",
+      "tamil": "கோல்டன் பேரல் கேக்டஸ்",
+      "telugu": "గోల్డెన్ బారెల్ కాక్టస్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 10,
+        "max": 15
+      },
+      "monsoon_and_winter": {
+        "min": 25,
+        "max": 45
+      },
+      "note": "Always apply water around the perimeter of the pot into the soil, never directly on top of the cactus crown. The sunken woolly apex traps water and causes fatal crown rot. Allow potting mix to dry out 100% between waterings."
+    },
+    "light_lux": {
+      "min_tolerated": 15000,
+      "ideal_min": 40000,
+      "ideal_max": 90000,
+      "max_tolerated": 100000
+    },
+    "humidity_percent": {
+      "min": 15,
+      "max": 55
+    },
+    "temperature_c": {
+      "tolerable_min": 5,
+      "tolerable_max": 45,
+      "ideal_min": 20,
+      "ideal_max": 38
+    },
+    "soil": {
+      "in_simple_words": "Extremely mineral-rich, porous, gravelly cactus soil that drains water within seconds and provides rock-solid physical anchorage.",
+      "mix_recipe": "70% mineral grit (coarse river sand, pumice, volcanic scoria, fine gravel) + 20% garden soil + 10% vermicompost",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 1095,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Chemically non-toxic to humans and pets, but heavily armored with stiff, sharp golden spines that can inflict serious deep puncture wounds and scratches upon physical contact."
+    },
+    "common_problems": [
+      {
+        "id": "116-crown_rot_from_trapped_water",
+        "problem": "Crown rot and apical blackening (Water pooling in top woolly center)",
+        "do_you_see_this_problem": "Is the woolly depression at the top center of the barrel turning brown, sunken, soggy, and foul-smelling after overhead rain or watering?",
+        "solve_it_like_this": [
+          "Never water overhead; always direct water onto the soil perimeter around the pot rim.",
+          "Shelter the cactus under a balcony roof during the heavy Indian monsoon season.",
+          "If apical rot has just begun, scrape away dead tissue with a sterilized scoop, dust thoroughly with carbendazim or sulfur powder, and keep bone dry.",
+          "Ensure excellent air movement to prevent moisture stagnation in the woolly areoles."
+        ]
+      },
+      {
+        "id": "116-conical_stretching_pear_shape",
+        "problem": "Conical distortion and loss of round shape (Insufficient light)",
+        "do_you_see_this_problem": "Is the spherical globe elongating vertically into a pointed cone or pear shape with weaker, pale yellow spines at the apex?",
+        "solve_it_like_this": [
+          "Gradually move the cactus into full unshaded outdoor sunshine (6+ hours daily).",
+          "Rotate the container a quarter-turn every 2 weeks to promote even symmetrical spherical growth.",
+          "Reduce watering and stop fertilizing until high light levels are restored to prevent forced etiolated growth."
+        ]
+      },
+      {
+        "id": "116-sunburn_and_rib_corking",
+        "problem": "Yellow rib scorching and corking (Sudden unacclimated summer sun)",
+        "do_you_see_this_problem": "Are the sunny-side ribs turning bleached yellow, crusty white, or rough brown like dry tree bark after sudden summer exposure?",
+        "solve_it_like_this": [
+          "Gradually acclimate indoor or greenhouse-bought barrels to outdoor sun over 2 to 3 weeks using green shade net.",
+          "During scorching May-June afternoons in North/Central India, provide light shade cloth protection.",
+          "Note that corking (browning) at the very base near the soil line is a natural woody aging process, but upper rib browning indicates scorch."
+        ]
+      },
+      {
+        "id": "116-mealybugs_in_deep_ribs",
+        "problem": "Mealybugs embedded deep between ribs (Hidden insect colonies)",
+        "do_you_see_this_problem": "Do you see cottony white webbing and mealybugs nestled deep in the furrowed grooves between the spiny ribs?",
+        "solve_it_like_this": [
+          "Use a pressurized spray bottle filled with water and 0.5% neem oil emulsion to wash out bugs from deep rib crevasses.",
+          "Drench the soil with a systemic insecticide (imidacloprid 0.5 ml/L) once during the growth season so the cactus absorbs pest protection internally.",
+          "Inspect areoles and roots during repotting for hidden subterranean mealybugs."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Echinocactus_grusonii",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Echinocactus_grusonii",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Echinocactus_grusonii_%28aka%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Echinocactus_grusonii_%28aka%29.jpg/330px-Echinocactus_grusonii_%28aka%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/116_golden_barrel_cactus.jpg",
+      "asset_path": "file:///android_asset/images/116_golden_barrel_cactus.jpg"
+    }
+  },
+  {
+    "id": 117,
+    "botanical_name": "Mammillaria hahniana",
+    "common_name": "Old Lady Cactus",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "ओल्ड लेडी कैक्टस",
+      "marathi": "ओल्ड लेडी कॅक्टस",
+      "bengali": "ওল্ড লেডি ক্যাকটাস",
+      "kannada": "ಓಲ್ಡ್ ಲೇಡಿ ಕ್ಯಾಕ್ಟಸ್",
+      "tamil": "ஓல்ட் லேடி கேக்டஸ்",
+      "telugu": "ఓల్డ్ లేడీ కాక్టస్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 8,
+        "max": 12
+      },
+      "monsoon_and_winter": {
+        "min": 20,
+        "max": 30
+      },
+      "note": "Bottom-water or carefully irrigate around the rim of the pot. Never spray water over the white woolly hairs, as waterlogged wool turns gray, harbors fungal spores, and causes root-collar rot. Soil must dry out 100% between waterings."
+    },
+    "light_lux": {
+      "min_tolerated": 12000,
+      "ideal_min": 35000,
+      "ideal_max": 75000,
+      "max_tolerated": 90000
+    },
+    "humidity_percent": {
+      "min": 20,
+      "max": 55
+    },
+    "temperature_c": {
+      "tolerable_min": 5,
+      "tolerable_max": 42,
+      "ideal_min": 18,
+      "ideal_max": 34
+    },
+    "soil": {
+      "in_simple_words": "Very porous, mineral-heavy, fast-draining cactus blend that will not hold water around the root collar.",
+      "mix_recipe": "70% mineral grit (pumice, coarse river sand, perlite, decomposed granite) + 20% garden soil + 10% vermicompost",
+      "ph_min": 6.1,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic chemically, but the soft-looking white woolly hairs conceal sharp radial and central spines that can easily prick curious fingers, lips, and paws."
+    },
+    "common_problems": [
+      {
+        "id": "117-matted_discolored_white_wool",
+        "problem": "Discolored matted wool and fungal mold (Overhead watering and moisture trapping)",
+        "do_you_see_this_problem": "Has the fluffy white hair turned yellowish-gray, matted down, or developed dark moldy spots from water droplets trapped in the fuzz?",
+        "solve_it_like_this": [
+          "Water exclusively at the soil perimeter or by soaking the base of the terracotta pot in a tray for 15 minutes.",
+          "Keep the cactus in an airy balcony with active air circulation to keep the woolly bristles dry and fluffy.",
+          "Gently fluff clean dry wool with a soft dry artist paintbrush; never use oily sprays or heavy chemical solutions on wool."
+        ]
+      },
+      {
+        "id": "117-no_flowers_in_spring",
+        "problem": "Lack of pink flower halo in spring (Lack of winter chill or overwatering in dormancy)",
+        "do_you_see_this_problem": "Is the cactus healthy and green but completely failing to produce its characteristic crown of bright pink flowers in late winter and spring?",
+        "solve_it_like_this": [
+          "Provide a cool, dry winter rest period from November to January with near-zero watering.",
+          "Ensure the cactus receives strong direct sunlight for at least 4–5 hours daily throughout winter and early spring.",
+          "Feed once in early spring with a bloom-booster (high phosphorus and potassium, low nitrogen) cactus fertilizer."
+        ]
+      },
+      {
+        "id": "117-root_collar_rot",
+        "problem": "Root collar rot and basal liquefaction (Waterlogged dense soil)",
+        "do_you_see_this_problem": "Is the spherical base turning soft, yellowish-brown, and squishy right at the soil line, causing the globe to wobble and slump?",
+        "solve_it_like_this": [
+          "Unpot immediately, wash off soil, and excise all dark rotting flesh using a sanitized razor blade.",
+          "Dust the wound liberally with sulfur powder or carbendazim and allow it to dry in shade for 7 days to form a hard callus.",
+          "Replant into an unglazed terracotta pot filled with 70% pumice/grit and top-dress with pea gravel so the plant base rests on stones rather than moist soil."
+        ]
+      },
+      {
+        "id": "117-mealybugs_in_woolly_areoles",
+        "problem": "Mealybugs camouflaged in white hair (Wool-camouflaged pests)",
+        "do_you_see_this_problem": "Are mealybugs colonizing the body beneath the white woolly hairs, blending into the white fuzz and sucking plant juices?",
+        "solve_it_like_this": [
+          "Inspect the plant closely with a magnifying glass or torch, checking beneath the wool.",
+          "Use a fine cotton swab dipped in isopropyl alcohol to dab directly on individual pests without wetting the entire wool coat.",
+          "Apply a systemic insecticide (imidacloprid) as a root drench so the cactus absorbs the protective compound internally through its sap."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Mammillaria_hahniana",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Mammillaria_hahniana",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/%28MHNT%29_Mammillaria_hahniana_-_Jardin_Botanique_Henri_GAUSSEN.jpg/3840px-%28MHNT%29_Mammillaria_hahniana_-_Jardin_Botanique_Henri_GAUSSEN.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/%28MHNT%29_Mammillaria_hahniana_-_Jardin_Botanique_Henri_GAUSSEN.jpg/330px-%28MHNT%29_Mammillaria_hahniana_-_Jardin_Botanique_Henri_GAUSSEN.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/117_old_lady_cactus.jpg",
+      "asset_path": "file:///android_asset/images/117_old_lady_cactus.jpg"
+    }
+  }
+]

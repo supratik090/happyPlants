@@ -18,7 +18,7 @@ class PlantIdentificationRepository(context: Context) {
     private val usageDao = db.plantIdentificationUsageDao()
 
     companion object {
-        const val DAILY_LIMIT = 5
+        const val DAILY_LIMIT = 3
 
         /**
          * Returns current date string formatted as "yyyy-MM-dd" in Indian Standard Time (IST, UTC+5:30).

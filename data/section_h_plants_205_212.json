@@ -1,0 +1,841 @@
+[
+  {
+    "id": 205,
+    "botanical_name": "Allium fistulosum",
+    "common_name": "Spring Onion",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "हरा प्याज",
+      "marathi": "कांद्याची पात",
+      "bengali": "পেঁয়াজ পাতা / পেঁয়াজ শাক",
+      "kannada": "ಈರುಳ್ಳಿ ಸೊಪ್ಪು",
+      "tamil": "வெங்காயத்தாள்",
+      "telugu": "ఉల్లిపొరక"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Keep the potting soil consistently moist but never soggy. As shallow-rooted plants, dry periods cause hollow green leaf tips to turn brown and dry out, while poor drainage rots the basal bulbs."
+    },
+    "light_lux": {
+      "min_tolerated": 8000,
+      "ideal_min": 15000,
+      "ideal_max": 40000,
+      "max_tolerated": 70000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 38,
+      "ideal_min": 15,
+      "ideal_max": 28
+    },
+    "soil": {
+      "in_simple_words": "Loose, nutrient-rich, crumbly potting soil with excellent drainage so delicate basal bulbs do not rot.",
+      "mix_recipe": "2 parts garden loam/cocopeat + 1 part aged cow manure or vermicompost + 1 part coarse sand or perlite + 1 tablespoon neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 15,
+    "refresh_top_soil_every_days": 45,
+    "repot_every_days": 120,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Contains organosulfoxides and thiosulfates that cause hemolytic anemia in dogs and cats if chewed or ingested. Completely non-toxic to humans and safe for culinary use."
+    },
+    "common_problems": [
+      {
+        "id": "205-onion_thrips",
+        "problem": "Onion Thrips (Silvery streaks on stalks)",
+        "do_you_see_this_problem": "Do you see tiny slender yellowish or black insects accompanied by silvery white streaks, specks, and mottled patches on the hollow green stalks?",
+        "solve_it_like_this": [
+          "Hang blue and yellow sticky traps near the plants to catch adult thrips.",
+          "Spray plants thoroughly with cold-pressed neem oil (5 ml) and mild liquid soap (2 ml) per litre of water, focusing on leaf bases.",
+          "Rinse foliage with a steady stream of water in the morning to physically dislodge pest colonies."
+        ]
+      },
+      {
+        "id": "205-brown_leaf_tips",
+        "problem": "Brown and dried leaf tips (Moisture stress or excessive heat)",
+        "do_you_see_this_problem": "Are the pointy tips of green leaves turning dry, yellow, or papery brown while the rest of the stalk remains green?",
+        "solve_it_like_this": [
+          "Maintain consistent soil moisture; do not let the topsoil dry out completely between waterings.",
+          "Move pots away from intense afternoon sun (above 36°C) to prevent leaf scorch.",
+          "Mulch the soil surface with a thin layer of dry compost or cocopeat to conserve root moisture."
+        ]
+      },
+      {
+        "id": "205-bulb_rot_damping_off",
+        "problem": "Basal bulb rot and waterlogging",
+        "do_you_see_this_problem": "Is the lower white bulb base turning soft, squishy, or translucent with a foul decaying smell?",
+        "solve_it_like_this": [
+          "Ensure the container has multiple clear drainage holes and empty saucers after watering.",
+          "Cut back watering frequency and allow the top 2 cm of soil to dry before the next watering.",
+          "Drench the root zone with organic Trichoderma viride bio-fungicide (5 g per litre of water)."
+        ]
+      },
+      {
+        "id": "205-purple_blotch",
+        "problem": "Purple blotch fungal spots (Alternaria porri)",
+        "do_you_see_this_problem": "Do leaves show small, sunken, water-soaked oval lesions that develop purple-brown centres and yellow margins in humid weather?",
+        "solve_it_like_this": [
+          "Prune and dispose of severely infected leaves to halt fungal spore spread.",
+          "Avoid splashing water directly on the foliage; water the soil at the base in early morning.",
+          "Spray organic bio-fungicide or a mild sour buttermilk (chaas) solution (100 ml per litre of water) weekly."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Allium_fistulosum",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Allium_fistulosum",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Welsh_onion.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Welsh_onion.jpg/330px-Welsh_onion.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/205_spring_onion.jpg",
+      "asset_path": "file:///android_asset/images/205_spring_onion.jpg"
+    }
+  },
+  {
+    "id": 206,
+    "botanical_name": "Abelmoschus esculentus",
+    "common_name": "Dwarf Okra",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "भिंडी",
+      "marathi": "भेंडी",
+      "bengali": "ঢ্যাঁড়শ / ভেন্ডি",
+      "kannada": "ಬೆಂಡೆಕಾಯಿ",
+      "tamil": "வெண்டைக்காய்",
+      "telugu": "బెండకాయ"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Okra thrives in warm weather and transpires rapidly. Water deeply whenever the top 2 cm of soil dries, especially during flowering and pod development, but ensure rapid pot drainage."
+    },
+    "light_lux": {
+      "min_tolerated": 15000,
+      "ideal_min": 30000,
+      "ideal_max": 65000,
+      "max_tolerated": 85000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 15,
+      "tolerable_max": 42,
+      "ideal_min": 24,
+      "ideal_max": 35
+    },
+    "soil": {
+      "in_simple_words": "Deep, highly fertile, nutrient-dense organic potting loam with great moisture retention and swift drainage.",
+      "mix_recipe": "2 parts garden loam + 2 parts aged cow manure or vermicompost + 1 part cocopeat + 1 part river sand + 2 tablespoons neem cake powder + 1 tablespoon bone meal",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 15,
+    "refresh_top_soil_every_days": 45,
+    "repot_every_days": 150,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to dogs, cats, and humans. The plant stems and leaves have stiff micro-hairs that can cause mild temporary skin prickliness when picking pods."
+    },
+    "common_problems": [
+      {
+        "id": "206-yellow_vein_mosaic_virus",
+        "problem": "Yellow Vein Mosaic Virus (YVMV)",
+        "do_you_see_this_problem": "Do leaves exhibit a distinct network of bright yellow or whitish veins against a green background, with stunted, yellowed pods?",
+        "solve_it_like_this": [
+          "Control the whitefly insect vector promptly by installing bright yellow sticky traps around the container.",
+          "Spray cold-pressed neem oil (5 ml per litre with liquid soap) every 4–5 days to prevent whiteflies from feeding and transmitting the virus.",
+          "Immediately uproot and safely dispose of severely infected plants to protect healthy okra and balcony crops.",
+          "For future plantings, choose YVMV-tolerant dwarf seed varieties such as Pusa Sawani or hybrid dwarf selections."
+        ]
+      },
+      {
+        "id": "206-shoot_and_fruit_borer",
+        "problem": "Shoot and Fruit Borer caterpillars (Earias vittella)",
+        "do_you_see_this_problem": "Are terminal shoot tips wilting and drooping, or do tender pods have small boreholes plugged with insect excrement (frass)?",
+        "solve_it_like_this": [
+          "Clip and discard wilting terminal shoots and infested pods into the garbage immediately.",
+          "Spray biological Bacillus thuringiensis (Bt) liquid (2 ml per litre) or 5% Neem Seed Kernel Extract (NSKE) during evening hours.",
+          "Install a pheromone trap nearby to monitor and trap adult moths."
+        ]
+      },
+      {
+        "id": "206-aphids_and_whiteflies",
+        "problem": "Sucking pests (Aphids and Whiteflies)",
+        "do_you_see_this_problem": "Are young leaves curling, puckering, or covered in sticky honeydew with clouds of tiny white gnats or green aphids under leaves?",
+        "solve_it_like_this": [
+          "Wash the undersides of leaves thoroughly with a strong jet of water.",
+          "Spray an organic emulsion of 5 ml neem oil and 2 ml reetha (soapnut) liquid per litre of water every 5 days.",
+          "Dust fine wood ash lightly on the leaves in the early morning while leaves are damp with dew."
+        ]
+      },
+      {
+        "id": "206-flower_drop",
+        "problem": "Blossom drop without pod formation",
+        "do_you_see_this_problem": "Are bright yellow flowers dropping off at the stem without setting baby okra pods?",
+        "solve_it_like_this": [
+          "Ensure the pot receives at least 6 hours of full direct sunlight daily.",
+          "Maintain regular deep watering; avoid alternating between drought and waterlogged roots.",
+          "Top-dress the soil with 2 tablespoons of wood ash or bone meal to supply extra potassium and phosphorus needed for fruiting."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Okra",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Okra",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Hong_Kong_Okra_Aug_25_2012.JPG/3840px-Hong_Kong_Okra_Aug_25_2012.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Hong_Kong_Okra_Aug_25_2012.JPG/330px-Hong_Kong_Okra_Aug_25_2012.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/206_dwarf_okra.jpg",
+      "asset_path": "file:///android_asset/images/206_dwarf_okra.jpg"
+    }
+  },
+  {
+    "id": 207,
+    "botanical_name": "Cucumis sativus",
+    "common_name": "Bush Cucumber",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "खीरा / ककड़ी",
+      "marathi": "काकडी",
+      "bengali": "শসা",
+      "kannada": "ಸೌತೆಕಾಯಿ",
+      "tamil": "வெள்ளரிக்காய்",
+      "telugu": "కీర దోసకాయ"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Cucumbers are 95% water and require continuous, generous moisture. Water deeply around the base every morning in summer. Never wet foliage late in the day to prevent mildew."
+    },
+    "light_lux": {
+      "min_tolerated": 15000,
+      "ideal_min": 30000,
+      "ideal_max": 60000,
+      "max_tolerated": 80000
+    },
+    "humidity_percent": {
+      "min": 45,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 14,
+      "tolerable_max": 40,
+      "ideal_min": 22,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Rich, spongy, moisture-retentive organic mix with high compost content and effortless water drainage.",
+      "mix_recipe": "2 parts vermicompost/compost + 2 parts garden soil + 1 part cocopeat + 1 part coarse sand + 2 tablespoons neem cake powder + 1 tablespoon crushed eggshells",
+      "ph_min": 6.0,
+      "ph_max": 6.8
+    },
+    "fertilise_or_manure_every_days": 14,
+    "refresh_top_soil_every_days": 45,
+    "repot_every_days": 120,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to dogs, cats, and humans. Fresh cucumber slices make a crunchy, safe, hydrating treat for pets."
+    },
+    "common_problems": [
+      {
+        "id": "207-fruit_fly_infestation",
+        "problem": "Melon fruit fly attack (Bactrocera cucurbitae)",
+        "do_you_see_this_problem": "Do young cucumbers have tiny amber pinprick punctures that turn yellow, curved, soft, and rot from inside with tiny white maggots?",
+        "solve_it_like_this": [
+          "Hang organic cue-lure pheromone fruit fly traps 1 metre away from the cucumber pot.",
+          "Enclose young pollinated cucumbers in breathable organza bags, butter paper pouches, or fine mesh socks.",
+          "Promptly remove and bury or destroy any stung or fallen fruits so larvae cannot pupate in the soil."
+        ]
+      },
+      {
+        "id": "207-powdery_mildew",
+        "problem": "Powdery Mildew on leaves",
+        "do_you_see_this_problem": "Do leaves develop dusty white or grey talcum-like patches that spread across upper leaf surfaces and cause leaves to shrivel?",
+        "solve_it_like_this": [
+          "Erect a vertical bamboo trellis or wire net to elevate vines and improve balcony airflow.",
+          "Water strictly at the soil base without wetting the foliage.",
+          "Spray an organic solution of 1 part fresh milk to 9 parts water in morning sunlight, or baking soda spray (5 g baking soda + 2 ml liquid soap per litre of water) every 5–7 days."
+        ]
+      },
+      {
+        "id": "207-poor_pollination_misshapen_fruit",
+        "problem": "Misshapen fruits or blossom drop (Poor pollination)",
+        "do_you_see_this_problem": "Are tiny cucumbers withering and turning yellow at the blossom end, or growing lumpy, curved, and stunted?",
+        "solve_it_like_this": [
+          "Balcony pollinators may be absent; hand-pollinate female flowers (flowers with miniature cucumber at base) using a soft paintbrush to transfer pollen from male flowers between 7 AM and 10 AM.",
+          "Grow flowering companion herbs like marigolds or sweet basil nearby to attract native honeybees."
+        ]
+      },
+      {
+        "id": "207-bitter_fruit",
+        "problem": "Bitter taste in cucumbers",
+        "do_you_see_this_problem": "Do harvested cucumbers taste unpleasantly bitter and astringent rather than fresh and sweet?",
+        "solve_it_like_this": [
+          "Keep watering strictly consistent; moisture stress and sudden dry spells stimulate bitter cucurbitacin production.",
+          "Mulch pot topsoil with dry straw or coco chips to keep root temperatures cool during hot afternoons.",
+          "Provide a lightweight 30% green shade net during intense peak summer heat waves above 38°C."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Cucumber",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Cucumber",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/ARS_cucumber.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/ARS_cucumber.jpg/330px-ARS_cucumber.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/207_bush_cucumber.jpg",
+      "asset_path": "file:///android_asset/images/207_bush_cucumber.jpg"
+    }
+  },
+  {
+    "id": 208,
+    "botanical_name": "Momordica charantia",
+    "common_name": "Dwarf Bitter Gourd",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "करेला",
+      "marathi": "कारले",
+      "bengali": "করলা / উচ্ছে",
+      "kannada": "ಹಾಗಲಕಾಯಿ",
+      "tamil": "பாகற்காய்",
+      "telugu": "కాకరకాయ"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Vigorous tropical vine requiring steady hydration in hot months. Water thoroughly at soil level whenever the top 2 cm feels dry. Prevent soil waterlogging during heavy monsoon rains."
+    },
+    "light_lux": {
+      "min_tolerated": 15000,
+      "ideal_min": 30000,
+      "ideal_max": 65000,
+      "max_tolerated": 85000
+    },
+    "humidity_percent": {
+      "min": 45,
+      "max": 85
+    },
+    "temperature_c": {
+      "tolerable_min": 15,
+      "tolerable_max": 42,
+      "ideal_min": 24,
+      "ideal_max": 35
+    },
+    "soil": {
+      "in_simple_words": "Rich, deeply aerated, organic garden loam with high compost content and quick drainage.",
+      "mix_recipe": "2 parts garden loam/red soil + 2 parts vermicompost or composted cow manure + 1 part cocopeat + 1 part coarse sand + 2 tablespoons neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 15,
+    "refresh_top_soil_every_days": 45,
+    "repot_every_days": 150,
+    "pet_and_child_safety": {
+      "level": "mildly_toxic",
+      "note": "Cooked fruit is a revered human health vegetable, but raw seeds, rind, and foliage contain vicine and momorcharin resins that can induce vomiting, diarrhea, or hypoglycemia in cats and dogs if ingested in quantity. Keep pets away from balcony vine foliage."
+    },
+    "common_problems": [
+      {
+        "id": "208-melon_fruit_fly",
+        "problem": "Melon fruit fly damage (Bactrocera cucurbitae)",
+        "do_you_see_this_problem": "Are female fruit flies puncturing developing young karela, causing resin droplets, curved distortion, premature yellowing, and interior maggots?",
+        "solve_it_like_this": [
+          "Install organic cue-lure pheromone fruit fly traps on the balcony railing to capture male fruit flies.",
+          "Cover tender pollinated bitter gourds in breathable mesh sleeves or perforated paper pouches when they are 2–3 cm long.",
+          "Harvest gourds when they are dark green, firm, and crisp; never allow over-ripe yellow fruit to rot on the vine."
+        ]
+      },
+      {
+        "id": "208-lack_of_trellis_support",
+        "problem": "Vines tangling and poor fruiting (Lack of vertical trellis)",
+        "do_you_see_this_problem": "Are dwarf bitter gourd vines crawling across the pot surface, tangling into dense mats with lower leaf rot and poor flowering?",
+        "solve_it_like_this": [
+          "Fix a vertical trellis, bamboo teepee, or nylon creeper net along the balcony wall or grill.",
+          "Gently guide emerging vine tendrils onto the support netting so leaves receive 360-degree sunlight.",
+          "Pinch the main stem tip when it reaches 1.5 metres to stimulate multiple productive lateral fruiting branches."
+        ]
+      },
+      {
+        "id": "208-downy_mildew",
+        "problem": "Downy Mildew in monsoon",
+        "do_you_see_this_problem": "Do angular pale yellow patches appear on upper leaf surfaces bounded by leaf veins, with a greyish-purple downy mold underneath during rainy weather?",
+        "solve_it_like_this": [
+          "Prune yellowing lower leaves to keep the base of the vine aerated and dry.",
+          "Avoid wetting the vine canopy; apply water directly to the soil perimeter.",
+          "Spray diluted sour buttermilk (chaas) solution (100 ml per 1 L water) or bio-fungicide containing Trichoderma viride weekly."
+        ]
+      },
+      {
+        "id": "208-serpentine_leaf_miner",
+        "problem": "Leaf miner trails",
+        "do_you_see_this_problem": "Are there white, winding, snake-like translucent squiggles running across leaf blades?",
+        "solve_it_like_this": [
+          "Crush the visible tiny fly larvae manually within their leaf tunnels between your fingers.",
+          "Spray cold-pressed neem oil (5 ml per litre of water with mild soap) once every 5–7 days to deter adult egg laying.",
+          "Prune heavily tunneled older leaves and discard in the trash."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Momordica_charantia",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Momordica_charantia",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Momordica_charantia_Blanco2.357.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Momordica_charantia_Blanco2.357.png/330px-Momordica_charantia_Blanco2.357.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/208_dwarf_bitter_gourd.jpg",
+      "asset_path": "file:///android_asset/images/208_dwarf_bitter_gourd.jpg"
+    }
+  },
+  {
+    "id": 209,
+    "botanical_name": "Brassica oleracea var. acephala",
+    "common_name": "Dwarf Kale",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "ड्वार्फ केल / पत्ता गोभी का साग",
+      "marathi": "ड्वार्फ केल / केल ची पाने",
+      "bengali": "কেল শাক / পাতা কপি শাক",
+      "kannada": "ಕೇಲ್ ಸೊಪ್ಪು",
+      "tamil": "கேல் கீரை",
+      "telugu": "కేల్ ఆకులు"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Maintain even soil moisture. Dry spells and heat stress make curly kale leaves tough, fibrous, and excessively bitter. Ensure rapid drainage to avoid root rot."
+    },
+    "light_lux": {
+      "min_tolerated": 10000,
+      "ideal_min": 20000,
+      "ideal_max": 45000,
+      "max_tolerated": 60000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 5,
+      "tolerable_max": 30,
+      "ideal_min": 13,
+      "ideal_max": 22
+    },
+    "soil": {
+      "in_simple_words": "Rich, nitrogen-loaded organic loam with generous compost and vermicompost that stays moist and drains freely.",
+      "mix_recipe": "2 parts garden loam + 2 parts vermicompost or cow dung manure + 1 part cocopeat + 1 part coarse sand + 2 tablespoons neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 15,
+    "refresh_top_soil_every_days": 45,
+    "repot_every_days": 150,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Safe for dogs, cats, and humans. A healthy leafy treat for pets in small cooked or chopped amounts; large raw quantities may cause mild digestive gas due to cruciferous fiber."
+    },
+    "common_problems": [
+      {
+        "id": "209-cabbage_white_caterpillars",
+        "problem": "Cabbage White butterfly caterpillars (Pieris brassicae)",
+        "do_you_see_this_problem": "Are large ragged holes chewed through leaves with dark green fecal pellets, leaving only skeletonized leaf ribs?",
+        "solve_it_like_this": [
+          "Inspect undersides of leaves and leaf folds every morning; hand-pick caterpillars and cluster eggs.",
+          "Spray biological Bacillus thuringiensis (Bt) kurstaki spray (2 g per litre of water) in the evening.",
+          "Cover balcony plants with lightweight insect exclusion netting during sunny daytime hours."
+        ]
+      },
+      {
+        "id": "209-cabbage_aphids",
+        "problem": "Cabbage aphids (Brevicoryne brassicae)",
+        "do_you_see_this_problem": "Are dense greyish-white waxy aphids coating new leaf curls, inner crowns, and stunting foliage growth?",
+        "solve_it_like_this": [
+          "Blast off dense colonies with a focused jet of water from a spray nozzle.",
+          "Spray cold-pressed neem oil (5 ml) mixed with 2 ml liquid castile soap per litre of water every 4 days.",
+          "Dust fine wood ash lightly onto morning-dew moistened leaves."
+        ]
+      },
+      {
+        "id": "209-bolting_and_bitterness",
+        "problem": "Premature bolting and bitter leaves",
+        "do_you_see_this_problem": "Is the central stem suddenly elongating into a tall flower spike while leaves turn tough, fibrous, and harsh?",
+        "solve_it_like_this": [
+          "Dwarf kale bolts when temperatures exceed 28°C; move pot to a shaded, cooler balcony corner with only gentle morning sun.",
+          "Harvest lower outer leaves continuously (cut-and-come-again) before flowers initiate.",
+          "Grow as a winter crop (sow September to November) in Indian plains."
+        ]
+      },
+      {
+        "id": "209-powdery_mildew",
+        "problem": "Powdery Mildew in humid winter",
+        "do_you_see_this_problem": "Do patches of dusty white fungal growth appear across the curly crinkled leaf surfaces during cool humid weeks?",
+        "solve_it_like_this": [
+          "Remove heavily infected lower leaves to increase aeration around the base of the plant.",
+          "Water directly into the potting soil, keeping the curly crown dry.",
+          "Spray an organic solution of baking soda (4 g) and liquid soap (2 ml) per litre of water every 7 days."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Kale",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Kale",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Boerenkool.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Boerenkool.jpg/330px-Boerenkool.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/209_dwarf_kale.jpg",
+      "asset_path": "file:///android_asset/images/209_dwarf_kale.jpg"
+    }
+  },
+  {
+    "id": 210,
+    "botanical_name": "Brassica rapa subsp. chinensis",
+    "common_name": "Bok Choy",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "बोक चॉय / चाइनीज पत्ता गोभी",
+      "marathi": "बोक चॉय / चिनी कोबी",
+      "bengali": "বক চয় শাক / চাইনিজ বাঁধাকপি",
+      "kannada": "ಬೊಕ್ ಚಾಯ್ ಸೊಪ್ಪು",
+      "tamil": "போக் சோய் கீரை",
+      "telugu": "బొక్ చోయ్ ఆకులు"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 3
+      },
+      "note": "Requires constant, uniform soil moisture. Drought stress causes instant premature flowering (bolting) and turns the succulent white stems fibrous and bitter."
+    },
+    "light_lux": {
+      "min_tolerated": 8000,
+      "ideal_min": 15000,
+      "ideal_max": 35000,
+      "max_tolerated": 50000
+    },
+    "humidity_percent": {
+      "min": 45,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 8,
+      "tolerable_max": 30,
+      "ideal_min": 15,
+      "ideal_max": 23
+    },
+    "soil": {
+      "in_simple_words": "Light, humus-rich, spongy potting mix that holds moisture reliably while draining excess water freely.",
+      "mix_recipe": "2 parts cocopeat + 2 parts vermicompost + 1 part garden soil + 1 part perlite or rice husk + 1 tablespoon neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 12,
+    "refresh_top_soil_every_days": 30,
+    "repot_every_days": 60,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic and safe for dogs, cats, and humans. A crunchy, hydrating, vitamin-rich edible green."
+    },
+    "common_problems": [
+      {
+        "id": "210-flea_beetles_shot_holes",
+        "problem": "Flea beetles (Shot-hole leaf damage)",
+        "do_you_see_this_problem": "Are tiny dark jumping beetles chewing numerous small circular shot-holes through tender succulent leaves?",
+        "solve_it_like_this": [
+          "Dust foliage with fine wood ash or food-grade diatomaceous earth in early morning.",
+          "Spray cold-pressed neem oil (5 ml per litre of water with mild soap) every 5 days.",
+          "Cover young plants with fine mosquito netting or insect row covers."
+        ]
+      },
+      {
+        "id": "210-premature_bolting",
+        "problem": "Premature bolting into flower",
+        "do_you_see_this_problem": "Is the compact leaf rosette opening up and shooting up a tall central yellow flower stalk before reaching full size?",
+        "solve_it_like_this": [
+          "Grow during cool months (October to February in Indian plains); high temperatures above 26°C trigger flowering.",
+          "Provide partial morning sun and shelter from harsh midday sun.",
+          "Harvest the entire head immediately as soon as a central flower bud starts forming."
+        ]
+      },
+      {
+        "id": "210-snails_and_slugs",
+        "problem": "Snails and slugs eating leaves",
+        "do_you_see_this_problem": "Are large ragged holes appearing along leaf margins overnight with silvery glistening slime trails across soil and leaves?",
+        "solve_it_like_this": [
+          "Scatter crushed eggshells or coarse wood ash in a ring around the base of the container.",
+          "Set shallow saucers filled with fermented jaggery and yeast water at pot level as organic bait traps.",
+          "Inspect pots under the rim after dark and hand-remove pests."
+        ]
+      },
+      {
+        "id": "210-basal_stem_rot",
+        "problem": "Basal petiole rot and damping-off",
+        "do_you_see_this_problem": "Are bottom white petioles touching wet soil turning mushy, translucent, and water-soaked?",
+        "solve_it_like_this": [
+          "Ensure pots have unobstructed drainage holes and never sit in stagnant saucer water.",
+          "Avoid watering directly into the central crown; water the outer soil perimeter.",
+          "Mulch lightly with clean dry rice husk to elevate bottom petioles above damp compost."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Bok_choy",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Bok_choy",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Bok_Choy_%2849553125456%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Bok_Choy_%2849553125456%29.jpg/330px-Bok_Choy_%2849553125456%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/210_bok_choy.jpg",
+      "asset_path": "file:///android_asset/images/210_bok_choy.jpg"
+    }
+  },
+  {
+    "id": 211,
+    "botanical_name": "Eruca vesicaria",
+    "common_name": "Arugula",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "तारामीरा / रॉकेट सलाद",
+      "marathi": "रॉकेट सॅलड / तारामीरा",
+      "bengali": "তারামিরা / রকেট শাক",
+      "kannada": "ರಾಕೆಟ್ ಸೊಪ್ಪು",
+      "tamil": "ராக்கெட் கீரை",
+      "telugu": "రాకెట్ ఆకులు"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 3
+      },
+      "note": "Water frequently and lightly. Moisture stress causes leaves to turn unpleasantly pungent, tough, and causes the plant to bolt into flower."
+    },
+    "light_lux": {
+      "min_tolerated": 8000,
+      "ideal_min": 15000,
+      "ideal_max": 35000,
+      "max_tolerated": 50000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 6,
+      "tolerable_max": 30,
+      "ideal_min": 12,
+      "ideal_max": 22
+    },
+    "soil": {
+      "in_simple_words": "Light, friable, well-aerated potting soil rich in compost that stays evenly damp without becoming waterlogged.",
+      "mix_recipe": "2 parts cocopeat + 2 parts vermicompost + 1 part garden soil + 1 part perlite or river sand",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 14,
+    "refresh_top_soil_every_days": 30,
+    "repot_every_days": 60,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to dogs, cats, and humans. The naturally peppery mustard oils (glucosinolates) naturally discourage household pets from chewing."
+    },
+    "common_problems": [
+      {
+        "id": "211-flea_beetles",
+        "problem": "Flea beetle perforations",
+        "do_you_see_this_problem": "Are leaves riddled with dozens of tiny pinholes chewed by small jumping dark beetles?",
+        "solve_it_like_this": [
+          "Apply cold-pressed neem oil (5 ml/L) mixed with mild soap to both sides of the leaves.",
+          "Dust dry wood ash or neem cake powder around the base of plants.",
+          "Cover containers with fine insect mesh."
+        ]
+      },
+      {
+        "id": "211-harsh_bitterness_bolting",
+        "problem": "Excessive bitterness and bolting",
+        "do_you_see_this_problem": "Are leaves tasting overpowering, bitter, and sharp with an upright flowering stalk emerging from the center?",
+        "solve_it_like_this": [
+          "Arugula prefers cool winter temperatures; move containers to an east-facing balcony with gentle morning sun only.",
+          "Maintain constant, light soil moisture; never let the root zone dry out completely.",
+          "Harvest leaves young when they are 5–10 cm long for optimal mild, nutty flavor."
+        ]
+      },
+      {
+        "id": "211-aphids_leaf_curl",
+        "problem": "Aphid colonies on leaf undersides",
+        "do_you_see_this_problem": "Are young leaves curling inward, sticky, and crowded underneath with tiny green or black aphids?",
+        "solve_it_like_this": [
+          "Rinse foliage thoroughly with a gentle spray of water.",
+          "Spray mild soap solution (5 ml liquid castile soap per litre of water) or neem oil spray.",
+          "Introduce or protect predatory insects like hoverflies and ladybirds."
+        ]
+      },
+      {
+        "id": "211-downy_mildew",
+        "problem": "Downy Mildew in dense plantings",
+        "do_you_see_this_problem": "Do leaves develop pale yellowish patches on top with delicate whitish-grey fuzz on undersides during damp weather?",
+        "solve_it_like_this": [
+          "Thin overcrowded seedlings to 8–10 cm apart to ensure good air circulation.",
+          "Water the soil surface gently without wetting the foliage.",
+          "Spray organic sour buttermilk (chaas) solution (10% in water) weekly."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Eruca_vesicaria",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Eruca_vesicaria",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Eruca_vesicaria_BM010755249.jpg/3840px-Eruca_vesicaria_BM010755249.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Eruca_vesicaria_BM010755249.jpg/330px-Eruca_vesicaria_BM010755249.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/211_arugula.jpg",
+      "asset_path": "file:///android_asset/images/211_arugula.jpg"
+    }
+  },
+  {
+    "id": 212,
+    "botanical_name": "Brassica oleracea var. botrytis",
+    "common_name": "Dwarf Cauliflower",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "फूलगोभी",
+      "marathi": "फुलकोबी / फ्लॉवर",
+      "bengali": "ফুলকপি",
+      "kannada": "ಹೂಕೋಸು",
+      "tamil": "காலிஃபிளவர் / பூக்கோசு",
+      "telugu": "క్యాలీఫ్లవర్ / గోబీ పువ్వు"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Requires deep, continuous moisture throughout curd development. Any drought shock causes tiny, premature 'button' heads. Keep root zone evenly cool and damp."
+    },
+    "light_lux": {
+      "min_tolerated": 15000,
+      "ideal_min": 30000,
+      "ideal_max": 55000,
+      "max_tolerated": 70000
+    },
+    "humidity_percent": {
+      "min": 45,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 28,
+      "ideal_min": 15,
+      "ideal_max": 22
+    },
+    "soil": {
+      "in_simple_words": "Rich, moisture-retentive, heavy organic loam packed with compost, cow manure, and trace minerals like boron.",
+      "mix_recipe": "2 parts garden loam + 2 parts aged cow manure or vermicompost + 1 part cocopeat + 1 part coarse sand + 2 tablespoons neem cake powder + pinch of borax",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 15,
+    "refresh_top_soil_every_days": 45,
+    "repot_every_days": 100,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to dogs, cats, and humans. Cooked or raw cauliflower florets are safe for pets in moderation as a healthy fiber-rich snack."
+    },
+    "common_problems": [
+      {
+        "id": "212-buttoning_tiny_curds",
+        "problem": "Buttoning (Tiny, premature heads)",
+        "do_you_see_this_problem": "Has the cauliflower formed a tiny, premature button-sized curd (only 3–5 cm wide) that opens into loose flowers without growing?",
+        "solve_it_like_this": [
+          "Buttoning occurs from temperature stress or root restriction; ensure pots are at least 10–12 inches deep and wide per plant.",
+          "Do not let young seedlings become root-bound in nursery cups before transplanting.",
+          "Maintain steady nitrogen feeding during early leaf growth before curd formation begins."
+        ]
+      },
+      {
+        "id": "212-boron_deficiency_brown_curd",
+        "problem": "Brown curd and hollow stem (Boron deficiency)",
+        "do_you_see_this_problem": "Are brown water-soaked spots appearing on the curd surface, accompanied by hollow, cracked central stems?",
+        "solve_it_like_this": [
+          "Drench the potting soil once during early head formation with 1 gram of agricultural borax dissolved in 2 litres of water.",
+          "Maintain balanced soil pH between 6.0 and 7.0 to facilitate boron uptake.",
+          "Incorporate well-rotted vermicompost rich in micronutrients into the potting mix."
+        ]
+      },
+      {
+        "id": "212-diamondback_moth_caterpillars",
+        "problem": "Diamondback moth & Cabbage loopers (Plutella xylostella)",
+        "do_you_see_this_problem": "Are small green caterpillars boring into the developing white curd and chewing holes through inner wrapper leaves?",
+        "solve_it_like_this": [
+          "Spray Bacillus thuringiensis (Bt) bio-insecticide (2 g per litre of water) in the evening hours.",
+          "Apply 5% Neem Seed Kernel Extract (NSKE) or neem oil spray (5 ml/L) weekly to disrupt caterpillar growth.",
+          "Hang yellow sticky traps to capture adult flying moths."
+        ]
+      },
+      {
+        "id": "212-curd_yellowing_sunlight",
+        "problem": "Curd browning and discoloration from sun",
+        "do_you_see_this_problem": "Is the pure white cauliflower head turning creamy yellow or purplish-brown, loose, and bitter due to sunlight exposure?",
+        "solve_it_like_this": [
+          "Perform blanching: when the white curd reaches 5–7 cm in diameter, fold and tie the large outer leaves over the curd using twine or a rubber band to shade it.",
+          "Ensure harvest takes place while heads remain tight, compact, and firm before curds spread apart."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Cauliflower",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Cauliflower",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Chou-fleur_02.jpg/3840px-Chou-fleur_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Chou-fleur_02.jpg/330px-Chou-fleur_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/212_dwarf_cauliflower.jpg",
+      "asset_path": "file:///android_asset/images/212_dwarf_cauliflower.jpg"
+    }
+  }
+]

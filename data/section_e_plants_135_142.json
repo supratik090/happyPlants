@@ -1,0 +1,840 @@
+[
+  {
+    "id": 135,
+    "botanical_name": "Cyrtomium falcatum",
+    "common_name": "Holly Fern",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "हॉली फ़र्न",
+      "marathi": "हॉली फर्न",
+      "bengali": "হলি ফার্ন",
+      "kannada": "ಹಾಲಿ ಫರ್ನ್",
+      "tamil": "ஹோலி ஃபெர்ன்",
+      "telugu": "హాలీ ఫెర్న్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 3
+      },
+      "monsoon_and_winter": {
+        "min": 4,
+        "max": 6
+      },
+      "note": "Maintain evenly moist soil during the fierce Indian summer. Cyrtomium falcatum has tough, leathery fronds with a waxy cuticle that withstand dry indoor air better than most delicate ferns, but prolonged drought will cause tips to brown. Water thoroughly when the top 1 inch of soil is dry, allowing excess to drain freely."
+    },
+    "light_lux": {
+      "min_tolerated": 1000,
+      "ideal_min": 2500,
+      "ideal_max": 7500,
+      "max_tolerated": 14000
+    },
+    "humidity_percent": {
+      "min": 45,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 5,
+      "tolerable_max": 38,
+      "ideal_min": 16,
+      "ideal_max": 28
+    },
+    "soil": {
+      "in_simple_words": "Spongy, rich, highly aerated humus-based mix that holds uniform moisture without ever becoming muddy or waterlogged.",
+      "mix_recipe": "2 parts cocopeat or leaf mould + 1 part garden soil + 1 part coarse perlite or pumice + 1 part vermicompost + 1 tbsp neem cake powder",
+      "ph_min": 5.5,
+      "ph_max": 6.8
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to cats, dogs, and children according to ASPCA and horticultural poison control databases."
+    },
+    "common_problems": [
+      {
+        "id": "135-brown_crispy_pinnae_edges",
+        "problem": "Crispy brown frond edges and dry leaflet tips",
+        "do_you_see_this_problem": "Are the waxy, pointed margins of the leaflets turning crunchy, brown, or brittle?",
+        "solve_it_like_this": [
+          "Increase humidity around the plant using a wide pebble-water tray or by clustering it closely with other broadleaf tropicals.",
+          "Shield the plant immediately from dry hot winds (Loo) or direct blasts from air conditioners and desert coolers.",
+          "Ensure the soil never desiccates completely; water promptly when the top inch dries out."
+        ]
+      },
+      {
+        "id": "135-yellowing_fronds_root_rot",
+        "problem": "Frond yellowing and basal rot (Overwatering / Stagnant drainage)",
+        "do_you_see_this_problem": "Are lower fronds turning pale yellow, softening at the base, and pulling out easily from the crown?",
+        "solve_it_like_this": [
+          "Check pot drainage holes to ensure water is draining instantly and not pooling in saucer trays.",
+          "Reduce watering frequency, especially during heavy monsoon humidity or cooler winter weeks.",
+          "Drench the root ball with bio-fungicide (Trichoderma viride) or copper oxychloride if fungal root rot is suspected, and trim off collapsed fronds."
+        ]
+      },
+      {
+        "id": "135-sun_scorch_bleaching",
+        "problem": "Sun scorch and bleached, washed-out foliage",
+        "do_you_see_this_problem": "Have the glossy deep forest-green fronds developed pale bleached centers or crispy scorched tan blotches?",
+        "solve_it_like_this": [
+          "Move the fern immediately into deep or filtered shade away from unshaded west- or south-facing windows and open balconies.",
+          "Prune away severely scorched fronds at their base to stimulate fresh, deep-green growth from the rhizome.",
+          "Provide 50% to 70% green agro-shade net if growing in an outdoor balcony or terrace shade garden."
+        ]
+      },
+      {
+        "id": "135-fern_scale_insects",
+        "problem": "Fern scale insects (Hemiberlesia or Pinnaspis species)",
+        "do_you_see_this_problem": "Do you see tiny, immobile brownish oval bumps or white scaly specks encrusting the underside of fronds and midribs?",
+        "solve_it_like_this": [
+          "Avoid harsh oil-heavy sprays that damage delicate fern tissues; wipe off scales gently with a soft cotton swab dipped in diluted isopropyl alcohol (50%).",
+          "Prune and discard heavily infested older fronds cleanly at soil level.",
+          "Spray mild insecticidal soap solution or light horticultural oil during cool evening hours, testing on a single frond first."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Cyrtomium_falcatum",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Cyrtomium_falcatum",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Cyrtomium_falcatum_3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Cyrtomium_falcatum_3.jpg/330px-Cyrtomium_falcatum_3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/135_holly_fern.jpg",
+      "asset_path": "file:///android_asset/images/135_holly_fern.jpg"
+    }
+  },
+  {
+    "id": 136,
+    "botanical_name": "Pteris ensiformis",
+    "common_name": "Silver Lace Fern",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "सिल्वर लेस फ़र्न",
+      "marathi": "सिल्व्हर लेस फर्न",
+      "bengali": "সিলভার লেস ফার্ন",
+      "kannada": "ಸಿಲ್ವರ್ ಲೇಸ್ ಫರ್ನ್",
+      "tamil": "சில்வர் லேஸ் ஃபெர்ன்",
+      "telugu": "సిల్వర్ లేస్ ఫెర్న్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 5
+      },
+      "note": "Silver Lace Fern possesses thin, delicate fronds that dry out and shrivel rapidly in Indian dry summer heat. Potting medium must remain consistently moist—like a wrung-out sponge—at all times. Never allow the root zone to dry to bone dryness."
+    },
+    "light_lux": {
+      "min_tolerated": 1200,
+      "ideal_min": 3000,
+      "ideal_max": 7000,
+      "max_tolerated": 12000
+    },
+    "humidity_percent": {
+      "min": 55,
+      "max": 85
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 35,
+      "ideal_min": 18,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "Light, aerated, humus-rich soil blend that retains steady moisture while letting excess water flush out freely.",
+      "mix_recipe": "2 parts washed low-EC cocopeat + 1 part perlite or pumice + 1 part leaf mould or vermicompost + 0.5 part coarse river sand + 1 tsp neem cake powder",
+      "ph_min": 5.5,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to cats, dogs, and children. Completely safe for pet-friendly indoor spaces and open terrariums."
+    },
+    "common_problems": [
+      {
+        "id": "136-crisping_frond_tips",
+        "problem": "Crispy, curled fronds from low humidity or rapid drying",
+        "do_you_see_this_problem": "Are the dainty silver-bordered fronds curling inwards, turning pale brown, and crumbling to dust when touched?",
+        "solve_it_like_this": [
+          "Immediately place the pot inside a pebble tray with water or house it inside a glass terrarium, cloche, or humid plant cabinet.",
+          "Increase watering frequency during dry summer spells; never allow the pot to go completely dry between waterings.",
+          "Keep well clear of ceiling fan drafts, hot breeze drafts, and dry air conditioning exhaust."
+        ]
+      },
+      {
+        "id": "136-loss_of_variegation",
+        "problem": "Loss of silvery-white pattern (Fronds reverting to dull dark green)",
+        "do_you_see_this_problem": "Are new fronds emerging entirely plain green without the characteristic creamy-silver central variegation?",
+        "solve_it_like_this": [
+          "Shift the fern to a location with brighter, indirect daylight—such as an east-facing windowsill with sheer net curtains.",
+          "Ensure lighting levels reach at least 3,000–5,000 lux during daytime to trigger variegation expression.",
+          "Avoid heavy nitrogen over-fertilisation, which encourages plain green vegetative growth over variegation."
+        ]
+      },
+      {
+        "id": "136-crown_and_stem_rot",
+        "problem": "Crown rot and basal damping-off",
+        "do_you_see_this_problem": "Is the center of the fern clump turning black, soggy, and collapsing with a mouldy odor?",
+        "solve_it_like_this": [
+          "Water gently around the outer rim of the container or use bottom-watering to prevent water standing in the tight central crown.",
+          "Improve potting mix drainage by incorporating extra coarse perlite or pumice.",
+          "Remove rotting fronds immediately and apply dilute systemic fungicide (carbendazim or neem spray) around the root zone."
+        ]
+      },
+      {
+        "id": "136-fungus_gnats",
+        "problem": "Fungus gnats infesting damp potting mix",
+        "do_you_see_this_problem": "Are tiny black flying gnats hovering around the soil surface and delicate lower fronds?",
+        "solve_it_like_this": [
+          "Sprinkle a thin 0.5 cm top layer of coarse sand or perlite over the soil to prevent female gnats from laying eggs.",
+          "Use yellow sticky traps placed near pot level to catch adult gnats.",
+          "Drench the potting mix with Bacillus thuringiensis israelensis (BTI) or diluted neem cake solution to kill gnat larvae without harming fern roots."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Pteris_ensiformis",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Pteris_ensiformis",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Pteris_ensiformis_%27Victoriae%27_-_Morris_Arboretum_-_DSC00170.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Pteris_ensiformis_%27Victoriae%27_-_Morris_Arboretum_-_DSC00170.JPG/330px-Pteris_ensiformis_%27Victoriae%27_-_Morris_Arboretum_-_DSC00170.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/136_silver_lace_fern.jpg",
+      "asset_path": "file:///android_asset/images/136_silver_lace_fern.jpg"
+    }
+  },
+  {
+    "id": 137,
+    "botanical_name": "Athyrium niponicum",
+    "common_name": "Japanese Painted Fern",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "जापानी पेंटेड फ़र्न",
+      "marathi": "जपानी पेंटेड फर्न",
+      "bengali": "জাপানি পেইন্টেড ফার্ন",
+      "kannada": "ಜಪಾನೀಸ್ ಪೇಂಟೆಡ್ ಫರ್ನ್",
+      "tamil": "ஜப்பானிய பெயிண்டட் ஃபெர்ன்",
+      "telugu": "జపనీస్ పెయింటెడ్ ఫెర్న్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 6
+      },
+      "note": "Requires steady, cool moisture around the root zone. In North and Central Indian dry summer heat, the rhizome can quickly bake; keep soil uniformly damp. In cool northern Indian winters, foliage naturally dies back—reduce watering significantly to prevent dormant rhizome rot."
+    },
+    "light_lux": {
+      "min_tolerated": 1000,
+      "ideal_min": 2500,
+      "ideal_max": 6000,
+      "max_tolerated": 10000
+    },
+    "humidity_percent": {
+      "min": 55,
+      "max": 85
+    },
+    "temperature_c": {
+      "tolerable_min": 0,
+      "tolerable_max": 34,
+      "ideal_min": 15,
+      "ideal_max": 26
+    },
+    "soil": {
+      "in_simple_words": "Humus-rich, cool, moisture-retentive woodland soil packed with organic matter and gentle drainage materials.",
+      "mix_recipe": "2 parts composted leaf mould + 1.5 parts cocopeat + 1 part coarse perlite + 0.5 part vermicompost + 1 tbsp neem cake powder",
+      "ph_min": 5.5,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic and safe around cats, dogs, and children according to ASPCA guidelines."
+    },
+    "common_problems": [
+      {
+        "id": "137-heat_stress_frond_crisping",
+        "problem": "Summer heat stress and frond desiccation",
+        "do_you_see_this_problem": "Are the delicate metallic fronds wilting, crisping up, and scorching during peak summer months when daytime temperatures exceed 33°C?",
+        "solve_it_like_this": [
+          "Relocate the fern to the coolest, shadiest microclimate in the house or north-facing shaded balcony.",
+          "Provide humidity via an ultrasonic cool-mist humidifier or group tightly with moisture-transpiring tropical houseplants.",
+          "Keep root zone cool by using breathable terracotta pots double-potted in moist coco-husk."
+        ]
+      },
+      {
+        "id": "137-winter_dormancy_dieback",
+        "problem": "Seasonal winter dormancy and frond dieback",
+        "do_you_see_this_problem": "Are all fronds turning yellow, then brown, and collapsing to the ground during late autumn or winter?",
+        "solve_it_like_this": [
+          "Do not panic or discard the plant; Athyrium is naturally deciduous and enters winter dormancy in response to short days and chilly nights.",
+          "Cut back dead withered fronds cleanly at the soil line.",
+          "Keep the dormant rhizome in barely moist soil (do not overwater) in a cool sheltered corner until fresh fiddleheads unfurl in early spring."
+        ]
+      },
+      {
+        "id": "137-faded_metallic_coloration",
+        "problem": "Dull, washed-out frond coloration without burgundy stems",
+        "do_you_see_this_problem": "Are the fronds a flat, muddy greenish-grey lacking the dramatic silver sheen and wine-red stems?",
+        "solve_it_like_this": [
+          "Move the pot to a spot with soft, morning dappled light or 2,500–6,000 lux filtered light.",
+          "Maintain cooler ambient night temperatures if possible, as cool night drafts enhance the vivid anthocyanin burgundy coloration.",
+          "Feed with a trace-mineral rich liquid seaweed fertilizer once every 4–6 weeks."
+        ]
+      },
+      {
+        "id": "137-rhizome_rot_in_standing_water",
+        "problem": "Rhizome rot from heavy, soggy soil",
+        "do_you_see_this_problem": "Is the underground creeping rhizome turning mushy, black, and failing to push new fiddleheads?",
+        "solve_it_like_this": [
+          "Amend heavy potting soil with extra leaf mould and perlite to allow rapid water infiltration.",
+          "Ensure pots have unobstructed drainage holes and never sit submerged in water saucer reservoirs.",
+          "Treat the soil with Trichoderma viride bio-fungicide during the humid monsoon season."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Athyrium_niponicum",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Athyrium_niponicum",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Japanese_Painted_Fern_Athyrium_nipponicum_%27Pictum%27_Leaf_1500px.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Japanese_Painted_Fern_Athyrium_nipponicum_%27Pictum%27_Leaf_1500px.jpg/330px-Japanese_Painted_Fern_Athyrium_nipponicum_%27Pictum%27_Leaf_1500px.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/137_japanese_painted_fern.jpg",
+      "asset_path": "file:///android_asset/images/137_japanese_painted_fern.jpg"
+    }
+  },
+  {
+    "id": 138,
+    "botanical_name": "Aglaomorpha coronans",
+    "common_name": "Crown Fern",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "क्राउन फ़र्न",
+      "marathi": "क्राउन फर्न",
+      "bengali": "ক্রাউন ফার্ন",
+      "kannada": "ಕ್ರೌನ್ ಫರ್ನ್",
+      "tamil": "கிரவுன் ஃபெர்ன்",
+      "telugu": "క్రౌన్ ఫెర్న్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 3
+      },
+      "monsoon_and_winter": {
+        "min": 5,
+        "max": 8
+      },
+      "note": "As an epiphytic basket fern native to tropical Asian tree canopies, Aglaomorpha stores moisture in its thick woolly rhizomes. Potted or mounted specimens need thorough watering followed by slight drying of the chunky bark substrate. In Indian dry summer, mist the fuzzy rhizome daily."
+    },
+    "light_lux": {
+      "min_tolerated": 1500,
+      "ideal_min": 3500,
+      "ideal_max": 9000,
+      "max_tolerated": 18000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 85
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 38,
+      "ideal_min": 20,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Ultra-coarse, spongy, breathable epiphytic medium tailored for tree-dwelling ferns; never plant in regular dense garden dirt.",
+      "mix_recipe": "2 parts chunky coconut husk chips / pine bark + 1 part sphagnum moss or coarse cocopeat + 1 part horticultural charcoal + 0.5 part perlite + 0.5 part vermicompost",
+      "ph_min": 5.5,
+      "ph_max": 6.8
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to dogs, cats, and humans. Safe to hang on verandahs, balconies, and indoor green walls."
+    },
+    "common_problems": [
+      {
+        "id": "138-rhizome_rot_from_compact_soil",
+        "problem": "Rhizome rot from burying the creeping stem or heavy soil",
+        "do_you_see_this_problem": "Is the thick, furry golden rhizome becoming soft, squishy, or black, accompanied by fronds falling off at the joint?",
+        "solve_it_like_this": [
+          "Never bury the rhizome underground; it must sit directly on the surface of the bark mix or be strapped onto a wooden mount.",
+          "Immediately transfer to an airy epiphytic mix containing pine bark chunks, coco husk chips, and charcoal.",
+          "Allow the top 2 inches of the chunky mix to dry out before watering again."
+        ]
+      },
+      {
+        "id": "138-frond_tip_browning",
+        "problem": "Frond tip browning from dry air and warm drafts",
+        "do_you_see_this_problem": "Are the tips of the broad lobed crown fronds drying out into pale tan crispy horns?",
+        "solve_it_like_this": [
+          "Mist the aerial woolly rhizome and base of fronds with filtered room-temperature water once or twice daily during dry summer.",
+          "Hang the fern under an open, well-ventilated covered verandah sheltered from hot desiccating winds.",
+          "Increase ambient humidity using grouped tropical companion plants."
+        ]
+      },
+      {
+        "id": "138-scale_insects_on_midribs",
+        "problem": "Scale insects clinging to underside of frond ribs",
+        "do_you_see_this_problem": "Are small, waxy brownish or yellowish domed bumps clustered along the thick veins beneath the fronds?",
+        "solve_it_like_this": [
+          "Manually scrape scales away using a soft toothbrush dipped in mild soapy water or 50% diluted rubbing alcohol.",
+          "Apply cold-pressed neem oil spray (3 ml/L + 1 ml organic dish soap) in late evening, covering frond undersides.",
+          "Repeat treatment weekly for 3 consecutive weeks to target newly hatched scale crawlers."
+        ]
+      },
+      {
+        "id": "138-pale_yellowing_fronds",
+        "problem": "Frond chlorosis (Pale yellowing foliage)",
+        "do_you_see_this_problem": "Are new architectural fronds coming out pale yellow-green instead of lustrous deep emerald?",
+        "solve_it_like_this": [
+          "Feed with a diluted foliar organic seaweed extract spray and balanced micro-nutrient booster every 4 weeks.",
+          "Check for root restriction or sour, decaying old bark medium that has broken down into suffocating muck, and refresh the medium."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Drynaria_coronans",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Aglaomorpha_coronans",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Drynaria_coronans.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Drynaria_coronans.jpg/330px-Drynaria_coronans.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/138_crown_fern.jpg",
+      "asset_path": "file:///android_asset/images/138_crown_fern.jpg"
+    }
+  },
+  {
+    "id": 139,
+    "botanical_name": "Hemionitis arifolia",
+    "common_name": "Heart Fern",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "हार्ट फ़र्न",
+      "marathi": "हार्ट फर्न",
+      "bengali": "হার্ট ফার্ন",
+      "kannada": "ಹಾರ್ಟ್ ಫರ್ನ್",
+      "tamil": "ஹார்ட் ஃபெர்ன்",
+      "telugu": "హార్ట్ ఫెర్న్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 5
+      },
+      "note": "Requires steady, even soil dampness. In dry Indian summer months, shallow roots dehydrate quickly, causing fronds to curl inward. Water from the bottom or around the rim of the pot with soft water to prevent moisture from sitting on the furry heart-shaped leaves."
+    },
+    "light_lux": {
+      "min_tolerated": 1000,
+      "ideal_min": 2500,
+      "ideal_max": 6000,
+      "max_tolerated": 9000
+    },
+    "humidity_percent": {
+      "min": 65,
+      "max": 90
+    },
+    "temperature_c": {
+      "tolerable_min": 15,
+      "tolerable_max": 35,
+      "ideal_min": 20,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "Fine, fluffy, moisture-holding terrarium potting mix rich in leaf compost with excellent gentle drainage.",
+      "mix_recipe": "2 parts washed cocopeat + 1 part leaf mould or vermicompost + 1 part perlite + 0.5 part horticultural charcoal bits",
+      "ph_min": 5.5,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to cats, dogs, and children."
+    },
+    "common_problems": [
+      {
+        "id": "139-curling_shrivelled_heart_leaves",
+        "problem": "Frond curling and crisping from dry air (Low humidity)",
+        "do_you_see_this_problem": "Are the heart-shaped leaf blades curling inward like cups and developing dry, crispy edges?",
+        "solve_it_like_this": [
+          "House the plant immediately inside a glass cloche, terrarium, or mini-greenhouse to maintain 65%+ humidity.",
+          "Place on a broad water-filled pebble tray and keep away from hot window drafts, air conditioners, and ceiling fans.",
+          "Ensure soil never dries out completely; water when the top layer just begins to lose surface moisture."
+        ]
+      },
+      {
+        "id": "139-crown_rot_and_leaf_spot",
+        "problem": "Crown rot and fungal leaf spot from overhead watering",
+        "do_you_see_this_problem": "Are heart leaves developing water-soaked black spots and rotting at the crown base?",
+        "solve_it_like_this": [
+          "Never pour water directly into the central crown or over the fuzzy leaf surfaces; always bottom-water or water the soil rim.",
+          "Ensure good gentle air circulation inside the growing area to avoid stagnant dampness.",
+          "Trim off severely infected leaves with sterilized scissors and dust cut stems with cinnamon powder."
+        ]
+      },
+      {
+        "id": "139-yellowing_lower_fronds",
+        "problem": "Yellowing lower leaves from soggy, waterlogged soil",
+        "do_you_see_this_problem": "Are older heart leaves turning translucent pale yellow and going limp while soil remains wet?",
+        "solve_it_like_this": [
+          "Ensure pot has active drainage holes and aerate the top layer of potting mix gently with a wooden skewer.",
+          "Reduce watering frequency slightly during monsoon when humidity is high and evaporation slows down.",
+          "Repot into a lighter mix containing more perlite and horticultural charcoal if drainage is sluggish."
+        ]
+      },
+      {
+        "id": "139-spider_mites",
+        "problem": "Spider mites in dry indoor air",
+        "do_you_see_this_problem": "Do you see tiny yellow stippling dots on leaf surfaces with microscopic web threads underneath?",
+        "solve_it_like_this": [
+          "Gently wipe the undersides of the heart leaves with a damp microfibre cloth dipped in lukewarm water.",
+          "Mist fronds regularly and raise ambient humidity above 65%, which halts spider mite reproduction.",
+          "Spray with diluted organic neem oil (2 ml/L) mixed with mild liquid soap once a week for 3 weeks."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Parahemionitis_arifolia",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Hemionitis_arifolia",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Hemionites_arifolia-fren-yercaud-salem-India.JPG/3840px-Hemionites_arifolia-fren-yercaud-salem-India.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Hemionites_arifolia-fren-yercaud-salem-India.JPG/330px-Hemionites_arifolia-fren-yercaud-salem-India.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/139_heart_fern.jpg",
+      "asset_path": "file:///android_asset/images/139_heart_fern.jpg"
+    }
+  },
+  {
+    "id": 140,
+    "botanical_name": "Selaginella kraussiana",
+    "common_name": "Krauss's Spikemoss",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "क्रॉस स्पाइकमॉस",
+      "marathi": "क्रॉस स्पायकमॉस",
+      "bengali": "ক্রসের স্পাইকমস",
+      "kannada": "ಕ್ರಾಸ್ ಸ್ಪೈಕ್‌ಮಾಸ್",
+      "tamil": "கிராஸ் ஸ்பைக்மாஸ்",
+      "telugu": "క్రాస్ స్పైక్‌ಮಾస్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Must never be allowed to dry out. The creeping moss-like stems desiccate and turn to brown straw within hours of drought in Indian summers. Keep soil uniformly damp like a wrung-out sponge. Grow in terrariums, bottle gardens, or glass cloches during dry months."
+    },
+    "light_lux": {
+      "min_tolerated": 800,
+      "ideal_min": 1800,
+      "ideal_max": 5000,
+      "max_tolerated": 8000
+    },
+    "humidity_percent": {
+      "min": 70,
+      "max": 95
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 32,
+      "ideal_min": 16,
+      "ideal_max": 26
+    },
+    "soil": {
+      "in_simple_words": "Fine, spongy, moisture-retentive woodland terrarium substrate that retains water without compaction.",
+      "mix_recipe": "2 parts cocopeat or milled sphagnum moss + 1 part perlite + 1 part leaf compost + 0.5 part fine horticultural charcoal",
+      "ph_min": 5.5,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic and completely safe for cats, dogs, and children. Highly recommended for bioactive vivariums with pets."
+    },
+    "common_problems": [
+      {
+        "id": "140-crispy_brown_foliage_mats",
+        "problem": "Crispy browning and collapse from low humidity (Dry summer air)",
+        "do_you_see_this_problem": "Are the feathery green mats shrivelling up, turning crunchy brown, and dying from the tips inwards?",
+        "solve_it_like_this": [
+          "Immediately enclose the pot inside a glass terrarium, cloche, or clear plastic dome to lock in 75%+ humidity.",
+          "Keep away from hot dry winds (Loo), air conditioning ducts, and direct drafts from ceiling fans.",
+          "Submerge the base of the pot in water for 15 minutes to rehydrate the root ball thoroughly if it dried out."
+        ]
+      },
+      {
+        "id": "140-damping_off_and_white_mold",
+        "problem": "White mould and stem rot from zero ventilation in soggy conditions",
+        "do_you_see_this_problem": "Is a webby white fungal mould spreading over waterlogged stems, causing them to turn black and mushy?",
+        "solve_it_like_this": [
+          "Open the terrarium or cloche lid for 1–2 hours daily to allow gentle fresh air circulation and vent excess condensation.",
+          "Gently remove fuzzy mouldy sections with tweezers and prune decayed stems.",
+          "Dust soil lightly with cinnamon powder or treat with bio-fungicide (Trichoderma)."
+        ]
+      },
+      {
+        "id": "140-sun_bleaching",
+        "problem": "Sun scorch and bleached white patches",
+        "do_you_see_this_problem": "Are patches of the carpet turning bleached white or straw-colored where sunlight hits the container?",
+        "solve_it_like_this": [
+          "Move the plant immediately into gentle, indirect shade or north-facing soft ambient light.",
+          "Ensure glass terrarium vessels are never placed in direct sun, as the greenhouse effect raises internal temperatures lethally within minutes.",
+          "Trim off bleached stems; fresh green runners will quickly spread to cover bare spots under proper shaded conditions."
+        ]
+      },
+      {
+        "id": "140-hard_water_chlorosis",
+        "problem": "Leaf browning and salt build-up from hard tap water",
+        "do_you_see_this_problem": "Are creeping tips turning yellow-brown with a crusty white mineral deposit on the soil surface?",
+        "solve_it_like_this": [
+          "Always use RO (reverse osmosis), distilled, or rainwater for watering and misting spikemoss.",
+          "Flush the pot thoroughly with soft water to leach accumulated municipal tap water salts.",
+          "Scrape off mineral-encrusted topsoil and replace with fresh acidic cocopeat-charcoal blend."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Selaginella_kraussiana",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Selaginella_kraussiana",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/SelaginellaKraussiana.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/SelaginellaKraussiana.jpg/330px-SelaginellaKraussiana.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/140_krausss_spikemoss.jpg",
+      "asset_path": "file:///android_asset/images/140_krausss_spikemoss.jpg"
+    }
+  },
+  {
+    "id": 141,
+    "botanical_name": "Selaginella uncinata",
+    "common_name": "Peacock Spikemoss",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "पीकॉक स्पाइकमॉस",
+      "marathi": "पीकॉक स्पायकमॉस",
+      "bengali": "ময়ূর স্পাইকমস",
+      "kannada": "ಪೀಕಾಕ್ ಸ್ಪೈಕ್‌ಮಾಸ್",
+      "tamil": "பீகாக் ஸ்பைக்மாஸ்",
+      "telugu": "పీకాక్ స్పైక్‌మాస్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Substrate must stay consistently moist at all times. In dry pre-monsoon Indian heat, the fine trailing fronds curl and crisp rapidly without high humidity. Terrarium cultivation or glass cloches are ideal during dry months. Use soft, chlorine-free water."
+    },
+    "light_lux": {
+      "min_tolerated": 600,
+      "ideal_min": 1500,
+      "ideal_max": 4000,
+      "max_tolerated": 7000
+    },
+    "humidity_percent": {
+      "min": 70,
+      "max": 95
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 34,
+      "ideal_min": 18,
+      "ideal_max": 28
+    },
+    "soil": {
+      "in_simple_words": "Acidic, fluffy, moisture-retaining woodland mix that remains evenly damp while offering excellent oxygenation.",
+      "mix_recipe": "2 parts cocopeat / long-fiber sphagnum moss + 1 part perlite + 1 part leaf compost + 0.5 part horticultural charcoal",
+      "ph_min": 5.0,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to pets and children. Safe for indoor living spaces and reptile/amphibian vivariums."
+    },
+    "common_problems": [
+      {
+        "id": "141-loss_of_blue_iridescence",
+        "problem": "Fading of blue iridescence (Foliage turning dull green or reddish-bronze)",
+        "do_you_see_this_problem": "Has the stunning metallic turquoise-blue sheen disappeared, leaving the fronds dull green or bronzy-red?",
+        "solve_it_like_this": [
+          "Move the plant into deeper shade; the iridescent blue sheen is a thin-film interference layer produced only in low light levels (1,500–3,500 lux).",
+          "Avoid bright windowsills or overhead grow lights placed too close to the plant.",
+          "New growth emerging under deep shade will restore the vibrant peacock blue luster within 2 to 3 weeks."
+        ]
+      },
+      {
+        "id": "141-frond_desiccation_crisping",
+        "problem": "Foliage browning and crisping from dry atmospheric air",
+        "do_you_see_this_problem": "Are the trailing fronds curling up, turning brittle brown, and drying into crispy patches?",
+        "solve_it_like_this": [
+          "House inside a closed or semi-closed glass terrarium, wardian case, or cloche to maintain steady 75%+ humidity.",
+          "Water frequently with a fine spray to keep the substrate evenly moist; never allow the root zone to dry out.",
+          "Keep strictly away from hot balcony winds and room air conditioners."
+        ]
+      },
+      {
+        "id": "141-stagnant_rot_and_mold",
+        "problem": "Rotting stems and mould in unventilated terrariums",
+        "do_you_see_this_problem": "Are lower stems turning into black mush with grey fuzzy mould in a sealed container?",
+        "solve_it_like_this": [
+          "Vent the terrarium for 30–60 minutes daily to refresh air and prevent excessive water droplet pooling on leaves.",
+          "Prune rotting runners with sterilized scissors to halt fungal spread.",
+          "Ensure the substrate is well-aerated with perlite and charcoal rather than waterlogged mud."
+        ]
+      },
+      {
+        "id": "141-water_mineral_burn",
+        "problem": "Leaf tip burn from hard municipal tap water",
+        "do_you_see_this_problem": "Are the tips of the blue fronds turning brown or necrotic with crusty mineral residue?",
+        "solve_it_like_this": [
+          "Switch strictly to RO water, rainwater, or distilled water; Selaginella is highly sensitive to chlorine and high total dissolved solids (TDS).",
+          "Flush the potting medium gently with distilled water to rinse out accumulated mineral salts."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Selaginella_uncinata",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Selaginella_uncinata",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Selaginella_uncinata_-_Berlin_Botanical_Garden_-_IMG_8722.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Selaginella_uncinata_-_Berlin_Botanical_Garden_-_IMG_8722.JPG/330px-Selaginella_uncinata_-_Berlin_Botanical_Garden_-_IMG_8722.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/141_peacock_spikemoss.jpg",
+      "asset_path": "file:///android_asset/images/141_peacock_spikemoss.jpg"
+    }
+  },
+  {
+    "id": 142,
+    "botanical_name": "Cryptanthus bivittatus",
+    "common_name": "Earth Star",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "अर्थ स्टार",
+      "marathi": "अर्थ स्टार",
+      "bengali": "আর্থ স্টার",
+      "kannada": "ಅರ್ಥ್ ಸ್ಟಾರ್",
+      "tamil": "எர்த் ஸ்டார்",
+      "telugu": "ఎర్త్ స్టార్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 5
+      },
+      "monsoon_and_winter": {
+        "min": 7,
+        "max": 10
+      },
+      "note": "Unlike epiphytic tank bromeliads, Cryptanthus is a terrestrial bromeliad with a functional root system that grows directly in soil. Do not let water sit stagnant in the central rosette, as it causes core rot. Water the potting soil around the base thoroughly when the top 1 inch is dry."
+    },
+    "light_lux": {
+      "min_tolerated": 2500,
+      "ideal_min": 5000,
+      "ideal_max": 15000,
+      "max_tolerated": 25000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 38,
+      "ideal_min": 20,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Light, aerated, well-draining terrestrial bromeliad mix that holds moderate moisture without getting soggy.",
+      "mix_recipe": "1.5 parts cocopeat + 1.5 parts perlite or pumice + 1 part compost or leaf mould + 1 part coarse river sand + 0.5 part fine bark",
+      "ph_min": 5.5,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to cats, dogs, and children according to ASPCA guidelines. Leaf margins possess fine micro-serrations that feel like gentle sandpaper; handle carefully."
+    },
+    "common_problems": [
+      {
+        "id": "142-central_rosette_core_rot",
+        "problem": "Core and crown rot from water trapped in rosette center",
+        "do_you_see_this_problem": "Is the central heart of the rosette turning brown, black, and mushy, with inner leaves pulling out easily?",
+        "solve_it_like_this": [
+          "Never pour water directly into the central cup; always water the soil around the rim of the pot.",
+          "If water gets trapped in the center, tip the plant gently sideways or wick it out with the corner of a tissue paper.",
+          "Increase air circulation and allow the potting mix to dry out slightly between waterings."
+        ]
+      },
+      {
+        "id": "142-faded_pink_coloration_greening",
+        "problem": "Loss of vibrant pink stripes (Foliage reverting to dull dark green)",
+        "do_you_see_this_problem": "Have the striking bright pink and cream stripes faded away into solid dark olive green?",
+        "solve_it_like_this": [
+          "Move the plant to a brighter location receiving strong indirect light or 2 to 3 hours of mild morning balcony sunshine.",
+          "Avoid placing in dark room corners where light drops below 2,500 lux.",
+          "As light increases, the intense pink and rose-red anthocyanin pigmentation will return in new leaves."
+        ]
+      },
+      {
+        "id": "142-brown_crispy_leaf_tips",
+        "problem": "Crispy leaf tips from low humidity or hard water minerals",
+        "do_you_see_this_problem": "Are the wavy tips of the star-like leaves drying out, turning brown, and curling upwards?",
+        "solve_it_like_this": [
+          "Increase ambient humidity using a pebble tray or group with other houseplants in dry summer months.",
+          "Avoid chlorinated or high-fluoride hard tap water; use filtered or rested water.",
+          "Carefully trim off brown tips with sterile scissors following the natural curvature of the leaf."
+        ]
+      },
+      {
+        "id": "142-post_bloom_mother_dieback",
+        "problem": "Gradual decline of mother plant after flowering (Natural life cycle)",
+        "do_you_see_this_problem": "Has the plant produced small white flowers in the center and is now slowly declining over several months?",
+        "solve_it_like_this": [
+          "This is normal monocarpic behavior: after flowering, the main mother rosette gradually dies, but produces multiple pups (offsets) at the leaf axils.",
+          "Continue watering the plant normally to nourish the developing baby pups at the base.",
+          "When pups reach about one-third the size of the mother plant, gently detach them and pot separately in fresh bromeliad mix."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Cryptanthus_bivittatus",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Cryptanthus_bivittatus",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/CryptanthusBivittatus.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/CryptanthusBivittatus.jpg/330px-CryptanthusBivittatus.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/142_earth_star.jpg",
+      "asset_path": "file:///android_asset/images/142_earth_star.jpg"
+    }
+  }
+]

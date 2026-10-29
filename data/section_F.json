@@ -1,0 +1,2615 @@
+[
+  {
+    "id": 151,
+    "botanical_name": "Mentha spicata",
+    "common_name": "Spearmint (Pudina)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "पुदीना",
+      "marathi": "पुदिना",
+      "bengali": "পুদিনা",
+      "kannada": "ಪುದೀನ",
+      "tamil": "புதினா",
+      "telugu": "పుదీనా"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Pudina spreads via shallow runners (stolons) that dry out very quickly in intense Indian summer heat. Keep the soil evenly moist like a wrung-out sponge, but never stagnant. In hot May weather, water every morning; if leaves flag by late afternoon, give a gentle sip. In monsoon, ensure wide container drainage so rainwater never stagnates around roots."
+    },
+    "light_lux": {
+      "min_tolerated": 8000,
+      "ideal_min": 20000,
+      "ideal_max": 50000,
+      "max_tolerated": 75000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 5,
+      "tolerable_max": 42,
+      "ideal_min": 18,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Rich, moisture-retentive, organically rich loamy soil in a wide, shallow pot or trough that allows creeping runners to root freely.",
+      "mix_recipe": "2 parts garden loam + 2 parts vermicompost or well-decomposed cow dung manure (gobar khaad) + 1 part coco peat + 1 part coarse river sand + 2 tbsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 20,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 180,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to humans and safe for culinary use in chutneys and drinks. Safe around dogs and cats in normal fresh garden nibbles, though large ingestions of fresh mint leaves or concentrated mint essential oils should be avoided as menthol can cause mild tummy upset in pets."
+    },
+    "common_problems": [
+      {
+        "id": "151-summer_wilting_and_leaf_scorch",
+        "problem": "Midday heat wilting and scorched crispy leaf edges",
+        "do_you_see_this_problem": "Are mint leaves drooping limp by midday and developing crisp brown margins under harsh 38°C+ summer sun?",
+        "solve_it_like_this": [
+          "Move the pot to a bright balcony position that receives gentle morning sun and shade during blazing afternoon hours.",
+          "Apply a 1-inch top layer of organic mulch (coco peat or dried sugarcane bagasse) to insulate shallow roots from rapid evaporation.",
+          "Water thoroughly every morning until water drains out from the bottom; avoid tiny shallow surface sprinkles."
+        ]
+      },
+      {
+        "id": "151-aphids_and_spider_mites",
+        "problem": "Aphids and two-spotted spider mites on tender sprigs",
+        "do_you_see_this_problem": "Do you see clusters of tiny soft green or black bugs on fresh shoot tips, or pale dusty speckling with fine webs underneath leaves?",
+        "solve_it_like_this": [
+          "Never spray chemical or systemic insecticides on edible herbs. Blast the foliage vigorously with a sharp morning jet of clean water to dislodge pests.",
+          "Spray an organic emulsion of 5 ml cold-pressed neem oil and 2 ml gentle liquid soap per litre of water thoroughly under all leaves in late evening.",
+          "Regularly harvest top sprigs; pruning stimulates vigorous clean new runners and removes pest harboring tips."
+        ]
+      },
+      {
+        "id": "151-runner_choking_and_woody_exhaustion",
+        "problem": "Rootbound runner congestion and bare woody stems",
+        "do_you_see_this_problem": "Are center stems turning woody and leafless while white root runners circle tightly around the pot edges and growth stalls?",
+        "solve_it_like_this": [
+          "Unpot the entire mint clump every 4 to 6 months; Pudina grows aggressively and exhausts shallow pot space quickly.",
+          "Divide the root clump with clean garden shears into 3 or 4 smaller portions, keeping young fresh root runners.",
+          "Replant the healthiest runners into fresh compost-rich soil mix and water well; lush new green leaves will emerge within 7–10 days."
+        ]
+      },
+      {
+        "id": "151-powdery_mildew_and_rust",
+        "problem": "Powdery mildew and mint rust during humid weather",
+        "do_you_see_this_problem": "Do you see a white powdery dusting on leaf surfaces or rusty orange-brown spots underneath leaves during humid monsoon periods?",
+        "solve_it_like_this": [
+          "Immediately snip off and discard severely infected stems in the trash bin (do not put in compost).",
+          "Space pots apart to promote good airflow and keep the plant in a breezy, sun-drenched spot.",
+          "Spray with an organic baking soda remedy (1 tsp baking soda + 1/2 tsp mild liquid soap in 1 litre of water) in the morning.",
+          "Water strictly into the soil at root level; keep foliage dry during cloudy monsoon days."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Spearmint",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Spearmint",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Minze.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Minze.jpg/330px-Minze.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/151_spearmint_pudina.jpg",
+      "asset_path": "file:///android_asset/images/151_spearmint_pudina.jpg"
+    }
+  },
+  {
+    "id": 152,
+    "botanical_name": "Mentha × piperita",
+    "common_name": "Peppermint",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "पिपरमिंट / काली पुदीना",
+      "marathi": "पिपरमिंट पुदिना",
+      "bengali": "পেপারমিন্ট / তীব্র পুদিনা",
+      "kannada": "ಪೆಪ್ಪರ್‌ಮಿಂಟ್ / ಪೆಪ್ಪರ್ ಪುದೀನ",
+      "tamil": "பெப்பர்மிண்ட் / காரப் புதினா",
+      "telugu": "పెప్పర్‌మింట్ / ఘాటైన పుదీనా"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Peppermint relishes consistently moist, cool potting soil. In scorching summer temperatures (>35°C), water every morning, making sure moisture reaches the entire root zone. Do not allow the root zone to dry to bone, or stems will collapse. During the monsoon, maintain free drainage holes to avoid waterlogged stagnation."
+    },
+    "light_lux": {
+      "min_tolerated": 7000,
+      "ideal_min": 18000,
+      "ideal_max": 45000,
+      "max_tolerated": 70000
+    },
+    "humidity_percent": {
+      "min": 45,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 4,
+      "tolerable_max": 38,
+      "ideal_min": 16,
+      "ideal_max": 28
+    },
+    "soil": {
+      "in_simple_words": "Rich, moisture-retentive, humus-packed potting loam with excellent aeration and good drainage.",
+      "mix_recipe": "2 parts garden loam + 2 parts aged vermicompost + 1 part coco peat + 1 part coarse sand or perlite + 2 tbsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 25,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 180,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Safe and edible for culinary and herbal tea use. Safe around children and pets in fresh garden leaf form; keep concentrated peppermint essential oil away from cats and dogs, as pure menthol is irritating to pet respiratory and digestive systems."
+    },
+    "common_problems": [
+      {
+        "id": "152-heat_stress_and_stem_collapse",
+        "problem": "Extreme dry heat stress and drooping foliage",
+        "do_you_see_this_problem": "Are leaves curling inward, losing their dark green gloss, and wilting limp during hot North/Central Indian dry summer afternoons?",
+        "solve_it_like_this": [
+          "Shift the container to morning sun only (or under 50% green garden shade netting).",
+          "Place the pot on a saucer filled with moist river pebbles to generate localized evaporative humidity without drowning roots.",
+          "Mulch the topsoil with dried leaves or coco peat to preserve root coolness."
+        ]
+      },
+      {
+        "id": "152-rust_fungus_pustules",
+        "problem": "Mint rust (Puccinia menthae fungal infection)",
+        "do_you_see_this_problem": "Do you see bright orange-brown or dark pustules erupting on the underside of peppermint leaves with yellow patches on top?",
+        "solve_it_like_this": [
+          "Snip off diseased stems at the base immediately and throw them away in household waste.",
+          "Ensure pots are spaced out in a breezy area with good morning sunlight.",
+          "Spray the plant with an organic cold-pressed neem oil solution (5 ml/L + 2 ml mild soap) every 5 days.",
+          "Water strictly at ground level; avoid overhead sprinkling."
+        ]
+      },
+      {
+        "id": "152-leaf_roller_caterpillars",
+        "problem": "Leaf-roller caterpillars chewing foliage",
+        "do_you_see_this_problem": "Are top peppermint leaves spun together with fine white silk webbing, with chewed holes and tiny black droppings inside?",
+        "solve_it_like_this": [
+          "Gently unroll folded leaf clusters by hand and pick off small green caterpillars.",
+          "Spray an organic bio-pesticide containing Bacillus thuringiensis (Bt) or an organic crushed garlic-chilli extract in the evening.",
+          "Regularly trim and harvest upper sprigs to deny caterpillars nesting sites."
+        ]
+      },
+      {
+        "id": "152-monsoon_stem_rot",
+        "problem": "Fungal stem rot and damp leaf decay in heavy rains",
+        "do_you_see_this_problem": "Are lower stems near the soil surface turning black, soft, and mushy during persistent monsoon wet spells?",
+        "solve_it_like_this": [
+          "Elevate the pot on brick stands so bottom drainage holes drain freely without pooling on wet balcony floors.",
+          "Thin crowded growth to allow wind to circulate through the base of the plant.",
+          "Dust the topsoil with dry wood ash or ground cinnamon powder to suppress soil fungus."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Peppermint",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Peppermint",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Pfefferminze_natur_peppermint.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Pfefferminze_natur_peppermint.jpg/330px-Pfefferminze_natur_peppermint.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/152_peppermint.jpg",
+      "asset_path": "file:///android_asset/images/152_peppermint.jpg"
+    }
+  },
+  {
+    "id": 153,
+    "botanical_name": "Ocimum basilicum",
+    "common_name": "Sweet Basil (Italian Basil)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "स्वीट तुलसी / मीठी तुलसी / इटैलियन बेसिल",
+      "marathi": "स्वीट बेसिल / इटालियन तुळस",
+      "bengali": "সুইট বেসিল / মিষ্টি তুলসী",
+      "kannada": "ಸ್ವೀಟ್ ಬೇಸಿಲ್ / ಇಟಾಲಿಯನ್ ತುಳಸಿ",
+      "tamil": "திருநீற்றுப்பச்சிலை / ஸ்வீட் பேசில்",
+      "telugu": "రుద్రజడ / సబ్జా ఆకు / స్వీట్ బాసిల్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Sweet Basil has broad, lush leaves with a high rate of water loss in dry weather. Water thoroughly when the top inch of soil feels dry. In hot summer months, water early every morning. Never wet the foliage late in the evening to prevent fungal leaf spots. In winter, reduce watering as growth slows down and protect from cold drafts."
+    },
+    "light_lux": {
+      "min_tolerated": 15000,
+      "ideal_min": 30000,
+      "ideal_max": 65000,
+      "max_tolerated": 85000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 8,
+      "tolerable_max": 40,
+      "ideal_min": 20,
+      "ideal_max": 34
+    },
+    "soil": {
+      "in_simple_words": "Rich, loose, well-draining garden soil packed with organic compost to support rapid, lush leaf growth.",
+      "mix_recipe": "2 parts fertile garden loam + 2 parts vermicompost or leaf mold + 1 part coco peat + 1 part coarse sand or perlite + 2 tbsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 20,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 180,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to humans, children, dogs, and cats according to the ASPCA. Fully culinary-safe for fresh pesto, pastas, and salads."
+    },
+    "common_problems": [
+      {
+        "id": "153-premature_flowering_and_woody_bitterness",
+        "problem": "Flowering (bolting) leading to tough, bitter leaves",
+        "do_you_see_this_problem": "Are tall flower spikes blooming at the stem tips, causing the leaves below to become smaller, sparse, tough, and bitter?",
+        "solve_it_like_this": [
+          "Pinch off all terminal flower buds as soon as they appear to redirect energy back into lush leaf production.",
+          "Prune the top one-third of stems every 2 to 3 weeks just above a leaf node; this stimulates dual bushy side branches.",
+          "Harvest outer leaves and sprigs regularly for cooking; frequent harvesting prevents the plant from setting seed."
+        ]
+      },
+      {
+        "id": "153-fusarium_wilt_and_downy_mildew",
+        "problem": "Basil downy mildew and leaf yellowing",
+        "do_you_see_this_problem": "Are leaves developing pale yellowish patches between veins, followed by purplish-gray downy spores under the leaf surfaces?",
+        "solve_it_like_this": [
+          "Water strictly at the base of the stems in early morning; keep leaves dry at all times.",
+          "Ensure wide spacing between pots on the balcony for maximum air circulation and morning sun exposure.",
+          "Remove and discard severely affected leaves; spray remaining foliage with a mild bio-fungicide like Trichoderma viride or dilute baking soda spray (1 tsp/L)."
+        ]
+      },
+      {
+        "id": "153-aphids_and_whiteflies",
+        "problem": "Aphids and whiteflies sucking sap from tender leaves",
+        "do_you_see_this_problem": "Are clusters of tiny green insects under leaves or tiny white flies fluttering around when stems are touched, leaving sticky residue?",
+        "solve_it_like_this": [
+          "Hang yellow sticky glue cards 15 cm above the foliage to trap flying whiteflies and winged aphids.",
+          "Spray an organic emulsion of 5 ml cold-pressed neem oil + 2 ml mild liquid soap per litre of water under the leaves in late evening.",
+          "Rinse culinary leaves with clean drinking water before preparing food."
+        ]
+      },
+      {
+        "id": "153-winter_chill_leaf_blackening",
+        "problem": "Winter cold shock and blackened leaves",
+        "do_you_see_this_problem": "Are leaves turning translucent black, limp, and dropping off when night temperatures drop below 12°C during North Indian winters?",
+        "solve_it_like_this": [
+          "Move the pot indoors to a sunny south-facing windowsill or sheltered warm balcony away from cold night breezes.",
+          "Cut back watering significantly during cold spells; wet roots in cold soil rot rapidly.",
+          "Take softwood stem cuttings in October to root in water indoors as backups for the following spring."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Basil",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Basil",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Ocimum_basilicum_8zz.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Ocimum_basilicum_8zz.jpg/330px-Ocimum_basilicum_8zz.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/153_sweet_basil.jpg",
+      "asset_path": "file:///android_asset/images/153_sweet_basil.jpg"
+    }
+  },
+  {
+    "id": 154,
+    "botanical_name": "Cymbopogon citratus",
+    "common_name": "Lemongrass",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "लेमनग्रास / नींबू घास",
+      "marathi": "गवती चहा",
+      "bengali": "লেমনগ্রাস / গন্ধতৃণ",
+      "kannada": "ಮಜ್ಜಿಗೆ ಹುಲ್ಲು",
+      "tamil": "எலுமிச்சை புல்",
+      "telugu": "నిమ్మగడ్డి"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 5
+      },
+      "note": "Lemongrass is a fast-growing, heavy-drinking tropical clumping grass during warm weather. In hot Indian summers, soak the pot thoroughly every morning; if blade tips curl inward and turn straw-like, increase watering. It relishes heavy monsoon rains provided bottom drainage holes are free. Reduce watering in winter when vegetative growth slows."
+    },
+    "light_lux": {
+      "min_tolerated": 25000,
+      "ideal_min": 50000,
+      "ideal_max": 95000,
+      "max_tolerated": 120000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 85
+    },
+    "temperature_c": {
+      "tolerable_min": 8,
+      "tolerable_max": 46,
+      "ideal_min": 22,
+      "ideal_max": 38
+    },
+    "soil": {
+      "in_simple_words": "Rich, loamy, highly fertile soil in a broad, deep container (at least 12–14 inches wide) that gives its expanding rhizomes plenty of room.",
+      "mix_recipe": "2 parts garden loam + 2 parts well-rotted cow dung manure (gobar khaad) or vermicompost + 1 part coarse river sand + 1 part coco peat + 1 cup neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.8
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic and culinary-safe for humans; widely used in Indian chai and herbal decoctions. Safe around pets in typical garden situations, though cats or dogs should be discouraged from chewing large fibrous quantities as rough grass blades can induce mechanical stomach upset."
+    },
+    "common_problems": [
+      {
+        "id": "154-leaf_blight_and_rust",
+        "problem": "Leaf blight and rust streaks during monsoon",
+        "do_you_see_this_problem": "Are long grass blades displaying reddish-brown streaks, dry necrotic tips, or dusty orange spots during warm, humid rainy spells?",
+        "solve_it_like_this": [
+          "Cut back affected outer blades to 2 inches from the base with clean shears and discard clippings.",
+          "Ensure the pot sits in full open sunshine and breezy conditions to dry wet foliage rapidly.",
+          "Spray the remaining clump with an organic cold-pressed neem oil emulsion (5 ml neem oil + 2 ml mild soap per litre of water)."
+        ]
+      },
+      {
+        "id": "154-rootbound_congestion_and_clump_dieback",
+        "problem": "Rootbound clump congestion and center hollow dieback",
+        "do_you_see_this_problem": "Is the center of the grass clump turning brown, woody, and hollow while outer stalks push hard against the pot rim?",
+        "solve_it_like_this": [
+          "Unpot the entire root mass in late winter or early monsoon (February or July).",
+          "Divide the thick clump into 3–4 smaller sections using a sharp serrated knife, ensuring each division has healthy roots and 3–5 sturdy stalks.",
+          "Cut back top blades by 50% to minimize transplant shock and replant divisions into fresh manure-rich potting soil."
+        ]
+      },
+      {
+        "id": "154-spider_mites_in_dry_heat",
+        "problem": "Red spider mites during hot dry summer",
+        "do_you_see_this_problem": "Do you see pale stippled yellowish leaf blades with dusty fine webbing around leaf sheaths in dry 40°C weather?",
+        "solve_it_like_this": [
+          "Hose down the entire grass clump thoroughly with a forceful jet of water to wash away mite colonies and webs.",
+          "Keep soil consistently moist and avoid positioning against hot, reflective concrete walls.",
+          "Apply an evening spray of organic neem oil emulsion (5 ml/L) once a week."
+        ]
+      },
+      {
+        "id": "154-nitrogen_deficiency_chlorosis",
+        "problem": "Pale yellowing blades (Nitrogen deficiency)",
+        "do_you_see_this_problem": "Are grass blades turning uniform pale yellow-green with thin, slow-growing stalks despite regular watering?",
+        "solve_it_like_this": [
+          "Top-dress the pot with 2–3 large handfuls of aged vermicompost or well-composted cow dung manure every month.",
+          "Drench the root zone with organic liquid seaweed extract or fermented compost tea every 15 days.",
+          "Ensure container drainage is free so vital nutrients are not washed out by stagnant water."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Cymbopogon_citratus",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Cymbopogon_citratus",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Gardenology.org-IMG_2892_rbgs11jan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Gardenology.org-IMG_2892_rbgs11jan.jpg/330px-Gardenology.org-IMG_2892_rbgs11jan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/154_lemongrass.jpg",
+      "asset_path": "file:///android_asset/images/154_lemongrass.jpg"
+    }
+  },
+  {
+    "id": 155,
+    "botanical_name": "Salvia rosmarinus",
+    "common_name": "Rosemary",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "रोज़मेरी / गुलमेंहदी",
+      "marathi": "रोझमेरी",
+      "bengali": "রোজমেরি",
+      "kannada": "ರೋಸ್ಮರಿ",
+      "tamil": "ரோஸ்மேரி",
+      "telugu": "రోజ్మేరీ"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 5
+      },
+      "monsoon_and_winter": {
+        "min": 7,
+        "max": 12
+      },
+      "note": "Rosemary is native to arid Mediterranean rocky slopes and cannot tolerate wet, boggy potting soil. Water deeply only when the top 2 inches of soil feel completely dry. In the Indian monsoon, keep the pot sheltered under a balcony roof; continuous rain on waterlogged roots is the #1 killer of rosemary in India. In winter, water sparingly every 7 to 10 days."
+    },
+    "light_lux": {
+      "min_tolerated": 25000,
+      "ideal_min": 45000,
+      "ideal_max": 90000,
+      "max_tolerated": 115000
+    },
+    "humidity_percent": {
+      "min": 25,
+      "max": 60
+    },
+    "temperature_c": {
+      "tolerable_min": 2,
+      "tolerable_max": 40,
+      "ideal_min": 16,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Super gritty, rock-filled, ultra-porous potting mix that lets water flush straight through and never holds standing moisture; prefers porous terracotta pots and neutral-to-alkaline pH.",
+      "mix_recipe": "2 parts coarse river sand or crushed cinder + 2 parts pumice or fine gravel + 1 part garden soil + 1 part vermicompost + 1 tbsp crushed limestone or eggshell powder + 1 tbsp neem cake powder",
+      "ph_min": 6.5,
+      "ph_max": 8.0
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 540,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to humans, children, dogs, and cats according to the ASPCA. Widely grown as a safe culinary herb and natural aromatic repellent."
+    },
+    "common_problems": [
+      {
+        "id": "155-monsoon_root_rot_and_collar_rot",
+        "problem": "Monsoon root rot and stem collar rot (Phytophthora fungus)",
+        "do_you_see_this_problem": "Are needle-like leaves turning dull brown or black from the base upwards, drooping limply with soft mushy stems near the soil line?",
+        "solve_it_like_this": [
+          "Immediately move the pot out of open rain into an airy, covered balcony space.",
+          "Check drainage holes; if the soil is soggy, gently slide the plant out, trim away mushy black roots, and dust with cinnamon powder or organic Trichoderma bio-fungicide.",
+          "Repot into a high-grit mix containing at least 50% cinder, gravel, or coarse sand in an unglazed terracotta pot.",
+          "Withhold watering until the soil is bone dry; never allow pots to sit in water collection saucers."
+        ]
+      },
+      {
+        "id": "155-powdery_mildew_in_humid_air",
+        "problem": "Powdery mildew coating needles in stagnant air",
+        "do_you_see_this_problem": "Do you see a dull grayish-white powder coating needle clusters during humid monsoon or cloudy autumn weeks?",
+        "solve_it_like_this": [
+          "Move the pot to your balcony's sunniest and breeziest location; stagnant humid air triggers fungal outbreaks.",
+          "Prune congested inner branches to open up airflow through the core of the bush.",
+          "Spray an organic solution of 1 tsp baking soda + 1/2 tsp mild liquid soap in 1 litre of water in early morning sun."
+        ]
+      },
+      {
+        "id": "155-spider_mites_and_spittlebugs",
+        "problem": "Spider mites and spittlebugs on tender shoots",
+        "do_you_see_this_problem": "Are needles turning speckled yellow with fine cobwebs, or do you notice foamy white froth ('cuckoo spit') nestled in branch joints?",
+        "solve_it_like_this": [
+          "Wipe off foamy spittlebug nests with a wet cotton rag or wash off with a sharp water jet.",
+          "Spray an organic neem oil solution (5 ml cold-pressed neem oil + 2 ml mild dish soap per litre of water) once a week in late afternoon.",
+          "Avoid using chemical pesticides that kill natural beneficial predators."
+        ]
+      },
+      {
+        "id": "155-leggy_growth_and_woody_bareness",
+        "problem": "Leggy, sparse growth and premature lower stem woodiness",
+        "do_you_see_this_problem": "Are lower branches bare, thick, and brown with green foliage only at the distant tips, looking sparse and spindly?",
+        "solve_it_like_this": [
+          "Ensure the plant receives at least 6 to 8 hours of direct unfiltered sunlight daily to prevent stretching.",
+          "Prune the top 2 to 3 inches of green sprigs regularly for kitchen use; frequent tip-pruning forces bushy side branching.",
+          "Never cut deep into old, bare brown wood that lacks needles, as rosemary rarely generates new buds from old woody stems."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Rosemary",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Rosemary",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Rosemary_in_bloom.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Rosemary_in_bloom.JPG/330px-Rosemary_in_bloom.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/155_rosemary.jpg",
+      "asset_path": "file:///android_asset/images/155_rosemary.jpg"
+    }
+  },
+  {
+    "id": 156,
+    "botanical_name": "Thymus vulgaris",
+    "common_name": "Thyme (English Thyme)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "थाइम / बन अजवाइन",
+      "marathi": "थाईम",
+      "bengali": "থাইম",
+      "kannada": "ಥೈಮ್",
+      "tamil": "தைம்",
+      "telugu": "థైమ్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 4
+      },
+      "monsoon_and_winter": {
+        "min": 5,
+        "max": 8
+      },
+      "note": "Thyme despises waterlogged roots and thrives on dry, lean conditions. Allow the potting soil to dry out almost completely between waterings. In hot Indian summers, water in the early morning when the pot feels light. During the monsoon, shelter pots under rain covers as standing water around its fine root system will cause fatal fungal rot within 48 hours."
+    },
+    "light_lux": {
+      "min_tolerated": 20000,
+      "ideal_min": 40000,
+      "ideal_max": 85000,
+      "max_tolerated": 110000
+    },
+    "humidity_percent": {
+      "min": 25,
+      "max": 60
+    },
+    "temperature_c": {
+      "tolerable_min": 2,
+      "tolerable_max": 38,
+      "ideal_min": 15,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "Lean, fast-draining, gritty sandy soil with minimal organic matter retention; thrives best in porous terracotta containers.",
+      "mix_recipe": "2 parts coarse sand or fine gravel + 2 parts cinder or perlite + 1 part garden soil + 1 part aged vermicompost + 1 tbsp crushed limestone or eggshell powder",
+      "ph_min": 6.5,
+      "ph_max": 8.0
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 540,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to humans, children, dogs, and cats according to the ASPCA. Safe for culinary use and pet-friendly in household herb gardens."
+    },
+    "common_problems": [
+      {
+        "id": "156-monsoon_stem_rot_and_melting",
+        "problem": "Monsoon fungal dieback and root rot (Rhizoctonia/damping off)",
+        "do_you_see_this_problem": "Are entire stems turning black, limp, and rotting into a mushy clump during rainy or humid monsoon weeks?",
+        "solve_it_like_this": [
+          "Immediately shift the pot away from rainfall to a dry, well-ventilated balcony under full breeze.",
+          "Snip away all blackened, mushy stems right to the base with sterilized scissors.",
+          "Top-dress the soil surface with 1 cm of coarse pea gravel or cinder grit to keep the lower stems from touching damp soil.",
+          "Withhold watering until the soil is completely dry, and drench the base with an organic bio-fungicide like Trichoderma viride."
+        ]
+      },
+      {
+        "id": "156-spider_mites_in_summer",
+        "problem": "Two-spotted spider mites in hot dry weather",
+        "do_you_see_this_problem": "Are tiny thyme leaves turning speckled yellow, looking dusty and webbed in dry April–May weather?",
+        "solve_it_like_this": [
+          "Spray the plant underside with a fine mist of cold water early in the morning to increase humidity.",
+          "Apply an organic spray of 5 ml cold-pressed neem oil and 2 ml liquid castile soap per litre of water once a week in the evening.",
+          "Ensure the plant is not kept near hot reflective concrete walls that trap dry radiating heat."
+        ]
+      },
+      {
+        "id": "156-woody_center_and_sparse_leaves",
+        "problem": "Woody center dieback and lack of pruning",
+        "do_you_see_this_problem": "Is the center of the thyme bush turning brown, woody, and barren while leafy growth only occurs at the outer sprawling tips?",
+        "solve_it_like_this": [
+          "Lightly shear back the outer top green growth by one-third in spring (February–March) to encourage fresh shoots from the center.",
+          "Never cut back into old, bare brown woody stems, as thyme cannot generate new buds from old wood.",
+          "Propagate fresh vigorous replacement plants every 2 years by stem cuttings or layering trailing branches."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Thyme",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Thyme",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Thyme-Bundle.jpg/3840px-Thyme-Bundle.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Thyme-Bundle.jpg/330px-Thyme-Bundle.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/156_thyme.jpg",
+      "asset_path": "file:///android_asset/images/156_thyme.jpg"
+    }
+  },
+  {
+    "id": 157,
+    "botanical_name": "Origanum vulgare",
+    "common_name": "Oregano (Wild Marjoram)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "ओरेगेनो / सथरा",
+      "marathi": "ओरेगॅनो",
+      "bengali": "ওরেগানো",
+      "kannada": "ಒರೆಗಾನೊ",
+      "tamil": "ஓரிகானோ",
+      "telugu": "ఒరేగానో"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 4
+      },
+      "monsoon_and_winter": {
+        "min": 5,
+        "max": 8
+      },
+      "note": "Oregano is a drought-tolerant Mediterranean herb that prefers lean, dry conditions. Overwatering is the single most common cause of failure in Indian gardens. Water deeply when the top 1 to 2 inches of soil feel completely dry, letting excess water drain out immediately. In monsoon, keep the pot in an airy covered balcony away from continuous lashing rains."
+    },
+    "light_lux": {
+      "min_tolerated": 18000,
+      "ideal_min": 35000,
+      "ideal_max": 85000,
+      "max_tolerated": 110000
+    },
+    "humidity_percent": {
+      "min": 25,
+      "max": 65
+    },
+    "temperature_c": {
+      "tolerable_min": 4,
+      "tolerable_max": 40,
+      "ideal_min": 16,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Gritty, sharply draining, light sandy-loam potting mix with modest organic content and slightly alkaline pH.",
+      "mix_recipe": "2 parts river sand or crushed cinder + 2 parts garden soil + 1 part vermicompost + 1 part perlite + 1 tbsp horticultural lime or crushed eggshell powder",
+      "ph_min": 6.5,
+      "ph_max": 8.0
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely safe and non-toxic for culinary human consumption. Fresh oregano in small culinary garnishes is safe for household pets, though pets should not consume large amounts of leaves or concentrated oregano essential oil due to strong aromatic phenols."
+    },
+    "common_problems": [
+      {
+        "id": "157-monsoon_root_rot_and_stem_collapse",
+        "problem": "Monsoon root rot and fungal collar rot",
+        "do_you_see_this_problem": "Are leaves turning yellow, limp, and dark brown at the base with blackened, rotting roots during prolonged monsoon showers?",
+        "solve_it_like_this": [
+          "Move the pot immediately to a sheltered, rain-protected balcony with active breeze.",
+          "Check drainage holes to ensure no water is trapped; empty saucers beneath the pot immediately.",
+          "Prune away rotting stems and top-dress the soil surface with coarse gravel or cinder to prevent wet soil from resting against lower leaves.",
+          "Drench soil with organic bio-fungicide (Trichoderma viride or Pseudomonas fluorescens) if rot symptoms appear."
+        ]
+      },
+      {
+        "id": "157-aphids_and_spider_mites",
+        "problem": "Aphids and spider mites on tender growth",
+        "do_you_see_this_problem": "Do you see tiny green bugs on new shoot tips or fine stippling and webbing on the underside of oregano leaves?",
+        "solve_it_like_this": [
+          "Wash off pest colonies with a sharp morning water spray.",
+          "Spray an organic mixture of 5 ml neem oil + 2 ml mild dish soap per litre of water onto foliage in late evening.",
+          "Prune heavily infested sprigs and wash kitchen herbs before consumption."
+        ]
+      },
+      {
+        "id": "157-loss_of_aroma_and_flavor",
+        "problem": "Loss of essential oil potency and weak flavor",
+        "do_you_see_this_problem": "Are leaves growing large, dark green, and watery but lacking the characteristic punchy oregano fragrance and taste?",
+        "solve_it_like_this": [
+          "Stop adding heavy nitrogen fertilizers; rich soils dilute oregano's essential oils.",
+          "Increase direct sun exposure to at least 6 full hours daily; sun intensity concentrates aromatic volatile oils.",
+          "Allow the soil to dry out more between waterings to simulate its native semi-arid Mediterranean habitat."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Oregano",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Oregano",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Origanum_vulgare_-_harilik_pune.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Origanum_vulgare_-_harilik_pune.jpg/330px-Origanum_vulgare_-_harilik_pune.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/157_oregano.jpg",
+      "asset_path": "file:///android_asset/images/157_oregano.jpg"
+    }
+  },
+  {
+    "id": 158,
+    "botanical_name": "Coriandrum sativum",
+    "common_name": "Coriander (Dhaniya / Cilantro)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "धनिया / हरा धनिया",
+      "marathi": "कोथिंबीर",
+      "bengali": "ধনে পাতা",
+      "kannada": "ಕೊತ್ತಂಬರಿ ಸೊಪ್ಪು",
+      "tamil": "கொத்தமல்லி",
+      "telugu": "కొత్తిమీర"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Coriander is a cool-season annual with delicate, shallow taproots. In Indian winters (October–February), water gently whenever the top half-inch of soil dries. In hot dry summer months (March–June), coriander struggles and bolts to seed rapidly; keep the potting mix consistently damp and provide cool afternoon shade. Always water with a gentle rose-head can to avoid flattening tender seedlings."
+    },
+    "light_lux": {
+      "min_tolerated": 10000,
+      "ideal_min": 22000,
+      "ideal_max": 50000,
+      "max_tolerated": 75000
+    },
+    "humidity_percent": {
+      "min": 35,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 7,
+      "tolerable_max": 35,
+      "ideal_min": 15,
+      "ideal_max": 26
+    },
+    "soil": {
+      "in_simple_words": "Light, friable, fertile, compost-rich sandy loam that drains freely while retaining steady moisture.",
+      "mix_recipe": "2 parts garden loam + 2 parts vermicompost or leaf compost + 1 part coarse sand + 1 part coco peat + 2 tbsp neem cake powder",
+      "ph_min": 6.2,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 15,
+    "refresh_top_soil_every_days": 45,
+    "repot_every_days": 60,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely safe and non-toxic for humans, children, dogs, and cats. Widely consumed raw in daily culinary dishes."
+    },
+    "common_problems": [
+      {
+        "id": "158-summer_bolting_and_premature_flowering",
+        "problem": "Premature bolting and flowering in summer heat",
+        "do_you_see_this_problem": "Are stems suddenly shooting up tall and spindly, with feathery fern-like leaves and tiny white flower umbels instead of broad leafy greens?",
+        "solve_it_like_this": [
+          "Understand that temperatures above 30°C and long day-lengths trigger natural bolting to set coriander seed.",
+          "Grow coriander in bright partial shade or morning-sun-only locations during March to June, avoiding hot afternoon glare.",
+          "Sow heat-tolerant/slow-bolt cultivars, mulch the soil surface to keep roots cool, and practice succession sowing every 2 weeks.",
+          "Harvest outer stems frequently using the 'cut-and-come-again' method before central flower stalks elongate."
+        ]
+      },
+      {
+        "id": "158-seedling_damping_off",
+        "problem": "Damping off in young seedlings (Pythium/Rhizoctonia fungal wilt)",
+        "do_you_see_this_problem": "Are tender young coriander sprouts collapsing at the soil line, looking water-soaked, shriveled, and dying in patches?",
+        "solve_it_like_this": [
+          "Avoid overcrowding seeds; crush whole coriander seeds into halves (split seeds) and sow them spaced 1 to 2 inches apart.",
+          "Ensure pots have multiple unobstructed drainage holes and use a light, sterilized, free-draining seed-starting mix.",
+          "Water using a fine misting spray in early morning; never overwater or leave the soil waterlogged.",
+          "Treat seeds with Trichoderma viride bio-fungicide powder before sowing."
+        ]
+      },
+      {
+        "id": "158-powdery_mildew_in_winter",
+        "problem": "Powdery mildew (White powdery coating on foliage)",
+        "do_you_see_this_problem": "Are leaves and stems coated with a dusty white flour-like fungal growth during warm dry winter afternoons following cool humid nights?",
+        "solve_it_like_this": [
+          "Thin the crop to allow sunlight and breeze to reach the base of each plant.",
+          "Spray foliage with an organic solution of 1 teaspoon baking soda + 2 drops mild soap in 1 litre of water at the first sign of white spots.",
+          "Avoid splashing water on the foliage late in the evening; water only the soil surface in the morning."
+        ]
+      },
+      {
+        "id": "158-aphids_infestation",
+        "problem": "Green peach aphids and coriander aphids",
+        "do_you_see_this_problem": "Are clusters of tiny green or yellowish insects crowding the tender inner leaf shoots, causing curling and stunted yellow leaves?",
+        "solve_it_like_this": [
+          "Wash them off gently with a handheld spray bottle of cool water.",
+          "Spray an organic solution of 3 to 5 ml cold-pressed neem oil + 1 ml mild dish soap per litre of water in late afternoon.",
+          "Dust fine wood ash or diatomaceous earth around the base to deter crawling pests."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Coriander",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Coriander",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Coriandrum_sativum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-193.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Coriandrum_sativum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-193.jpg/330px-Coriandrum_sativum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-193.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/158_coriander_dhaniya.jpg",
+      "asset_path": "file:///android_asset/images/158_coriander_dhaniya.jpg"
+    }
+  },
+  {
+    "id": 159,
+    "botanical_name": "Petroselinum crispum",
+    "common_name": "Parsley (Flat-leaf & Curly Parsley)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "पार्सले / अजमोद",
+      "marathi": "पार्सली / अजमोदा",
+      "bengali": "পার্সলে / বনজোয়ান",
+      "kannada": "ಪಾರ್ಸ್ಲಿ / ಅಜಮೋದ",
+      "tamil": "பார்ஸ்லி / அஜ்மோதா",
+      "telugu": "పార్స్లీ / వాము ఆకు"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Parsley has a long, delicate taproot that requires consistently moist, evenly damp soil. Never let the root ball completely dry out, as drought stress causes tough, yellowing, bitter leaves. In Indian summers, water early in the morning and provide afternoon shade. In winter and monsoons, water when the top inch dries, ensuring water flushes through freely without waterlogging."
+    },
+    "light_lux": {
+      "min_tolerated": 12000,
+      "ideal_min": 25000,
+      "ideal_max": 55000,
+      "max_tolerated": 75000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 5,
+      "tolerable_max": 36,
+      "ideal_min": 15,
+      "ideal_max": 26
+    },
+    "soil": {
+      "in_simple_words": "Deep, rich, moisture-retentive yet well-drained loamy soil with plenty of organic matter in a pot at least 10–12 inches deep to accommodate its long taproot.",
+      "mix_recipe": "2 parts garden loam + 2 parts aged vermicompost or composted cow manure + 1 part coco peat + 1 part coarse sand or perlite + 2 tbsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 20,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 180,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely safe and edible for humans and children. Curly/flat parsley in small dietary quantities is safe for dogs and commonly used as a natural breath freshener; however, avoid letting pets gorge on massive quantities, and do not confuse with toxic wild carrot or spring parsley (Cymopterus watsonii)."
+    },
+    "common_problems": [
+      {
+        "id": "159-summer_heat_wilting_and_yellowing",
+        "problem": "Summer heat stress and lower leaf yellowing",
+        "do_you_see_this_problem": "Are outer leaf stems turning bright yellow, wilting limp, and drying up under hot summer temperatures exceeding 32°C?",
+        "solve_it_like_this": [
+          "Move the pot to a bright morning-sun location that is fully shaded from harsh midday and afternoon heat.",
+          "Ensure the deep potting mix remains consistently damp; mulch the top with coco peat or rice husk to keep taproots cool.",
+          "Harvest outer stems regularly to relieve transpiration load on the root system."
+        ]
+      },
+      {
+        "id": "159-septoria_leaf_spot",
+        "problem": "Septoria leaf spot (Fungal brown spots with yellow halos)",
+        "do_you_see_this_problem": "Do you see small sunken brown circular spots with yellow halos on leaf blades during warm humid periods?",
+        "solve_it_like_this": [
+          "Prune away and safely dispose of all spotted leaves to prevent fungal spores from spreading.",
+          "Water strictly at the soil base using a watering can with a narrow spout; never wet parsley leaves directly.",
+          "Spray remaining foliage with an organic copper-free bio-fungicide like Trichoderma viride or dilute baking soda spray (1 tsp/L)."
+        ]
+      },
+      {
+        "id": "159-slow_and_erratic_germination",
+        "problem": "Extremely slow germination (Parsley seeds taking 3–4 weeks to sprout)",
+        "do_you_see_this_problem": "Have you sown parsley seeds but see zero sprouts emerging even after 2 to 3 weeks?",
+        "solve_it_like_this": [
+          "Understand that parsley seed coats contain natural germination inhibitors (furanocoumarins) that make sprouting naturally sluggish.",
+          "Soak parsley seeds in warm water (approx 40°C) overnight for 12 to 24 hours before sowing to leach out inhibitors.",
+          "Keep the seedbed constantly damp by covering the pot loosely with a moist burlap cloth or paper towel until sprouts appear."
+        ]
+      },
+      {
+        "id": "159-swallowtail_caterpillars",
+        "problem": "Caterpillars / leaf chewers",
+        "do_you_see_this_problem": "Are entire leaf stems being stripped bare overnight with large green-and-black striped caterpillars feeding on foliage?",
+        "solve_it_like_this": [
+          "Hand-pick caterpillars off the plants and relocate them (many are beneficial swallowtail butterfly larvae).",
+          "If damage is excessive, spray with organic Bacillus thuringiensis (Bt) or an organic neem oil spray in late evening.",
+          "Cover young parsley plants with fine horticultural insect netting if moth pressure is intense."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Parsley",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Parsley",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Petroselinum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Petroselinum.jpg/330px-Petroselinum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/159_parsley.jpg",
+      "asset_path": "file:///android_asset/images/159_parsley.jpg"
+    }
+  },
+  {
+    "id": 160,
+    "botanical_name": "Anethum graveolens",
+    "common_name": "Dill (Suva)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "सोया / सुवा",
+      "marathi": "शेपू",
+      "bengali": "শুল্পা শাক / সোয়া",
+      "kannada": "ಸಬ್ಬಸಿಗೆ ಸೊಪ್ಪು",
+      "tamil": "சதகுப்பை",
+      "telugu": "సదాప / సోపు కూర"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Sensitive taproot requires consistent moisture without waterlogging. In the dry Indian summer heat, soil dries out rapidly causing premature flowering (bolting); maintain damp but well-draining soil and water gently at the base without soaking the delicate feathery foliage."
+    },
+    "light_lux": {
+      "min_tolerated": 15000,
+      "ideal_min": 30000,
+      "ideal_max": 60000,
+      "max_tolerated": 80000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 8,
+      "tolerable_max": 36,
+      "ideal_min": 15,
+      "ideal_max": 26
+    },
+    "soil": {
+      "in_simple_words": "Deep, fertile, well-draining loamy soil that allows its long, sensitive taproot to anchor without water stagnation.",
+      "mix_recipe": "2 parts garden soil + 1.5 parts vermicompost + 1 part cocopeat + 0.5 part coarse sand + 2 tbsp neem cake powder",
+      "ph_min": 5.8,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 20,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 120,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to dogs, cats, and humans. A celebrated culinary herb and traditional digestive carminative commonly used for soothing infant colic (gripe water)."
+    },
+    "common_problems": [
+      {
+        "id": "160-premature_bolting",
+        "problem": "Premature bolting and flower umbel emergence",
+        "do_you_see_this_problem": "Is the plant suddenly shooting up tall, hollow flower stalks with yellow umbels while stopping production of feathery culinary leaves?",
+        "solve_it_like_this": [
+          "Snip off central flowering stems as soon as they appear to redirect energy back into foliage production.",
+          "Provide afternoon shade when outdoor temperatures exceed 28°C to delay heat-induced bolting.",
+          "Harvest outer leaves regularly and practice succession sowing every 3 to 4 weeks during winter for continuous harvest."
+        ]
+      },
+      {
+        "id": "160-aphid_infestation",
+        "problem": "Green and black aphids infesting delicate feathery stems",
+        "do_you_see_this_problem": "Are colonies of tiny green or black insects clustering along tender branch tips, causing distorted, stunted growth and sticky honeydew residue?",
+        "solve_it_like_this": [
+          "Dislodge aphid colonies with a focused morning water spray from a handheld pressure mister.",
+          "Spray an organic neem oil solution (5 ml cold-pressed neem oil + 2 ml organic liquid soap per litre of water) in the cool evening.",
+          "Dust surrounding soil and lower stems lightly with sifted wood ash to deter ant trails that farm aphids."
+        ]
+      },
+      {
+        "id": "160-damping_off_taproot_rot",
+        "problem": "Damping off and root collar rot in poorly aerated soil",
+        "do_you_see_this_problem": "Are young seedlings collapsing at ground level, or are lower stems turning yellow, watery, and brown near the soil line?",
+        "solve_it_like_this": [
+          "Ensure containers have multiple free-flowing bottom holes; never let saucers hold stagnant runoff.",
+          "Incorporate coarse river sand into the potting mix to ensure rapid aeration around the delicate taproot.",
+          "Drench soil lightly with Trichoderma viride bio-fungicide (3 g per litre of water) to suppress soil pathogens."
+        ]
+      },
+      {
+        "id": "160-transplant_shock",
+        "problem": "Severe transplant shock and wilt",
+        "do_you_see_this_problem": "Did young seedlings suddenly droop, turn yellow, and fail to recover after being shifted into a new pot?",
+        "solve_it_like_this": [
+          "Dill forms a fragile, brittle taproot that strongly resents root disturbance; always direct-sow seeds into their permanent 8–10 inch deep container.",
+          "If transplanting is necessary, move entire soil blocks undisturbed while seedlings have only 2–3 true leaves.",
+          "Keep newly transplanted herbs in cool dappled shade for 3 to 4 days and keep soil consistently damp."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Anethum_graveolens",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Anethum_graveolens",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Illustration_Anethum_graveolens_clean.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Illustration_Anethum_graveolens_clean.jpg/330px-Illustration_Anethum_graveolens_clean.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/160_dill_suva.jpg",
+      "asset_path": "file:///android_asset/images/160_dill_suva.jpg"
+    }
+  },
+  {
+    "id": 161,
+    "botanical_name": "Allium schoenoprasum",
+    "common_name": "Chives",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "चाइव्स / छोटी प्याज",
+      "marathi": "चाइव्ज",
+      "bengali": "চাইভস",
+      "kannada": "ಚೈವ್ಸ್",
+      "tamil": "சைவ்ஸ் / பூண்டு தாள்",
+      "telugu": "చైవ్స్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Prefers consistently moist, cool potting soil. In scorching Indian summers, cylindrical hollow leaf tips quickly dry and turn straw-colored if the soil dries out completely. Provide generous bottom drainage so heavy monsoon rains flow through without rotting the small underground bulb clusters."
+    },
+    "light_lux": {
+      "min_tolerated": 10000,
+      "ideal_min": 25000,
+      "ideal_max": 55000,
+      "max_tolerated": 75000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 5,
+      "tolerable_max": 35,
+      "ideal_min": 15,
+      "ideal_max": 26
+    },
+    "soil": {
+      "in_simple_words": "Rich, fertile, moisture-retentive yet well-aerated potting soil packed with organic compost.",
+      "mix_recipe": "2 parts garden soil + 1.5 parts vermicompost + 1 part cocopeat + 0.5 part coarse river sand + 2 tbsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 25,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Toxic to cats and dogs. Like all Allium species (onions, garlic, shallots), it contains organosulfur compounds and n-propyl disulfide that trigger oxidative damage to feline and canine red blood cells (Heinz body hemolytic anemia). Safe and edible for human culinary use."
+    },
+    "common_problems": [
+      {
+        "id": "161-yellowing_straw_leaf_tips",
+        "problem": "Crispy yellow and brown leaf tips",
+        "do_you_see_this_problem": "Are the hollow tubular green blades turning bleached straw-yellow, dry, and crispy at the tips?",
+        "solve_it_like_this": [
+          "Increase watering frequency to maintain even soil moisture; never let the root zone turn bone dry.",
+          "Move the pot away from harsh, dry midday winds and direct afternoon summer sun exceeding 32°C.",
+          "Snip off brown tips with clean kitchen scissors roughly 2 to 3 cm above the crown to stimulate fresh green flushes."
+        ]
+      },
+      {
+        "id": "161-bulb_and_crown_rot",
+        "problem": "Crown and bulb rot from soggy soil",
+        "do_you_see_this_problem": "Are blade bases becoming mushy, slimy, and browning at the soil line with a foul decaying smell during monsoon?",
+        "solve_it_like_this": [
+          "Immediately verify that bottom drainage holes are clear and elevate the pot on stands.",
+          "Withhold watering until the top 3 cm of potting soil feels dry to the touch.",
+          "Drench the root ball with Trichoderma viride or carbendazim (1 g per litre of water) to halt fungal progression."
+        ]
+      },
+      {
+        "id": "161-thrips_and_aphids",
+        "problem": "Onion thrips and dark aphids",
+        "do_you_see_this_problem": "Are silver-white flecks, distorted leaf growth, or tiny black specks congregating between densely clustered blade stems?",
+        "solve_it_like_this": [
+          "Rinse foliage thoroughly under a steady jet of tap water to wash off active thrips and aphids.",
+          "Spray cold-pressed neem oil (5 ml) blended with mild organic liquid soap (2 ml) in 1 litre water during twilight.",
+          "Space containers apart to maximize air movement between herb clusters."
+        ]
+      },
+      {
+        "id": "161-crowded_rootbound_clump",
+        "problem": "Stunted growth and hair-thin blades from crowded root clumps",
+        "do_you_see_this_problem": "Has foliage growth slowed down, producing sparse, hair-thin blades after months in the same container?",
+        "solve_it_like_this": [
+          "Chive bulb clumps multiply exponentially and quickly become pot-bound; unpot the plant in late winter or early spring.",
+          "Gently divide the dense root mass into smaller clusters containing 6 to 10 healthy bulbs each.",
+          "Replant divisions in fresh, compost-enriched potting mix spaced 8 to 10 cm apart."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Allium_schoenoprasum",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Allium_schoenoprasum",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Allium_schoenoprasum_-_Bombus_lapidarius_-_Tootsi.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Allium_schoenoprasum_-_Bombus_lapidarius_-_Tootsi.jpg/330px-Allium_schoenoprasum_-_Bombus_lapidarius_-_Tootsi.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/161_chives.jpg",
+      "asset_path": "file:///android_asset/images/161_chives.jpg"
+    }
+  },
+  {
+    "id": 162,
+    "botanical_name": "Allium tuberosum",
+    "common_name": "Garlic Chives",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "हरा लहसुन / गार्लिक चाइव्स",
+      "marathi": "लसूण पाती / गार्लिक चाइव्ज",
+      "bengali": "কুচাই / বাবান্দা",
+      "kannada": "ಬೆಳ್ಳುಳ್ಳಿ ಸೊಪ್ಪು",
+      "tamil": "பூண்டு கீரை / குட்சாய்",
+      "telugu": "వెల్లుల్లి ఆకులు"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 5
+      },
+      "note": "Significantly more heat-tolerant and robust than common chives. Appreciates regular, deep watering to maintain juicy, succulent flat strap leaves. Allow top 2 cm of soil to dry between waterings, and ensure rapid drainage during intense monsoon spells."
+    },
+    "light_lux": {
+      "min_tolerated": 12000,
+      "ideal_min": 30000,
+      "ideal_max": 65000,
+      "max_tolerated": 85000
+    },
+    "humidity_percent": {
+      "min": 35,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 6,
+      "tolerable_max": 42,
+      "ideal_min": 18,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Fertile, loamy, compost-rich potting soil with good moisture retention and unimpeded drainage.",
+      "mix_recipe": "2 parts garden soil + 1.5 parts vermicompost + 1 part cocopeat + 0.5 part coarse sand or perlite + 2 tbsp neem cake powder",
+      "ph_min": 6.2,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Toxic to dogs and cats. Contains organosulfur compounds and thiosulfates characteristic of the Allium genus that cause hemolytic anemia and Heinz body formation upon pet ingestion. Completely safe, fragrant, and nutritious for human consumption."
+    },
+    "common_problems": [
+      {
+        "id": "162-downy_mildew_leaf_blight",
+        "problem": "Downy mildew and foliar blight lesions",
+        "do_you_see_this_problem": "Are greyish-purple downy patches or yellowish water-soaked blotches spreading across mature flat strap leaves during muggy humid weather?",
+        "solve_it_like_this": [
+          "Avoid splashing water on leaf surfaces; irrigate directly onto the potting soil early in the morning.",
+          "Prune severely affected leaf blades down to soil level and discard them to curb spore dispersal.",
+          "Apply copper oxychloride (2 g/L) or a bio-spray of Pseudomonas fluorescens (5 g/L) across all foliage."
+        ]
+      },
+      {
+        "id": "162-rhizome_bulb_rot",
+        "problem": "Rhizomatous bulb rot from standing water",
+        "do_you_see_this_problem": "Are entire leaf clumps pulling away effortlessly with brown, mushy, malodorous rhizome bases during the monsoon?",
+        "solve_it_like_this": [
+          "Unblock pot drainage holes immediately and move the container away from relentless rain overflow.",
+          "Remove infected decayed bulbs and drench remaining root balls with Trichoderma viride bio-fungicide (3 g/L).",
+          "Re-pot into a lighter, coarser medium containing equal parts coarse river sand and perlite."
+        ]
+      },
+      {
+        "id": "162-uncontrolled_self_seeding",
+        "problem": "Rampant self-seeding and container crowding",
+        "do_you_see_this_problem": "Is the pot suddenly carpeted with hundreds of tiny seedling grass blades, choking out the parent clumps?",
+        "solve_it_like_this": [
+          "Cut off decorative white starry flower umbels as blooms begin to fade before black seed capsules open.",
+          "Harvest tender flower scapes and unopened buds for delicious culinary stir-fries before blossoms open.",
+          "Weed out volunteer seedlings from around the main root clumps while they are small."
+        ]
+      },
+      {
+        "id": "162-thrips_and_leaf_flecking",
+        "problem": "Onion thrips causing silvery mottled foliage",
+        "do_you_see_this_problem": "Do flat leaf surfaces show minute silvery streaks, pale patches, and tiny black droppings?",
+        "solve_it_like_this": [
+          "Mist underside of foliage and stem folds with neem oil emulsion (5 ml cold-pressed neem oil + 2 ml mild liquid soap in 1 litre water).",
+          "Wipe leaf blades gently with a damp cotton cloth or sponge to remove insect colonies.",
+          "Ensure pots receive good ventilation and are not overcrowded by taller plants."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Allium_tuberosum",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Allium_tuberosum",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Allium_tuberosum_kz01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Allium_tuberosum_kz01.jpg/330px-Allium_tuberosum_kz01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/162_garlic_chives.jpg",
+      "asset_path": "file:///android_asset/images/162_garlic_chives.jpg"
+    }
+  },
+  {
+    "id": 163,
+    "botanical_name": "Coleus amboinicus",
+    "common_name": "Indian Borage (Ajwain Patta)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "अजवाइन पत्ता / पत्थरचूर",
+      "marathi": "पान ओवा / पत्थरचूर",
+      "bengali": "পাথরচুর পাতা / আমলকুচি",
+      "kannada": "ದೊಡ್ಡಪತ್ರೆ / ಸಾಂಬ್ರಾಣಿ ಸೊಪ್ಪು",
+      "tamil": "கற்பூரவல்லி / ஓமவல்லி",
+      "telugu": "వాము ఆకు / కర్పూరవల్లి"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 4
+      },
+      "monsoon_and_winter": {
+        "min": 5,
+        "max": 8
+      },
+      "note": "Semi-succulent aromatic herb with thick, water-storing fleshy leaves and stems. Extremely susceptible to stem rot and root decay in soggy soil. Employ a strict soak-and-dry regimen: water thoroughly only when the top 3–4 cm of potting mix is dry. Shelter from relentless monsoon rains."
+    },
+    "light_lux": {
+      "min_tolerated": 8000,
+      "ideal_min": 20000,
+      "ideal_max": 50000,
+      "max_tolerated": 75000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 42,
+      "ideal_min": 20,
+      "ideal_max": 35
+    },
+    "soil": {
+      "in_simple_words": "Porous, gritty, fast-draining succulent potting mix that never allows stagnant moisture around fleshy root crowns.",
+      "mix_recipe": "2 parts garden soil + 1.5 parts coarse river sand or pumice grit + 1 part vermicompost + 0.5 part cocopeat + 2 tbsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "mildly_toxic",
+      "note": "Mildly toxic to dogs and cats. Contains concentrated volatile aromatic oils (thymol and carvacrol) that can induce vomiting, diarrhea, drooling, or skin redness if consumed in large volumes by pets. Completely safe and widely utilized in Indian home medicine (kashayam for colds, coughs, and indigestion) and culinary dishes (pakodas, rasam)."
+    },
+    "common_problems": [
+      {
+        "id": "163-stem_and_root_rot",
+        "problem": "Basal stem collapse and root rot from overwatering",
+        "do_you_see_this_problem": "Are lower stem bases turning brown, black, water-soaked, and soft, with heavy succulent branches toppling over at soil level?",
+        "solve_it_like_this": [
+          "Stop watering immediately; tip out standing water from pot saucers and check drainage holes.",
+          "Take healthy green stem cuttings 8–10 cm above the rotten section; let cut ends dry for a day, then root directly in sandy soil.",
+          "Discard rotted roots and repot surviving portions in porous, gritty soil containing extra coarse sand."
+        ]
+      },
+      {
+        "id": "163-leggy_sprawling_growth",
+        "problem": "Leggy, spindly stems with pale small leaves",
+        "do_you_see_this_problem": "Are stems stretching long, fragile, and sprawling with large gaps between leaves and diminished aromatic pungency?",
+        "solve_it_like_this": [
+          "Move the pot to a bright balcony or window sill receiving 3 to 5 hours of morning direct sunlight.",
+          "Pinch off stem terminal tips regularly to force vigorous lateral branch growth and maintain a compact, bushy mound.",
+          "Use the harvested fragrant tender tips fresh in cooking, herbal teas, or herbal remedies."
+        ]
+      },
+      {
+        "id": "163-mealybug_infestation",
+        "problem": "Mealybugs hiding under velvety leaf undersides",
+        "do_you_see_this_problem": "Are fuzzy white cottony masses tucked beneath leaf axils, veins, and branch junctions?",
+        "solve_it_like_this": [
+          "Dab visible mealybug colonies directly using a cotton bud dipped in 70% surgical spirit or isopropyl alcohol.",
+          "Spray plant thoroughly with neem oil emulsion (5 ml neem oil + 2 ml liquid castile soap per litre of water) once a week in the evening.",
+          "Keep infested plants isolated until pests are completely eradicated."
+        ]
+      },
+      {
+        "id": "163-sun_scorched_yellow_leaves",
+        "problem": "Bleached yellow leaves and burnt crisp margins",
+        "do_you_see_this_problem": "Are thick green velvety leaves turning pale yellowish-white with brown crisp scorch patches during peak summer afternoons?",
+        "solve_it_like_this": [
+          "Relocate the container behind a 50% green agro-shade net or into bright dappled light during harsh 12 PM–3 PM summer heatwaves.",
+          "Ensure morning sun (7 AM–10 AM) is prioritized while avoiding blazing afternoon western glare.",
+          "Scorched leaves will not heal; trim them off to let fresh lush green foliage sprout from nodes."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Coleus_amboinicus",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Coleus_amboinicus",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Leaf_-pani_koorkka.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Leaf_-pani_koorkka.JPG/330px-Leaf_-pani_koorkka.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/163_indian_borage.jpg",
+      "asset_path": "file:///android_asset/images/163_indian_borage.jpg"
+    }
+  },
+  {
+    "id": 164,
+    "botanical_name": "Centella asiatica",
+    "common_name": "Gotu Kola (Mandukaparni)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "मण्डूकपर्णी / ब्राह्मी",
+      "marathi": "ब्राह्मी / करिवना",
+      "bengali": "থানকুনী পাতা / ব্রাহ্মমণ্ডূকী",
+      "kannada": "ಒಂದೆಲಗ / ಸರಸ್ವತಿ ಸೊಪ್ಪು",
+      "tamil": "வல்லாரை கீரை",
+      "telugu": "సరస్వతీ ఆకు / మండూకపర్ణి"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 1
+      },
+      "monsoon_and_winter": {
+        "min": 1,
+        "max": 2
+      },
+      "note": "Moisture-loving wetland perennial that roots along creeping stolons. The potting medium must remain perpetually moist to damp; even a single day of dry soil in Indian summer causes severe wilting and leaf crisping. Keep in shallow wide bowls or place pots in a saucer holding 1 cm of water."
+    },
+    "light_lux": {
+      "min_tolerated": 8000,
+      "ideal_min": 15000,
+      "ideal_max": 35000,
+      "max_tolerated": 60000
+    },
+    "humidity_percent": {
+      "min": 55,
+      "max": 90
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 38,
+      "ideal_min": 20,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Rich, humus-heavy, moisture-retentive loamy soil that remains evenly damp without compacting into hard brick.",
+      "mix_recipe": "2 parts garden loam + 2 parts vermicompost or composted cow manure + 1 part cocopeat + 0.5 part coarse sand",
+      "ph_min": 5.5,
+      "ph_max": 7.2
+    },
+    "fertilise_or_manure_every_days": 20,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 180,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to pets and humans. Renowned classical Ayurvedic Medhya Rasayana (brain and longevity tonic) widely consumed as an edible green in chutneys, juices, and soups across India."
+    },
+    "common_problems": [
+      {
+        "id": "164-dry_soil_wilt_and_crisping",
+        "problem": "Sudden leaf wilting and crisping from dry soil",
+        "do_you_see_this_problem": "Are fan-shaped leaves drooping flat against the soil, turning paper-thin and brittle at the margins?",
+        "solve_it_like_this": [
+          "Immediately place the base of the pot in a tub of water for 20 minutes to soak up moisture from below.",
+          "Keep a permanent saucer filled with 1 cm of standing fresh water beneath wide, shallow pots.",
+          "Move container into bright dappled shade, sheltered from dry hot balcony winds."
+        ]
+      },
+      {
+        "id": "164-cercospora_leaf_spot",
+        "problem": "Cercospora fungal leaf spots",
+        "do_you_see_this_problem": "Are circular reddish-brown spots with yellow chlorotic rings dotting the round leaf blades during humid monsoon weather?",
+        "solve_it_like_this": [
+          "Snip and remove infected leaves with clean scissors to prevent spread to young runner shoots.",
+          "Water at the base of the plant without splashing soil onto foliage surfaces.",
+          "Spray biological Trichoderma viride or Pseudomonas fluorescens (3 g per litre of water) once every 10 days."
+        ]
+      },
+      {
+        "id": "164-snails_and_caterpillars",
+        "problem": "Snails, slugs, and leaf-chewing caterpillars",
+        "do_you_see_this_problem": "Are irregular ragged holes chewed out of tender green leaves with silver slime trails or tiny dark droppings present?",
+        "solve_it_like_this": [
+          "Handpick nocturnal slugs, snails, and caterpillars during early dawn or twilight hours.",
+          "Form a defensive ring of crushed eggshells, coarse sand, or wood ash along the rim and base of the container.",
+          "Apply a mild biological spray of Bacillus thuringiensis (Bt) or diluted cold-pressed neem oil (3 ml/L)."
+        ]
+      },
+      {
+        "id": "164-crowded_runner_exhaustion",
+        "problem": "Yellowing leaves and stunted runners from container exhaustion",
+        "do_you_see_this_problem": "Are new leaves growing very small and pale yellow with stunted stolons after spreading across the pot?",
+        "solve_it_like_this": [
+          "Gotu Kola rapidly fills container surface; divide creeping rooted nodes into fresh wide trays every 5 to 6 months.",
+          "Top dress with a generous 2 cm layer of nutrient-rich vermicompost mixed with a spoonful of neem cake.",
+          "Feed with diluted jeevamrutha or fermented mustard cake liquid every two weeks to stimulate lush green leaf flushes."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Centella_asiatica",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Centella_asiatica",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Centella_asiatica_%28%E0%A6%A5%E0%A6%BE%E0%A6%A8%E0%A6%95%E0%A7%81%E0%A6%A8%E0%A6%BF%29_%283%29.jpg/3840px-Centella_asiatica_%28%E0%A6%A5%E0%A6%BE%E0%A6%A8%E0%A6%95%E0%A7%81%E0%A6%A8%E0%A6%BF%29_%283%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Centella_asiatica_%28%E0%A6%A5%E0%A6%BE%E0%A6%A8%E0%A6%95%E0%A7%81%E0%A6%A8%E0%A6%BF%29_%283%29.jpg/330px-Centella_asiatica_%28%E0%A6%A5%E0%A6%BE%E0%A6%A8%E0%A6%95%E0%A7%81%E0%A6%A8%E0%A6%BF%29_%283%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/164_gotu_kola.jpg",
+      "asset_path": "file:///android_asset/images/164_gotu_kola.jpg"
+    }
+  },
+  {
+    "id": 165,
+    "botanical_name": "Bacopa monnieri",
+    "common_name": "Brahmi (Jalbrahmi)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "जलब्राह्मी / ब्राह्मी",
+      "marathi": "जलब्राह्मी / नीर ब्राह्मी",
+      "bengali": "ব্রাহ্মী শাক / ব্রাহ্মী",
+      "kannada": "ಜಲ ಬ್ರಾಹ್ಮಿ / ನೀರು ಬ್ರಾಹ್ಮಿ",
+      "tamil": "நீர்ப்பிரமி / பிரமியம்",
+      "telugu": "సాంబ్రాణి ఆకు / నీటి బ్రాహ్మి"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 1
+      },
+      "monsoon_and_winter": {
+        "min": 1,
+        "max": 2
+      },
+      "note": "True semi-aquatic wetland herb native to marshlands and watercourses across India. Requires perpetually saturated, waterlogged, or flooded potting medium. Never allow the soil to dry out even for a few hours. Thrives when kept in a pot permanently standing in 2–3 cm of water."
+    },
+    "light_lux": {
+      "min_tolerated": 10000,
+      "ideal_min": 25000,
+      "ideal_max": 60000,
+      "max_tolerated": 80000
+    },
+    "humidity_percent": {
+      "min": 60,
+      "max": 95
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 42,
+      "ideal_min": 22,
+      "ideal_max": 35
+    },
+    "soil": {
+      "in_simple_words": "Heavy, organic-rich boggy silt or clay loam that holds standing water without deteriorating.",
+      "mix_recipe": "2 parts garden clay loam + 1 part vermicompost + 1 part cocopeat or pond sediment + 0.5 part well-decomposed cow manure",
+      "ph_min": 6.0,
+      "ph_max": 7.8
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 180,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to dogs, cats, and humans. Celebrated in Ayurveda as the premier Medhya Rasayana herb for enhancing memory, focus, and reducing cognitive fatigue."
+    },
+    "common_problems": [
+      {
+        "id": "165-desiccation_and_shriveling",
+        "problem": "Rapid desiccation and stem collapse from dry potting mix",
+        "do_you_see_this_problem": "Are creeping succulent stems shriveling, turning brown, and drying to crisp brittle twigs?",
+        "solve_it_like_this": [
+          "Submerge the entire pot in a bucket of fresh water for 30 minutes to revive dehydrated roots and stem nodes.",
+          "Keep containers placed in a 2 to 3 cm deep water tray or saucer at all times, topping up daily.",
+          "Never place containers in exposed hot winds without continuous standing water."
+        ]
+      },
+      {
+        "id": "165-algae_and_stagnant_water",
+        "problem": "Green algae scum and stagnant smell in the water tray",
+        "do_you_see_this_problem": "Is green slimy algae accumulating on the surface of standing water, creating unpleasant odors?",
+        "solve_it_like_this": [
+          "Flush and refresh the standing water saucer once every week with clean water.",
+          "Add a small handful of horticultural charcoal chunks or a pinch of neem cake powder to keep water fresh.",
+          "Wipe clean the outer saucer during water replacements."
+        ]
+      },
+      {
+        "id": "165-caterpillar_skeletonizers",
+        "problem": "Leaf skeletonizer caterpillars and grasshoppers",
+        "do_you_see_this_problem": "Are fleshy small oblong leaves being devoured, leaving bare creeping runners and dark fecal droppings?",
+        "solve_it_like_this": [
+          "Inspect stems closely and handpick caterpillars during morning hours.",
+          "Spray biological Bacillus thuringiensis (Bt) or mild organic cold-pressed neem oil (3 ml/L) in the evening.",
+          "Avoid chemical pesticides as the fresh succulent leaves are harvested for daily herbal tonics and teas."
+        ]
+      },
+      {
+        "id": "165-foliar_chlorosis_hard_water",
+        "problem": "Foliar chlorosis and leaf yellowing from high pH hard water",
+        "do_you_see_this_problem": "Are succulent new creeping leaves turning pale yellow or chalky white due to alkaline borewell tap water?",
+        "solve_it_like_this": [
+          "Flush the pot with rainwater or reverse-osmosis (RO) water to leach accumulated alkaline mineral salts.",
+          "Top dress with acidic leaf mould or well-rotted vermicompost enriched with a pinch of humic acid.",
+          "Apply a mild drench of chelated iron (Fe-EDTA, 0.5 g per litre) to restore deep emerald green coloring."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Bacopa_monnieri",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Bacopa_monnieri",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Starr_010818-0007_Bacopa_monnieri.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Starr_010818-0007_Bacopa_monnieri.jpg/330px-Starr_010818-0007_Bacopa_monnieri.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/165_brahmi.jpg",
+      "asset_path": "file:///android_asset/images/165_brahmi.jpg"
+    }
+  },
+  {
+    "id": 166,
+    "botanical_name": "Withania somnifera",
+    "common_name": "Ashwagandha",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "अश्वगंधा / असगन्ध",
+      "marathi": "अश्वगंधा / आस्कंद",
+      "bengali": "অশ্বগন্ধা",
+      "kannada": "ಅಶ್ವಗಂಧ / ಹಿರೆಮದ್ದಿನ ಗಿಡ",
+      "tamil": "அமுக்கிராங்கிழங்கு / அசுவகந்தி",
+      "telugu": "అశ్వగంధ / పెన్నేరు గడ్డ"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 4
+      },
+      "monsoon_and_winter": {
+        "min": 6,
+        "max": 10
+      },
+      "note": "Native to arid and semi-arid tracts of India. Possesses exceptional dry-root tolerance and hates excess moisture. Water deeply only after the top 4–5 cm of soil has dried out thoroughly. Highly vulnerable to root and collar rot during heavy monsoon downpours; protect containers under shelter."
+    },
+    "light_lux": {
+      "min_tolerated": 20000,
+      "ideal_min": 45000,
+      "ideal_max": 85000,
+      "max_tolerated": 100000
+    },
+    "humidity_percent": {
+      "min": 25,
+      "max": 65
+    },
+    "temperature_c": {
+      "tolerable_min": 8,
+      "tolerable_max": 45,
+      "ideal_min": 20,
+      "ideal_max": 38
+    },
+    "soil": {
+      "in_simple_words": "Sandy, gritty, highly porous soil with low water retention that prevents standing water around thick taproots.",
+      "mix_recipe": "2 parts sandy loam or red soil + 1.5 parts coarse river sand + 1 part vermicompost + 0.5 part pumice or perlite + 2 tbsp neem cake powder",
+      "ph_min": 7.0,
+      "ph_max": 8.2
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Toxic to dogs and cats. Member of the nightshade family (Solanaceae) containing bitter withanolides and alkaloids that induce gastrointestinal upset, drooling, vomiting, diarrhea, and lethargy in pets. In humans, raw foliage and berries are toxic; only processed root powder is taken in measured Ayurvedic doses."
+    },
+    "common_problems": [
+      {
+        "id": "166-root_and_collar_rot",
+        "problem": "Collar rot and root decay from excess water",
+        "do_you_see_this_problem": "Is the base of the central stem turning dark brown, soft, and constricted at soil level while leaves wilt despite wet potting mix?",
+        "solve_it_like_this": [
+          "Stop watering immediately; ensure container drainage holes are clear and pots are elevated off wet terrace floors.",
+          "Drench root zone with Trichoderma viride bio-fungicide (3 g/L) or carbendazim (1 g/L) to arrest damping off.",
+          "Incorporate extra coarse river sand into the potting mix to maintain dry root aeration."
+        ]
+      },
+      {
+        "id": "166-spider_mites_infestation",
+        "problem": "Red spider mites and foliar webbing",
+        "do_you_see_this_problem": "Are leaves showing fine yellow stippling, curling backwards, with delicate silk web threads spun across leaf undersides during hot dry spells?",
+        "solve_it_like_this": [
+          "Spray leaf undersides forcefully with water to break webbing and wash off mite colonies.",
+          "Apply cold-pressed neem oil (5 ml) plus mild liquid soap (2 ml) in 1 litre water in late evening.",
+          "Increase ambient balcony humidity slightly during dry heatwaves by grouping potted plants together."
+        ]
+      },
+      {
+        "id": "166-alternaria_leaf_blight",
+        "problem": "Alternaria leaf blight and target leaf spots",
+        "do_you_see_this_problem": "Are dark brown to black circular spots with concentric target-like rings spreading over mature leaves during damp rainy weather?",
+        "solve_it_like_this": [
+          "Prune off severely diseased lower foliage and destroy it to prevent spore splash.",
+          "Avoid wetting foliage during irrigation; always apply water directly to soil base.",
+          "Spray copper oxychloride (2 g per litre of water) or neem seed kernel extract (5%) every 12 to 14 days."
+        ]
+      },
+      {
+        "id": "166-whitefly_and_aphid_swarms",
+        "problem": "Whiteflies and aphids on succulent young shoots",
+        "do_you_see_this_problem": "Are tiny white fluttery insects flying up when branches are shaken, accompanied by sticky leaves and black sooty mold?",
+        "solve_it_like_this": [
+          "Mount yellow sticky traps near the canopy to intercept adult whiteflies.",
+          "Spray foliage every 5 days with an organic neem oil solution (5 ml/L) ensuring thorough coverage beneath leaves.",
+          "Prune heavily infested shoot tips and dust remaining leaves with sifted wood ash."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Withania_somnifera",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Withania_somnifera",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/WithaniaFruit.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/WithaniaFruit.jpg/330px-WithaniaFruit.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/166_ashwagandha.jpg",
+      "asset_path": "file:///android_asset/images/166_ashwagandha.jpg"
+    }
+  },
+  {
+    "id": 167,
+    "botanical_name": "Curcuma longa",
+    "common_name": "Turmeric (Haldi)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "हल्दी",
+      "marathi": "हळद",
+      "bengali": "হলুদ",
+      "kannada": "ಅರಿಶಿನ",
+      "tamil": "மஞ்சள்",
+      "telugu": "పసుపు"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 3
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 6
+      },
+      "note": "Thrives with consistent moisture and high humidity during active monsoon vegetative surge, but potting mix must be open and freely draining to prevent rhizome rot. When mature foliage naturally turns yellow and dries back in winter, halt watering completely for 2–3 weeks to cure underground rhizomes for harvest."
+    },
+    "light_lux": {
+      "min_tolerated": 15000,
+      "ideal_min": 30000,
+      "ideal_max": 65000,
+      "max_tolerated": 85000
+    },
+    "humidity_percent": {
+      "min": 60,
+      "max": 90
+    },
+    "temperature_c": {
+      "tolerable_min": 15,
+      "tolerable_max": 40,
+      "ideal_min": 22,
+      "ideal_max": 35
+    },
+    "soil": {
+      "in_simple_words": "Loose, fertile, compost-rich, crumbly loamy soil that allows underground rhizomes to expand freely without compaction.",
+      "mix_recipe": "2 parts garden loam + 2 parts vermicompost or well-rotted cow manure + 1 part cocopeat + 1 part coarse sand or rice husk + 2 tbsp neem cake powder + 1 tbsp bone meal",
+      "ph_min": 5.5,
+      "ph_max": 6.8
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 270,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to pets and humans. Sacred spice and Ayurvedic cornerstone celebrated for curcumin. Small culinary additions are safe and anti-inflammatory for dogs, though excessive concentrated amounts may induce mild gastrointestinal upset."
+    },
+    "common_problems": [
+      {
+        "id": "167-rhizome_rot_pythium",
+        "problem": "Rhizome soft rot and pseudostem collapse (Pythium aphanidermatum)",
+        "do_you_see_this_problem": "Are stem bases near the soil turning water-soaked, rotting, and foul-smelling, with underground rhizomes becoming soft and mushy during monsoon rains?",
+        "solve_it_like_this": [
+          "Ensure pots or grow bags have ample drainage holes and elevate them on pot feet to avoid pooling water.",
+          "Drench potting medium with Trichoderma viride or copper oxychloride (2 g/L) at the onset of monsoon showers.",
+          "Only plant sound, disease-free seed rhizomes treated with biological biocontrol agents."
+        ]
+      },
+      {
+        "id": "167-leaf_blotch_taphrina",
+        "problem": "Leaf blotch and brown necrotic spots (Taphrina maculans)",
+        "do_you_see_this_problem": "Are rectangular reddish-yellow to dark brown spots forming between leaf veins, causing premature drying of broad tropical foliage?",
+        "solve_it_like_this": [
+          "Prune off heavily spotted lower leaves and dispose of them away from the balcony to curb fungal spores.",
+          "Avoid overhead spray watering; apply water directly to soil level early in the day.",
+          "Spray foliage with copper oxychloride (2.5 g per litre) or 5% neem seed kernel extract (NSKE) every 14 days."
+        ]
+      },
+      {
+        "id": "167-shoot_borer_caterpillar",
+        "problem": "Shoot borer caterpillar (Conogethes punctiferalis)",
+        "do_you_see_this_problem": "Is the central emerging leaf shoot wilting, turning yellow, and drying up (dead heart symptom), with frass pellets around stem bore holes?",
+        "solve_it_like_this": [
+          "Cut open dying central pseudostems carefully and destroy the tunneling borer caterpillar inside.",
+          "Spray biological Bacillus thuringiensis (Bt) or cold-pressed neem oil (5 ml/L) once every 10 days during vegetative growth.",
+          "Dust soil surface and stem bases with wood ash and neem cake powder as a preventative repellent."
+        ]
+      },
+      {
+        "id": "167-winter_senescence_harvest",
+        "problem": "Natural foliage drying and senescence (Harvest maturity signal)",
+        "do_you_see_this_problem": "Are all mature broad tropical leaves turning golden-yellow and drying crispy from bottom to top around 8 to 9 months after planting?",
+        "solve_it_like_this": [
+          "This is a natural physiological drying process signaling full rhizome maturity; do not panic or fertilize.",
+          "Stop watering completely for 2 to 3 weeks to allow rhizome skins to firm up and cure in dry soil.",
+          "Gently invert the grow bag or pot, tease apart the soil, and harvest fresh organic turmeric rhizomes."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Curcuma_longa",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Curcuma_longa",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Turmeric_inflorescence.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Turmeric_inflorescence.jpg/330px-Turmeric_inflorescence.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/167_turmeric.jpg",
+      "asset_path": "file:///android_asset/images/167_turmeric.jpg"
+    }
+  },
+  {
+    "id": 168,
+    "botanical_name": "Zingiber officinale",
+    "common_name": "Ginger (Adrak)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "अदरक",
+      "marathi": "आले",
+      "bengali": "আদা",
+      "kannada": "ಶುಂಠಿ",
+      "tamil": "இஞ்சி",
+      "telugu": "అల్లం"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 6
+      },
+      "note": "Maintain evenly damp, porous soil like a wrung-out sponge during active vegetative growth. Ensure rapid drainage during monsoon rains to prevent rhizome rot. Gradually stop watering in late autumn when foliage begins yellowing and dying back before winter harvest."
+    },
+    "light_lux": {
+      "min_tolerated": 3500,
+      "ideal_min": 8000,
+      "ideal_max": 20000,
+      "max_tolerated": 35000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 85
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 40,
+      "ideal_min": 22,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Rich, loose, well-draining organic soil that stays moist without turning soggy, allowing underground rhizomes to expand freely.",
+      "mix_recipe": "1 part garden soil + 1 part vermicompost or aged cow manure + 1 part cocopeat + 1 part coarse river sand + 2 tbsp neem cake powder",
+      "ph_min": 5.5,
+      "ph_max": 6.8
+    },
+    "fertilise_or_manure_every_days": 25,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 300,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to humans and household pets. Daily culinary spice, though excessive ingestion of raw rhizomes may cause mild stomach upset in sensitive dogs or cats."
+    },
+    "common_problems": [
+      {
+        "id": "168-rhizome_soft_rot",
+        "problem": "Rhizome soft rot (Pythium / Bacterial rot)",
+        "do_you_see_this_problem": "Are stem bases turning dark, water-soaked, and foul-smelling near the soil line, with leaves turning pale yellow and pseudostems pulling out easily?",
+        "solve_it_like_this": [
+          "Ensure pots have multiple open drainage holes and use gritty, well-drained soil that does not hold waterlogged mud.",
+          "Treat seed rhizomes with Trichoderma viride or a pinch of systemic fungicide before planting.",
+          "Drench soil with bio-fungicide (Trichoderma) or neem cake liquid, and withhold watering until the topsoil dries slightly during cloudy monsoon spells.",
+          "Remove and discard severely rotting pseudostems immediately to prevent spreading to adjacent rhizomes."
+        ]
+      },
+      {
+        "id": "168-shoot_borer_and_leaf_roller",
+        "problem": "Shoot borer and leaf roller caterpillars",
+        "do_you_see_this_problem": "Are leaves folded or curled lengthwise with webbing inside, or is the central shooting stem wilting and drying up from a bore hole with frass?",
+        "solve_it_like_this": [
+          "Inspect rolled leaves manually and crush or remove the caterpillar sheltering inside.",
+          "Prune wilted central shoots below the bore hole to eliminate shoot borer larvae before they damage rhizome buds.",
+          "Spray foliage with organic neem oil (5 ml per litre of water + 2 ml mild liquid soap) or Bacillus thuringiensis (Bt) every 10 days."
+        ]
+      },
+      {
+        "id": "168-leaf_spot_blight",
+        "problem": "Phyllosticta leaf spot / fungal leaf blight",
+        "do_you_see_this_problem": "Are small, water-soaked yellowish specks developing on foliage, widening into brown oval lesions with grey centers and yellow halos?",
+        "solve_it_like_this": [
+          "Avoid overhead watering; irrigate strictly at the soil base so leaves remain dry.",
+          "Snip off and discard badly spotted lower leaves to reduce fungal spore load.",
+          "Spray with copper oxychloride or bio-fungicide (Pseudomonas fluorescens) early in the morning."
+        ]
+      },
+      {
+        "id": "168-sunscald_and_leaf_tip_scorch",
+        "problem": "Sunscald and leaf tip scorch",
+        "do_you_see_this_problem": "Are the long slender leaf blades developing bleached, pale, or crispy dry brown edges during April to June?",
+        "solve_it_like_this": [
+          "Move containers away from intense unshaded afternoon sunlight; place under 50% green shading net or on an east-facing balcony receiving gentle morning sun.",
+          "Mulch the topsoil with 2 inches of dry straw or leaf mold to keep the shallow rhizome zone cool.",
+          "Mist surrounding air on dry, scorching summer afternoons to elevate ambient micro-humidity."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Ginger",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Ginger",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Koeh-146-no_text.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Koeh-146-no_text.jpg/330px-Koeh-146-no_text.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/168_ginger.jpg",
+      "asset_path": "file:///android_asset/images/168_ginger.jpg"
+    }
+  },
+  {
+    "id": 169,
+    "botanical_name": "Trachyspermum ammi",
+    "common_name": "Ajwain (Carom seeds)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "अजवाइन",
+      "marathi": "ओवा",
+      "bengali": "জোয়ান",
+      "kannada": "ಅಜವಾನ",
+      "tamil": "ஓமம்",
+      "telugu": "వాము"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 4
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 6
+      },
+      "note": "Allow the top 1 to 2 inches of soil to dry out between waterings. Drought-hardy taproot dislikes soggy conditions. Taper off watering as flower umbels turn into mature carom seeds to prevent seed blight."
+    },
+    "light_lux": {
+      "min_tolerated": 8000,
+      "ideal_min": 25000,
+      "ideal_max": 60000,
+      "max_tolerated": 75000
+    },
+    "humidity_percent": {
+      "min": 30,
+      "max": 65
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 38,
+      "ideal_min": 16,
+      "ideal_max": 28
+    },
+    "soil": {
+      "in_simple_words": "Light, fast-draining, sandy loam that stays aerated and never holds standing water.",
+      "mix_recipe": "1.5 parts coarse river sand + 1.5 parts garden soil + 1 part vermicompost + 0.5 part perlite or rice husk ash + 1 tbsp neem cake powder",
+      "ph_min": 6.5,
+      "ph_max": 7.8
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 180,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely safe for human culinary and digestive herbal uses (Omam water). The concentrated essential oil (thymol) can cause mild oral irritation or upset in cats and dogs if large amounts of foliage are ingested."
+    },
+    "common_problems": [
+      {
+        "id": "169-damping_off_seedlings",
+        "problem": "Seedling damping off (Pythium / Rhizoctonia)",
+        "do_you_see_this_problem": "Are tender young seedlings toppling over in patches at ground level with thread-thin, water-soaked stems?",
+        "solve_it_like_this": [
+          "Sow seeds thinly to maintain ample airflow between sprouts rather than clumping.",
+          "Use light sandy soil that drains instantly; do not keep seedling trays waterlogged.",
+          "Dust seeds with Trichoderma viride before sowing in moist, well-aerated medium."
+        ]
+      },
+      {
+        "id": "169-powdery_mildew",
+        "problem": "Powdery mildew (Erysiphe umbelliferarum)",
+        "do_you_see_this_problem": "Is a white, talcum-like powdery coating spreading across the feathery leaves, stems, and developing flower heads?",
+        "solve_it_like_this": [
+          "Ensure pots receive at least 5 hours of direct sunlight and have wide spacing for ventilation.",
+          "Spray a mixture of 100 ml fresh milk in 900 ml water, or 3 g baking soda + 2 drops mild dish soap per litre of water.",
+          "Avoid overhead watering late in the evening."
+        ]
+      },
+      {
+        "id": "169-aphid_cluster_on_umbels",
+        "problem": "Aphids on flower umbels (Aphis / Hyadaphis)",
+        "do_you_see_this_problem": "Are dense clusters of tiny black or green insects swarming around tender flower buds and delicate seed heads, leaving sticky residue?",
+        "solve_it_like_this": [
+          "Dislodge aphids with a firm spray of clean water early in the morning.",
+          "Spray 5 ml cold-pressed neem oil mixed with 2 ml liquid soap per litre of water during the evening.",
+          "Dust wood ash lightly around the pot rim to repel creeping ants that farm aphids."
+        ]
+      },
+      {
+        "id": "169-root_rot_from_overwatering",
+        "problem": "Root rot from waterlogged soil",
+        "do_you_see_this_problem": "Are lower leaves turning yellow, limp, and dropping while the potting soil remains wet and swampy?",
+        "solve_it_like_this": [
+          "Inspect drainage holes and clear any clogged soil immediately.",
+          "Allow potting medium to dry out thoroughly before the next watering.",
+          "Amend soil with extra coarse river sand or pumice to prevent moisture stagnation."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Ajwain",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Ajwain",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Carom_Flowers.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Carom_Flowers.jpg/330px-Carom_Flowers.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/169_ajwain.jpg",
+      "asset_path": "file:///android_asset/images/169_ajwain.jpg"
+    }
+  },
+  {
+    "id": 170,
+    "botanical_name": "Trigonella foenum-graecum",
+    "common_name": "Fenugreek (Methi)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "मेथी",
+      "marathi": "मेथी",
+      "bengali": "মেথি শাক",
+      "kannada": "ಮೆಂತ್ಯ ಸೊಪ್ಪು",
+      "tamil": "வெந்தயக்கீரை",
+      "telugu": "మెంతి కూర"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Keep the upper 1 inch of soil consistently damp but never soggy. Use a fine-rose watering can or spray nozzle so delicate tender seedlings do not flatten or rot. Water every morning during dry warm spells to keep leaves succulent and sweet."
+    },
+    "light_lux": {
+      "min_tolerated": 6000,
+      "ideal_min": 18000,
+      "ideal_max": 45000,
+      "max_tolerated": 60000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 8,
+      "tolerable_max": 35,
+      "ideal_min": 15,
+      "ideal_max": 26
+    },
+    "soil": {
+      "in_simple_words": "Loose, porous, fertile loamy soil rich in compost that supports rapid root development and easy moisture drainage.",
+      "mix_recipe": "1 part garden soil + 1 part vermicompost + 1 part cocopeat + 0.5 part coarse sand + 2 tbsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.2
+    },
+    "fertilise_or_manure_every_days": 20,
+    "refresh_top_soil_every_days": 45,
+    "repot_every_days": 60,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic, nutritious culinary herb loved across India. Safe for household pets in small quantities, though large quantities of dried seeds should not be fed to pets."
+    },
+    "common_problems": [
+      {
+        "id": "170-powdery_mildew_white_dust",
+        "problem": "Powdery mildew (Erysiphe polygoni)",
+        "do_you_see_this_problem": "Is a white powder-like fungal dust coating the upper surface of the leaves during cool, dry winter weather?",
+        "solve_it_like_this": [
+          "Ensure pots get at least 4 hours of morning sun and are not kept in damp, stagnant corners.",
+          "Spray diluted sour buttermilk (30 ml in 1 litre water) or 5 ml neem oil with mild soap as a natural organic fungicide.",
+          "Harvest leaves early before the fungal mildew covers the foliage."
+        ]
+      },
+      {
+        "id": "170-damping_off_in_crowded_trays",
+        "problem": "Damping off in dense seedling trays",
+        "do_you_see_this_problem": "Are newly sprouted tender methi seedlings collapsing in circular patches with soggy, blackened stems at soil level?",
+        "solve_it_like_this": [
+          "Broadcast seeds thinly, leaving 1 to 2 cm between seeds rather than overseeding thickly.",
+          "Ensure shallow containers have ample drainage holes and drain freely.",
+          "Keep soil moist with a fine mister rather than flooding with heavy streams of water."
+        ]
+      },
+      {
+        "id": "170-premature_bolting_and_bitterness",
+        "problem": "Premature bolting and bitter leaves",
+        "do_you_see_this_problem": "Are young plants shooting up tall, thin flower stalks with tiny pale flowers and bitter, fibrous foliage instead of bushy tender greens?",
+        "solve_it_like_this": [
+          "Move pots to dappled shade or shelter from intense afternoon sun when temperatures exceed 28°C.",
+          "Practice cut-and-come-again harvesting by snipping shoots 2 inches above the soil line every 15-20 days to stimulate continuous leafy branching.",
+          "Maintain steady soil moisture so plants never undergo water stress."
+        ]
+      },
+      {
+        "id": "170-aphids_and_leaf_miners",
+        "problem": "Aphids and serpentine leaf miners",
+        "do_you_see_this_problem": "Are winding white squiggly lines etched across the leaves, or tiny green/black aphids clustering under tender shoots?",
+        "solve_it_like_this": [
+          "Hand-pick and discard leaves showing heavy miner tracks, or squeeze larvae inside the leaf with fingers.",
+          "Spray cold-pressed neem oil (3 ml per litre with a dash of mild liquid soap) every 7 days.",
+          "Avoid synthetic chemical insecticides since methi greens are harvested frequently for direct consumption."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Fenugreek",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Fenugreek",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Illustration_Trigonella_foenum-graecum0_clean.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Illustration_Trigonella_foenum-graecum0_clean.jpg/330px-Illustration_Trigonella_foenum-graecum0_clean.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/170_fenugreek.jpg",
+      "asset_path": "file:///android_asset/images/170_fenugreek.jpg"
+    }
+  },
+  {
+    "id": 171,
+    "botanical_name": "Amaranthus tricolor",
+    "common_name": "Amaranth Greens (Chaulai / Lal Saag)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "चौलाई",
+      "marathi": "तांबडा माठ",
+      "bengali": "লাল শাক",
+      "kannada": "ದಂಟಿನ ಸೊಪ್ಪು",
+      "tamil": "சிவப்பு கீரை",
+      "telugu": "తోటకూర"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Water daily during dry, hot weather to maintain tender, succulent foliage. In the monsoon, allow the soil surface to dry slightly between rain showers. Water at the base to keep foliage clean."
+    },
+    "light_lux": {
+      "min_tolerated": 12000,
+      "ideal_min": 30000,
+      "ideal_max": 75000,
+      "max_tolerated": 90000
+    },
+    "humidity_percent": {
+      "min": 45,
+      "max": 85
+    },
+    "temperature_c": {
+      "tolerable_min": 15,
+      "tolerable_max": 42,
+      "ideal_min": 24,
+      "ideal_max": 36
+    },
+    "soil": {
+      "in_simple_words": "Rich, loamy, fertile soil packed with organic manure that stays moist while allowing water to pass through freely.",
+      "mix_recipe": "1 part garden loam + 1 part vermicompost or cow dung manure + 1 part cocopeat + 0.5 part coarse sand + 2 tbsp neem cake powder + 1 tbsp bone meal or rock phosphate",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 18,
+    "refresh_top_soil_every_days": 45,
+    "repot_every_days": 90,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely safe and highly nutritious leafy vegetable loaded with vitamins A, C, iron, and calcium. Contains mild oxalates typical of greens, which are harmless and break down when cooked traditionally."
+    },
+    "common_problems": [
+      {
+        "id": "171-leaf_webber_caterpillar",
+        "problem": "Leaf webber caterpillar (Psara basalis)",
+        "do_you_see_this_problem": "Are leaves folded and tied together with silky web shelters, with green caterpillars feeding on the leaf tissue inside?",
+        "solve_it_like_this": [
+          "Inspect foliage weekly, handpick webbed clusters, and remove sheltering caterpillars.",
+          "Spray organic Bacillus thuringiensis (Bt) or neem oil (5 ml/L + 2 ml soap) in late afternoon.",
+          "Dust fine wood ash on leaves to make foliage unpalatable to young caterpillars."
+        ]
+      },
+      {
+        "id": "171-cercospora_leaf_spot",
+        "problem": "Cercospora / Anthracnose leaf spot",
+        "do_you_see_this_problem": "Are dark brown or reddish circular spots with grey centers peppering the lower leaves during monsoon rains?",
+        "solve_it_like_this": [
+          "Prune off heavily spotted lower leaves and discard them away from compost bins.",
+          "Space plants 12 to 15 cm apart to ensure dry breezes circulate through the canopy.",
+          "Spray diluted fermented cow urine (1:10 with water) or Trichoderma bio-fungicide once every 10 days."
+        ]
+      },
+      {
+        "id": "171-aphids_and_jassids",
+        "problem": "Aphids and sucking jassids",
+        "do_you_see_this_problem": "Are leaves curling downwards, crinkling, and coated with sticky honeydew that fosters black sooty mold?",
+        "solve_it_like_this": [
+          "Wash insects away with a targeted spray of water early in the day.",
+          "Spray leaf undersides thoroughly with 5 ml neem oil and 2 ml mild shampoo per litre of water.",
+          "Set up yellow sticky traps around the garden bed to catch flying adults."
+        ]
+      },
+      {
+        "id": "171-stem_weevil_borer",
+        "problem": "Stem weevil borer (Lixus truncatulus)",
+        "do_you_see_this_problem": "Are the main stems swelling abnormally near the base with tiny bore holes, leading to stunted shoots and sudden lodging?",
+        "solve_it_like_this": [
+          "Incorporate neem cake powder generously into potting soil at planting time.",
+          "Remove and destroy swollen, infested stems before adult weevils emerge.",
+          "Maintain rapid vegetative growth with regular compost tea feeds so plants outpace pest damage."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Amaranthus_tricolor",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Amaranthus_tricolor",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Amaranthus_tricolor_in_a_flower_bed_near_Notre-Dame_cathedral_in_Paris3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Amaranthus_tricolor_in_a_flower_bed_near_Notre-Dame_cathedral_in_Paris3.jpg/330px-Amaranthus_tricolor_in_a_flower_bed_near_Notre-Dame_cathedral_in_Paris3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/171_amaranth_greens.jpg",
+      "asset_path": "file:///android_asset/images/171_amaranth_greens.jpg"
+    }
+  },
+  {
+    "id": 172,
+    "botanical_name": "Basella alba",
+    "common_name": "Malabar Spinach (Pui Saag / Basale)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "पोई साग",
+      "marathi": "मायाळू",
+      "bengali": "পুঁই শাক",
+      "kannada": "ಬಸಳೆ ಸೊಪ್ಪು",
+      "tamil": "பசலைக் கீரை",
+      "telugu": "బచ్చలి కూర"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Requires plenty of water during hot dry spells to keep thick fleshy leaves and stems juicy and tender. In the rainy season, ensure excess water flows freely out of drainage holes. Reduce watering in cool winters."
+    },
+    "light_lux": {
+      "min_tolerated": 8000,
+      "ideal_min": 22000,
+      "ideal_max": 60000,
+      "max_tolerated": 80000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 90
+    },
+    "temperature_c": {
+      "tolerable_min": 15,
+      "tolerable_max": 42,
+      "ideal_min": 25,
+      "ideal_max": 35
+    },
+    "soil": {
+      "in_simple_words": "Rich, moisture-retentive, compost-heavy organic soil with good aeration so thick roots do not sit in stagnant mud.",
+      "mix_recipe": "1 part garden soil + 1.5 parts well-decomposed cow manure or vermicompost + 1 part cocopeat + 0.5 part coarse sand + 2 tbsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 22,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to humans, dogs, and cats. Prized edible vegetable rich in soluble fiber and mucilage. If pets chew large quantities raw, the high mucilage may occasionally cause loose stools."
+    },
+    "common_problems": [
+      {
+        "id": "172-cercospora_red_spot",
+        "problem": "Cercospora red spot / leaf spot",
+        "do_you_see_this_problem": "Are circular reddish-brown to dark purple spots with greyish-white centers spreading across the thick succulent leaves in humid weather?",
+        "solve_it_like_this": [
+          "Direct irrigation strictly to the soil base, avoiding wetting the broad leaves.",
+          "Pluck off and dispose of heavily spotted leaves to halt spore proliferation.",
+          "Spray with copper oxychloride (2 g/L) or a combination of 5 ml neem oil and 1 g baking soda per litre."
+        ]
+      },
+      {
+        "id": "172-snails_and_slugs",
+        "problem": "Snails and slugs chewing leaves",
+        "do_you_see_this_problem": "Are large irregular holes eaten out of thick fleshy leaves and tender vine tips, with glistening silvery slime trails visible on pots?",
+        "solve_it_like_this": [
+          "Handpick snails and slugs at night or during early morning with a flashlight.",
+          "Create a 2-inch protective border of crushed eggshells, coarse sand, or wood ash around the base of the container.",
+          "Place shallow saucers filled with yeast water or stale beer near pots to trap slugs organically."
+        ]
+      },
+      {
+        "id": "172-aphids_on_growing_tips",
+        "problem": "Aphids congregating on tender vine tips",
+        "do_you_see_this_problem": "Are colonies of black or greenish aphids tightly clustered around the soft apical tips, stunting vine elongation and causing leaf curl?",
+        "solve_it_like_this": [
+          "Pinch off severely infested shoot tips and harvest them for cooking after a thorough wash.",
+          "Spray shoots forcefully with clean water to knock aphids down.",
+          "Apply neem oil spray (5 ml neem oil + 2 ml liquid soap per litre) in the evening."
+        ]
+      },
+      {
+        "id": "172-root_knot_nematodes",
+        "problem": "Root-knot nematodes (Meloidogyne spp.)",
+        "do_you_see_this_problem": "Is the vine stunted and wilting during sunny afternoons despite moist soil, with small round bead-like galls on the root system?",
+        "solve_it_like_this": [
+          "Mix 3 to 4 tablespoons of pure neem cake powder into potting medium; neem acts as a potent natural nematicide.",
+          "Drench potting soil with Paecilomyces lilacinus or Trichoderma bio-culture.",
+          "Plant French marigolds (Tagetes patula) as companion plants in the same container or nearby pots to suppress nematodes."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Basella_alba",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Basella_alba",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Basella_alba-2.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Basella_alba-2.JPG/330px-Basella_alba-2.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/172_malabar_spinach.jpg",
+      "asset_path": "file:///android_asset/images/172_malabar_spinach.jpg"
+    }
+  },
+  {
+    "id": 173,
+    "botanical_name": "Ipomoea aquatica",
+    "common_name": "Water Spinach (Kalmi Saag)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "कलमी साग",
+      "marathi": "नालीची भाजी",
+      "bengali": "কলমি শাক",
+      "kannada": "ಕಂಬಂ ಸಪ್ಪು",
+      "tamil": "வள்ளைக் கீரை",
+      "telugu": "తూటికూర"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 1
+      },
+      "monsoon_and_winter": {
+        "min": 1,
+        "max": 2
+      },
+      "note": "Semi-aquatic marsh plant that requires constant saturated mud or 1 to 2 inches of standing water in shallow tubs. Never allow the soil to dry out, as drought causes hollow stems to collapse and turn bitter. Flush standing water every 5 days in monsoon to prevent mosquito breeding."
+    },
+    "light_lux": {
+      "min_tolerated": 10000,
+      "ideal_min": 25000,
+      "ideal_max": 70000,
+      "max_tolerated": 85000
+    },
+    "humidity_percent": {
+      "min": 60,
+      "max": 95
+    },
+    "temperature_c": {
+      "tolerable_min": 15,
+      "tolerable_max": 42,
+      "ideal_min": 25,
+      "ideal_max": 36
+    },
+    "soil": {
+      "in_simple_words": "Heavy, clay-rich pond silt or garden mud enriched with organic compost that retains water without leaking away.",
+      "mix_recipe": "2 parts clayey garden soil or pond silt + 1.5 parts well-decomposed vermicompost/cow manure + 0.5 part cocopeat + 2 tbsp neem cake powder (mixed into a soft mud bed 6-8 inches deep in a non-draining tub)",
+      "ph_min": 5.5,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 18,
+    "refresh_top_soil_every_days": 45,
+    "repot_every_days": 180,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic and highly nutritious culinary green eaten widely stir-fried and in curries. Unlike wild harvest from contaminated waterways, clean home-grown tub cultivation in fresh potable water is completely free from water-borne fluke parasites."
+    },
+    "common_problems": [
+      {
+        "id": "173-mosquito_breeding_in_tub",
+        "problem": "Mosquito larvae breeding in standing water tubs",
+        "do_you_see_this_problem": "Are tiny wriggling mosquito larvae (wigglers) swimming actively in the standing water around the plant bases?",
+        "solve_it_like_this": [
+          "Introduce 2 or 3 small guppy fish (Poecilia reticulata) or mosquito fish into the tub; they eat larvae voraciously.",
+          "Completely flush and replace standing tub water with fresh water every 5 to 7 days.",
+          "Use organic Bacillus thuringiensis israelensis (BTI) mosquito dunk granules which are harmless to plants, humans, and pets."
+        ]
+      },
+      {
+        "id": "173-white_rust_blisters",
+        "problem": "White rust fungus (Albugo ipomoeae-aquaticae)",
+        "do_you_see_this_problem": "Are raised, chalky-white blisters or pustules breaking out on leaf undersides, accompanied by pale yellow patches on top?",
+        "solve_it_like_this": [
+          "Prune off and safely discard heavily blistered leaves and shoots immediately.",
+          "Harvest greens young and maintain good spacing between shoots for light penetration.",
+          "Spray foliage with 5 ml neem oil mixed with 1 g baking soda and 2 ml liquid soap in 1 litre water."
+        ]
+      },
+      {
+        "id": "173-aphids_and_spider_mites",
+        "problem": "Aphids and spider mites on shoot tips",
+        "do_you_see_this_problem": "Are young leaf blades speckling yellow, puckering, or swarming with tiny sap-sucking insects in hot pre-monsoon weather?",
+        "solve_it_like_this": [
+          "Spray stems firmly with water, washing pests directly into the tub water where they drown.",
+          "Spray neem soap solution (5 ml cold-pressed neem oil + 2 ml mild soap/L) under the leaves in late evening.",
+          "Harvest mature tender stems frequently (cut-and-come-again) to remove pest-prone dense foliage."
+        ]
+      },
+      {
+        "id": "173-serpentine_leaf_miners",
+        "problem": "Serpentine leaf miners (Liriomyza spp.)",
+        "do_you_see_this_problem": "Are white serpentine squiggles and maze-like transparent tunnels meandering across the green leaf surface?",
+        "solve_it_like_this": [
+          "Pluck and discard leaves showing multiple active leaf trails.",
+          "Position yellow sticky cards around the balcony tub to trap adult female leaf miner flies.",
+          "Spray cold-pressed neem oil (3-5 ml/L) weekly to deter adult flies from laying eggs inside leaf tissue."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Ipomoea_aquatica",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Ipomoea_aquatica",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/N_Ipoa_D1600.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/N_Ipoa_D1600.JPG/330px-N_Ipoa_D1600.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/173_water_spinach.jpg",
+      "asset_path": "file:///android_asset/images/173_water_spinach.jpg"
+    }
+  },
+  {
+    "id": 174,
+    "botanical_name": "Rumex acetosa",
+    "common_name": "Garden Sorrel (Khatta Saag)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "खट्टा साग",
+      "marathi": "आंबट चुका",
+      "bengali": "চুকাপালং",
+      "kannada": "ಹುಳಿ ಸೊಪ್ಪು",
+      "tamil": "சுக்கங்கீரை",
+      "telugu": "చుక్కకూర"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Maintain evenly moist potting medium. Never let the soil dry out to the point of wilting, as water stress causes leaves to turn tough and induces rapid premature flowering (bolting). Mulch the surface during hot dry spells."
+    },
+    "light_lux": {
+      "min_tolerated": 6000,
+      "ideal_min": 15000,
+      "ideal_max": 40000,
+      "max_tolerated": 55000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 5,
+      "tolerable_max": 35,
+      "ideal_min": 15,
+      "ideal_max": 25
+    },
+    "soil": {
+      "in_simple_words": "Rich, moisture-retentive, loose garden soil packed with organic compost that drains freely away from the crown.",
+      "mix_recipe": "1.5 parts garden loam + 1.5 parts vermicompost or leaf mold + 1 part cocopeat + 0.5 part coarse sand + 2 tbsp neem cake powder",
+      "ph_min": 5.5,
+      "ph_max": 6.8
+    },
+    "fertilise_or_manure_every_days": 22,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "mildly_toxic",
+      "note": "Safe and widely prized in Indian culinary dishes (chutneys, dal, and saag) cooked in moderation. Contains high soluble oxalic acid (responsible for its signature sour taste), which can be toxic to dogs and cats in substantial raw quantities by binding serum calcium. Keep pots out of reach of pets."
+    },
+    "common_problems": [
+      {
+        "id": "174-summer_heat_bolting",
+        "problem": "Premature bolting and tough leaves in summer heat",
+        "do_you_see_this_problem": "Is the plant rapidly sending up a tall, reddish flowering stalk while the rosette leaves become small, tough, and excessively bitter?",
+        "solve_it_like_this": [
+          "Cut out the central flowering stalk all the way down to the basal rosette as soon as it emerges.",
+          "Shift the pot to a cool, shaded balcony area with morning sun only during March to June.",
+          "Harvest outer leaves continuously (cut-and-come-again) to encourage ongoing tender leaf production."
+        ]
+      },
+      {
+        "id": "174-leaf_miners_blotches",
+        "problem": "Leaf miners (Pegomya hyoscyami)",
+        "do_you_see_this_problem": "Are winding white translucent tracks and brown blistered blotches etched across the broad green leaf blades?",
+        "solve_it_like_this": [
+          "Crush the visible larvae inside the leaf blade gently using your fingers, or snip off heavily mined leaves.",
+          "Spray with neem oil solution (5 ml/L + 2 ml mild soap) in the evening to deter egg deposition.",
+          "Cover young plants with fine insect netting during early spring fly flight periods."
+        ]
+      },
+      {
+        "id": "174-crown_rot_in_monsoon",
+        "problem": "Basal crown rot (Phytophthora / Rhizoctonia)",
+        "do_you_see_this_problem": "Are stem bases at the soil line turning mushy, black, and collapsing with leaves wilting during monsoon downpours?",
+        "solve_it_like_this": [
+          "Plant with the central crown situated 1/2 inch above the soil level rather than buried deep in wet soil.",
+          "Ensure pots have clear, unblocked drainage holes and avoid saucer water buildup.",
+          "Drench soil with Trichoderma viride bio-fungicide and let the topsoil dry between watering."
+        ]
+      },
+      {
+        "id": "174-aphid_colonies",
+        "problem": "Black bean aphids and green aphids",
+        "do_you_see_this_problem": "Are dense colonies of tiny dark aphids crowding the undersides of leaves and sucking sap from tender central shoots?",
+        "solve_it_like_this": [
+          "Wash aphids off with a strong blast of clean water.",
+          "Apply an organic neem spray (5 ml neem oil + 2 ml soap in 1 L water) focusing on leaf undersides every 5 to 7 days.",
+          "Dust light wood ash around the crown to discourage ants and aphids."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Sorrel",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Sorrel",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/%28MHNT%29_Rumex_acetosa_-_Habit.jpg/3840px-%28MHNT%29_Rumex_acetosa_-_Habit.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/%28MHNT%29_Rumex_acetosa_-_Habit.jpg/330px-%28MHNT%29_Rumex_acetosa_-_Habit.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/174_garden_sorrel.jpg",
+      "asset_path": "file:///android_asset/images/174_garden_sorrel.jpg"
+    }
+  },
+  {
+    "id": 175,
+    "botanical_name": "Stevia rebaudiana",
+    "common_name": "Stevia (Meethi Tulsi)",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "मीठी तुलसी",
+      "marathi": "गोड तुळस",
+      "bengali": "মিষ্টি তুলসী",
+      "kannada": "ಸಿಹಿ ತುಳಸಿ",
+      "tamil": "சீனித்துளசி",
+      "telugu": "మధుర తులసి"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Shallow fibrous root system demands consistent moisture but quickly suffocates in waterlogged mud. Water whenever the top 1/2 inch of soil feels dry. Shelter from stagnant rainwater in monsoon and reduce watering in winter."
+    },
+    "light_lux": {
+      "min_tolerated": 8000,
+      "ideal_min": 25000,
+      "ideal_max": 55000,
+      "max_tolerated": 70000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 40,
+      "ideal_min": 20,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Light, porous, organically enriched sandy loam with superb drainage and good moisture retention.",
+      "mix_recipe": "1.5 parts garden soil + 1.5 parts vermicompost or leaf compost + 1 part coarse river sand or perlite + 0.5 part cocopeat + 2 tbsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.2
+    },
+    "fertilise_or_manure_every_days": 28,
+    "refresh_top_soil_every_days": 60,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to humans, dogs, and cats. Safe, zero-calorie natural herbal sweetener. Fresh garden leaves are completely safe if accidentally chewed by pets."
+    },
+    "common_problems": [
+      {
+        "id": "175-premature_autumn_flowering",
+        "problem": "Premature flowering (Short-day photoperiod response)",
+        "do_you_see_this_problem": "Are small white flower clusters forming at stem tips, causing the leaves to become smaller and lose their intense natural sweetness?",
+        "solve_it_like_this": [
+          "Pinch off flower buds immediately as soon as they form to keep the plant in vigorous vegetative leaf production.",
+          "Harvest leaves just before flower buds open, when steviol glycoside concentration is at its peak.",
+          "Regularly pinch the top 1-2 inches of vegetative tips to encourage dense, bushy side branching."
+        ]
+      },
+      {
+        "id": "175-collar_rot_and_root_rot",
+        "problem": "Collar rot and root rot (Sclerotium rolfsii / Pythium)",
+        "do_you_see_this_problem": "Are lower leaves wilting and turning brown while soil is moist, with stem bases turning black or developing white fan-like fungal threads?",
+        "solve_it_like_this": [
+          "Ensure pots have unobstructed drainage holes and use a loose, sandy potting mix that dries quickly.",
+          "Avoid overwatering; allow the surface soil to dry out between watering sessions.",
+          "Drench soil with Trichoderma viride or copper oxychloride solution (2 g/L) at the earliest sign of collar infection."
+        ]
+      },
+      {
+        "id": "175-septoria_leaf_spot",
+        "problem": "Septoria leaf spot (Septoria steviae)",
+        "do_you_see_this_problem": "Are small circular greyish-brown spots with dark purple or brown borders developing on the lower leaves and moving up the plant?",
+        "solve_it_like_this": [
+          "Water solely at the root zone; do not wet foliage with overhead sprinkling.",
+          "Prune affected lower leaves and discard them to improve airflow through the lower canopy.",
+          "Spray with organic neem oil (5 ml/L with soap) or a mild copper-based fungicide every 10 days."
+        ]
+      },
+      {
+        "id": "175-whiteflies_and_aphids",
+        "problem": "Whiteflies and aphids",
+        "do_you_see_this_problem": "Are tiny white insects fluttering into the air when leaves are shaken, or leaves coated in sticky honeydew attracting soot?",
+        "solve_it_like_this": [
+          "Install yellow sticky traps right next to the foliage to trap flying whiteflies.",
+          "Wash foliage with a steady stream of water to knock insects off.",
+          "Spray organic neem oil solution (5 ml/L + 2 ml mild soap) thoroughly over both sides of the leaves once a week."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Stevia_rebaudiana",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Stevia_rebaudiana",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Stevia_rebaudiana_flowers.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Stevia_rebaudiana_flowers.jpg/330px-Stevia_rebaudiana_flowers.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/175_stevia.jpg",
+      "asset_path": "file:///android_asset/images/175_stevia.jpg"
+    }
+  }
+]

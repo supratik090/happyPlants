@@ -9,6 +9,11 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+    <!-- Daily Plant Duty Notification & Boot -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
     <!-- Camera for fallback light meter (optional, not required to install) -->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature
@@ -42,6 +47,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Daily 7 AM Duty Notification Receiver -->
+        <receiver
+            android:name=".data.notification.DailyDutyNotificationReceiver"
+            android:exported="false" />
+
+        <!-- Boot Receiver to re-arm 7 AM Alarm on restart -->
+        <receiver
+            android:name=".data.notification.BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
 
     </application>
 

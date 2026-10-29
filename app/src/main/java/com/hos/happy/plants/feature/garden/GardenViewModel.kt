@@ -1,6 +1,7 @@
 package com.hos.happy.plants.feature.garden
 
 import android.app.Application
+import android.graphics.Bitmap
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.hos.happy.plants.data.local.AppDatabase
@@ -11,7 +12,15 @@ import com.hos.happy.plants.data.local.entity.PlantPhotoEntity
 import com.hos.happy.plants.data.local.entity.RoomEnvSnapshotEntity
 import com.hos.happy.plants.data.model.CommonProblem
 import com.hos.happy.plants.data.model.MasterPlant
+import com.hos.happy.plants.data.model.WateringSchedule
+import com.hos.happy.plants.data.model.WateringSchedule.Companion.daysUntilNext
+import com.hos.happy.plants.data.model.WateringSchedule.Companion.fromEntity
+import com.hos.happy.plants.data.model.WateringSchedule.Companion.scheduleLabel
+import com.hos.happy.plants.data.model.WateringSchedule.Companion.toJson
+import com.hos.happy.plants.data.model.WateringSchedule.Companion.typeString
 import com.hos.happy.plants.data.preferences.UserPreferencesRepository
+import com.hos.happy.plants.data.remote.PlantNetDiseaseService
+import com.hos.happy.plants.data.remote.model.PlantDiseaseResult
 import com.hos.happy.plants.data.repository.PlantMasterRepository
 import com.hos.happy.plants.data.repository.TaskRuleEngine
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -24,6 +33,7 @@ import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import java.util.UUID
 
@@ -135,11 +145,22 @@ data class GardenUiState(
     val activeDoctorPlant: PlantEntity? = null,
     val activeJourneyPlant: PlantEntity? = null,
     val showAddPlantDialog: Boolean = false,
-    val actionDialogTask: TodayCareTask? = null
+    val actionDialogTask: TodayCareTask? = null,
+    val showDiseaseScanForPlant: PlantEntity? = null,
+    val showGardenSchedule: Boolean = false           // 🗓️ garden-level schedule screen
+)
+
+data class PlantDiseaseUiState(
+    val isLoading: Boolean = false,
+    val selectedBitmaps: List<Bitmap> = emptyList(),  // user-picked images (max 3)
+    val results: List<PlantDiseaseResult> = emptyList(),
+    val error: String? = null,
+    val remainingScansToday: Int = 3
 )
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class GardenViewModel(application: Application) : AndroidViewModel(application) {
+
 
     private val db = AppDatabase.getInstance(application)
     private val plantDao = db.plantDao()
@@ -153,6 +174,11 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
 
     private val _uiState = MutableStateFlow(GardenUiState())
     val uiState: StateFlow<GardenUiState> = _uiState.asStateFlow()
+
+    // Disease diagnosis state
+    private val diseaseService = PlantNetDiseaseService()
+    private val _diseaseState = MutableStateFlow(PlantDiseaseUiState())
+    val diseaseState: StateFlow<PlantDiseaseUiState> = _diseaseState.asStateFlow()
 
     // Room tags: default locations + custom
     val defaultRoomTags = listOf("Living", "Bed", "Bathroom", "Balcony", "Outdoors")
@@ -177,6 +203,11 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
                 }
             }
         }
+        viewModelScope.launch {
+            prefs.remainingDiseaseScansFlow.collect { remaining ->
+                _diseaseState.update { it.copy(remainingScansToday = remaining) }
+            }
+        }
     }
 
     // Daily evaluated tasks from Room DB (Pending vs Completed)
@@ -189,6 +220,17 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
         val profileId = state.currentProfileId ?: return@flatMapLatest flowOf(emptyList())
         ruleEngine.observeCompletedTasksForToday(profileId)
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
+    // Show swipe gesture tutorial only for new users (< 2 tasks completed or skipped)
+    val showSwipeGestureHint: StateFlow<Boolean> = _uiState.flatMapLatest { state ->
+        val profileId = state.currentProfileId ?: return@flatMapLatest flowOf(false)
+        combine(
+            taskDao.getCompletedOrSkippedCountFlow(profileId),
+            prefs.tasksCompletedOrSkippedCountFlow
+        ) { dbCount: Int, prefsCount: Int ->
+            (dbCount < 2) && (prefsCount < 2)
+        }
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), false)
 
     // Backwards compatibility alias for deck tasks
     val dailyDeckTasks: StateFlow<List<DailyCareTaskEntity>> = pendingDailyTasks
@@ -440,6 +482,7 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
                 caption = caption ?: "Photo added"
             )
             photoDao.insertPhoto(photo)
+            com.hos.happy.plants.data.telemetry.FirebaseTelemetryManager.getInstance()?.recordPlantPhotoUploaded()
 
             val log = PlantCareLogEntity(
                 plantId = plantId,
@@ -451,6 +494,23 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
             )
             careLogDao.insertLog(log)
             completeGardenPhotoTask()
+        }
+    }
+
+    fun deletePlantPhoto(photoId: String, photoUri: String? = null) {
+        viewModelScope.launch {
+            photoDao.deletePhotoById(photoId)
+            if (photoUri != null && photoUri.startsWith("file://")) {
+                try {
+                    val path = android.net.Uri.parse(photoUri).path
+                    if (path != null) {
+                        val file = java.io.File(path)
+                        if (file.exists()) file.delete()
+                    }
+                } catch (e: Exception) {
+                    // Ignore disk cleanup error
+                }
+            }
         }
     }
 
@@ -518,12 +578,101 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
         _uiState.value = _uiState.value.copy(actionDialogTask = null)
     }
 
+    fun openDiseaseScan(plant: PlantEntity) {
+        clearDiseaseState()
+        _uiState.value = _uiState.value.copy(showDiseaseScanForPlant = plant)
+    }
+
+    fun closeDiseaseScan() {
+        _uiState.value = _uiState.value.copy(showDiseaseScanForPlant = null)
+        clearDiseaseState()
+    }
+
     fun addCustomRoom(roomName: String) {
         if (roomName.isNotBlank()) {
             viewModelScope.launch {
                 prefs.addCustomRoomTag(roomName.trim())
             }
         }
+    }
+
+    // ---- Watering Schedule ----
+
+    /**
+     * Saves a custom watering schedule for a plant and immediately re-evaluates today's tasks.
+     */
+    fun saveWaterSchedule(plant: PlantEntity, schedule: WateringSchedule) {
+        viewModelScope.launch {
+            val now = System.currentTimeMillis()
+            plantDao.updateWaterSchedule(
+                plantId = plant.id,
+                type = schedule.typeString(),
+                value = schedule.toJson(),
+                setAt = now
+            )
+            if (schedule is WateringSchedule.Interval) {
+                plantDao.updateWateringInterval(plant.id, schedule.intervalDays)
+            }
+            // Immediately re-evaluate so today's task deck reflects the new schedule
+            val profileId = _uiState.value.currentProfileId ?: return@launch
+            ruleEngine.evaluateDailyRules(profileId, forceRefresh = true)
+        }
+    }
+
+    /** Returns the suggested watering interval in days derived from master plant data. */
+    fun getSuggestedWateringIntervalDays(plant: PlantEntity): Int {
+        val masterPlant = plant.masterPlantId?.let { masterRepo.getPlantById(it) }
+            ?: masterRepo.getAllPlants().find {
+                it.botanicalName.equals(plant.botanicalName, ignoreCase = true) ||
+                it.commonName.equals(plant.commonName, ignoreCase = true)
+            }
+        return masterPlant?.watering?.hotDryMonths?.min
+            ?: masterPlant?.watering?.monsoonAndWinter?.min
+            ?: if (plant.wateringIntervalDays > 0) plant.wateringIntervalDays else 7
+    }
+
+    /** Opens the garden-level schedule overview screen. */
+    fun openGardenSchedule() {
+        _uiState.value = _uiState.value.copy(showGardenSchedule = true)
+    }
+
+    /** Closes the garden-level schedule overview screen. */
+    fun closeGardenSchedule() {
+        _uiState.value = _uiState.value.copy(showGardenSchedule = false)
+    }
+
+    /**
+     * Returns a human-readable schedule label + next-due string for a plant,
+     * used in the garden schedule list rows.
+     * e.g. Pair("Every 7d", "Next in 2 days") or Pair("Mon, Thu", "Due today")
+     */
+    fun getScheduleInfoForPlant(plant: PlantEntity): Pair<String, String> {
+        val now = System.currentTimeMillis()
+        val customSchedule = fromEntity(plant.waterScheduleType, plant.waterScheduleValue)
+
+        val label: String
+        val nextDays: Int
+
+        if (customSchedule != null) {
+            label = customSchedule.scheduleLabel()
+            nextDays = customSchedule.daysUntilNext(now, plant.lastWateredAt, plant.waterScheduleSetAt)
+        } else {
+            label = "Every ${plant.wateringIntervalDays}d"
+            val lastWater = plant.lastWateredAt
+            nextDays = if (lastWater == null) {
+                0
+            } else {
+                val daysSince = ((now - lastWater) / 86_400_000L).toInt()
+                maxOf(0, plant.wateringIntervalDays - daysSince)
+            }
+        }
+
+        val nextStr = when {
+            nextDays == 0 -> "Due today"
+            nextDays == 1 -> "Next tomorrow"
+            else -> "Next in $nextDays days"
+        }
+        return Pair(label, nextStr)
     }
 
     fun logCareAction(
@@ -569,6 +718,7 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
                     careLogId = log.id
                 )
                 photoDao.insertPhoto(photo)
+                com.hos.happy.plants.data.telemetry.FirebaseTelemetryManager.getInstance()?.recordPlantPhotoUploaded()
                 completeGardenPhotoTask()
             }
 
@@ -641,6 +791,7 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
                         caption = "Added to Garden (${plant.roomTag})"
                     )
                 )
+                com.hos.happy.plants.data.telemetry.FirebaseTelemetryManager.getInstance()?.recordPlantPhotoUploaded()
                 completeGardenPhotoTask()
             }
 
@@ -654,6 +805,7 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
 
     fun completeDailyTask(task: DailyCareTaskEntity) {
         viewModelScope.launch {
+            prefs.incrementTaskActionCount()
             val now = System.currentTimeMillis()
             if (task.taskType == "SNAPSHOT") {
                 ruleEngine.completeTask(task.id)
@@ -687,6 +839,7 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
 
     fun skipDailyTask(task: DailyCareTaskEntity) {
         viewModelScope.launch {
+            prefs.incrementTaskActionCount()
             ruleEngine.skipTask(task.id)
         }
     }
@@ -764,10 +917,92 @@ class GardenViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     fun getPhotosForPlantFlow(plantId: String) = photoDao.getPhotosForPlantFlow(plantId)
+    fun getLatestPhotoForPlantFlow(plantId: String) = photoDao.getLatestPhotoForPlantFlow(plantId)
     fun getCareLogsForPlantFlow(plantId: String) = careLogDao.getLogsForPlantFlow(plantId)
+
+    fun updatePlantNickname(plantId: String, newNickname: String) {
+        viewModelScope.launch {
+            val trimmed = newNickname.trim()
+            if (trimmed.isNotBlank()) {
+                plantDao.updateNickname(plantId, trimmed)
+            }
+        }
+    }
 
     fun getCommonProblemsForPlant(plant: PlantEntity): List<CommonProblem> {
         val masterId = plant.masterPlantId ?: return emptyList()
         return masterRepo.getPlantById(masterId)?.commonProblems ?: emptyList()
+    }
+
+    // ---- Disease Diagnosis ----
+
+    /** Add a bitmap to the disease scan selection (max 3 photos). */
+    fun addDiseaseImage(bitmap: Bitmap) {
+        _diseaseState.update { state ->
+            if (state.selectedBitmaps.size >= 3) state
+            else state.copy(selectedBitmaps = state.selectedBitmaps + bitmap, error = null, results = emptyList())
+        }
+    }
+
+    /** Remove a specific bitmap from the disease scan selection. */
+    fun removeDiseaseImage(index: Int) {
+        _diseaseState.update { state ->
+            val updated = state.selectedBitmaps.toMutableList().also { it.removeAt(index) }
+            state.copy(selectedBitmaps = updated, error = null, results = emptyList())
+        }
+    }
+
+    /** Clear all disease scan state (images + results). */
+    fun clearDiseaseState() {
+        val remaining = _diseaseState.value.remainingScansToday
+        _diseaseState.value = PlantDiseaseUiState(remainingScansToday = remaining)
+    }
+
+    /** Send selected images to PlantNet Diseases API and update disease state. */
+    fun diagnosePlantDiseases() {
+        val currentState = _diseaseState.value
+        if (currentState.selectedBitmaps.isEmpty()) {
+            _diseaseState.update { it.copy(error = "Please add at least one photo of the affected plant.") }
+            return
+        }
+        viewModelScope.launch {
+            if (!prefs.canAttemptDiseaseScan()) {
+                _diseaseState.update {
+                    it.copy(
+                        isLoading = false,
+                        error = "This feature is currently not available. Daily limit of 3 scans reached for today."
+                    )
+                }
+                return@launch
+            }
+
+            _diseaseState.update { it.copy(isLoading = true, error = null, results = emptyList()) }
+            com.hos.happy.plants.data.telemetry.FirebaseTelemetryManager.getInstance()?.recordPlantDiseaseCall()
+            val apiKey = prefs.getPlantNetApiKey()
+            val result = diseaseService.identifyDiseases(currentState.selectedBitmaps, apiKey)
+            result.fold(
+                onSuccess = { diseases ->
+                    prefs.recordDiseaseScan()
+                    _diseaseState.update { it.copy(isLoading = false, results = diseases, error = null) }
+                },
+                onFailure = { e ->
+                    val raw = e.message ?: ""
+                    val message = if (raw.contains("quota", ignoreCase = true) ||
+                        raw.contains("limit", ignoreCase = true) ||
+                        raw.contains("timeout", ignoreCase = true) ||
+                        raw.contains("connect", ignoreCase = true) ||
+                        raw.contains("unreachable", ignoreCase = true) ||
+                        raw.contains("unavailable", ignoreCase = true) ||
+                        raw.contains("503") || raw.contains("502") || raw.contains("500") ||
+                        raw.contains("429")
+                    ) {
+                        "This feature is currently not available."
+                    } else {
+                        raw.ifBlank { "This feature is currently not available." }
+                    }
+                    _diseaseState.update { it.copy(isLoading = false, error = message) }
+                }
+            )
+        }
     }
 }

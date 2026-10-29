@@ -91,25 +91,18 @@ fun ProfileChooserScreen(
             Spacer(modifier = Modifier.height(36.dp))
 
             // Botanical App Header
-            Box(
+            androidx.compose.foundation.Image(
+                painter = androidx.compose.ui.res.painterResource(id = com.hos.happy.plants.R.drawable.ic_metro_greens_icon),
+                contentDescription = "Metro Greens Logo",
                 modifier = Modifier
-                    .size(68.dp)
-                    .clip(CircleShape)
-                    .background(Forest),
-                contentAlignment = Alignment.Center
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Person,
-                    contentDescription = null,
-                    tint = Leaf,
-                    modifier = Modifier.size(36.dp)
-                )
-            }
+                    .size(72.dp)
+                    .clip(RoundedCornerShape(18.dp))
+            )
 
             Spacer(modifier = Modifier.height(16.dp))
 
             Text(
-                text = "Happy Plants",
+                text = "Metro Greens",
                 style = MaterialTheme.typography.displayMedium,
                 color = Forest
             )
@@ -152,7 +145,7 @@ fun ProfileChooserScreen(
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text(
-                            text = "Welcome to Happy Plants",
+                            text = "Welcome to Metro Greens",
                             style = MaterialTheme.typography.headlineSmall,
                             color = Forest
                         )

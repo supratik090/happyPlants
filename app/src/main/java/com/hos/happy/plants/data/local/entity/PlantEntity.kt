@@ -52,5 +52,12 @@ data class PlantEntity(
 
     val notes: String? = null,
     val createdAt: Long = System.currentTimeMillis(),
-    val isArchived: Boolean = false
+    val isArchived: Boolean = false,
+
+    // Custom watering schedule (user override; null = use master/interval default)
+    // waterScheduleType: "INTERVAL" | "WEEKDAYS" | "MONTHLY"
+    // waterScheduleValue: JSON — e.g. {"days":7} | {"weekdays":[1,3,5]} | {"dates":[1,10,20]}
+    val waterScheduleType: String? = null,
+    val waterScheduleValue: String? = null,
+    val waterScheduleSetAt: Long? = null
 )

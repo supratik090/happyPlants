@@ -20,6 +20,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.DeleteOutline
 import androidx.compose.material3.BottomSheetDefaults
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -33,6 +34,7 @@ import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.SheetState
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -57,6 +59,7 @@ import com.hos.happy.plants.ui.theme.Mute
 import com.hos.happy.plants.ui.theme.PaperDark
 import com.hos.happy.plants.ui.theme.Sand
 import com.hos.happy.plants.ui.theme.SurfaceWarm
+import com.hos.happy.plants.ui.theme.Terracotta
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -76,6 +79,7 @@ fun SnapshotConfirmationBottomSheet(
     data: SnapshotConfirmationData,
     onDismiss: () -> Unit,
     onAddLeafCleaning: () -> Unit,
+    onDeleteSnapshot: () -> Unit = {},
     sheetState: SheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
 ) {
     val snapshot = data.snapshot
@@ -389,6 +393,27 @@ fun SnapshotConfirmationBottomSheet(
                     color = SurfaceWarm,
                     fontWeight = FontWeight.Bold,
                     fontSize = 15.sp
+                )
+            }
+
+            Spacer(modifier = Modifier.height(6.dp))
+
+            TextButton(
+                onClick = onDeleteSnapshot,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Icon(
+                    imageVector = Icons.Default.DeleteOutline,
+                    contentDescription = "Delete snapshot",
+                    tint = Terracotta,
+                    modifier = Modifier.size(18.dp)
+                )
+                Spacer(modifier = Modifier.width(6.dp))
+                Text(
+                    text = "Delete snapshot (taken by mistake)",
+                    color = Terracotta,
+                    fontWeight = FontWeight.Medium,
+                    fontSize = 13.sp
                 )
             }
 

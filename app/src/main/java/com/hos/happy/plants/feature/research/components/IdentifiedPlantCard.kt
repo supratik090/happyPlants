@@ -228,7 +228,7 @@ fun IdentifiedPlantCard(
                 if (localMap.isNotEmpty()) {
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
-                        text = "Indian Nursery / Regional Names:",
+                        text = "Regional & Nursery Names:",
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold,
                         color = Bark

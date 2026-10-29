@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.hos.happy.plants.data.local.dao.AppSessionDao
 import com.hos.happy.plants.data.local.dao.DailyCareTaskDao
 import com.hos.happy.plants.data.local.dao.MasterPlantDao
 import com.hos.happy.plants.data.local.dao.PlantCareLogDao
@@ -16,6 +17,7 @@ import com.hos.happy.plants.data.local.dao.RoomAnalyticsDao
 import com.hos.happy.plants.data.local.dao.RoomEnvSnapshotDao
 import com.hos.happy.plants.data.local.dao.RoomPlantSuggestionDao
 import com.hos.happy.plants.data.local.dao.UserProfileDao
+import com.hos.happy.plants.data.local.entity.AppSessionEntity
 import com.hos.happy.plants.data.local.entity.DailyCareTaskEntity
 import com.hos.happy.plants.data.local.entity.MasterPlantEntity
 import com.hos.happy.plants.data.local.entity.PlantCareLogEntity
@@ -38,9 +40,10 @@ import com.hos.happy.plants.data.local.entity.UserProfileEntity
         MasterPlantEntity::class,
         PlantIdentificationUsageEntity::class,
         DailyCareTaskEntity::class,
-        RoomPlantSuggestionEntity::class
+        RoomPlantSuggestionEntity::class,
+        AppSessionEntity::class
     ],
-    version = 9,
+    version = 11,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -55,6 +58,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun plantIdentificationUsageDao(): PlantIdentificationUsageDao
     abstract fun dailyCareTaskDao(): DailyCareTaskDao
     abstract fun roomPlantSuggestionDao(): RoomPlantSuggestionDao
+    abstract fun appSessionDao(): AppSessionDao
 
     companion object {
         @Volatile
@@ -278,6 +282,33 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
+        val MIGRATION_9_10 = object : Migration(9, 10) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE `plants` ADD COLUMN `waterScheduleType` TEXT")
+                db.execSQL("ALTER TABLE `plants` ADD COLUMN `waterScheduleValue` TEXT")
+                db.execSQL("ALTER TABLE `plants` ADD COLUMN `waterScheduleSetAt` INTEGER")
+            }
+        }
+
+        val MIGRATION_10_11 = object : Migration(10, 11) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    """
+                    CREATE TABLE IF NOT EXISTS `app_sessions` (
+                        `id` TEXT NOT NULL PRIMARY KEY,
+                        `profileId` TEXT NOT NULL,
+                        `startTime` INTEGER NOT NULL,
+                        `endTime` INTEGER,
+                        `durationSeconds` INTEGER NOT NULL,
+                        `isSynced` INTEGER NOT NULL DEFAULT 0
+                    )
+                    """.trimIndent()
+                )
+                db.execSQL("CREATE INDEX IF NOT EXISTS `index_app_sessions_profileId` ON `app_sessions` (`profileId`)")
+                db.execSQL("CREATE INDEX IF NOT EXISTS `index_app_sessions_startTime` ON `app_sessions` (`startTime`)")
+            }
+        }
+
         fun getInstance(context: Context): AppDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
@@ -285,7 +316,11 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "happy_plants.db"
                 )
-                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_1_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9)
+                    .addMigrations(
+                        MIGRATION_1_2, MIGRATION_2_3, MIGRATION_1_3, MIGRATION_3_4,
+                        MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8,
+                        MIGRATION_8_9, MIGRATION_9_10, MIGRATION_10_11
+                    )
                     .fallbackToDestructiveMigrationOnDowngrade()
                     .build()
                 INSTANCE = instance

@@ -53,4 +53,11 @@ interface RoomEnvSnapshotDao {
 
     @Query("SELECT * FROM room_env_snapshots WHERE profileId = :profileId AND roomTag = :roomTag ORDER BY recordedAt DESC LIMIT 1")
     suspend fun getLatestSnapshotForRoom(profileId: String, roomTag: String): RoomEnvSnapshotEntity?
+
+    @Query("SELECT * FROM room_env_snapshots WHERE id = :snapshotId LIMIT 1")
+    suspend fun getSnapshotById(snapshotId: String): RoomEnvSnapshotEntity?
+
+    @Query("DELETE FROM room_env_snapshots WHERE id = :snapshotId")
+    suspend fun deleteSnapshotById(snapshotId: String)
 }
+

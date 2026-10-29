@@ -42,19 +42,33 @@ class PlantMasterRepository(private val context: Context) {
     }
 
     fun loadPlantsFromAssets(): List<MasterPlant> {
-        return context.assets.open("indoor_plants_india.json").use { inputStream ->
-            InputStreamReader(inputStream, Charsets.UTF_8).use { reader ->
-                val catalog = gson.fromJson(reader, MasterPlantCatalog::class.java)
-                catalog.plants
+        val fileName = "indian_v1.json"
+        val allPlants = mutableListOf<MasterPlant>()
+        try {
+            context.assets.open(fileName).use { inputStream ->
+                InputStreamReader(inputStream, Charsets.UTF_8).use { reader ->
+                    val jsonElement = com.google.gson.JsonParser.parseReader(reader)
+                    if (jsonElement.isJsonObject) {
+                        val catalog = gson.fromJson(jsonElement, MasterPlantCatalog::class.java)
+                        allPlants.addAll(catalog.plants)
+                    } else if (jsonElement.isJsonArray) {
+                        val type = object : com.google.gson.reflect.TypeToken<List<MasterPlant>>() {}.type
+                        val list: List<MasterPlant> = gson.fromJson(jsonElement, type)
+                        allPlants.addAll(list)
+                    }
+                }
             }
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
+        return allPlants.distinctBy { it.id }
     }
 
     suspend fun seedDatabaseIfEmpty(): List<MasterPlant> = withContext(Dispatchers.IO) {
         try {
+            val plants = loadPlantsFromAssets()
             val count = masterPlantDao.getPlantCount()
-            if (count == 0) {
-                val plants = loadPlantsFromAssets()
+            if (count < plants.size) {
                 val entities = plants.map { plant ->
                     MasterPlantEntity(
                         id = plant.id,

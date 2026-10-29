@@ -62,4 +62,14 @@ interface PlantDao {
 
     @Query("UPDATE plants SET lastPrunedAt = :timestamp WHERE id = :plantId")
     suspend fun updateLastPruned(plantId: String, timestamp: Long)
+
+    @Query("UPDATE plants SET waterScheduleType = :type, waterScheduleValue = :value, waterScheduleSetAt = :setAt WHERE id = :plantId")
+    suspend fun updateWaterSchedule(plantId: String, type: String, value: String, setAt: Long)
+
+    @Query("UPDATE plants SET wateringIntervalDays = :interval WHERE id = :plantId")
+    suspend fun updateWateringInterval(plantId: String, interval: Int)
+
+    @Query("UPDATE plants SET nickname = :nickname WHERE id = :plantId")
+    suspend fun updateNickname(plantId: String, nickname: String)
 }
+

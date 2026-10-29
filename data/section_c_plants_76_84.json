@@ -1,0 +1,960 @@
+[
+  {
+    "id": 76,
+    "botanical_name": "Rosa miniature cultivars",
+    "common_name": "Miniature Rose",
+    "popularity_score": 7,
+    "local_names": {
+      "hindi": "बटन गुलाब / छोटा गुलाब",
+      "marathi": "बटन गुलाब",
+      "bengali": "বোতাম গোলাপ",
+      "kannada": "ಬಟನ್ ಗುಲಾಬಿ",
+      "tamil": "பட்டன் ரோஜா",
+      "telugu": "బటన్ గులాబీ"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 5
+      },
+      "note": "Check first: water thoroughly when the top 2 cm of soil dries. Always water at the base in early morning; never wet the foliage late in the day to avoid black spot fungus."
+    },
+    "light_lux": {
+      "min_tolerated": 25000,
+      "ideal_min": 50000,
+      "ideal_max": 85000,
+      "max_tolerated": 100000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 5,
+      "tolerable_max": 42,
+      "ideal_min": 15,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Rich, loose, well-aerated potting mix packed with organic matter and excellent drainage that stays moist without being soggy.",
+      "mix_recipe": "2 parts garden loam + 2 parts well-rotted cow dung manure (gobar ki khaad) or vermicompost + 1 part coarse sand or perlite + 1 part cocopeat + 2 tbsp neem cake powder + 1 tbsp bone meal",
+      "ph_min": 6.0,
+      "ph_max": 6.8
+    },
+    "fertilise_or_manure_every_days": 15,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to dogs, cats, and humans. However, stems have sharp thorns and prickles that can scratch curious pets and small children."
+    },
+    "common_problems": [
+      {
+        "id": "76-black_spot_fungus",
+        "problem": "Black spot fungus (Diplocarpon rosae)",
+        "do_you_see_this_problem": "Do leaves develop circular black spots with fringed edges that turn the surrounding leaf tissue yellow before dropping off, especially during monsoon rains?",
+        "solve_it_like_this": [
+          "Pluck off and destroy infected leaves; rake up and discard fallen leaves from the pot surface.",
+          "Avoid overhead watering and water exclusively at the base in the morning.",
+          "Ensure good spacing around pots for continuous air circulation.",
+          "Spray with a systemic fungicide like carbendazim or mancozeb (2 g per litre of water), or a protective baking soda spray (5 g baking soda + 2 ml liquid soap per litre) every 7–10 days."
+        ]
+      },
+      {
+        "id": "76-aphids_and_thrips",
+        "problem": "Aphids and flower thrips",
+        "do_you_see_this_problem": "Are tiny green or brown insects clustering on tender shoots and flower buds, causing petals to turn brown, crinkled, or fail to open?",
+        "solve_it_like_this": [
+          "Dislodge clusters with a firm jet of water in the morning.",
+          "Spray organic cold-pressed neem oil (5 ml per litre of water + 2 ml mild shampoo) on buds and leaf undersides weekly.",
+          "For persistent heavy thrip attacks, apply imidacloprid (0.5 ml per litre of water) late in the evening."
+        ]
+      },
+      {
+        "id": "76-powdery_mildew",
+        "problem": "Powdery mildew",
+        "do_you_see_this_problem": "Is there a powdery white or grayish fungal film coating young leaves, stems, and buds, causing leaves to curl and puckering new shoots during humid transitional weather?",
+        "solve_it_like_this": [
+          "Move the pot to a bright, well-ventilated spot receiving full direct sunlight.",
+          "Prune crowded inner stems to open up airflow inside the shrub canopy.",
+          "Spray wettable sulfur (2 g per litre) or a potassium bicarbonate solution (3 g per litre of water) early in the morning."
+        ]
+      },
+      {
+        "id": "76-stem_dieback",
+        "problem": "Stem dieback after pruning",
+        "do_you_see_this_problem": "Are pruned stems turning brown or black from the cut tip moving progressively downwards towards the base?",
+        "solve_it_like_this": [
+          "Prune back the diseased stem 2–3 cm into healthy green wood using clean, alcohol-sterilized pruning shears at a 45-degree angle.",
+          "Immediately seal cut ends with copper oxychloride paste or organic turmeric paste.",
+          "Drench the root ball with a copper-based fungicide (2 g per litre of water) to protect roots."
+        ]
+      },
+      {
+        "id": "76-red_spider_mites",
+        "problem": "Red spider mites",
+        "do_you_see_this_problem": "Are leaves looking pale, dusty, and speckled with tiny yellow dots, accompanied by fine silky webbing underneath the foliage during hot dry spells?",
+        "solve_it_like_this": [
+          "Mist the undersides of leaves thoroughly with cold water every morning to disrupt mite colonies.",
+          "Spray thoroughly with neem oil emulsion (5 ml neem oil + 2 ml dish soap per litre of water).",
+          "Ensure potting mix does not dry out bone dry during hot summer weeks."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Garden_roses",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Miniature_rose",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Rosa_Peace_1945.jpg/3840px-Rosa_Peace_1945.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Rosa_Peace_1945.jpg/330px-Rosa_Peace_1945.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/76_miniature_rose.jpg",
+      "asset_path": "file:///android_asset/images/76_miniature_rose.jpg"
+    }
+  },
+  {
+    "id": 77,
+    "botanical_name": "Ixora coccinea",
+    "common_name": "Dwarf Ixora",
+    "popularity_score": 7,
+    "local_names": {
+      "hindi": "रुक्मिणी / रोंगण",
+      "marathi": "पेंढुळ / रुक्मिणी",
+      "bengali": "রঙ্গন",
+      "kannada": "ಕಿಸುಗಾರ / ರಂಗನ ಹೂವು",
+      "tamil": "வெட்சி / இட்லிப்பூ",
+      "telugu": "నూరివరహా / కొమ్మ మల్లె"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 5
+      },
+      "note": "Water when the top 2 cm of soil dries. Keep potting mix evenly moist during flowering season, but protect from stagnant water which causes root rot and chlorosis."
+    },
+    "light_lux": {
+      "min_tolerated": 20000,
+      "ideal_min": 40000,
+      "ideal_max": 75000,
+      "max_tolerated": 95000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 85
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 42,
+      "ideal_min": 20,
+      "ideal_max": 34
+    },
+    "soil": {
+      "in_simple_words": "Acidic, porous, fertile loamy potting soil rich in organic compost. Strictly avoid alkaline or lime-rich soil.",
+      "mix_recipe": "2 parts red garden soil + 1 part leaf mold or vermicompost + 1 part cocopeat + 1 part coarse river sand + 1 tsp Epsom salt + spent coffee grounds",
+      "ph_min": 5.0,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 20,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to cats, dogs, and humans. Flowers are widely used in Hindu puja rituals and traditional Ayurvedic medicine."
+    },
+    "common_problems": [
+      {
+        "id": "77-iron_chlorosis",
+        "problem": "Iron chlorosis (Yellow leaves with green veins)",
+        "do_you_see_this_problem": "Are new leaves turning pale yellow or whitish while the veins remain distinctly dark green?",
+        "solve_it_like_this": [
+          "Check soil pH: alkaline soil or hard tap water locks up iron uptake.",
+          "Drench soil with chelated iron (Fe-EDDHA or Fe-EDTA, 1–2 g per litre of water) once every 15 days.",
+          "Add used organic coffee grounds or composted tea leaves to naturally acidify the root zone.",
+          "Use rainwater or filtered water instead of hard borewell water whenever possible."
+        ]
+      },
+      {
+        "id": "77-bud_drop",
+        "problem": "Flower bud drop before opening",
+        "do_you_see_this_problem": "Are tight flower clusters turning brown and falling off before blooming into full pom-poms?",
+        "solve_it_like_this": [
+          "Ensure consistent watering; never let the root ball dry out completely during flowering.",
+          "Mist the plant foliage on dry sunny afternoons to keep humidity above 50%.",
+          "Keep the pot in a stable location with at least 4–5 hours of direct sun; avoid frequent moving."
+        ]
+      },
+      {
+        "id": "77-mealybugs_and_scales",
+        "problem": "Mealybugs and scale insects",
+        "do_you_see_this_problem": "Do you see white waxy cotton-like bugs or small brown waxy bumps clustered along stems and leaf axils, accompanied by black sooty mold?",
+        "solve_it_like_this": [
+          "Dab visible mealybugs and scales directly with a cotton swab dipped in rubbing alcohol.",
+          "Wash off residue with a strong spray of water mixed with 2 ml liquid dish soap.",
+          "Apply cold-pressed neem oil (5 ml per litre of water) weekly to prevent recurrence."
+        ]
+      },
+      {
+        "id": "77-sooty_mold",
+        "problem": "Black sooty mold on foliage",
+        "do_you_see_this_problem": "Is there a dark, soot-like black powdery coating covering the upper surface of glossy green leaves?",
+        "solve_it_like_this": [
+          "Wipe leaves clean with a damp soft cloth and mild soapy water.",
+          "Target and eliminate honeydew-secreting pests like aphids and scale insects using neem oil or insecticidal soap.",
+          "Improve sunlight and airflow around the plant canopy."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Ixora_coccinea",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Ixora_coccinea",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Ixora_coccinea.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Ixora_coccinea.jpg/330px-Ixora_coccinea.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/77_dwarf_ixora.jpg",
+      "asset_path": "file:///android_asset/images/77_dwarf_ixora.jpg"
+    }
+  },
+  {
+    "id": 78,
+    "botanical_name": "Bougainvillea compact cultivars",
+    "common_name": "Dwarf Bougainvillea",
+    "popularity_score": 7,
+    "local_names": {
+      "hindi": "बोगनवेलिया / कागज़ के फूल",
+      "marathi": "बोगनवेल / कागदी फूल",
+      "bengali": "বাগানবিলাস / কাগজ ফুল",
+      "kannada": "ಬೋಗನ್‌ವಿಲ್ಲಾ / ಕಾಗದದ ಹೂವು",
+      "tamil": "காகிதப்பூ",
+      "telugu": "కాగితం పూలు"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 3
+      },
+      "monsoon_and_winter": {
+        "min": 5,
+        "max": 8
+      },
+      "note": "Allow the potting mix to dry out almost completely between waterings until leaves just begin to flag slightly. Mild moisture stress is the key trigger for profuse, vibrant flowering bracts."
+    },
+    "light_lux": {
+      "min_tolerated": 30000,
+      "ideal_min": 60000,
+      "ideal_max": 95000,
+      "max_tolerated": 110000
+    },
+    "humidity_percent": {
+      "min": 35,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 48,
+      "ideal_min": 22,
+      "ideal_max": 38
+    },
+    "soil": {
+      "in_simple_words": "Gritty, lean, ultra-fast-draining soil mix that never retains stagnant moisture. Fragile roots quickly rot in dense waterlogged mud.",
+      "mix_recipe": "2 parts sandy garden soil + 1 part coarse river sand or crushed brick grit + 1 part vermicompost + 0.5 part perlite or pumice + 1 tbsp bone meal",
+      "ph_min": 5.5,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "mildly_toxic",
+      "note": "Sap contains sapogenins that can cause mild contact dermatitis or skin rashes. Ingestion may cause mild gastrointestinal irritation. Stems have sharp thorns that can scratch skin."
+    },
+    "common_problems": [
+      {
+        "id": "78-lush_leaves_no_blooms",
+        "problem": "Lush green foliage but no flowers",
+        "do_you_see_this_problem": "Is your dwarf bougainvillea growing lots of vibrant green leaves and vigorous shoots, but producing very few or no colored flower bracts?",
+        "solve_it_like_this": [
+          "Cut back watering sharply; water only when the top half of the pot is bone dry and leaves begin to wilt slightly.",
+          "Relocate the pot to the sunniest possible spot receiving 6+ hours of unrelenting direct sunlight.",
+          "Stop all high-nitrogen fertilizers; feed bone meal, wood ash, or banana peel liquid fertilizer rich in potassium and phosphorus."
+        ]
+      },
+      {
+        "id": "78-bougainvillea_looper_caterpillar",
+        "problem": "Bougainvillea looper caterpillar",
+        "do_you_see_this_problem": "Are leaf edges chewed away in scalloped patterns overnight, with dark little droppings visible on leaves below?",
+        "solve_it_like_this": [
+          "Inspect leaf undersides and branch forks at dusk or night with a flashlight and handpick caterpillars.",
+          "Spray with biological Bacillus thuringiensis (Bt) or spinosad solution in the evening.",
+          "Apply neem oil spray (5 ml per litre of water) to deter egg laying."
+        ]
+      },
+      {
+        "id": "78-transplant_shock_leaf_drop",
+        "problem": "Severe leaf drop after repotting",
+        "do_you_see_this_problem": "Did the plant shed nearly all its leaves within 3–5 days after being repotted or disturbed?",
+        "solve_it_like_this": [
+          "Bougainvillea has extremely brittle, fine feeder roots that break easily. Never tease out or disturb the root ball during potting.",
+          "Place the shocked plant in bright indirect light for 7–10 days; keep soil barely moist without overwatering.",
+          "Do not fertilise until fresh green leaf buds begin sprouting along branches."
+        ]
+      },
+      {
+        "id": "78-root_rot_overwatering",
+        "problem": "Root rot from waterlogging",
+        "do_you_see_this_problem": "Are leaves turning yellow, wilting, and falling off while the potting soil remains soaking wet?",
+        "solve_it_like_this": [
+          "Ensure drainage holes in the pot are completely unblocked; remove standing water from saucers immediately.",
+          "Allow soil to dry out thoroughly before giving any more water.",
+          "Drench the soil with a broad-spectrum copper fungicide or Trichoderma viride."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Bougainvillea",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Bougainvillea",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Bougainvillea_closeup.jpg/3840px-Bougainvillea_closeup.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Bougainvillea_closeup.jpg/330px-Bougainvillea_closeup.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/78_dwarf_bougainvillea.jpg",
+      "asset_path": "file:///android_asset/images/78_dwarf_bougainvillea.jpg"
+    }
+  },
+  {
+    "id": 79,
+    "botanical_name": "Hibiscus rosa-sinensis",
+    "common_name": "Dwarf Hibiscus",
+    "popularity_score": 7,
+    "local_names": {
+      "hindi": "गुड़हल / जबा",
+      "marathi": "जास्वंद",
+      "bengali": "জবা",
+      "kannada": "ದಾಸವಾಳ",
+      "tamil": "செம்பருத்தி",
+      "telugu": "మందార"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 5
+      },
+      "note": "Hibiscus is a thirsty bloomer in summer; water deeply in the early morning whenever top 2 cm feels dry. In monsoon and winter, reduce watering and ensure free drainage."
+    },
+    "light_lux": {
+      "min_tolerated": 25000,
+      "ideal_min": 45000,
+      "ideal_max": 80000,
+      "max_tolerated": 95000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 85
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 42,
+      "ideal_min": 18,
+      "ideal_max": 35
+    },
+    "soil": {
+      "in_simple_words": "Rich, loamy, moisture-retentive potting soil packed with organic manure and slightly acidic pH.",
+      "mix_recipe": "2 parts garden loam + 1 part vermicompost or cow dung manure + 1 part cocopeat + 1 part coarse sand + 2 tbsp neem cake powder + 1 tsp Epsom salt",
+      "ph_min": 6.0,
+      "ph_max": 6.8
+    },
+    "fertilise_or_manure_every_days": 15,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to dogs, cats, and humans. Hibiscus petals and leaves are edible, safe, and widely used across India in herbal teas, temple offerings, and traditional hair care oils."
+    },
+    "common_problems": [
+      {
+        "id": "79-mealybugs_on_buds",
+        "problem": "Mealybug clusters on shoot tips and buds",
+        "do_you_see_this_problem": "Are sticky white cottony bugs tightly clustered on tender new shoots and under flower buds, causing deformed growth and bud drop?",
+        "solve_it_like_this": [
+          "Wash off visible mealybugs with a strong water spray nozzle in the morning.",
+          "Dab clustered bugs with a cotton swab soaked in rubbing alcohol.",
+          "Spray thoroughly with neem oil emulsion (5 ml neem oil + 2 ml liquid dish soap per litre of water) every 5 days.",
+          "For severe recurring outbreaks, drench root zone and spray with imidacloprid (0.5 ml per litre of water)."
+        ]
+      },
+      {
+        "id": "79-bud_drop",
+        "problem": "Flower buds turning yellow and dropping",
+        "do_you_see_this_problem": "Are unopened green flower buds turning yellow or brown at the base and falling off the plant before opening?",
+        "solve_it_like_this": [
+          "Ensure steady watering; avoid cycles of severe drying followed by heavy drowning.",
+          "Inspect buds closely for tiny sap-sucking thrips or mites.",
+          "Feed with a potassium booster like fermented banana peel tea or wood ash, plus 2 g Epsom salt per litre of water."
+        ]
+      },
+      {
+        "id": "79-yellowing_leaves_chlorosis",
+        "problem": "Yellowing leaves with green veins (Nutrient deficiency)",
+        "do_you_see_this_problem": "Are mature leaves turning yellow while veins remain green, or are bottom leaves turning completely yellow and dropping?",
+        "solve_it_like_this": [
+          "Spray foliage and drench soil with Epsom salt (magnesium sulfate, 2 g per litre of water) once every 2 weeks.",
+          "Apply chelated iron (1 g per litre of water) if new leaves emerge pale yellow or bleached.",
+          "Topdress with well-rotted vermicompost and neem cake powder to replenish trace minerals."
+        ]
+      },
+      {
+        "id": "79-leaf_curl_and_aphids",
+        "problem": "Leaf curl and aphid colonies",
+        "do_you_see_this_problem": "Are tender leaves curling downwards with sticky clear honeydew residue underneath and black ants crawling along stems?",
+        "solve_it_like_this": [
+          "Spray leaf undersides with mild soapy water or insecticidal soap solution.",
+          "Set up yellow sticky insect traps near the pot to catch flying aphids and whiteflies.",
+          "Spray cold-pressed neem oil (5 ml per litre of water) weekly to deter ants and eliminate aphids."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Hibiscus_%C3%97_rosa-sinensis",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Hibiscus_rosa-sinensis",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Hibiscus_Brilliant.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Hibiscus_Brilliant.jpg/330px-Hibiscus_Brilliant.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/79_dwarf_hibiscus.jpg",
+      "asset_path": "file:///android_asset/images/79_dwarf_hibiscus.jpg"
+    }
+  },
+  {
+    "id": 80,
+    "botanical_name": "Gardenia jasminoides",
+    "common_name": "Dwarf Gardenia",
+    "popularity_score": 7,
+    "local_names": {
+      "hindi": "गंधराज",
+      "marathi": "गंधराज",
+      "bengali": "গন্ধরাজ",
+      "kannada": "ಗಂಧರಾಜ / ಸುವಾಸನಾ ಮಲ್ಲಿಗೆ",
+      "tamil": "காந்தராஜா / தம்பாச்சம்பங்கி",
+      "telugu": "గంధరాజము / సుగంధ మల్లె"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 6
+      },
+      "note": "Needs consistently moist, well-aerated soil. Never allow the root ball to dry out completely during blooming, but avoid waterlogged soil. Use rainwater or rested tap water to prevent lime buildup."
+    },
+    "light_lux": {
+      "min_tolerated": 15000,
+      "ideal_min": 35000,
+      "ideal_max": 65000,
+      "max_tolerated": 80000
+    },
+    "humidity_percent": {
+      "min": 55,
+      "max": 85
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 38,
+      "ideal_min": 18,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "Strictly acidic, organic-rich, spongy potting mix with superb aeration and drainage. High pH causes severe iron chlorosis.",
+      "mix_recipe": "2 parts leaf mold or vermicompost + 1 part garden red soil + 1 part peat moss or washed cocopeat + 1 part coarse perlite + 1 tsp sulfur powder or spent coffee grounds",
+      "ph_min": 5.0,
+      "ph_max": 6.0
+    },
+    "fertilise_or_manure_every_days": 20,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Contains geniposide and iridoid glycosides. Ingestion by dogs, cats, or horses can cause vomiting, diarrhea, drooling, and mild tremors."
+    },
+    "common_problems": [
+      {
+        "id": "80-bud_blast_and_drop",
+        "problem": "Flower bud blast and drop",
+        "do_you_see_this_problem": "Are fragrant flower buds turning brown or black at the base and dropping off before unfurling their waxy white petals?",
+        "solve_it_like_this": [
+          "Maintain consistent moisture; erratic watering (drying out or drowning) is the number one cause of bud blast.",
+          "Increase humidity by placing the pot on a water-filled pebble tray or grouping with other plants.",
+          "Protect from scorching direct afternoon sun (>35°C) and hot dry balcony winds."
+        ]
+      },
+      {
+        "id": "80-iron_deficiency_chlorosis",
+        "problem": "Yellow leaves with prominent dark green veins",
+        "do_you_see_this_problem": "Are upper leaves becoming bright yellow with deep green network of veins while lower leaves remain green?",
+        "solve_it_like_this": [
+          "Check soil pH; gardenias cannot absorb iron if soil is alkaline (pH > 6.0).",
+          "Apply chelated iron spray (Fe-EDTA, 1.5 g per litre of water) directly to the foliage and drench soil.",
+          "Add used organic coffee grounds or acidic compost around the drip line.",
+          "Stop using hard municipal or borewell water containing high lime/calcium."
+        ]
+      },
+      {
+        "id": "80-spider_mites_and_scales",
+        "problem": "Spider mites and scale insects",
+        "do_you_see_this_problem": "Do you see tiny brown oval bumps stuck firmly onto stems, or dusty yellow speckling and fine webs under the glossy dark green leaves?",
+        "solve_it_like_this": [
+          "Wipe scale insects off stems with a cotton ball soaked in rubbing alcohol.",
+          "Spray the entire plant, especially leaf undersides, with horticultural neem oil emulsion (5 ml neem oil + 2 ml soap per litre).",
+          "Wash foliage weekly with a gentle water shower to prevent dust buildup."
+        ]
+      },
+      {
+        "id": "80-root_rot",
+        "problem": "Root rot and leaf browning from waterlogging",
+        "do_you_see_this_problem": "Are leaves turning dull brown, drooping, and falling off while the potting soil stays soggy and smells sour?",
+        "solve_it_like_this": [
+          "Check drainage holes immediately to make sure they are not clogged with soil or roots.",
+          "Unpot the plant, inspect roots, and trim away any black mushy root tips with sterile shears.",
+          "Repot into fresh, highly porous acidic mix with extra perlite or bark, and drench with carbendazim (1 g per litre of water)."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Gardenia_jasminoides",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Gardenia_jasminoides",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Gardenia_jasminoides_flower_Argentina.jpg/3840px-Gardenia_jasminoides_flower_Argentina.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Gardenia_jasminoides_flower_Argentina.jpg/330px-Gardenia_jasminoides_flower_Argentina.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/80_dwarf_gardenia.jpg",
+      "asset_path": "file:///android_asset/images/80_dwarf_gardenia.jpg"
+    }
+  },
+  {
+    "id": 81,
+    "botanical_name": "Jasminum sambac",
+    "common_name": "Arabian Jasmine / Mogra",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "मोगरा / बेला / मोतिया",
+      "marathi": "मोगरा",
+      "bengali": "বেলি / বেলি ফুল",
+      "kannada": "ಮಲ್ಲಿಗೆ / ಇರುವಾಂತಿ",
+      "tamil": "குண்டு மல்லி / மல்லிகை",
+      "telugu": "గుండు మల్లె / మోగ్ర"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 4,
+        "max": 7
+      },
+      "note": "Water deeply when the top 2 cm of soil dries out. Daily watering is essential during scorching summer flowering flushes. Drastically reduce watering during winter dormancy."
+    },
+    "light_lux": {
+      "min_tolerated": 25000,
+      "ideal_min": 50000,
+      "ideal_max": 85000,
+      "max_tolerated": 100000
+    },
+    "humidity_percent": {
+      "min": 45,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 8,
+      "tolerable_max": 44,
+      "ideal_min": 20,
+      "ideal_max": 36
+    },
+    "soil": {
+      "in_simple_words": "Rich, porous, fertile loamy potting soil packed with well-aged organic manure and sharp drainage.",
+      "mix_recipe": "2 parts garden loam + 2 parts well-rotted cow dung manure (gobar ki khaad) or vermicompost + 1 part coarse river sand + 1 part cocopeat + 2 tbsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 15,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Jasminum sambac is completely non-toxic to cats, dogs, and humans. Flowers are edible, revered in temple offerings, and widely brewed in jasmine green tea. (Do not confuse with poisonous false jasmines like Carolina jessamine)."
+    },
+    "common_problems": [
+      {
+        "id": "81-no_blooms_unpruned_branches",
+        "problem": "Few or no flowers on overgrown branches",
+        "do_you_see_this_problem": "Is your Mogra growing long leafy woody stems but barely producing any fragrant flower buds?",
+        "solve_it_like_this": [
+          "Mogra flowers exclusively on fresh new seasonal growth. Hard prune all stems back by one-third in late January or February before spring flushes.",
+          "Ensure the pot receives at least 5 to 6 hours of full direct sunlight daily.",
+          "Feed with high-potassium organic fertilizer like bone meal, wood ash, or fermented mustard cake liquid."
+        ]
+      },
+      {
+        "id": "81-jasmine_bud_borer",
+        "problem": "Jasmine bud borer caterpillar (Hendecasis duplifascialis)",
+        "do_you_see_this_problem": "Are immature flower buds developing tiny holes, turning pinkish-violet, or drying up with silky webbing and frass inside?",
+        "solve_it_like_this": [
+          "Handpick and destroy pinkish or damaged buds immediately; do not let them drop into the soil.",
+          "Spray with neem seed kernel extract (NSKE 5%) or cold-pressed neem oil (5 ml per litre of water) weekly.",
+          "In severe infestations, spray biological Bacillus thuringiensis (Bt) or spinosad at dusk."
+        ]
+      },
+      {
+        "id": "81-bud_drop_in_dry_heat",
+        "problem": "Flower buds turning brown and drying up",
+        "do_you_see_this_problem": "Are small flower buds turning dry, papery brown, and dropping off during peak summer heat before opening?",
+        "solve_it_like_this": [
+          "Water thoroughly every morning; never let the root ball bake bone dry in intense midday heat.",
+          "Mulch the soil surface with a 2 cm layer of dry leaves or vermicompost to retain root zone coolness.",
+          "Mist foliage lightly in early evening to revive tired plants after scorching afternoons."
+        ]
+      },
+      {
+        "id": "81-whiteflies_and_mites",
+        "problem": "Whiteflies and spider mites",
+        "do_you_see_this_problem": "Do clouds of tiny white insects fly up when branches are shaken, or are leaves yellowing with fine webbing underneath?",
+        "solve_it_like_this": [
+          "Hang yellow sticky traps right above the plant canopy to trap adult whiteflies.",
+          "Spray leaf undersides with neem oil solution (5 ml neem oil + 2 ml mild shampoo per litre of water).",
+          "Hose down foliage with water every 3–4 days to clean off pest eggs and honeydew."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Jasminum_sambac",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Jasminum_sambac",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Arabian_jasmin%2C_Tunisia_2010.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Arabian_jasmin%2C_Tunisia_2010.jpg/330px-Arabian_jasmin%2C_Tunisia_2010.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/81_arabian_jasmine_mogra.jpg",
+      "asset_path": "file:///android_asset/images/81_arabian_jasmine_mogra.jpg"
+    }
+  },
+  {
+    "id": 82,
+    "botanical_name": "Clitoria ternatea",
+    "common_name": "Butterfly Pea (Aparajita)",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "अपराजिता / गोकर्णी",
+      "marathi": "गोकर्ण / अपराजिता",
+      "bengali": "অপরাজিতা",
+      "kannada": "ಶಂಖಪುಷ್ಪ / ಅಪರಾಜಿತಾ",
+      "tamil": "சங்குப்பூ / காகணம்",
+      "telugu": "శంఖుపుష్పం / దింటెన"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 5
+      },
+      "note": "Water when the top 2 cm of soil dries. Fast-growing vines drink lots of water in hot weather. Reduce watering during cool winter months when vegetative growth slows."
+    },
+    "light_lux": {
+      "min_tolerated": 25000,
+      "ideal_min": 45000,
+      "ideal_max": 85000,
+      "max_tolerated": 100000
+    },
+    "humidity_percent": {
+      "min": 45,
+      "max": 85
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 45,
+      "ideal_min": 22,
+      "ideal_max": 38
+    },
+    "soil": {
+      "in_simple_words": "Light, loamy, well-draining potting mix. As a legume, it fixes atmospheric nitrogen naturally through root nodules.",
+      "mix_recipe": "2 parts garden soil + 1 part vermicompost + 1 part coarse sand or perlite + 1 part cocopeat + 1 tbsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "mildly_toxic",
+      "note": "Flowers are safe, edible, and famous for blue antioxidant herbal tea and traditional puja offerings. However, the mature seeds and brown seed pods contain cathartic resins that can cause nausea, vomiting, and diarrhea if eaten by pets or children."
+    },
+    "common_problems": [
+      {
+        "id": "82-caterpillars_eating_leaves",
+        "problem": "Caterpillars devouring leaves and buds",
+        "do_you_see_this_problem": "Are leaves riddled with large holes or completely skeletonized, with green caterpillars clinging to vine stems and fresh buds?",
+        "solve_it_like_this": [
+          "Inspect vines daily and handpick caterpillars into a container of soapy water.",
+          "Spray with biological Bacillus thuringiensis (Bt) or neem oil spray (5 ml per litre of water) on both sides of leaves.",
+          "Encourage natural predators like garden birds and paper wasps by avoiding synthetic broad-spectrum insecticides."
+        ]
+      },
+      {
+        "id": "82-reduced_blooms_heavy_seed_pods",
+        "problem": "Decreased flowering due to seed pod formation",
+        "do_you_see_this_problem": "Has flowering dramatically slowed down while the vine is covered in numerous green pea-like seed pods?",
+        "solve_it_like_this": [
+          "The vine redirects all its reproductive energy into seed development once pods form.",
+          "Regularly pinch off and harvest young green pods and deadhead wilted flowers daily to stimulate continuous fresh bloom flushes.",
+          "Save only a couple of mature pods if you intend to collect seeds for next season."
+        ]
+      },
+      {
+        "id": "82-spider_mites_in_summer",
+        "problem": "Spider mites during hot dry months",
+        "do_you_see_this_problem": "Are lower leaves turning pale, stippled with tiny yellow pinprick dots, and covered with fine webs along vine petioles?",
+        "solve_it_like_this": [
+          "Spray foliage with a strong jet of cool water each morning, especially under leaves.",
+          "Apply cold-pressed neem oil (5 ml per litre of water + 2 ml soap) every 5 days.",
+          "Mulch the container top to preserve soil moisture during scorching afternoons."
+        ]
+      },
+      {
+        "id": "82-powdery_mildew_in_winter",
+        "problem": "Powdery mildew in cool humid weather",
+        "do_you_see_this_problem": "Are leaves and vine tips developing white powdery patches during late autumn and winter mornings?",
+        "solve_it_like_this": [
+          "Prune congested, overlapping vines to increase sunlight penetration and air movement.",
+          "Spray with baking soda solution (5 g baking soda + 2 ml shampoo per litre of water).",
+          "Ensure vines receive full morning sun so leaves dry quickly from morning dew."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Clitoria_ternatea",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Clitoria_ternatea",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Asian_pigeonwings_in_Bhopal_04.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Asian_pigeonwings_in_Bhopal_04.jpg/330px-Asian_pigeonwings_in_Bhopal_04.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/82_butterfly_pea_aparajita.jpg",
+      "asset_path": "file:///android_asset/images/82_butterfly_pea_aparajita.jpg"
+    }
+  },
+  {
+    "id": 83,
+    "botanical_name": "Ipomoea purpurea",
+    "common_name": "Purple Morning Glory",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "मॉर्निंग ग्लोरी / नीलकमल लता",
+      "marathi": "मॉर्निंग ग्लोरी / निळी वेल",
+      "bengali": "সকালের মহিমা / নীলতারা লতা",
+      "kannada": "ಪ್ರಾತಃ ಕಮಲ / ಮಾರ್ನಿಂಗ್ ಗ್ಲೋರಿ",
+      "tamil": "காலை மகிமை / நீலக்கொடி",
+      "telugu": "మార్నింగ్ గ్లోరీ / వేకువ పూలు"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 5
+      },
+      "note": "Keep soil evenly moist during the active growing and flowering cycle. Thin broad leaves wilt rapidly if soil dries out in direct sun; water in the early morning."
+    },
+    "light_lux": {
+      "min_tolerated": 25000,
+      "ideal_min": 50000,
+      "ideal_max": 85000,
+      "max_tolerated": 100000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 42,
+      "ideal_min": 20,
+      "ideal_max": 35
+    },
+    "soil": {
+      "in_simple_words": "Moderately fertile, lightweight, well-draining potting soil. Avoid overly rich manure mixes which produce tons of vine leaves but very few flowers.",
+      "mix_recipe": "2 parts garden loam + 1 part coarse sand + 1 part vermicompost + 1 part cocopeat",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Seeds contain hallucinogenic ergoline alkaloids (such as ergine / LSA). Ingestion of seeds causes vomiting, nausea, disorientation, dilated pupils, and lethargy in dogs, cats, and humans. Keep seed pods well out of reach."
+    },
+    "common_problems": [
+      {
+        "id": "83-red_spider_mites",
+        "problem": "Red spider mites on foliage",
+        "do_you_see_this_problem": "Are heart-shaped leaves turning dull yellowish-gray with fine pinhead speckles and delicate spider-like webs beneath the leaves?",
+        "solve_it_like_this": [
+          "Wash the foliage thoroughly with a spray nozzle every morning, targeting leaf undersides.",
+          "Spray cold-pressed neem oil solution (5 ml per litre of water + 2 ml mild soap) every 5 days.",
+          "Ensure the potting mix stays evenly hydrated; dry soil encourages rapid mite multiplication."
+        ]
+      },
+      {
+        "id": "83-leaf_miner_trails",
+        "problem": "Leaf miner serpentine trails",
+        "do_you_see_this_problem": "Do leaves have winding, squiggly white or translucent silver tunnel trails through the leaf surface?",
+        "solve_it_like_this": [
+          "Pinch off and discard leaves with heavy tunnel trails before larvae mature and pupate.",
+          "Crush visible larvae inside tunnels with gentle finger pressure.",
+          "Spray neem oil spray weekly to repel adult leaf miner flies from laying eggs."
+        ]
+      },
+      {
+        "id": "83-rampant_vines_no_flowers",
+        "problem": "Massive vine growth with few flowers",
+        "do_you_see_this_problem": "Is your Morning Glory aggressively covering the trellis with lush giant green leaves but yielding few or no trumpet blooms?",
+        "solve_it_like_this": [
+          "Stop applying high-nitrogen organic or chemical fertilizers immediately.",
+          "Provide at least 5–6 hours of direct morning sunlight.",
+          "Feed with high-potassium fertilizer like banana peel extract or wood ash tea to initiate flower bud initiation."
+        ]
+      },
+      {
+        "id": "83-leaf_rust_fungus",
+        "problem": "Leaf rust pustules",
+        "do_you_see_this_problem": "Are small orange, yellow, or rust-colored powdery pustules developing on the undersides of leaves during humid monsoon weather?",
+        "solve_it_like_this": [
+          "Prune off heavily infected lower leaves and discard them in the trash bin.",
+          "Never water foliage in the late evening; keep water directed to the soil base.",
+          "Spray with copper oxychloride (2 g per litre of water) or a sulfur-based fungicide."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Ipomoea_purpurea",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Ipomoea_purpurea",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Ipomoea_purpurea%2C_2021-08-31%2C_Beechview%2C_05.jpg/3840px-Ipomoea_purpurea%2C_2021-08-31%2C_Beechview%2C_05.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Ipomoea_purpurea%2C_2021-08-31%2C_Beechview%2C_05.jpg/330px-Ipomoea_purpurea%2C_2021-08-31%2C_Beechview%2C_05.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/83_purple_morning_glory.jpg",
+      "asset_path": "file:///android_asset/images/83_purple_morning_glory.jpg"
+    }
+  },
+  {
+    "id": 84,
+    "botanical_name": "Clerodendrum thomsoniae",
+    "common_name": "Bleeding Heart Vine",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "ब्लीडिंग हार्ट वाइन / रक्तगुलाब लता",
+      "marathi": "ब्लीडिंग हार्ट वेल",
+      "bengali": "রক্তজবা লতা / ব্লিডিং হার্ট",
+      "kannada": "ರಕ್ತ ಹೃದಯ ಬಳ್ಳಿ / ಬ್ಲೀಡಿಂಗ್ ಹಾರ್ಟ್",
+      "tamil": "இரத்த இதய கொடி / பிளீடிங் ஹார்ட்",
+      "telugu": "బ్లీడింగ్ హార్ట్ తీగ / రక్తాక్షి పూలు"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 4,
+        "max": 7
+      },
+      "note": "Keep soil evenly damp but never waterlogged during active flowering from March to October. Reduce watering substantially during cool winter semi-dormancy."
+    },
+    "light_lux": {
+      "min_tolerated": 15000,
+      "ideal_min": 30000,
+      "ideal_max": 60000,
+      "max_tolerated": 75000
+    },
+    "humidity_percent": {
+      "min": 55,
+      "max": 85
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 38,
+      "ideal_min": 18,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Humus-rich, moisture-retentive, porous potting mix with great aeration that drains freely without holding stagnant water.",
+      "mix_recipe": "2 parts garden loam + 1 part cocopeat or peat moss + 1 part vermicompost or leaf mold + 1 part perlite or coarse sand",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 20,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "mildly_toxic",
+      "note": "Contains diterpenoids and saponins that can cause mild gastrointestinal distress, drooling, or vomiting if ingested in quantity by dogs or cats. Generally safe to handle, but keep away from pets that chew on foliage."
+    },
+    "common_problems": [
+      {
+        "id": "84-flower_and_bud_drop",
+        "problem": "Bud and flower drop from harsh sun or dry air",
+        "do_you_see_this_problem": "Are pristine white calyces turning brown or dropping before the crimson red petals unfurl?",
+        "solve_it_like_this": [
+          "Move the vine to gentle morning sunlight or bright filtered light; shield from harsh midday summer sun (>34°C).",
+          "Increase humidity by placing a water tray with pebbles near the pot.",
+          "Keep rootzone consistently moist; never let the container soil dry out completely during flowering."
+        ]
+      },
+      {
+        "id": "84-mealybugs_and_aphids",
+        "problem": "Mealybugs and aphids on flower clusters",
+        "do_you_see_this_problem": "Are fuzzy white insects or green aphids clustering around new tender vine tips and between flower calyces?",
+        "solve_it_like_this": [
+          "Dab clustered bugs with a cotton swab dipped in rubbing alcohol.",
+          "Wash off vine clusters with a soft water spray.",
+          "Spray weekly with neem oil emulsion (5 ml neem oil + 2 ml mild soap per litre of water)."
+        ]
+      },
+      {
+        "id": "84-winter_leaf_yellowing_drop",
+        "problem": "Winter leaf yellowing and shedding",
+        "do_you_see_this_problem": "Are lower leaves turning yellow and dropping off during November to January?",
+        "solve_it_like_this": [
+          "This is a natural semi-dormancy response to cooler temperatures and shorter winter days; do not overwater or add heavy fertilizers.",
+          "Cut back watering; allow top 3–4 cm of soil to dry before watering lightly.",
+          "Prune back long leggy branches in early February to stimulate fresh, bushy flowering shoots for spring."
+        ]
+      },
+      {
+        "id": "84-spider_mites",
+        "problem": "Spider mites in dry weather",
+        "do_you_see_this_problem": "Are leaves turning pale, mottled with fine yellow dots, with fine webs between leaf stems during hot dry spells?",
+        "solve_it_like_this": [
+          "Mist foliage regularly with water to raise humidity around leaves.",
+          "Spray thoroughly with neem oil or insecticidal soap, ensuring complete coverage under leaves."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Clerodendrum_thomsoniae",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Clerodendrum_thomsoniae",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Clerodendron_thomsoniae1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Clerodendron_thomsoniae1.jpg/330px-Clerodendron_thomsoniae1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/84_bleeding_heart_vine.jpg",
+      "asset_path": "file:///android_asset/images/84_bleeding_heart_vine.jpg"
+    }
+  }
+]

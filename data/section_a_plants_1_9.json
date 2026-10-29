@@ -1,0 +1,860 @@
+[
+  {
+    "id": 1,
+    "botanical_name": "Ficus lyrata",
+    "common_name": "Dwarf Fiddle-Leaf Fig",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "ड्वार्फ फिडल-लीफ फिग",
+      "marathi": "ड्वार्फ फिडल-लीफ फिग",
+      "bengali": "ডোয়ার্ফ ফিডল-লিফ ডুমুর",
+      "kannada": "ಡ್ವಾರ್ಫ್ ಫಿಡಲ್-ಲೀಫ್ ಫಿಗ್",
+      "tamil": "குள்ள பிடில் இலை அத்தி",
+      "telugu": "డ్వార్ఫ్ ఫిడిల్-లీఫ్ ఫిగ్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 4,
+        "max": 7
+      },
+      "monsoon_and_winter": {
+        "min": 9,
+        "max": 14
+      },
+      "note": "Check first: water only when the top 3–5 cm of soil feels completely dry to the touch. Highly sensitive to soggy soil and overwatering."
+    },
+    "light_lux": {
+      "min_tolerated": 1500,
+      "ideal_min": 5000,
+      "ideal_max": 15000,
+      "max_tolerated": 25000
+    },
+    "humidity_percent": {
+      "min": 45,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 13,
+      "tolerable_max": 38,
+      "ideal_min": 18,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "Chunky, fast-draining potting mix that holds light moisture without getting soggy or waterlogged.",
+      "mix_recipe": "2 parts garden loam/potting soil + 1 part cocopeat + 1 part perlite or coarse river sand + 1 part compost/bark chips",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Contains milky sap with ficin and calcium oxalate crystals. Toxic to dogs, cats, and causes oral irritation, drooling, and vomiting if chewed."
+    },
+    "common_problems": [
+      {
+        "id": "1-brown_spots_overwatering",
+        "problem": "Brown patches on leaves (Root rot or overwatering)",
+        "do_you_see_this_problem": "Are there dark brown or black patches in the center or edges of leaves, and does the soil stay wet for many days?",
+        "solve_it_like_this": [
+          "Stop watering immediately and allow the soil to dry out thoroughly.",
+          "Check pot drainage holes to ensure excess water drains freely.",
+          "Inspect roots: unpot and prune away any black, squishy, or rotting roots using sterilized scissors.",
+          "Drench soil with a mild fungicide like carbendazim (1 g per litre of water).",
+          "Water only when the top 3–5 cm of soil is dry."
+        ]
+      },
+      {
+        "id": "1-leaf_drop_stress",
+        "problem": "Sudden leaf dropping",
+        "do_you_see_this_problem": "Are bottom or green leaves suddenly dropping off after moving the pot or exposing to AC drafts?",
+        "solve_it_like_this": [
+          "Keep the plant in one fixed location with steady bright indirect light; avoid frequent moving.",
+          "Shield from cold drafts, air conditioner vents, and sudden temperature fluctuations.",
+          "Ensure consistent watering and do not let the root ball completely desiccate."
+        ]
+      },
+      {
+        "id": "1-spider_mites",
+        "problem": "Spider mites",
+        "do_you_see_this_problem": "Do you see delicate silky webs under leaves, along with tiny dusty yellow or pale speckles?",
+        "solve_it_like_this": [
+          "Wipe both upper and lower surfaces of all leaves with a damp microfiber cloth.",
+          "Spray thoroughly with neem oil solution (5 ml cold-pressed neem oil + 2 ml mild liquid soap per litre of water).",
+          "Increase ambient humidity using a pebble tray or room humidifier."
+        ]
+      },
+      {
+        "id": "1-edema_red_spots",
+        "problem": "Edema (Red or rust spots on new leaves)",
+        "do_you_see_this_problem": "Do newly unfurled leaves have tiny reddish or purple freckles on the underside?",
+        "solve_it_like_this": [
+          "Maintain a consistent watering schedule instead of alternating between bone-dry and soaking wet.",
+          "Ensure the potting mix is aerated and drains swiftly.",
+          "The spots are harmless cell bursts from moisture fluctuations and will fade naturally as the leaf matures."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Ficus_lyrata",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Ficus_lyrata",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Ficus_lyrata_11zz.jpg",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Ficus_lyrata_11zz.jpg/330px-Ficus_lyrata_11zz.jpg",
+      "local_file": "images/01_dwarf_fiddle_leaf_fig.jpg",
+      "asset_path": "file:///android_asset/images/01_dwarf_fiddle_leaf_fig.jpg"
+    }
+  },
+  {
+    "id": 2,
+    "botanical_name": "Ficus benjamina",
+    "common_name": "Compact Weeping Fig",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "पुकर / पाकुर",
+      "marathi": "नांदरूक",
+      "bengali": "পাকুড়",
+      "kannada": "ಜಾವಾ ಅತ್ತಿ",
+      "tamil": "வெள்ளால்",
+      "telugu": "కొండ జువ్వి"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 6
+      },
+      "monsoon_and_winter": {
+        "min": 7,
+        "max": 12
+      },
+      "note": "Check first: water thoroughly when the top 3 cm of soil is dry. Never allow the pot to sit in standing water."
+    },
+    "light_lux": {
+      "min_tolerated": 2000,
+      "ideal_min": 8000,
+      "ideal_max": 20000,
+      "max_tolerated": 30000
+    },
+    "humidity_percent": {
+      "min": 45,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 38,
+      "ideal_min": 20,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Loamy, rich, aerated soil that drains water quickly and lets roots breathe.",
+      "mix_recipe": "2 parts garden loam + 1 part vermicompost + 1 part river sand or perlite + 1 part cocopeat",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Milky sap contains ficin and furocoumarins; toxic to cats and dogs causing oral burning, drooling, vomiting, and potential contact dermatitis."
+    },
+    "common_problems": [
+      {
+        "id": "2-leaf_drop_stress",
+        "problem": "Mass leaf dropping",
+        "do_you_see_this_problem": "Are green or yellow leaves shedding heavily after relocating the pot or changing watering routines?",
+        "solve_it_like_this": [
+          "Find a bright, draft-free spot and leave the plant there permanently—Ficus benjamina hates relocation.",
+          "Avoid placing directly near air conditioner vents or drafty doorways.",
+          "Maintain a steady watering schedule; never allow the soil to go bone dry or stay swampy."
+        ]
+      },
+      {
+        "id": "2-mealybugs_and_scale",
+        "problem": "Scale insects and mealybugs",
+        "do_you_see_this_problem": "Are there brown waxy bumps on stems or white cottony specks on leaf axils accompanied by sticky residue?",
+        "solve_it_like_this": [
+          "Dab individual insects with a cotton bud soaked in 70% isopropyl alcohol.",
+          "Wash leaves with a soft jet of water to dislodge bugs.",
+          "Spray neem oil formulation (5 ml neem oil + 2 ml liquid soap per litre) weekly for 3 consecutive weeks."
+        ]
+      },
+      {
+        "id": "2-yellowing_leaves_overwatering",
+        "problem": "Yellowing lower leaves and root rot",
+        "do_you_see_this_problem": "Are lower leaves turning limp and yellow while soil feels persistently damp and heavy?",
+        "solve_it_like_this": [
+          "Reduce watering frequency immediately.",
+          "Clear drainage holes and pour away water collected in the saucer.",
+          "Let the top 3–5 cm of soil dry completely before the next watering."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Ficus_benjamina",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Ficus_benjamina",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Ficus_benjamina.jpg",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Ficus_benjamina.jpg/330px-Ficus_benjamina.jpg",
+      "local_file": "images/02_compact_weeping_fig.jpg",
+      "asset_path": "file:///android_asset/images/02_compact_weeping_fig.jpg"
+    }
+  },
+  {
+    "id": 3,
+    "botanical_name": "Schefflera arboricola",
+    "common_name": "Dwarf Umbrella Plant",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "ड्वार्फ अम्ब्रेला प्लांट",
+      "marathi": "ड्वार्फ अम्ब्रेला प्लांट",
+      "bengali": "ডোয়ার্ফ আমব্রেলা প্ল্যান্ট",
+      "kannada": "ಡ್ವಾರ್ಫ್ ಅಂಬ್ರೆಲಾ ಪ್ಲಾಂಟ್",
+      "tamil": "ட்வார்ஃப் அம்பர்லா பிளாண்ட்",
+      "telugu": "డ్వార్ఫ్ అంబ్రెల్లా ప్లాంట్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 6
+      },
+      "monsoon_and_winter": {
+        "min": 7,
+        "max": 12
+      },
+      "note": "Check first: water when the top 3–5 cm of soil feels dry. Prefers underwatering over overwatering."
+    },
+    "light_lux": {
+      "min_tolerated": 1500,
+      "ideal_min": 6000,
+      "ideal_max": 18000,
+      "max_tolerated": 25000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 38,
+      "ideal_min": 18,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Porous, aerated potting soil that releases excess water quickly while holding modest moisture.",
+      "mix_recipe": "2 parts garden soil + 2 parts cocopeat + 1 part vermicompost + 1 part perlite/coarse river sand",
+      "ph_min": 6.0,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Contains insoluble calcium oxalate crystals. Toxic to dogs and cats; causes intense mouth irritation, burning sensation, drooling, and vomiting."
+    },
+    "common_problems": [
+      {
+        "id": "3-root_rot",
+        "problem": "Root rot from overwatering",
+        "do_you_see_this_problem": "Are lower leaves turning black or dark brown and dropping readily while soil remains soggy?",
+        "solve_it_like_this": [
+          "Cease watering until top soil dries completely.",
+          "Remove decayed, foul-smelling roots and repot into fresh porous potting mix.",
+          "Drench soil with copper oxychloride (2.5 g per litre) or Trichoderma viride.",
+          "Ensure pot has clear, unblocked bottom drainage holes."
+        ]
+      },
+      {
+        "id": "3-scale_insects",
+        "problem": "Scale insects and mealybugs",
+        "do_you_see_this_problem": "Do you see tiny brown waxy shells or white fluffy bugs along leaf veins and petioles?",
+        "solve_it_like_this": [
+          "Wipe stems and leaves with rubbing alcohol on a cotton ball.",
+          "Spray with neem oil solution (5 ml/litre with liquid soap) every 7 days for 3 weeks.",
+          "Prune off heavily infested branches if necessary."
+        ]
+      },
+      {
+        "id": "3-leggy_growth",
+        "problem": "Leggy, sparse stems",
+        "do_you_see_this_problem": "Are stems stretching long with wide gaps between umbrella leaf clusters?",
+        "solve_it_like_this": [
+          "Relocate the plant to a spot with brighter indirect sunlight.",
+          "Prune or pinch back the tall leggy tips to stimulate bushier side growth."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Schefflera_arboricola",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Schefflera_arboricola",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Schefflera_arboricola.JPG",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Schefflera_arboricola.JPG/330px-Schefflera_arboricola.JPG",
+      "local_file": "images/03_dwarf_umbrella_plant.jpg",
+      "asset_path": "file:///android_asset/images/03_dwarf_umbrella_plant.jpg"
+    }
+  },
+  {
+    "id": 4,
+    "botanical_name": "Pilea peperomioides",
+    "common_name": "Chinese Money Plant",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "चाइनीज मनी प्लांट",
+      "marathi": "चायनीज मनी प्लांट",
+      "bengali": "চাইনিজ মানি প্ল্যান্ট",
+      "kannada": "ಚೈನೀಸ್ ಮನಿ ಪ್ಲಾಂಟ್",
+      "tamil": "சைனீஸ் மணி பிளாண்ட்",
+      "telugu": "చైనీస్ మనీ ప్లాంట్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 4,
+        "max": 7
+      },
+      "monsoon_and_winter": {
+        "min": 8,
+        "max": 14
+      },
+      "note": "Check first: water only when top 3 cm of soil has dried out. Leaves will droop slightly to signal thirst."
+    },
+    "light_lux": {
+      "min_tolerated": 1000,
+      "ideal_min": 3000,
+      "ideal_max": 10000,
+      "max_tolerated": 15000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 35,
+      "ideal_min": 16,
+      "ideal_max": 28
+    },
+    "soil": {
+      "in_simple_words": "Very light, well-draining potting medium that never cakes or stays waterlogged.",
+      "mix_recipe": "1 part cocopeat + 1 part perlite or pumice + 1 part leaf compost/vermicompost + 1 part garden loam",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to cats, dogs, and children."
+    },
+    "common_problems": [
+      {
+        "id": "4-curling_cupping_leaves",
+        "problem": "Curled or cupped leaves",
+        "do_you_see_this_problem": "Are the round pancake leaves curling inward like cups or doming outwards?",
+        "solve_it_like_this": [
+          "Move the plant slightly away from direct heat, dry wind, or harsh afternoon sunlight.",
+          "Check for underwatering or low humidity during dry hot spells.",
+          "Ensure room temperature remains comfortable (below 32°C)."
+        ]
+      },
+      {
+        "id": "4-yellow_drooping_leaves",
+        "problem": "Yellowing and falling lower leaves (Overwatering)",
+        "do_you_see_this_problem": "Are lower leaves turning yellow, soft, and falling off easily while soil is wet?",
+        "solve_it_like_this": [
+          "Allow the soil to dry out significantly between waterings.",
+          "Always empty drainage trays so the pot does not sit in stagnant water.",
+          "Ensure the pot has adequate bottom drainage holes."
+        ]
+      },
+      {
+        "id": "4-leaning_lopsided_stem",
+        "problem": "Leaning toward window",
+        "do_you_see_this_problem": "Is the central stem bending and leaning heavily towards the light source?",
+        "solve_it_like_this": [
+          "Rotate the pot by 90 degrees every week to promote symmetrical, upright growth.",
+          "Provide a small bamboo stake for support if the plant is tall."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Pilea_peperomioides",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Pilea_peperomioides",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Pilea_Peperomioides.jpg",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Pilea_Peperomioides.jpg/330px-Pilea_Peperomioides.jpg",
+      "local_file": "images/04_chinese_money_plant.jpg",
+      "asset_path": "file:///android_asset/images/04_chinese_money_plant.jpg"
+    }
+  },
+  {
+    "id": 5,
+    "botanical_name": "Aspidistra elatior",
+    "common_name": "Cast Iron Plant",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "कास्ट आयरन प्लांट",
+      "marathi": "कास्ट आयर्न प्लांट",
+      "bengali": "কাস্ট আয়রন প্ল্যান্ট",
+      "kannada": "ಕ್ಯಾಸ್ಟ್ ಐರನ್ ಪ್ಲಾಂಟ್",
+      "tamil": "காஸ்ட் அயர்ன் பிளாண்ட்",
+      "telugu": "కాస్ట్ ఐరన్ ప్లాంట్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 7,
+        "max": 12
+      },
+      "monsoon_and_winter": {
+        "min": 14,
+        "max": 21
+      },
+      "note": "Check first: water only when top half of soil feels completely dry. Extremely drought-tolerant; overwatering is its main enemy."
+    },
+    "light_lux": {
+      "min_tolerated": 200,
+      "ideal_min": 500,
+      "ideal_max": 2000,
+      "max_tolerated": 5000
+    },
+    "humidity_percent": {
+      "min": 30,
+      "max": 65
+    },
+    "temperature_c": {
+      "tolerable_min": 7,
+      "tolerable_max": 38,
+      "ideal_min": 15,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "Rich, highly porous potting mix with rapid drainage. Tolerates imperfect soil but hates waterlogging.",
+      "mix_recipe": "2 parts garden loam + 1 part coarse sand + 1 part cocopeat + 1 part vermicompost",
+      "ph_min": 5.5,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 1095,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic and safe for dogs, cats, and children."
+    },
+    "common_problems": [
+      {
+        "id": "5-brown_leaf_tips",
+        "problem": "Brown crispy tips and margins",
+        "do_you_see_this_problem": "Are the tips or edges of older leaves turning brown, crispy, and dry?",
+        "solve_it_like_this": [
+          "Avoid using hard, chemically treated tap water; let water sit overnight or use filtered water.",
+          "Reduce chemical fertilizer; flush soil with clean water to remove excess mineral salts.",
+          "Trim unsightly brown tips with clean shears, leaving a tiny brown margin to avoid wounding green tissue."
+        ]
+      },
+      {
+        "id": "5-bleached_scotched_leaves",
+        "problem": "Bleached or yellowed leaves from sun scorch",
+        "do_you_see_this_problem": "Are the dark green leaves turning pale yellowish-white with dry faded patches?",
+        "solve_it_like_this": [
+          "Move the plant further away from direct sunlight or bright unshaded windows into deeper shade.",
+          "Cast Iron plant thrives in deep shade and indirect ambient room light."
+        ]
+      },
+      {
+        "id": "5-root_rot",
+        "problem": "Root rot from persistent dampness",
+        "do_you_see_this_problem": "Are leaf stems collapsing at the base with a foul smell in the soil?",
+        "solve_it_like_this": [
+          "Stop watering immediately and let the pot dry out thoroughly.",
+          "Repot into fresh dry soil mix with plenty of coarse sand and ensure drainage holes are functional."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Aspidistra_elatior",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Aspidistra_elatior",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Aspidistra_elatior1.jpg",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Aspidistra_elatior1.jpg/330px-Aspidistra_elatior1.jpg",
+      "local_file": "images/05_cast_iron_plant.jpg",
+      "asset_path": "file:///android_asset/images/05_cast_iron_plant.jpg"
+    }
+  },
+  {
+    "id": 6,
+    "botanical_name": "Pilea cadierei",
+    "common_name": "Aluminum Plant",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "एल्युमिनियम प्लांट",
+      "marathi": "ॲल्युमिनियम प्लांट",
+      "bengali": "অ্যালুমিনিয়াম প্ল্যান্ট",
+      "kannada": "ಅಲ್ಯೂಮಿನಿಯಂ ಪ್ಲಾಂಟ್",
+      "tamil": "அலுமினியம் பிளாண்ட்",
+      "telugu": "అల్యూమినియం ప్లాంట్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 5
+      },
+      "monsoon_and_winter": {
+        "min": 6,
+        "max": 9
+      },
+      "note": "Check first: water when the top 2.5 cm (1 inch) of soil feels dry. Keep soil evenly moist but never saturated."
+    },
+    "light_lux": {
+      "min_tolerated": 1000,
+      "ideal_min": 4000,
+      "ideal_max": 12000,
+      "max_tolerated": 18000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 35,
+      "ideal_min": 18,
+      "ideal_max": 28
+    },
+    "soil": {
+      "in_simple_words": "Lightweight, airy, well-draining soil mix that retains gentle moisture without waterlogging.",
+      "mix_recipe": "2 parts cocopeat + 1 part garden soil + 1 part perlite/vermiculite + 1 part vermicompost",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to dogs, cats, and humans."
+    },
+    "common_problems": [
+      {
+        "id": "6-leggy_straggly_growth",
+        "problem": "Leggy, sparse stems",
+        "do_you_see_this_problem": "Are stems growing long and thin with few leaves and lost compactness?",
+        "solve_it_like_this": [
+          "Pinch back stem growing tips regularly to encourage bushier lateral growth.",
+          "Move to a brighter location with good indirect light.",
+          "Root tip cuttings in water or moist soil to refresh old leggy plants."
+        ]
+      },
+      {
+        "id": "6-fading_silver_markings",
+        "problem": "Loss of metallic silver pattern",
+        "do_you_see_this_problem": "Are the leaves turning solid green with dull or shrinking silver patches?",
+        "solve_it_like_this": [
+          "Increase bright, filtered indirect sunlight; low light fades the variegation.",
+          "Ensure temperatures remain warm and comfortable (20–28°C)."
+        ]
+      },
+      {
+        "id": "6-brown_leaf_edges",
+        "problem": "Crispy brown leaf margins",
+        "do_you_see_this_problem": "Are the leaf margins curling and turning crisp and brown?",
+        "solve_it_like_this": [
+          "Increase humidity using a pebble tray with water or place near other plants.",
+          "Keep away from hot dry winds or direct blast from air conditioning units."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Pilea_cadierei",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Pilea_cadierei",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/PileaCadierei.jpg",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/PileaCadierei.jpg/330px-PileaCadierei.jpg",
+      "local_file": "images/06_aluminum_plant.jpg",
+      "asset_path": "file:///android_asset/images/06_aluminum_plant.jpg"
+    }
+  },
+  {
+    "id": 7,
+    "botanical_name": "Hypoestes phyllostachya",
+    "common_name": "Polka Dot Plant",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "पोल्का डॉट प्लांट",
+      "marathi": "पोल्का डॉट प्लांट",
+      "bengali": "পোলকা ডট প্ল্যান্ট",
+      "kannada": "ಪೋಲ್ಕಾ ಡಾಟ್ ಪ್ಲಾಂಟ್",
+      "tamil": "போல்கா டாட் பிளாண்ட்",
+      "telugu": "పోల్కా డాట్ ప్లాంట్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 4
+      },
+      "monsoon_and_winter": {
+        "min": 5,
+        "max": 8
+      },
+      "note": "Check first: water when the top 1–2 cm feels slightly dry. Will wilt dramatically if completely dry, perking back up quickly once watered."
+    },
+    "light_lux": {
+      "min_tolerated": 2000,
+      "ideal_min": 6000,
+      "ideal_max": 15000,
+      "max_tolerated": 22000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 13,
+      "tolerable_max": 36,
+      "ideal_min": 18,
+      "ideal_max": 29
+    },
+    "soil": {
+      "in_simple_words": "Moisture-retentive yet well-drained organic mix that stays softly damp without rotting roots.",
+      "mix_recipe": "2 parts cocopeat + 1 part garden soil + 1 part vermicompost + 1 part perlite/coarse river sand",
+      "ph_min": 6.0,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to cats, dogs, and children."
+    },
+    "common_problems": [
+      {
+        "id": "7-leggy_stems",
+        "problem": "Stems becoming tall, thin, and leggy",
+        "do_you_see_this_problem": "Is the plant growing tall and spindly with wide spaces between leaves and fading color?",
+        "solve_it_like_this": [
+          "Pinch back stem tips every 2–3 weeks to force dense, bushy growth.",
+          "Move into brighter indirect light near an east-facing window.",
+          "Pinch off any flower spikes immediately to keep the plant in vegetative foliage growth."
+        ]
+      },
+      {
+        "id": "7-fainting_wilting",
+        "problem": "Sudden wilting or fainting",
+        "do_you_see_this_problem": "Has the entire plant gone completely limp and collapsed overnight?",
+        "solve_it_like_this": [
+          "Check soil moisture: if dry, bottom-water or give a deep soak; it will perk up within a few hours.",
+          "If soil is soaking wet and leaves are limp, inspect for root rot caused by poor drainage."
+        ]
+      },
+      {
+        "id": "7-crispy_curling_leaves",
+        "problem": "Curling leaves with crispy tips",
+        "do_you_see_this_problem": "Are leaf edges curling inwards and feeling brittle or dry?",
+        "solve_it_like_this": [
+          "Increase ambient humidity using a pebble tray or small humidifier.",
+          "Shield the plant from hot dry afternoon winds and air conditioning vents."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Hypoestes_phyllostachya",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Hypoestes_phyllostachya",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Starr_080117-1693_Hypoestes_phyllostachya.jpg",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Starr_080117-1693_Hypoestes_phyllostachya.jpg/330px-Starr_080117-1693_Hypoestes_phyllostachya.jpg",
+      "local_file": "images/07_polka_dot_plant.jpg",
+      "asset_path": "file:///android_asset/images/07_polka_dot_plant.jpg"
+    }
+  },
+  {
+    "id": 8,
+    "botanical_name": "Fittonia albivenis",
+    "common_name": "Nerve Plant",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "नर्व प्लांट / फिटोनिया",
+      "marathi": "नर्व्ह प्लांट",
+      "bengali": "নার্ভ প্ল্যান্ট",
+      "kannada": "ನರ್ವ್ ಪ್ಲಾಂಟ್",
+      "tamil": "நெர்வ் பிளாண்ட்",
+      "telugu": "నెర్వ్ ప్లాంట్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 4
+      },
+      "monsoon_and_winter": {
+        "min": 4,
+        "max": 7
+      },
+      "note": "Check first: water when the top 2 cm feels dry. If it wilts (faints) from thirst, water immediately and it bounces back."
+    },
+    "light_lux": {
+      "min_tolerated": 1000,
+      "ideal_min": 3000,
+      "ideal_max": 9000,
+      "max_tolerated": 15000
+    },
+    "humidity_percent": {
+      "min": 55,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 13,
+      "tolerable_max": 35,
+      "ideal_min": 18,
+      "ideal_max": 28
+    },
+    "soil": {
+      "in_simple_words": "Peaty, moisture-retentive, loose soil with great drainage that prevents standing water.",
+      "mix_recipe": "2 parts cocopeat + 1 part perlite/vermiculite + 1 part leaf mold or vermicompost + 1 part garden soil",
+      "ph_min": 6.0,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to cats, dogs, and children."
+    },
+    "common_problems": [
+      {
+        "id": "8-dramatic_wilting_faint",
+        "problem": "Fainting / severe wilting",
+        "do_you_see_this_problem": "Has the plant collapsed completely flat over the sides of the pot?",
+        "solve_it_like_this": [
+          "Water thoroughly immediately or soak the bottom of the pot in a bowl of water for 15 minutes.",
+          "The plant will restore turgor pressure and stand upright within 2 hours.",
+          "Avoid letting it faint frequently as repeated dehydration damages foliage."
+        ]
+      },
+      {
+        "id": "8-yellowing_leaves_soggy_soil",
+        "problem": "Yellow leaves and mushy stems (Overwatering)",
+        "do_you_see_this_problem": "Are lower leaves turning yellow and translucent while soil stays swampy?",
+        "solve_it_like_this": [
+          "Check drainage holes to make sure water flows freely.",
+          "Allow top 2 cm to dry out slightly before watering again.",
+          "Do not leave the pot standing in a saucer of water."
+        ]
+      },
+      {
+        "id": "8-crisp_leaf_margins",
+        "problem": "Dry, crispy leaf margins",
+        "do_you_see_this_problem": "Are leaf edges crinkling and turning brown and dry?",
+        "solve_it_like_this": [
+          "Increase humidity using a pebble tray, terrarium enclosure, or gentle misting.",
+          "Keep away from dry AC air drafts."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Fittonia_albivenis",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Fittonia_albivenis",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Fittonia_albivenis_WPC.jpg",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Fittonia_albivenis_WPC.jpg/330px-Fittonia_albivenis_WPC.jpg",
+      "local_file": "images/08_nerve_plant.jpg",
+      "asset_path": "file:///android_asset/images/08_nerve_plant.jpg"
+    }
+  },
+  {
+    "id": 9,
+    "botanical_name": "Maranta leuconeura",
+    "common_name": "Prayer Plant",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "प्रेयर प्लांट",
+      "marathi": "प्रेयर प्लांट",
+      "bengali": "প্রেয়ার প্ল্যান্ট",
+      "kannada": "ಪ್ರೇಯರ್ ಪ್ಲಾಂಟ್",
+      "tamil": "பிரேயர் பிளாண்ட்",
+      "telugu": "ప్రేయర్ ప్లాంట్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 5
+      },
+      "monsoon_and_winter": {
+        "min": 6,
+        "max": 9
+      },
+      "note": "Check first: water when the top 2–3 cm of soil is dry. Sensitive to tap water chlorine and fluoride; use filtered or rested water."
+    },
+    "light_lux": {
+      "min_tolerated": 1500,
+      "ideal_min": 4000,
+      "ideal_max": 10000,
+      "max_tolerated": 16000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 14,
+      "tolerable_max": 35,
+      "ideal_min": 18,
+      "ideal_max": 28
+    },
+    "soil": {
+      "in_simple_words": "Fluffy, rich, moisture-retentive potting mix with high aeration and fast drainage.",
+      "mix_recipe": "2 parts cocopeat + 1 part perlite + 1 part vermicompost + 1 part leaf mold",
+      "ph_min": 5.5,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to cats, dogs, and children."
+    },
+    "common_problems": [
+      {
+        "id": "9-brown_crispy_tips",
+        "problem": "Brown crispy leaf tips and edges",
+        "do_you_see_this_problem": "Are leaf tips turning dry and brown even when you water regularly?",
+        "solve_it_like_this": [
+          "Switch to filtered water, RO water, or rainwater; municipal tap water chemicals cause tip burn.",
+          "Boost humidity around the plant with a pebble tray or humidifier.",
+          "Avoid over-fertilizing."
+        ]
+      },
+      {
+        "id": "9-faded_curled_leaves",
+        "problem": "Faded leaf colors and curling during daytime",
+        "do_you_see_this_problem": "Are the vibrant red/green veins bleaching out and leaves rolling inward during the day?",
+        "solve_it_like_this": [
+          "Move further away from bright windows; shield from harsh sunlight with sheer curtains.",
+          "Check soil moisture and water if top soil is dry."
+        ]
+      },
+      {
+        "id": "9-root_rot",
+        "problem": "Yellowing lower leaves and base rot",
+        "do_you_see_this_problem": "Are leaves turning yellow and stems becoming mushy at the soil line?",
+        "solve_it_like_this": [
+          "Cut back watering; never leave the pot sitting in standing drainage water.",
+          "Ensure pot drainage holes are clear.",
+          "Drench with mild fungicide or neem drench if rot is suspected."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Maranta_leuconeura",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Maranta_leuconeura",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Maranta_leuconeura3.jpg",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Maranta_leuconeura3.jpg/330px-Maranta_leuconeura3.jpg",
+      "local_file": "images/09_prayer_plant.jpg",
+      "asset_path": "file:///android_asset/images/09_prayer_plant.jpg"
+    }
+  }
+]

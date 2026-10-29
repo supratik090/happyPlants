@@ -21,4 +21,8 @@ interface RoomAnalyticsDao {
 
     @Query("SELECT * FROM room_analytics WHERE profileId = :profileId")
     fun getAllAnalyticsForProfileFlow(profileId: String): Flow<List<RoomAnalyticsEntity>>
+
+    @Query("DELETE FROM room_analytics WHERE profileId = :profileId AND roomTag = :roomTag")
+    suspend fun deleteAnalyticsForRoom(profileId: String, roomTag: String)
 }
+

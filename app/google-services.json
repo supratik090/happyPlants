@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "799949850589",
+    "project_id": "hos-live",
+    "storage_bucket": "hos-live.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799949850589:android:270114db3403a2ea4f5834",
+        "android_client_info": {
+          "package_name": "com.hos.happy.plants"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqVPTlGDlm7dCt14PArmOJaSGpyoXn62E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

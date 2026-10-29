@@ -114,9 +114,8 @@ fun EnvScreen(
     val authState by authViewModel.uiState.collectAsState()
     val roomTags by envViewModel.availableRoomTags.collectAsState()
     val distinctRooms by envViewModel.distinctRecordedRooms.collectAsState()
-    val recordedTimestamps by envViewModel.recordedSnapshotTimestamps.collectAsState()
     val roomAnalytics by envViewModel.roomAnalytics.collectAsState()
-    val filteredSnapshots by envViewModel.filteredSnapshots.collectAsState()
+    val latestSnapshotsPerSpace by envViewModel.latestSnapshotsPerSpace.collectAsState()
 
     val snackbarHostState = remember { SnackbarHostState() }
     var selectedMetricInfo by remember { mutableStateOf<MetricType?>(null) }
@@ -204,37 +203,12 @@ fun EnvScreen(
         topBar = {
             TopAppBar(
                 title = {
-                    Column {
-                        Text(
-                            text = "Live Environment",
-                            style = MaterialTheme.typography.headlineSmall,
-                            color = Forest
-                        )
-                        authState.activeProfile?.let { profile ->
-                            Text(
-                                text = "Profile: ${profile.name}",
-                                style = MaterialTheme.typography.labelSmall,
-                                color = Bark
-                            )
-                        }
-                    }
-                },
-                actions = {
-                    OutlinedButton(
-                        onClick = onSwitchProfile,
-                        shape = RoundedCornerShape(10.dp),
-                        border = androidx.compose.foundation.BorderStroke(1.dp, Sand),
-                        contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 8.dp, vertical = 4.dp)
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Person,
-                            contentDescription = "Profiles",
-                            tint = Moss,
-                            modifier = Modifier.size(16.dp)
-                        )
-                        Spacer(modifier = Modifier.width(4.dp))
-                        Text("Switch", color = Moss, fontSize = 12.sp)
-                    }
+                    Text(
+                        text = "Live Environment",
+                        style = MaterialTheme.typography.headlineSmall,
+                        color = Forest,
+                        fontWeight = FontWeight.Bold
+                    )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = PaperDark)
             )
@@ -337,7 +311,7 @@ fun EnvScreen(
                 }
             }
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
             // Section 1: Live Macro-climate (Temperature, Humidity, AQI, UV, Daylight)
             LiveWeatherCards(
@@ -355,10 +329,12 @@ fun EnvScreen(
             // Section 2: Light Meter Gauge (Sensor + Camera Fallback)
             Text(
                 text = "Light Meter",
-                style = MaterialTheme.typography.headlineSmall,
-                color = Forest
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold,
+                color = Forest,
+                fontSize = 16.sp
             )
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(10.dp))
 
             Box(modifier = Modifier.bringIntoViewRequester(bringIntoViewRequester)) {
                 LightMeterGauge(
@@ -372,12 +348,18 @@ fun EnvScreen(
                 )
             }
 
-            // If Camera mode is active, render CameraX preview analyzer
-            if (uiState.lightSettings.preferredMode == LightMeterMode.CAMERA) {
-                Spacer(modifier = Modifier.height(14.dp))
+            // If Camera mode is active and not frozen, render CameraX preview analyzer
+            if (uiState.lightSettings.preferredMode == LightMeterMode.CAMERA && !uiState.isLightFrozen) {
+                Spacer(modifier = Modifier.height(12.dp))
                 CameraMeterPreview(
                     onLightCalculated = { reading ->
                         envViewModel.onCameraLightCalculated(reading)
+                    },
+                    onDone = {
+                        envViewModel.finishCameraReading()
+                    },
+                    onClose = {
+                        envViewModel.switchOffCameraMode()
                     }
                 )
             }
@@ -494,20 +476,17 @@ fun EnvScreen(
                 WeeklyClimateCareCard(weeklyData = uiState.weatherSnapshot?.weeklyMacro)
             }
 
-            Spacer(modifier = Modifier.height(28.dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
-            // Section 6: Historical Snapshots Lookup (Auto-filtered for selected room)
+            // Section 6: Historical Snapshots (Last snapshot per space)
             SnapshotHistorySection(
-                snapshots = filteredSnapshots,
-                distinctRooms = distinctRooms,
-                recordedTimestamps = recordedTimestamps,
-                selectedRoom = uiState.historyFilterRoom,
-                selectedDateMillis = uiState.historyFilterDateMillis,
-                onSelectRoom = { envViewModel.setHistoryFilterRoom(it) },
-                onSelectDate = { envViewModel.setHistoryFilterDate(it) }
+                snapshots = latestSnapshotsPerSpace,
+                onDeleteSnapshot = { snapshotId ->
+                    envViewModel.deleteSnapshot(snapshotId)
+                }
             )
 
-            Spacer(modifier = Modifier.height(40.dp))
+            Spacer(modifier = Modifier.height(36.dp))
         }
 
         // Metric Info Help Modal (auto-closes in 5 seconds or on dismiss)
@@ -589,7 +568,8 @@ fun EnvScreen(
             SnapshotConfirmationBottomSheet(
                 data = confirmationData,
                 onDismiss = { envViewModel.dismissSnapshotConfirmation() },
-                onAddLeafCleaning = { envViewModel.addLeafCleaningTaskForRoom() }
+                onAddLeafCleaning = { envViewModel.addLeafCleaningTaskForRoom() },
+                onDeleteSnapshot = { envViewModel.deleteSnapshot(confirmationData.snapshot.id) }
             )
         }
     }

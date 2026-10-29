@@ -103,7 +103,7 @@ fun LiveWeatherCards(
             }
         }
 
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         // 2x2 Grid for Temp, Humidity, AQI, UV
         Row(
@@ -164,14 +164,14 @@ fun LiveWeatherCards(
         Card(
             modifier = Modifier
                 .fillMaxWidth()
-                .border(1.dp, Sand, RoundedCornerShape(14.dp)),
+                .border(1.dp, Sand, RoundedCornerShape(16.dp)),
             colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
-            shape = RoundedCornerShape(14.dp)
+            shape = RoundedCornerShape(16.dp)
         ) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 14.dp, vertical = 12.dp),
+                    .padding(14.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -241,14 +241,14 @@ fun LiveWeatherCards(
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .border(1.dp, Sand, RoundedCornerShape(14.dp)),
+                    .border(1.dp, Sand, RoundedCornerShape(16.dp)),
                 colors = CardDefaults.cardColors(containerColor = Paper),
-                shape = RoundedCornerShape(14.dp)
+                shape = RoundedCornerShape(16.dp)
             ) {
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 16.dp, vertical = 12.dp),
+                        .padding(14.dp),
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {

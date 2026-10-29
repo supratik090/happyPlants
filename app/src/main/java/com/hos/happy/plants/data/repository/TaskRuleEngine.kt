@@ -4,6 +4,10 @@ import android.content.Context
 import com.hos.happy.plants.data.local.AppDatabase
 import com.hos.happy.plants.data.local.entity.DailyCareTaskEntity
 import com.hos.happy.plants.data.local.entity.PlantEntity
+import com.hos.happy.plants.data.model.WateringSchedule
+import com.hos.happy.plants.data.model.WateringSchedule.Companion.fromEntity
+import com.hos.happy.plants.data.model.WateringSchedule.Companion.isDueToday
+import com.hos.happy.plants.data.model.WateringSchedule.Companion.scheduleLabel
 import com.hos.happy.plants.feature.garden.PlantActivityType
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -155,9 +159,14 @@ class TaskRuleEngine(context: Context) {
             val seasonalWateringInterval = if (isSummer) summerInterval else winterInterval
 
             // Check Watering (Priority 1 - Mandatory)
+            // Custom schedule overrides master-data interval when set.
+            val customSchedule = fromEntity(plant.waterScheduleType, plant.waterScheduleValue)
             val lastWater = plant.lastWateredAt
+
             if (lastWater == null) {
                 // Day 1 rule: Plant added with no water log -> Due today as Priority 1!
+                val scheduleDesc = customSchedule?.scheduleLabel()
+                    ?: "every $seasonalWateringInterval days"
                 createdTasks.add(
                     DailyCareTaskEntity(
                         id = UUID.randomUUID().toString(),
@@ -169,14 +178,40 @@ class TaskRuleEngine(context: Context) {
                         targetSubtitle = "${plant.botanicalName} • ${plant.roomTag}",
                         targetPhotoUri = plant.photoUri,
                         title = "Water",
-                        description = "Every $seasonalWateringInterval days · newly added to garden",
-                        priority = 1, // High / Mandatory
+                        description = "$scheduleDesc · newly added to garden",
+                        priority = 1,
                         urgencyDays = 0,
                         spaceName = plant.roomTag,
                         isCompleted = false
                     )
                 )
+            } else if (customSchedule != null) {
+                // Custom schedule: check if due today
+                val isDue = customSchedule.isDueToday(now, lastWater, plant.waterScheduleSetAt)
+                if (isDue) {
+                    val daysSinceWater = ((now - lastWater) / oneDayMillis).toInt()
+                    val lastWateredStr = if (daysSinceWater == 0) "today" else "$daysSinceWater days ago"
+                    createdTasks.add(
+                        DailyCareTaskEntity(
+                            id = UUID.randomUUID().toString(),
+                            profileId = profileId,
+                            dateKey = todayKey,
+                            taskType = PlantActivityType.WATER.name,
+                            targetId = plant.id,
+                            targetTitle = plant.nickname,
+                            targetSubtitle = "${plant.botanicalName} • ${plant.roomTag}",
+                            targetPhotoUri = plant.photoUri,
+                            title = "Water",
+                            description = "${customSchedule.scheduleLabel()} · last watered $lastWateredStr",
+                            priority = 1,
+                            urgencyDays = 0,
+                            spaceName = plant.roomTag,
+                            isCompleted = false
+                        )
+                    )
+                }
             } else {
+                // No custom schedule: fall back to seasonal interval
                 val daysSinceWater = ((now - lastWater) / oneDayMillis).toInt()
                 if (daysSinceWater >= seasonalWateringInterval) {
                     val overdue = daysSinceWater - seasonalWateringInterval
@@ -193,7 +228,7 @@ class TaskRuleEngine(context: Context) {
                             targetPhotoUri = plant.photoUri,
                             title = "Water",
                             description = "Every $seasonalWateringInterval days · last watered $lastWateredStr",
-                            priority = 1, // High / Mandatory
+                            priority = 1,
                             urgencyDays = overdue,
                             spaceName = plant.roomTag,
                             isCompleted = false

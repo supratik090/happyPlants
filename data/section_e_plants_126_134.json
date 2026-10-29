@@ -1,0 +1,937 @@
+[
+  {
+    "id": 126,
+    "botanical_name": "Asplenium nidus",
+    "common_name": "Bird's Nest Fern",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "बर्ड्स नेस्ट फर्न",
+      "marathi": "बर्ड्स नेस्ट फर्न",
+      "bengali": "বার্ডস নেস্ট ফার্ন",
+      "kannada": "ಬರ್ಡ್ಸ್ ನೆಸ್ಟ್ ಜರೀಗಿಡ",
+      "tamil": "பேர்ட்ஸ் நெஸ்ட் பெரணி",
+      "telugu": "బర్డ్స్ నెస్ట్ ఫెర్న్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 3
+      },
+      "monsoon_and_winter": {
+        "min": 4,
+        "max": 7
+      },
+      "note": "Water into the potting soil around the container rim; never pour water directly into the central crown or 'nest', as trapped stagnant water quickly causes fatal fungal crown rot."
+    },
+    "light_lux": {
+      "min_tolerated": 800,
+      "ideal_min": 1500,
+      "ideal_max": 4000,
+      "max_tolerated": 8000
+    },
+    "humidity_percent": {
+      "min": 60,
+      "max": 85
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 36,
+      "ideal_min": 18,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "Airy, fibrous, moisture-retentive epiphytic mix that provides free drainage while staying evenly damp.",
+      "mix_recipe": "2 parts cocopeat/peat moss + 1.5 parts orchid bark or crushed coconut husk chips + 1 part perlite + 0.5 part leaf mould compost + 1 tbsp neem cake powder",
+      "ph_min": 5.5,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to cats, dogs, and humans according to ASPCA guidelines."
+    },
+    "common_problems": [
+      {
+        "id": "126-crown_rot",
+        "problem": "Crown rot (Blackening center of rosette)",
+        "do_you_see_this_problem": "Is the center 'nest' turning dark brown or black, becoming mushy, and emitting an unpleasant odor while new fronds fail to unfurl?",
+        "solve_it_like_this": [
+          "Immediately cease overhead watering into the central rosette; always direct water onto the soil surrounding the plant base.",
+          "Improve ventilation around the plant and ensure the drainage holes are completely unblocked.",
+          "Dust the crown base lightly with cinnamon powder or carbendazim fungicide and allow the upper medium to aerate."
+        ]
+      },
+      {
+        "id": "126-crispy_brown_frond_margins",
+        "problem": "Crispy brown frond edges (Low humidity / Heat stress)",
+        "do_you_see_this_problem": "Are the wavy margins and tips of the broad fronds turning dry, brittle, and brown during peak summer or in air-conditioned rooms?",
+        "solve_it_like_this": [
+          "Place the pot on a broad pebble tray with water (ensuring the pot base rests above the water line) to raise ambient moisture.",
+          "Cluster the fern with other foliage houseplants to create a humid transpiration bubble.",
+          "Keep the plant safely away from air conditioner vents, hot afternoon winds (loo), or heating appliances."
+        ]
+      },
+      {
+        "id": "126-bleached_yellow_fronds",
+        "problem": "Sunburn and frond bleaching",
+        "do_you_see_this_problem": "Are the vibrant green glossy fronds fading to pale yellow or developing scorched dry patches from harsh light?",
+        "solve_it_like_this": [
+          "Relocate the plant immediately to a spot receiving gentle, filtered indirect light or morning dappled shade.",
+          "Shield from harsh direct afternoon sunlight using sheer curtains or a 50% green garden net.",
+          "Prune away severely disfigured, scorched outer fronds at the base using sterile scissors."
+        ]
+      },
+      {
+        "id": "126-scale_insects",
+        "problem": "Scale insects on frond undersides",
+        "do_you_see_this_problem": "Are small, brown, raised oval bumps attached along the midribs or frond undersides?",
+        "solve_it_like_this": [
+          "Carefully distinguish scale pests from fertile spore clusters (sori), which form neat, parallel brown diagonal lines on mature fronds.",
+          "Dab visible pests with a cotton swab dipped in 70% isopropyl alcohol to dissolve their protective waxy shells.",
+          "Apply an evening spray of organic neem oil solution (3 ml/L with 2 ml mild liquid soap)."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Asplenium_nidus",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Asplenium_nidus",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Asplenium_nidus_%28Bukidnon%2C_Philippines%29_02.jpg/3840px-Asplenium_nidus_%28Bukidnon%2C_Philippines%29_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Asplenium_nidus_%28Bukidnon%2C_Philippines%29_02.jpg/330px-Asplenium_nidus_%28Bukidnon%2C_Philippines%29_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/126_birds_nest_fern.jpg",
+      "asset_path": "file:///android_asset/images/126_birds_nest_fern.jpg"
+    }
+  },
+  {
+    "id": 127,
+    "botanical_name": "Adiantum raddianum",
+    "common_name": "Maidenhair Fern",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "हंसराज",
+      "marathi": "हंसराज",
+      "bengali": "ময়ূরশিখা",
+      "kannada": "ಮೇಡನ್‌ಹೇರ್ ಜರೀಗಿಡ",
+      "tamil": "மயிர்க்கால் பெரணி",
+      "telugu": "హంసరాజ్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 1,
+        "max": 2
+      },
+      "monsoon_and_winter": {
+        "min": 2,
+        "max": 4
+      },
+      "note": "Delicate fan-shaped pinnules have zero drought tolerance. Soil must stay consistently damp like a wrung-out sponge. Never let the root ball dry out completely; sub-irrigation or self-watering pots prevent leaf crisping."
+    },
+    "light_lux": {
+      "min_tolerated": 600,
+      "ideal_min": 1200,
+      "ideal_max": 3500,
+      "max_tolerated": 5000
+    },
+    "humidity_percent": {
+      "min": 65,
+      "max": 90
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 35,
+      "ideal_min": 18,
+      "ideal_max": 28
+    },
+    "soil": {
+      "in_simple_words": "Light, moisture-retentive, humus-rich soil mix with limestone that stays humid without choking root respiration.",
+      "mix_recipe": "2 parts cocopeat/peat moss + 1 part leaf mould or vermicompost + 1 part perlite + 0.5 part coarse sand + 1 tsp horticultural lime / crushed limestone + 1 tsp neem cake powder",
+      "ph_min": 6.5,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to cats, dogs, and children."
+    },
+    "common_problems": [
+      {
+        "id": "127-shriveled_crispy_fronds",
+        "problem": "Instant shriveling and browning fronds (Underwatering / Low humidity)",
+        "do_you_see_this_problem": "Have the delicate fan-shaped leaflets curled up dry and turned papery brown overnight?",
+        "solve_it_like_this": [
+          "Immediately bottom-water by submerging the bottom half of the pot in a shallow basin of water for 30 minutes until topsoil is moist.",
+          "Cut completely dried fronds back to the soil line; maintain consistent moisture and high humidity, and new fiddleheads will sprout from underground rhizomes within 2 to 3 weeks.",
+          "Place in a high-humidity environment such as a naturally humid bathroom windowsill, terrarium, or beside a cool-mist humidifier."
+        ]
+      },
+      {
+        "id": "127-yellowing_lower_fronds_root_rot",
+        "problem": "Yellowing fronds and root rot (Waterlogging)",
+        "do_you_see_this_problem": "Are fronds turning sickly yellow and slumping over limp from the base in soggy, sour-smelling soil?",
+        "solve_it_like_this": [
+          "Ensure pot drainage holes are completely open and remove any stagnant water collected in outer saucers.",
+          "Blend extra perlite or pumice into the soil to ensure oxygen circulation around fine rootlets.",
+          "Keep medium evenly moist, never dripping wet or waterlogged."
+        ]
+      },
+      {
+        "id": "127-chemical_leaf_scorch",
+        "problem": "Chemical sensitivity to hard tap water and sprays",
+        "do_you_see_this_problem": "Are leaflet edges developing scorched brown margins or black spots following tap watering or chemical foliar sprays?",
+        "solve_it_like_this": [
+          "Maidenhair ferns possess extremely thin cuticle layers; avoid chemical insecticides, synthetic leaf shines, or concentrated fertilisers.",
+          "Use rested, filtered, or rainwater to minimize damage from dissolved tap salts and chlorine.",
+          "Flush the container thoroughly with clean filtered water every 2 months to leach accumulated fertilizer salts."
+        ]
+      },
+      {
+        "id": "127-heavy_monsoon_rain_damage",
+        "problem": "Monsoon downpour damage and leaf spotting",
+        "do_you_see_this_problem": "Are delicate wiry black stems crushed, flattened, or covered in dark fungal blemishes following heavy monsoon downpours?",
+        "solve_it_like_this": [
+          "Move container under sheltered balcony overhangs or verandas during intense monsoon cloudbursts.",
+          "Prune broken or rotting stems to maintain airflow through the dense canopy.",
+          "Water strictly at root level rather than spraying delicate canopy foliage."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Adiantum_raddianum",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Adiantum_raddianum",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Starr_030807-0143_Adiantum_raddianum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Starr_030807-0143_Adiantum_raddianum.jpg/330px-Starr_030807-0143_Adiantum_raddianum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/127_maidenhair_fern.jpg",
+      "asset_path": "file:///android_asset/images/127_maidenhair_fern.jpg"
+    }
+  },
+  {
+    "id": 128,
+    "botanical_name": "Platycerium bifurcatum",
+    "common_name": "Staghorn Fern",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "बारहसिंगा फर्न",
+      "marathi": "सांबरशिंग फर्न",
+      "bengali": "হরিণশিঙা ফার্ন",
+      "kannada": "ಜಿಂಕೆಕೊಂಬು ಫರ್ನ್",
+      "tamil": "கலைமான் கொம்பு பெரணி",
+      "telugu": "దుప్పి కొమ్ముల ఫెర్న్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 5
+      },
+      "monsoon_and_winter": {
+        "min": 7,
+        "max": 12
+      },
+      "note": "For mounted specimens, immerse the entire moss root ball in a bucket of water for 10-15 minutes, then drain thoroughly before hanging. Never remove the brown basal shield fronds—they protect root tissues naturally."
+    },
+    "light_lux": {
+      "min_tolerated": 1000,
+      "ideal_min": 2000,
+      "ideal_max": 6000,
+      "max_tolerated": 10000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 38,
+      "ideal_min": 18,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Fibrous epiphytic medium of sphagnum moss and coconut husk chips mounted on wood or wire baskets; not grown in garden soil.",
+      "mix_recipe": "50% long-fiber sphagnum moss + 30% chunky coconut husk chips + 15% coarse orchid bark + 5% coarse perlite and a pinch of bone meal",
+      "ph_min": 5.5,
+      "ph_max": 6.8
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 365,
+    "repot_every_days": 1095,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic and pet-safe for cats, dogs, and children."
+    },
+    "common_problems": [
+      {
+        "id": "128-shield_frond_black_rot",
+        "problem": "Basal shield rot (Overwatering / Stagnant dampness)",
+        "do_you_see_this_problem": "Are the base shield fronds turning slimy, mushy black, and decaying rather than drying to a healthy natural papery tan brown?",
+        "solve_it_like_this": [
+          "Distinguish natural brown papery shields (a normal protective layer) from slimy black rot caused by excess moisture.",
+          "Allow the sphagnum moss root ball to dry out until lightweight before soaking again.",
+          "Improve air movement around the mount; avoid hanging in stagnant, unventilated corners."
+        ]
+      },
+      {
+        "id": "128-wilted_limp_antler_fronds",
+        "problem": "Dehydration and limp antler fronds",
+        "do_you_see_this_problem": "Are the upright or arching antler-like fronds drooping, limp, and wrinkly?",
+        "solve_it_like_this": [
+          "Submerge the root plaque in room-temperature water for 15 to 20 minutes to allow bone-dry hydrophobic moss to rehydrate fully.",
+          "Mist the surrounding air and moss ball regularly during peak hot dry Indian summer afternoons.",
+          "Protect from blistering hot afternoon sun which speeds up moisture loss."
+        ]
+      },
+      {
+        "id": "128-damaged_trichomes",
+        "problem": "Loss of protective white fuzz (Trichome stripping)",
+        "do_you_see_this_problem": "Have the silver-white fuzzy hairs on the antler fronds been wiped or scrubbed off, leaving shiny green vulnerable leaf surfaces?",
+        "solve_it_like_this": [
+          "Never wipe or scrub staghorn fern fronds with cloths or leaf-shine products; the white fuzz shields against drying winds and sun.",
+          "Rinse dusty foliage gently with a fine water spray instead of physical wiping.",
+          "Keep the plant in gentle dappled shade until new fuzzy fronds emerge."
+        ]
+      },
+      {
+        "id": "128-scale_insects",
+        "problem": "Scale insect infestation under antler fronds",
+        "do_you_see_this_problem": "Are small brown waxy bumps accumulating along the veins of the antler fronds, leaving sticky honeydew on surfaces below?",
+        "solve_it_like_this": [
+          "Dab individual scales carefully with a cotton bud dipped in isopropyl alcohol.",
+          "Spray with diluted neem oil (3 ml per litre) ensuring spray reaches underside veins.",
+          "Isolate from other mounted epiphytes until clean."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Platycerium_bifurcatum",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Platycerium_bifurcatum",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Platycerium_bifurcatum_612351086.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Platycerium_bifurcatum_612351086.jpg/330px-Platycerium_bifurcatum_612351086.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/128_staghorn_fern.jpg",
+      "asset_path": "file:///android_asset/images/128_staghorn_fern.jpg"
+    }
+  },
+  {
+    "id": 129,
+    "botanical_name": "Microsorum musifolium",
+    "common_name": "Crocodile Fern",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "क्रोकोडाइल फर्न",
+      "marathi": "क्रोकोडाईल फर्न",
+      "bengali": "ক্রোকোডাইল ফার্ন",
+      "kannada": "ಮೊಸಳೆ ಚರ್ಮದ ಜರೀಗಿಡ",
+      "tamil": "முதலை தோல் பெரணி",
+      "telugu": "మొసలి చర్మం ఫెర్న్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 4
+      },
+      "monsoon_and_winter": {
+        "min": 4,
+        "max": 7
+      },
+      "note": "Maintain evenly moist potting medium. Never bury the creeping surface rhizome under soggy soil. Water around the pot edges and ensure excess water drains out immediately."
+    },
+    "light_lux": {
+      "min_tolerated": 1000,
+      "ideal_min": 1500,
+      "ideal_max": 4500,
+      "max_tolerated": 7000
+    },
+    "humidity_percent": {
+      "min": 60,
+      "max": 85
+    },
+    "temperature_c": {
+      "tolerable_min": 14,
+      "tolerable_max": 36,
+      "ideal_min": 18,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "Airy, chunky epiphytic potting mix rich in bark, cocopeat, and perlite that retains moisture while breathing easily.",
+      "mix_recipe": "35% coarse cocopeat + 25% pine bark / coconut husk chips + 20% perlite + 15% leaf mould compost + 5% charcoal chunks + 1 tsp neem cake powder",
+      "ph_min": 5.5,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to cats, dogs, and humans according to ASPCA lists."
+    },
+    "common_problems": [
+      {
+        "id": "129-crispy_brown_margins",
+        "problem": "Crispy brown leaf edges (Low humidity / Summer heat)",
+        "do_you_see_this_problem": "Are the tips and wavy margins of the crocodile-patterned leaves turning brown and brittle?",
+        "solve_it_like_this": [
+          "Increase ambient humidity to at least 60% with a pebble humidity tray or room humidifier.",
+          "Shelter the plant from scorching hot dry summer winds or direct air conditioner exhaust.",
+          "Trim off dry dead brown tips carefully with clean shears, leaving a tiny brown margin to avoid cutting into green tissue."
+        ]
+      },
+      {
+        "id": "129-rhizome_rot_overwatering",
+        "problem": "Rhizome rot from buried runners or dense soil",
+        "do_you_see_this_problem": "Are fronds yellowing and pulling away easily from soft, blackened, decaying surface rhizomes?",
+        "solve_it_like_this": [
+          "Check planting depth; ensure creeping surface rhizomes are resting on top of the soil, not buried underground.",
+          "Switch to a chunkier, coarse bark-based epiphytic potting mix to prevent stagnant water.",
+          "Allow top 1 inch of soil to dry out between waterings."
+        ]
+      },
+      {
+        "id": "129-leaf_bleaching_and_loss_of_pattern",
+        "problem": "Sunburn and pattern bleaching",
+        "do_you_see_this_problem": "Is the striking dark green reptilian vein pattern fading to a washed-out yellowish-green or developing brown sunburn spots?",
+        "solve_it_like_this": [
+          "Move the fern out of direct sun into gentle, bright indirect light or dappled shade.",
+          "Maintain consistent watering schedule so stressed leaves stay hydrated."
+        ]
+      },
+      {
+        "id": "129-spider_mites",
+        "problem": "Spider mite infestation in hot dry air",
+        "do_you_see_this_problem": "Are there fine silky webs and dusty yellow stippling across the underside crevices of textured fronds?",
+        "solve_it_like_this": [
+          "Wipe both sides of leaves gently with a damp sponge soaked in mild soapy water.",
+          "Mist foliage frequently to deter spider mites, which thrive exclusively in arid microclimates.",
+          "Spray with neem oil solution (4 ml/L with 2 ml liquid soap) weekly until eradicated."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Microsorum",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Microsorum",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Microsorum_punctatum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Microsorum_punctatum.jpg/330px-Microsorum_punctatum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/129_crocodile_fern.jpg",
+      "asset_path": "file:///android_asset/images/129_crocodile_fern.jpg"
+    }
+  },
+  {
+    "id": 130,
+    "botanical_name": "Pellaea rotundifolia",
+    "common_name": "Button Fern",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "बटन फर्न",
+      "marathi": "बटन फर्न",
+      "bengali": "বাটন ফার্ন",
+      "kannada": "ಬಟನ್ ಜರೀಗಿಡ",
+      "tamil": "பட்டன் பெரணி",
+      "telugu": "బటన్ ఫెర్న్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 5
+      },
+      "monsoon_and_winter": {
+        "min": 5,
+        "max": 9
+      },
+      "note": "Button fern dislikes wet feet! Allow the top 1/3 of the potting soil to dry out before watering again. Never let the pot sit in standing saucer drainage water."
+    },
+    "light_lux": {
+      "min_tolerated": 800,
+      "ideal_min": 1200,
+      "ideal_max": 3500,
+      "max_tolerated": 5000
+    },
+    "humidity_percent": {
+      "min": 45,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 8,
+      "tolerable_max": 34,
+      "ideal_min": 16,
+      "ideal_max": 26
+    },
+    "soil": {
+      "in_simple_words": "Gritty, well-draining, slightly alkaline potting mix that dries evenly without water stagnation.",
+      "mix_recipe": "35% cocopeat + 25% perlite + 20% coarse river sand + 15% leaf mould compost + 5% crushed limestone/dolomite + 1 tsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to dogs, cats, and humans."
+    },
+    "common_problems": [
+      {
+        "id": "130-yellowing_and_dropping_leaflets",
+        "problem": "Yellowing and dropping round leaflets (Overwatering)",
+        "do_you_see_this_problem": "Are the cute round button leaflets turning pale yellow and dropping off arching stems in large numbers?",
+        "solve_it_like_this": [
+          "Cut back on watering immediately and allow the top 1 to 2 inches of soil to dry out.",
+          "Ensure pot has unblocked drainage holes and remove any standing water from collection saucers.",
+          "Repot into a grittier mix with added coarse sand and perlite if soil remains soggy for over 4 days."
+        ]
+      },
+      {
+        "id": "130-dry_crispy_fronds",
+        "problem": "Crispy brown foliage (Underwatering / Low humidity)",
+        "do_you_see_this_problem": "Are leaflet edges crisping up and stems turning brittle during dry hot summer spells?",
+        "solve_it_like_this": [
+          "Water thoroughly until water runs freely through the drainage holes, then empty the tray.",
+          "Move away from hot sunlit windows or dry air conditioning vents.",
+          "Prune away dead, dried-up fronds near the soil line to stimulate fresh compact growth."
+        ]
+      },
+      {
+        "id": "130-leggy_thin_growth",
+        "problem": "Stretched, leggy stems with sparse leaflets",
+        "do_you_see_this_problem": "Are stems stretching unnaturally long with widely spaced button leaflets instead of forming a compact, dense rosette?",
+        "solve_it_like_this": [
+          "Move the plant to a brighter location receiving bright, filtered daylight.",
+          "Avoid dark hallway corners or windowless rooms."
+        ]
+      },
+      {
+        "id": "130-scale_insects",
+        "problem": "Scale pests on dark wiry stems",
+        "do_you_see_this_problem": "Are tiny brownish waxy bumps attached along the wiry stems?",
+        "solve_it_like_this": [
+          "Dab with cotton bud dipped in diluted surgical spirit or isopropyl alcohol.",
+          "Apply evening spray of organic neem oil (3 ml/L) mixed with mild liquid soap."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Pellaea_rotundifolia",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Pellaea_rotundifolia",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Pellaea_rotundifolia_-_Berlin_Botanical_Garden_-_IMG_8761.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Pellaea_rotundifolia_-_Berlin_Botanical_Garden_-_IMG_8761.JPG/330px-Pellaea_rotundifolia_-_Berlin_Botanical_Garden_-_IMG_8761.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/130_button_fern.jpg",
+      "asset_path": "file:///android_asset/images/130_button_fern.jpg"
+    }
+  },
+  {
+    "id": 131,
+    "botanical_name": "Davallia fejeensis",
+    "common_name": "Rabbit's Foot Fern",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "रैबिट्स फुट फर्न",
+      "marathi": "रॅबिट्स फूट फर्न",
+      "bengali": "র‍্যাবিটস ফুট ফার্ন",
+      "kannada": "ರ್‍ಯಾಬಿಟ್ಸ್ ಫೂಟ್ ಜರೀಗಿಡ",
+      "tamil": "ராபிட்ஸ் புட் பெரணி",
+      "telugu": "రాబిట్స్ ఫుట్ ఫెర్న్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 4
+      },
+      "monsoon_and_winter": {
+        "min": 4,
+        "max": 7
+      },
+      "note": "Keep potting mix lightly moist. Never bury the fuzzy creeping rhizomes under the soil; mist the furry 'paws' regularly during dry summer days so they absorb ambient moisture."
+    },
+    "light_lux": {
+      "min_tolerated": 800,
+      "ideal_min": 1500,
+      "ideal_max": 4500,
+      "max_tolerated": 7500
+    },
+    "humidity_percent": {
+      "min": 55,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 36,
+      "ideal_min": 18,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "Fibrous, spongy, well-draining epiphytic potting medium that allows furry rhizomes to crawl over pot edges freely.",
+      "mix_recipe": "40% coarse cocopeat + 25% orchid pine bark or crushed coconut husk chips + 15% perlite + 15% vermicompost + 5% coarse river sand + 1 tsp neem cake powder",
+      "ph_min": 5.5,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to dogs, cats, and humans according to the ASPCA."
+    },
+    "common_problems": [
+      {
+        "id": "131-rhizome_rot",
+        "problem": "Furry rhizome rot (Overwatering / Buried rhizomes)",
+        "do_you_see_this_problem": "Are the fuzzy brown creeping paws turning black, soft, and shedding their hairs while fronds wilt?",
+        "solve_it_like_this": [
+          "Never bury the furry rhizomes beneath soil; they are epiphytic aerial runners that must crawl across the surface.",
+          "Cut back watering frequency and allow the upper layer of soil to dry between waterings.",
+          "Trim off rotten, mushy rhizome sections with clean shears and dust healthy cuts with cinnamon powder."
+        ]
+      },
+      {
+        "id": "131-brown_crispy_frond_tips",
+        "problem": "Dry crispy frond tips (Low humidity / Underwatering)",
+        "do_you_see_this_problem": "Are the finely divided lacy fronds crisping up brown at the tips during peak summer or near fan drafts?",
+        "solve_it_like_this": [
+          "Mist the furry rhizomes daily in dry weather, as they absorb moisture directly from the air.",
+          "Use a humidity tray or hang the basket among other lush tropical plants to create a humid canopy.",
+          "Keep the plant sheltered from hot dry afternoon winds (loo)."
+        ]
+      },
+      {
+        "id": "131-yellowing_fronds",
+        "problem": "Yellowing fronds from dense soil or poor drainage",
+        "do_you_see_this_problem": "Are mature fronds turning pale yellow and dropping off while soil remains wet?",
+        "solve_it_like_this": [
+          "Ensure hanging baskets or pots have ample drainage holes.",
+          "Aerate the medium and repot into a chunkier mix with bark and perlite."
+        ]
+      },
+      {
+        "id": "131-mealybugs_in_furry_rhizomes",
+        "problem": "Mealybugs hiding inside furry rhizomes",
+        "do_you_see_this_problem": "Do you see tiny white cottony patches tucked deep into the dense fur of the creeping rabbit paws?",
+        "solve_it_like_this": [
+          "Dip a fine paintbrush or cotton swab in 70% rubbing alcohol and touch each mealybug directly to dissolve it.",
+          "Apply a light spray of organic neem oil formulation (3 ml/L) in the cool evening.",
+          "Check under pot rims where mealybugs often hide."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Davallia_fejeensis",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Davallia_fejeensis",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/DavalliaFejeensis.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/DavalliaFejeensis.jpg/330px-DavalliaFejeensis.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/131_rabbits_foot_fern.jpg",
+      "asset_path": "file:///android_asset/images/131_rabbits_foot_fern.jpg"
+    }
+  },
+  {
+    "id": 132,
+    "botanical_name": "Microsorum diversifolium",
+    "common_name": "Kangaroo Paw Fern",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "कंगारू पॉ फर्न",
+      "marathi": "कांगारू पॉ फर्न",
+      "bengali": "ক্যাঙ্গারু প ফার্ন",
+      "kannada": "ಕಾಂಗರೂ ಪಾವ್ ಜರೀಗಿಡ",
+      "tamil": "கங்காரு பா பெரணி",
+      "telugu": "కంగారూ పా ఫెర్న్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 4
+      },
+      "monsoon_and_winter": {
+        "min": 4,
+        "max": 7
+      },
+      "note": "Maintain evenly moist medium during hot months. Water when the top inch of soil feels dry. Thicker leathery fronds give it slightly better resilience to short dry spells than thin-leaved ferns."
+    },
+    "light_lux": {
+      "min_tolerated": 900,
+      "ideal_min": 1500,
+      "ideal_max": 4500,
+      "max_tolerated": 7000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 36,
+      "ideal_min": 18,
+      "ideal_max": 29
+    },
+    "soil": {
+      "in_simple_words": "Porous, organic-rich epiphytic potting mix that allows creeping green-and-brown rhizomes to branch out without waterlogging.",
+      "mix_recipe": "40% coarse cocopeat + 25% perlite + 20% leaf mould compost + 10% pine bark / coconut husk chips + 5% coarse river sand + 1 tsp neem cake powder",
+      "ph_min": 5.5,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to cats, dogs, and children."
+    },
+    "common_problems": [
+      {
+        "id": "132-blackening_leaf_tips",
+        "problem": "Blackening frond tips (Dry air / Water salts)",
+        "do_you_see_this_problem": "Are the tips of the deep green glossy fronds turning dark brown or black?",
+        "solve_it_like_this": [
+          "Raise atmospheric humidity by grouping with other plants or using a pebble humidity tray.",
+          "Use rested or filtered water instead of highly alkaline or chlorinated tap water.",
+          "Flush pot thoroughly every 2 months to leach accumulated mineral fertiliser salts."
+        ]
+      },
+      {
+        "id": "132-rhizome_rot_overwatering",
+        "problem": "Rhizome rot from poor drainage",
+        "do_you_see_this_problem": "Are fronds yellowing and pulling away effortlessly from soggy, blackened creeping rhizomes?",
+        "solve_it_like_this": [
+          "Allow top inch of potting medium to dry between watering sessions.",
+          "Ensure pot has wide, open drainage holes and empty collection saucers after watering.",
+          "Plant in shallow, wide pots rather than deep narrow pots to suit the horizontal rhizome spread."
+        ]
+      },
+      {
+        "id": "132-loss_of_frond_lobes",
+        "problem": "Unlobed, plain juvenile fronds (Low light)",
+        "do_you_see_this_problem": "Are new fronds emerging as plain simple straps instead of developing characteristic deep indented kangaroo paw lobes?",
+        "solve_it_like_this": [
+          "Move the plant closer to an east-facing window or bright balcony location receiving bright indirect light.",
+          "Ensure the plant is fed with diluted balanced liquid seaweed or compost tea during spring and monsoon."
+        ]
+      },
+      {
+        "id": "132-scale_insects",
+        "problem": "Scale insects on stems and under lobes",
+        "do_you_see_this_problem": "Are small, dark oval scales sticking along the dark stipes and beneath frond lobes?",
+        "solve_it_like_this": [
+          "Clean infested stems with a soft cloth dipped in mild soapy water or isopropyl alcohol.",
+          "Spray with neem oil solution (3 ml/L) in the evening."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Zealandia_pustulata",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Microsorum_diversifolium",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Microsorum_pustulatum_11.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Microsorum_pustulatum_11.JPG/330px-Microsorum_pustulatum_11.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/132_kangaroo_paw_fern.jpg",
+      "asset_path": "file:///android_asset/images/132_kangaroo_paw_fern.jpg"
+    }
+  },
+  {
+    "id": 133,
+    "botanical_name": "Nephrolepis cordifolia 'Duffii'",
+    "common_name": "Lemon Button Fern",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "लेमन बटन फर्न",
+      "marathi": "लेमन बटन फर्न",
+      "bengali": "লেমন বাটন ফার্ন",
+      "kannada": "ಲೆಮನ್ ಬಟನ್ ಜರೀಗಿಡ",
+      "tamil": "லெமன் பட்டன் பெரணி",
+      "telugu": "లెమన్ బటన్ ఫెర్న్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 3
+      },
+      "monsoon_and_winter": {
+        "min": 4,
+        "max": 6
+      },
+      "note": "Keep potting mix evenly moist. Lemon Button Fern possesses underground moisture-storing tubers that grant it moderate drought tolerance compared to Boston ferns, but prolonged dryness causes leaflet shedding."
+    },
+    "light_lux": {
+      "min_tolerated": 900,
+      "ideal_min": 1500,
+      "ideal_max": 4500,
+      "max_tolerated": 7000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 37,
+      "ideal_min": 18,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "Light, moisture-retentive potting mix rich in cocopeat, vermicompost, and perlite that retains moisture without waterlogging.",
+      "mix_recipe": "40% cocopeat + 25% vermicompost + 20% perlite + 10% garden loam + 5% coarse river sand + 1 tsp neem cake powder",
+      "ph_min": 5.5,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to cats, dogs, and children."
+    },
+    "common_problems": [
+      {
+        "id": "133-leaflet_shedding_and_browning",
+        "problem": "Leaflet drop and shedding (Underwatering / Dry air)",
+        "do_you_see_this_problem": "Are tiny rounded leaflets drying up and shedding like green or brown confetti whenever the pot is brushed?",
+        "solve_it_like_this": [
+          "Establish a regular watering routine so the soil never becomes completely bone-dry.",
+          "Move away from blowing air conditioner vents, room heaters, or hot dry drafts.",
+          "Mist surrounding air lightly in hot dry summer months to increase ambient humidity."
+        ]
+      },
+      {
+        "id": "133-yellowing_fronds_root_rot",
+        "problem": "Yellowing fronds from root and tuber rot",
+        "do_you_see_this_problem": "Are entire fronds turning yellow and collapsing from the base in soggy soil?",
+        "solve_it_like_this": [
+          "Check drainage holes and empty drip trays immediately after watering.",
+          "Ensure potting mix is airy and rich in perlite, avoiding heavy garden clay.",
+          "Allow top half-inch of medium to dry slightly before adding more water."
+        ]
+      },
+      {
+        "id": "133-bleached_sunburned_foliage",
+        "problem": "Bleached, scorch-damaged foliage",
+        "do_you_see_this_problem": "Are the top fronds turning pale, washed-out yellow or crispy white from direct sun exposure?",
+        "solve_it_like_this": [
+          "Move to a bright location protected from intense direct midday sunlight.",
+          "Filtered morning sun (1 to 2 hours) is beneficial, but shade from hot afternoon sun is vital."
+        ]
+      },
+      {
+        "id": "133-spider_mites",
+        "problem": "Spider mites in dense foliage",
+        "do_you_see_this_problem": "Are tiny spider webs forming across dense, arching fronds with dusty yellow foliage speckling?",
+        "solve_it_like_this": [
+          "Give the plant a gentle lukewarm shower in the bathroom sink to dislodge mites and wash away webbing.",
+          "Spray with neem oil solution (3 ml/L) in the evening, ensuring it penetrates dense inner fronds."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Nephrolepis_cordifolia",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Nephrolepis_cordifolia",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Starr_070221-4863_Nephrolepis_cordifolia.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Starr_070221-4863_Nephrolepis_cordifolia.jpg/330px-Starr_070221-4863_Nephrolepis_cordifolia.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/133_lemon_button_fern.jpg",
+      "asset_path": "file:///android_asset/images/133_lemon_button_fern.jpg"
+    }
+  },
+  {
+    "id": 134,
+    "botanical_name": "Phlebodium aureum",
+    "common_name": "Blue Star Fern",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "ब्लू स्टार फर्न",
+      "marathi": "ब्लू स्टार फर्न",
+      "bengali": "ব্লু স্টার ফার্ন",
+      "kannada": "ಬ್ಲೂ ಸ್ಟಾರ್ ಜರೀಗಿಡ",
+      "tamil": "ப்ளூ ஸ்டார் பெரணி",
+      "telugu": "బ్లూ స్టార్ ఫెర్న్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 4
+      },
+      "monsoon_and_winter": {
+        "min": 4,
+        "max": 7
+      },
+      "note": "Allow the top 1 inch of soil to dry out between waterings. Always water into the soil around the rim of the pot; avoid splashing water directly onto the central golden furry rhizomes to prevent crown rot."
+    },
+    "light_lux": {
+      "min_tolerated": 1000,
+      "ideal_min": 1500,
+      "ideal_max": 4500,
+      "max_tolerated": 7500
+    },
+    "humidity_percent": {
+      "min": 55,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 36,
+      "ideal_min": 18,
+      "ideal_max": 28
+    },
+    "soil": {
+      "in_simple_words": "Chunky, porous, fast-draining epiphytic potting mix that prevents waterlogging around golden surface rhizomes.",
+      "mix_recipe": "40% coarse cocopeat + 25% pine bark / coconut husk chips + 20% perlite + 10% vermicompost + 5% coarse river sand + 1 tsp neem cake powder",
+      "ph_min": 5.5,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to cats, dogs, and children according to ASPCA guidelines."
+    },
+    "common_problems": [
+      {
+        "id": "134-loss_of_blue_hue",
+        "problem": "Loss of blue-green powdery hue (Low light / Dusty fronds)",
+        "do_you_see_this_problem": "Are the foliage fronds turning dull dark green and losing their distinctive glaucous silvery-blue powdered coating?",
+        "solve_it_like_this": [
+          "Move the fern to a brighter spot receiving strong, filtered indirect sunlight.",
+          "Rinse dust off fronds gently with lukewarm water spray; do not wipe with rough rags or chemical leaf shines which strip the natural waxy bloom."
+        ]
+      },
+      {
+        "id": "134-golden_rhizome_rot",
+        "problem": "Rotting golden creeping rhizomes (Overwatering / Crown soaking)",
+        "do_you_see_this_problem": "Are the thick golden-brown furry rhizomes becoming mushy, black, and shedding fronds at soil level?",
+        "solve_it_like_this": [
+          "Never bury the golden creeping rhizomes under the soil; they are surface runners.",
+          "Stop pouring water directly into the plant center; always water into the potting medium around the pot edges.",
+          "Allow top inch of medium to dry out before re-watering, and verify container drainage."
+        ]
+      },
+      {
+        "id": "134-crispy_brown_frond_margins",
+        "problem": "Crispy brown leaf tips and margins (Low humidity / Heatwaves)",
+        "do_you_see_this_problem": "Are leaf tips turning dry, brown, and papery during hot dry weather or in air-conditioned rooms?",
+        "solve_it_like_this": [
+          "Place the pot on a water-filled pebble tray to raise local ambient humidity around the foliage.",
+          "Shelter from hot dry afternoon balcony winds (loo) and cold air conditioner drafts.",
+          "Trim off dried brown tips with clean scissors without cutting into healthy green tissue."
+        ]
+      },
+      {
+        "id": "134-yellowing_lower_fronds",
+        "problem": "Yellowing lower fronds from excess moisture",
+        "do_you_see_this_problem": "Are bottom fronds turning yellow, limp, and dropping while potting mix remains wet?",
+        "solve_it_like_this": [
+          "Reduce watering frequency, especially during cool rainy monsoon or winter periods.",
+          "Empty saucers so the pot never sits in stagnant runoff water."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Phlebodium_aureum",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Phlebodium_aureum",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Starr_050107-2831_Phlebodium_aureum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Starr_050107-2831_Phlebodium_aureum.jpg/330px-Starr_050107-2831_Phlebodium_aureum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/134_blue_star_fern.jpg",
+      "asset_path": "file:///android_asset/images/134_blue_star_fern.jpg"
+    }
+  }
+]

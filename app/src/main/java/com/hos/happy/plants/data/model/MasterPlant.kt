@@ -9,13 +9,17 @@ data class MasterPlantCatalog(
 
 data class CatalogMeta(
     @SerializedName("title") val title: String? = null,
-    @SerializedName("version") val version: Int = 1
+    @SerializedName("version") val version: Int = 1,
+    @SerializedName("region") val region: String? = null,
+    @SerializedName("total_plants") val totalPlants: Int? = null
 )
 
 data class MasterPlant(
     @SerializedName("id") val id: Int,
     @SerializedName("botanical_name") val botanicalName: String,
     @SerializedName("common_name") val commonName: String,
+    @SerializedName("region") val region: String? = "India",
+    @SerializedName("popularity_score") val popularityScore: Int = 8,
     @SerializedName("local_names") val localNames: Map<String, String>? = null,
     @SerializedName("watering_every_days") val watering: WateringInfo? = null,
     @SerializedName("light_lux") val lightLux: LightLuxInfo? = null,

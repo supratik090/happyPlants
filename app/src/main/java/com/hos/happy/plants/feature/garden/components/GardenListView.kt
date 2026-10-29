@@ -20,6 +20,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -49,6 +50,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
@@ -283,13 +285,21 @@ fun GardenListView(
                                             color = Forest,
                                             fontSize = 16.sp
                                         )
-                                        Spacer(modifier = Modifier.width(6.dp))
-                                        Text(
-                                            text = "• ${plantsInRoom.size} ${if (plantsInRoom.size == 1) "plant" else "plants"}",
-                                            style = MaterialTheme.typography.bodySmall,
-                                            color = Bark,
-                                            fontSize = 12.sp
-                                        )
+                                        Spacer(modifier = Modifier.width(8.dp))
+                                        Box(
+                                            modifier = Modifier
+                                                .size(20.dp)
+                                                .clip(CircleShape)
+                                                .background(Moss.copy(alpha = 0.12f)),
+                                            contentAlignment = Alignment.Center
+                                        ) {
+                                            Text(
+                                                text = "${plantsInRoom.size}",
+                                                fontSize = 11.sp,
+                                                fontWeight = FontWeight.Bold,
+                                                color = Moss
+                                            )
+                                        }
                                     }
 
                                     Icon(
@@ -445,10 +455,13 @@ private fun PlantGardenCardItem(
     onClick: () -> Unit
 ) {
     val tags = remember(plant) { viewModel.getTagsForPlant(plant) }
+    val latestPhotoEntity by viewModel.getLatestPhotoForPlantFlow(plant.id).collectAsState(initial = null)
 
-    val resolvedPhoto = plant.photoUri?.takeIf { it.startsWith("file://") || it.startsWith("content://") }
+    val defaultPhoto = plant.photoUri?.takeIf { it.startsWith("file://") || it.startsWith("content://") }
         ?: plant.masterPlantId?.let { viewModel.masterRepo.getPlantById(it)?.displayImageUrl }
         ?: plant.photoUri
+
+    val resolvedPhoto = latestPhotoEntity?.photoUri?.takeIf { it.isNotBlank() } ?: defaultPhoto
 
     Card(
         modifier = Modifier
@@ -502,13 +515,31 @@ private fun PlantGardenCardItem(
                         fontSize = 16.sp
                     )
                     Spacer(modifier = Modifier.height(2.dp))
+                    val speciesSubtitle = if (!plant.nickname.trim().equals(plant.commonName.trim(), ignoreCase = true)) {
+                        "${plant.commonName} • ${plant.botanicalName}"
+                    } else {
+                        plant.botanicalName
+                    }
                     Text(
-                        text = plant.botanicalName,
+                        text = speciesSubtitle,
                         style = MaterialTheme.typography.bodySmall,
                         color = Bark,
                         fontSize = 11.sp,
                         fontStyle = FontStyle.Italic,
-                        maxLines = 1
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+
+                    // Watering schedule sub-line
+                    val (scheduleLabel, nextDueStr) = remember(plant) {
+                        viewModel.getScheduleInfoForPlant(plant)
+                    }
+                    Text(
+                        text = "💧 $scheduleLabel · $nextDueStr",
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = Moss,
+                        modifier = Modifier.padding(top = 3.dp)
                     )
 
                     Spacer(modifier = Modifier.height(6.dp))

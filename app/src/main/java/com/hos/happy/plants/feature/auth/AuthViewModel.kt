@@ -42,37 +42,34 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
     private fun checkPersistedSession() {
         viewModelScope.launch {
             _uiState.value = _uiState.value.copy(isSessionChecking = true, isLoading = true)
+            val startTime = System.currentTimeMillis()
+
             // Initialize hardware light sensor check in preferences on startup
             prefs.getOrInitializeLightMeterSettings()
 
             // Check if there are profiles
             val profiles = profileDao.getAllProfiles()
-            if (profiles.isNotEmpty()) {
-                val savedActiveId = runCatching { prefs.activeProfileIdFlow.first() }.getOrNull()
-                val matched = profiles.find { it.id == savedActiveId }
+            val savedActiveId = runCatching { prefs.activeProfileIdFlow.first() }.getOrNull()
+            val matched = if (profiles.isNotEmpty()) {
+                profiles.find { it.id == savedActiveId }
                     ?: if (profiles.size == 1) profiles.first() else null
+            } else null
 
-                if (matched != null) {
-                    prefs.setActiveProfileId(matched.id)
-                    _uiState.value = _uiState.value.copy(
-                        activeProfile = matched,
-                        isSessionChecking = false,
-                        isLoading = false
-                    )
-                } else {
-                    _uiState.value = _uiState.value.copy(
-                        activeProfile = null,
-                        isSessionChecking = false,
-                        isLoading = false
-                    )
-                }
-            } else {
-                _uiState.value = _uiState.value.copy(
-                    activeProfile = null,
-                    isSessionChecking = false,
-                    isLoading = false
-                )
+            if (matched != null) {
+                prefs.setActiveProfileId(matched.id)
             }
+
+            // Ensure minimum splash display time (900ms) so initial launch displays smoothly
+            val elapsed = System.currentTimeMillis() - startTime
+            if (elapsed < 900) {
+                kotlinx.coroutines.delay(900 - elapsed)
+            }
+
+            _uiState.value = _uiState.value.copy(
+                activeProfile = matched,
+                isSessionChecking = false,
+                isLoading = false
+            )
         }
     }
 
@@ -84,6 +81,7 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
             _uiState.value = _uiState.value.copy(isLoading = true)
             profileDao.updateLastLogin(profile.id)
             prefs.setActiveProfileId(profile.id)
+            com.hos.happy.plants.data.telemetry.FirebaseTelemetryManager.getInstance()?.onProfileActivated(profile.id)
             _uiState.value = _uiState.value.copy(
                 activeProfile = profile,
                 errorMessage = null,
@@ -120,6 +118,7 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
 
             profileDao.insertProfile(newProfile)
             prefs.setActiveProfileId(newProfile.id)
+            com.hos.happy.plants.data.telemetry.FirebaseTelemetryManager.getInstance()?.onProfileActivated(newProfile.id)
             _uiState.value = _uiState.value.copy(
                 activeProfile = newProfile,
                 isLoading = false,
@@ -135,6 +134,7 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
             if (profile.passwordHash == inputHash) {
                 profileDao.updateLastLogin(profile.id)
                 prefs.setActiveProfileId(profile.id)
+                com.hos.happy.plants.data.telemetry.FirebaseTelemetryManager.getInstance()?.onProfileActivated(profile.id)
                 _uiState.value = _uiState.value.copy(
                     activeProfile = profile,
                     errorMessage = null,

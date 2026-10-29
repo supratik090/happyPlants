@@ -13,11 +13,13 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -35,10 +37,13 @@ import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material.icons.filled.CameraAlt
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Key
+import androidx.compose.material.icons.filled.KeyboardArrowDown
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.PhotoLibrary
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Spa
+import androidx.compose.material.icons.filled.Tune
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -151,23 +156,6 @@ fun ResearchScreen(
                         )
                     }
                 },
-                actions = {
-                    OutlinedButton(
-                        onClick = onSwitchProfile,
-                        shape = RoundedCornerShape(10.dp),
-                        border = androidx.compose.foundation.BorderStroke(1.dp, Sand),
-                        contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 8.dp, vertical = 4.dp)
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Person,
-                            contentDescription = "Profiles",
-                            tint = Moss,
-                            modifier = Modifier.size(16.dp)
-                        )
-                        Spacer(modifier = Modifier.width(4.dp))
-                        Text("Switch", color = Moss, fontSize = 12.sp)
-                    }
-                },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = PaperDark)
             )
         },
@@ -225,7 +213,7 @@ fun ResearchScreen(
                             onTakePhoto = {
                                 if (uiState.remainingDailyIdentifications <= 0) {
                                     scope.launch {
-                                        snackbarHostState.showSnackbar("Daily limit reached (5/5 photo identifications used). Resets at 12:00 AM IST.")
+                                        snackbarHostState.showSnackbar("Daily limit reached (3/3 photo identifications used). Resets at 12:00 AM IST.")
                                     }
                                 } else {
                                     showLiveCamera = true
@@ -234,7 +222,7 @@ fun ResearchScreen(
                             onPickGallery = {
                                 if (uiState.remainingDailyIdentifications <= 0) {
                                     scope.launch {
-                                        snackbarHostState.showSnackbar("Daily limit reached (5/5 photo identifications used). Resets at 12:00 AM IST.")
+                                        snackbarHostState.showSnackbar("Daily limit reached (3/3 photo identifications used). Resets at 12:00 AM IST.")
                                     }
                                 } else {
                                     galleryLauncher.launch(
@@ -252,21 +240,32 @@ fun ResearchScreen(
                                         snackbarHostState.showSnackbar("Please open the Garden tab to add plants.")
                                     }
                                 }
+                            },
+                            onQuickFilter = { filter ->
+                                researchViewModel.selectCategory(filter)
+                                researchViewModel.setMode(ResearchMode.BROWSE)
                             }
                         )
                     }
 
                     ResearchMode.BROWSE -> {
-                        // Option 2: Browse Encyclopedia Option
+                        // Option 2: Browse Encyclopedia Option with Multidimensional Filters
                         BrowseOptionView(
                             plants = uiState.browsePlants,
-                            selectedCategory = uiState.selectedCategory,
-                            onSelectCategory = { researchViewModel.selectCategory(it) },
+                            totalCount = uiState.totalPlantCount,
+                            filterCriteria = uiState.filterCriteria,
+                            isLoading = uiState.isBrowseLoading,
+                            onSelectTemperature = { researchViewModel.setTemperatureFilter(it) },
+                            onSelectHumidity = { researchViewModel.setHumidityFilter(it) },
+                            onSelectWaterCare = { researchViewModel.setWaterCareFilter(it) },
+                            onSelectLight = { researchViewModel.setLightFilter(it) },
+                            onClearAllFilters = { researchViewModel.clearAllFilters() },
                             onSelectPlant = { researchViewModel.selectPlant(it) }
                         )
                     }
                 }
             }
+            Spacer(modifier = Modifier.height(36.dp))
         }
     }
 
@@ -440,7 +439,8 @@ private fun SearchOptionView(
     onPickGallery: () -> Unit,
     onConfigureApiKey: () -> Unit,
     onDismissIdentification: () -> Unit,
-    onAddIdentifiedPlantToGarden: (PlantIdentificationResult) -> Unit
+    onAddIdentifiedPlantToGarden: (PlantIdentificationResult) -> Unit,
+    onQuickFilter: (String) -> Unit = {}
 ) {
     Column(modifier = Modifier.fillMaxWidth()) {
 
@@ -453,7 +453,7 @@ private fun SearchOptionView(
             shape = RoundedCornerShape(18.dp),
             elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
         ) {
-            Column(modifier = Modifier.padding(16.dp)) {
+            Column(modifier = Modifier.padding(18.dp)) {
                 // Header with icon, daily limit badge, and API key button
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -466,14 +466,14 @@ private fun SearchOptionView(
                     ) {
                         Box(
                             modifier = Modifier
-                                .size(26.dp)
+                                .size(28.dp)
                                 .clip(CircleShape)
                                 .background(Leaf.copy(alpha = 0.35f)),
                             contentAlignment = Alignment.Center
                         ) {
-                            Text("🌿", fontSize = 14.sp)
+                            Text("🌿", fontSize = 15.sp)
                         }
-                        Spacer(modifier = Modifier.width(8.dp))
+                        Spacer(modifier = Modifier.width(10.dp))
                         Text(
                             text = "Find or Identify Any Plant",
                             style = MaterialTheme.typography.titleMedium,
@@ -482,17 +482,20 @@ private fun SearchOptionView(
                         )
                     }
 
-                    Row(verticalAlignment = Alignment.CenterVertically) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
                         // Daily attempt count badge
                         Box(
                             modifier = Modifier
                                 .clip(RoundedCornerShape(8.dp))
                                 .background(if (remainingDailyIdentifications > 0) Leaf.copy(alpha = 0.3f) else Terracotta.copy(alpha = 0.2f))
-                                .padding(horizontal = 7.dp, vertical = 3.dp)
+                                .padding(horizontal = 8.dp, vertical = 4.dp)
                         ) {
                             Text(
-                                text = "$remainingDailyIdentifications/5 left",
-                                fontSize = 10.sp,
+                                text = "$remainingDailyIdentifications/3 left",
+                                fontSize = 11.sp,
                                 fontWeight = FontWeight.Bold,
                                 color = if (remainingDailyIdentifications > 0) Forest else Terracotta
                             )
@@ -512,7 +515,7 @@ private fun SearchOptionView(
                     }
                 }
 
-                Spacer(modifier = Modifier.height(10.dp))
+                Spacer(modifier = Modifier.height(14.dp))
 
                 // Highlighted Search Input Box
                 OutlinedTextField(
@@ -539,7 +542,7 @@ private fun SearchOptionView(
                     modifier = Modifier.fillMaxWidth()
                 )
 
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(14.dp))
 
                 // Visual Divider with Caption
                 Row(
@@ -556,7 +559,7 @@ private fun SearchOptionView(
                     HorizontalDivider(modifier = Modifier.weight(1f), color = Sand, thickness = 0.5.dp)
                 }
 
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(14.dp))
 
                 // Live Camera & Gallery Photo Buttons
                 val isLimitReached = remainingDailyIdentifications <= 0
@@ -571,7 +574,7 @@ private fun SearchOptionView(
                         ),
                         shape = RoundedCornerShape(12.dp),
                         modifier = Modifier.weight(1f),
-                        contentPadding = androidx.compose.foundation.layout.PaddingValues(vertical = 10.dp)
+                        contentPadding = androidx.compose.foundation.layout.PaddingValues(vertical = 12.dp)
                     ) {
                         Icon(Icons.Default.CameraAlt, contentDescription = null, tint = SurfaceWarm, modifier = Modifier.size(16.dp))
                         Spacer(modifier = Modifier.width(6.dp))
@@ -583,7 +586,7 @@ private fun SearchOptionView(
                         shape = RoundedCornerShape(12.dp),
                         border = androidx.compose.foundation.BorderStroke(1.5.dp, if (isLimitReached) Mute else Moss),
                         modifier = Modifier.weight(1f),
-                        contentPadding = androidx.compose.foundation.layout.PaddingValues(vertical = 10.dp)
+                        contentPadding = androidx.compose.foundation.layout.PaddingValues(vertical = 12.dp)
                     ) {
                         Icon(Icons.Default.PhotoLibrary, contentDescription = null, tint = if (isLimitReached) Mute else Moss, modifier = Modifier.size(16.dp))
                         Spacer(modifier = Modifier.width(6.dp))
@@ -591,9 +594,9 @@ private fun SearchOptionView(
                     }
                 }
 
-                Spacer(modifier = Modifier.height(6.dp))
+                Spacer(modifier = Modifier.height(10.dp))
                 Text(
-                    text = "Daily limit: 5 photo identifications • Resets at 12:00 AM IST",
+                    text = "Daily limit: 3 photo identifications • Resets at 12:00 AM IST",
                     fontSize = 10.sp,
                     color = Mute,
                     modifier = Modifier.align(Alignment.CenterHorizontally)
@@ -601,7 +604,7 @@ private fun SearchOptionView(
             }
         }
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(24.dp))
 
         // 2. Identifying in progress state (displayed BELOW the search card)
         if (isIdentifying) {
@@ -690,7 +693,52 @@ private fun SearchOptionView(
             Spacer(modifier = Modifier.height(16.dp))
         }
 
-        Spacer(modifier = Modifier.height(16.dp))
+        // Quick Filters bar in Search Mode
+        if (searchQuery.isBlank()) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 20.dp)
+            ) {
+                Text(
+                    text = "Explore by Climate & Care",
+                    fontSize = 13.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Forest
+                )
+                Spacer(modifier = Modifier.height(10.dp))
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .horizontalScroll(rememberScrollState()),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    listOf(
+                        "🔥 Warm Temp" to "Warm",
+                        "❄️ Cold Tolerant" to "Cold",
+                        "🌤️ Moderate Temp" to "Moderate Temp",
+                        "🌵 Low Water" to "Low Water",
+                        "🪴 Medium Water" to "Medium Water",
+                        "💦 High Water" to "High Water",
+                        "🏜️ Low Humidity" to "Low Humidity",
+                        "🌧️ High Humidity" to "High Humidity",
+                        "🌑 Low Light" to "Low Light",
+                        "☀️ Bright Light" to "Bright Light"
+                    ).forEach { (label, key) ->
+                        Box(
+                            modifier = Modifier
+                                .clip(RoundedCornerShape(10.dp))
+                                .background(SurfaceWarm)
+                                .border(1.dp, Sand, RoundedCornerShape(10.dp))
+                                .clickable { onQuickFilter(key) }
+                                .padding(horizontal = 12.dp, vertical = 7.dp)
+                        ) {
+                            Text(label, fontSize = 12.sp, color = Forest, fontWeight = FontWeight.Medium)
+                        }
+                    }
+                }
+            }
+        }
 
         // Space Plant Suggestions (shown directly below Find or Identify)
         if (searchQuery.isBlank() && spaceSuggestions.isNotEmpty()) {
@@ -698,9 +746,9 @@ private fun SearchOptionView(
                 spaceSuggestions = spaceSuggestions,
                 isRefreshing = isRefreshingSuggestions,
                 onRefresh = onRefreshSuggestions,
-                onSelectPlant = onSelectPlant
+                onSelectPlant = onSelectPlant,
+                modifier = Modifier.padding(bottom = 20.dp)
             )
-            Spacer(modifier = Modifier.height(16.dp))
         }
 
         // Autocomplete Results Dropdown / List
@@ -746,7 +794,7 @@ private fun SearchOptionView(
                     )
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(
-                        text = "Try searching by English common name, botanical genus, or Indian nursery name — or use the Live Camera / Gallery buttons above to identify it with Pl@ntNet AI.",
+                        text = "Try searching by common name, botanical genus, or regional nursery name — or use the Live Camera / Gallery buttons above to identify it with Pl@ntNet AI.",
                         color = Mute,
                         fontSize = 12.sp,
                         textAlign = androidx.compose.ui.text.style.TextAlign.Center
@@ -764,7 +812,7 @@ private fun SearchOptionView(
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Text(
-                        text = "Popular Indian Houseplants",
+                        text = "Popular Houseplants",
                         style = MaterialTheme.typography.titleSmall,
                         color = Forest,
                         fontWeight = FontWeight.Bold
@@ -813,61 +861,533 @@ private fun SearchOptionView(
 @Composable
 private fun BrowseOptionView(
     plants: List<MasterPlant>,
-    selectedCategory: String,
-    onSelectCategory: (String) -> Unit,
+    totalCount: Int,
+    filterCriteria: PlantFilterCriteria,
+    isLoading: Boolean = false,
+    onSelectTemperature: (String?) -> Unit,
+    onSelectHumidity: (String?) -> Unit,
+    onSelectWaterCare: (String?) -> Unit,
+    onSelectLight: (String?) -> Unit,
+    onClearAllFilters: () -> Unit,
     onSelectPlant: (MasterPlant) -> Unit
 ) {
-    val categories = listOf("All", "Low Light", "Moderate Light", "Bright Light", "Low Water")
+    var isFilterExpanded by remember { mutableStateOf(filterCriteria.isActive) }
 
     Column(modifier = Modifier.fillMaxWidth()) {
-        Text(
-            text = "Browse by Light & Care Category",
-            style = MaterialTheme.typography.titleSmall,
-            color = Forest,
-            fontWeight = FontWeight.Bold
-        )
-        Spacer(modifier = Modifier.height(8.dp))
-
-        // Category Filter Chips
-        FlowRow(
-            horizontalArrangement = Arrangement.spacedBy(6.dp),
-            verticalArrangement = Arrangement.spacedBy(6.dp)
+        // Multi-dimensional Filter Card (Compact & Collapsible)
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .border(1.dp, Sand, RoundedCornerShape(16.dp)),
+            colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
+            shape = RoundedCornerShape(16.dp)
         ) {
-            categories.forEach { category ->
-                FilterChip(
-                    selected = selectedCategory == category,
-                    onClick = { onSelectCategory(category) },
-                    label = { Text(category, fontSize = 11.sp) },
-                    colors = FilterChipDefaults.filterChipColors(
-                        selectedContainerColor = Moss,
-                        selectedLabelColor = SurfaceWarm,
-                        containerColor = Paper
-                    ),
-                    border = FilterChipDefaults.filterChipBorder(
-                        enabled = true,
-                        selected = selectedCategory == category,
-                        borderColor = Sand
-                    )
+            Column(
+                modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp)
+            ) {
+                // Header with Toggle & Active Count & Reset
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(8.dp))
+                        .clickable { isFilterExpanded = !isFilterExpanded }
+                        .padding(vertical = 4.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .size(28.dp)
+                                .clip(RoundedCornerShape(8.dp))
+                                .background(if (filterCriteria.isActive) Moss else Paper),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Tune,
+                                contentDescription = null,
+                                tint = if (filterCriteria.isActive) SurfaceWarm else Forest,
+                                modifier = Modifier.size(15.dp)
+                            )
+                        }
+
+                        Text(
+                            text = "Filter Encyclopedia",
+                            fontWeight = FontWeight.Bold,
+                            color = Forest,
+                            fontSize = 14.sp
+                        )
+
+                        if (filterCriteria.isActive) {
+                            Box(
+                                modifier = Modifier
+                                    .clip(RoundedCornerShape(6.dp))
+                                    .background(Leaf.copy(alpha = 0.25f))
+                                    .padding(horizontal = 6.dp, vertical = 2.dp)
+                            ) {
+                                Text(
+                                    text = "${filterCriteria.activeCount} active",
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Forest
+                                )
+                            }
+                        }
+                    }
+
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        if (filterCriteria.isActive) {
+                            Text(
+                                text = "Reset",
+                                fontSize = 12.sp,
+                                color = Terracotta,
+                                fontWeight = FontWeight.Bold,
+                                modifier = Modifier
+                                    .clip(RoundedCornerShape(6.dp))
+                                    .clickable { onClearAllFilters() }
+                                    .padding(horizontal = 6.dp, vertical = 2.dp)
+                            )
+                        }
+
+                        Icon(
+                            imageVector = if (isFilterExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                            contentDescription = if (isFilterExpanded) "Collapse" else "Expand",
+                            tint = Forest,
+                            modifier = Modifier.size(20.dp)
+                        )
+                    }
+                }
+
+                // Active filters pill strip when collapsed
+                if (!isFilterExpanded && filterCriteria.isActive) {
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .horizontalScroll(rememberScrollState()),
+                        horizontalArrangement = Arrangement.spacedBy(6.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        filterCriteria.temperature?.let { temp ->
+                            ActiveFilterChip("🌡️ $temp") { onSelectTemperature(null) }
+                        }
+                        filterCriteria.humidity?.let { hum ->
+                            ActiveFilterChip("💨 $hum") { onSelectHumidity(null) }
+                        }
+                        filterCriteria.waterCare?.let { water ->
+                            ActiveFilterChip("💧 $water") { onSelectWaterCare(null) }
+                        }
+                        filterCriteria.light?.let { light ->
+                            ActiveFilterChip("☀️ $light") { onSelectLight(null) }
+                        }
+                    }
+                }
+
+                // Expanded Filter Options (Single horizontal scroll row per category)
+                AnimatedVisibility(visible = isFilterExpanded) {
+                    Column(
+                        modifier = Modifier.padding(top = 10.dp),
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        HorizontalDivider(color = Sand.copy(alpha = 0.5f))
+
+                        // 1. Temperature: Warm, Cold, Moderate
+                        FilterCategoryRow(
+                            icon = "🌡️",
+                            title = "Temp",
+                            options = listOf(
+                                "Warm" to "🔥 Warm",
+                                "Cold" to "❄️ Cold Tolerant",
+                                "Moderate" to "🌤️ Moderate"
+                            ),
+                            selected = filterCriteria.temperature,
+                            onSelect = onSelectTemperature
+                        )
+
+                        // 2. Humidity: Low, Moderate, High
+                        FilterCategoryRow(
+                            icon = "💨",
+                            title = "Humidity",
+                            options = listOf(
+                                "Low" to "🏜️ Low (<40%)",
+                                "Moderate" to "🍃 Moderate",
+                                "High" to "🌧️ High (>60%)"
+                            ),
+                            selected = filterCriteria.humidity,
+                            onSelect = onSelectHumidity
+                        )
+
+                        // 3. Water Care: Low, Medium, High
+                        FilterCategoryRow(
+                            icon = "💧",
+                            title = "Water",
+                            options = listOf(
+                                "Low" to "🌵 Low (drought)",
+                                "Medium" to "🪴 Medium",
+                                "High" to "💦 High (frequent)"
+                            ),
+                            selected = filterCriteria.waterCare,
+                            onSelect = onSelectWaterCare
+                        )
+
+                        // 4. Light Exposure: Low, Moderate, Bright
+                        FilterCategoryRow(
+                            icon = "☀️",
+                            title = "Light",
+                            options = listOf(
+                                "Low" to "🌑 Low Light",
+                                "Moderate" to "⛅ Moderate",
+                                "Bright" to "☀️ Bright"
+                            ),
+                            selected = filterCriteria.light,
+                            onSelect = onSelectLight
+                        )
+                    }
+                }
+            }
+        }
+
+        Spacer(modifier = Modifier.height(18.dp))
+
+        // Results count header
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = "Showing ${plants.size} of $totalCount Plants:",
+                fontSize = 14.sp,
+                color = Forest,
+                fontWeight = FontWeight.Bold
+            )
+            if (filterCriteria.isActive) {
+                Text(
+                    text = "Filtered",
+                    fontSize = 12.sp,
+                    color = Moss,
+                    fontWeight = FontWeight.SemiBold
                 )
             }
         }
 
-        Spacer(modifier = Modifier.height(14.dp))
+        Spacer(modifier = Modifier.height(12.dp))
 
-        Text(
-            text = "Showing ${plants.size} Plants:",
-            fontSize = 12.sp,
-            color = Bark,
-            fontWeight = FontWeight.SemiBold
-        )
-        Spacer(modifier = Modifier.height(8.dp))
+        if (isLoading) {
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .border(1.dp, Sand, RoundedCornerShape(16.dp)),
+                colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 44.dp, horizontal = 24.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    CircularProgressIndicator(
+                        modifier = Modifier.size(36.dp),
+                        color = Forest,
+                        strokeWidth = 3.dp
+                    )
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text(
+                        text = "Loading Plant Library...",
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Forest
+                    )
+                    Spacer(modifier = Modifier.height(4.dp))
+                    Text(
+                        text = "Preparing 220 botanical species & care guidelines",
+                        fontSize = 12.sp,
+                        color = Mute
+                    )
+                }
+            }
+        } else if (plants.isEmpty()) {
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .border(1.dp, Sand, RoundedCornerShape(14.dp)),
+                colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
+                shape = RoundedCornerShape(14.dp)
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(24.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text("🌿", fontSize = 28.sp)
+                    Spacer(modifier = Modifier.height(6.dp))
+                    Text(
+                        text = "No plants match all selected filters",
+                        fontWeight = FontWeight.Bold,
+                        color = Forest,
+                        fontSize = 13.sp
+                    )
+                    Spacer(modifier = Modifier.height(4.dp))
+                    Text(
+                        text = "Try deselecting one of the filters or tap Reset All to view all species.",
+                        color = Mute,
+                        fontSize = 11.sp,
+                        textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    OutlinedButton(
+                        onClick = onClearAllFilters,
+                        shape = RoundedCornerShape(8.dp),
+                        contentPadding = PaddingValues(horizontal = 12.dp, vertical = 4.dp)
+                    ) {
+                        Text("Reset All Filters", fontSize = 11.sp, color = Forest)
+                    }
+                }
+            }
+        } else {
+            var visibleItemCount by remember(plants) { mutableStateOf(30) }
+            val displayedPlants = plants.take(visibleItemCount)
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                displayedPlants.forEach { plant ->
+                    PlantBrowseCard(
+                        plant = plant,
+                        onClick = { onSelectPlant(plant) }
+                    )
+                }
 
-        Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-            plants.forEach { plant ->
-                PlantBrowseCard(
-                    plant = plant,
-                    onClick = { onSelectPlant(plant) }
+                if (visibleItemCount < plants.size) {
+                    val remaining = plants.size - visibleItemCount
+                    val nextBatch = remaining.coerceAtMost(30)
+                    Button(
+                        onClick = { visibleItemCount += nextBatch },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 8.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Moss),
+                        shape = RoundedCornerShape(12.dp)
+                    ) {
+                        Text(
+                            text = "Load More Plants ($remaining remaining)",
+                            color = SurfaceWarm,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 13.sp
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun FilterCategoryRow(
+    icon: String,
+    title: String,
+    options: List<Pair<String, String>>,
+    selected: String?,
+    onSelect: (String?) -> Unit
+) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        // Left category label (compact fixed width)
+        Row(
+            modifier = Modifier.width(76.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(icon, fontSize = 12.sp)
+            Spacer(modifier = Modifier.width(4.dp))
+            Text(
+                text = title,
+                fontSize = 11.sp,
+                fontWeight = FontWeight.Bold,
+                color = Bark,
+                maxLines = 1
+            )
+        }
+
+        // Right compact horizontal scroll row of options
+        Row(
+            modifier = Modifier
+                .weight(1f)
+                .horizontalScroll(rememberScrollState()),
+            horizontalArrangement = Arrangement.spacedBy(6.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            // "All" chip
+            val isAll = selected == null
+            Box(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(8.dp))
+                    .background(if (isAll) Moss else Paper)
+                    .border(1.dp, if (isAll) Moss else Sand, RoundedCornerShape(8.dp))
+                    .clickable { onSelect(null) }
+                    .padding(horizontal = 9.dp, vertical = 5.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = "All",
+                    fontSize = 11.sp,
+                    fontWeight = if (isAll) FontWeight.Bold else FontWeight.Medium,
+                    color = if (isAll) SurfaceWarm else Ink
                 )
+            }
+
+            // Category options
+            options.forEach { (key, label) ->
+                val isSelected = selected == key
+                Box(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(8.dp))
+                        .background(if (isSelected) Moss else Paper)
+                        .border(1.dp, if (isSelected) Moss else Sand, RoundedCornerShape(8.dp))
+                        .clickable { onSelect(if (isSelected) null else key) }
+                        .padding(horizontal = 9.dp, vertical = 5.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = label,
+                        fontSize = 11.sp,
+                        fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
+                        color = if (isSelected) SurfaceWarm else Ink
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun ActiveFilterChip(
+    label: String,
+    onRemove: () -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .clip(RoundedCornerShape(8.dp))
+            .background(Leaf.copy(alpha = 0.25f))
+            .border(1.dp, Leaf, RoundedCornerShape(8.dp))
+            .clickable { onRemove() }
+            .padding(horizontal = 8.dp, vertical = 4.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(4.dp)
+    ) {
+        Text(
+            text = label,
+            fontSize = 11.sp,
+            fontWeight = FontWeight.SemiBold,
+            color = Forest
+        )
+        Icon(
+            imageVector = Icons.Default.Close,
+            contentDescription = "Remove",
+            tint = Forest,
+            modifier = Modifier.size(12.dp)
+        )
+    }
+}
+
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun PlantBrowseCard(
+    plant: MasterPlant,
+    onClick: () -> Unit
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable { onClick() }
+            .border(1.dp, Sand, RoundedCornerShape(16.dp)),
+        colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(12.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            val imgUrl = plant.displayImageUrl ?: plant.image?.thumbnailUrl ?: plant.image?.directImageUrl
+            if (imgUrl != null) {
+                AsyncImage(
+                    model = imgUrl,
+                    contentDescription = plant.commonName,
+                    modifier = Modifier
+                        .size(70.dp)
+                        .clip(RoundedCornerShape(12.dp)),
+                    contentScale = ContentScale.Crop
+                )
+            } else {
+                Box(
+                    modifier = Modifier
+                        .size(70.dp)
+                        .clip(RoundedCornerShape(12.dp))
+                        .background(Paper),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text("🌿", fontSize = 28.sp)
+                }
+            }
+
+            Spacer(modifier = Modifier.width(14.dp))
+
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = plant.commonName,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 15.sp,
+                    color = Forest
+                )
+                Text(
+                    text = plant.botanicalName,
+                    fontSize = 12.sp,
+                    color = Bark,
+                    fontStyle = androidx.compose.ui.text.font.FontStyle.Italic
+                )
+                Spacer(modifier = Modifier.height(4.dp))
+                FlowRow(
+                    horizontalArrangement = Arrangement.spacedBy(6.dp),
+                    verticalArrangement = Arrangement.spacedBy(2.dp)
+                ) {
+                    plant.watering?.hotDryMonths?.let { hot ->
+                        Text(
+                            text = "💧 ${hot.min}–${hot.max}d",
+                            fontSize = 11.sp,
+                            color = Moss,
+                            fontWeight = FontWeight.Medium
+                        )
+                    }
+                    plant.temperature?.let { temp ->
+                        val minT = temp.idealMin ?: temp.tolerableMin
+                        val maxT = temp.idealMax ?: temp.tolerableMax
+                        if (minT != null && maxT != null) {
+                            Text(
+                                text = "• 🌡️ ${minT.toInt()}–${maxT.toInt()}°C",
+                                fontSize = 11.sp,
+                                color = Bark
+                            )
+                        }
+                    }
+                    plant.humidity?.let { hum ->
+                        if (hum.min != null && hum.max != null) {
+                            Text(
+                                text = "• 💨 ${hum.min.toInt()}–${hum.max.toInt()}%",
+                                fontSize = 11.sp,
+                                color = Mute
+                            )
+                        }
+                    }
+                }
             }
         }
     }
@@ -953,85 +1473,6 @@ private fun PlantSearchResultCard(
                         color = Moss,
                         fontWeight = FontWeight.SemiBold
                     )
-                }
-            }
-        }
-    }
-}
-
-@Composable
-private fun PlantBrowseCard(
-    plant: MasterPlant,
-    onClick: () -> Unit
-) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable { onClick() }
-            .border(1.dp, Sand, RoundedCornerShape(16.dp)),
-        colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
-        shape = RoundedCornerShape(16.dp)
-    ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(12.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            val imgUrl = plant.displayImageUrl ?: plant.image?.thumbnailUrl ?: plant.image?.directImageUrl
-            if (imgUrl != null) {
-                AsyncImage(
-                    model = imgUrl,
-                    contentDescription = plant.commonName,
-                    modifier = Modifier
-                        .size(70.dp)
-                        .clip(RoundedCornerShape(12.dp)),
-                    contentScale = ContentScale.Crop
-                )
-            } else {
-                Box(
-                    modifier = Modifier
-                        .size(70.dp)
-                        .clip(RoundedCornerShape(12.dp))
-                        .background(Paper),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text("🌿", fontSize = 28.sp)
-                }
-            }
-
-            Spacer(modifier = Modifier.width(14.dp))
-
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    text = plant.commonName,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 15.sp,
-                    color = Forest
-                )
-                Text(
-                    text = plant.botanicalName,
-                    fontSize = 12.sp,
-                    color = Bark,
-                    fontStyle = androidx.compose.ui.text.font.FontStyle.Italic
-                )
-                Spacer(modifier = Modifier.height(4.dp))
-                Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                    plant.watering?.hotDryMonths?.let { hot ->
-                        Text(
-                            text = "💧 Summer: ${hot.min}–${hot.max}d",
-                            fontSize = 11.sp,
-                            color = Moss,
-                            fontWeight = FontWeight.Medium
-                        )
-                    }
-                    plant.lightLux?.idealMin?.let { minLux ->
-                        Text(
-                            text = "• ☀️ ${minLux.toInt()} lx",
-                            fontSize = 11.sp,
-                            color = Mute
-                        )
-                    }
                 }
             }
         }

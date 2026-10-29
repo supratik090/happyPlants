@@ -31,8 +31,14 @@ interface DailyCareTaskDao {
     @Query("SELECT * FROM daily_care_tasks WHERE profileId = :profileId AND dateKey = :dateKey")
     suspend fun getTasksForDate(profileId: String, dateKey: String): List<DailyCareTaskEntity>
 
+    @Query("SELECT * FROM daily_care_tasks WHERE profileId = :profileId AND dateKey = :dateKey AND isCompleted = 0 AND isSkipped = 0 ORDER BY priority ASC")
+    suspend fun getPendingTasksForDate(profileId: String, dateKey: String): List<DailyCareTaskEntity>
+
     @Query("SELECT COUNT(*) FROM daily_care_tasks WHERE profileId = :profileId AND dateKey = :dateKey")
     suspend fun getTaskCountForDate(profileId: String, dateKey: String): Int
+
+    @Query("SELECT COUNT(*) FROM daily_care_tasks WHERE profileId = :profileId AND (isCompleted = 1 OR isSkipped = 1)")
+    fun getCompletedOrSkippedCountFlow(profileId: String): Flow<Int>
 
     @Query("UPDATE daily_care_tasks SET isCompleted = 1, completedAt = :completedAt WHERE id = :taskId")
     suspend fun markTaskCompleted(taskId: String, completedAt: Long = System.currentTimeMillis())

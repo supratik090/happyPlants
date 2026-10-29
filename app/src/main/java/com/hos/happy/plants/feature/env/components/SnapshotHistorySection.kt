@@ -6,8 +6,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ExperimentalLayoutApi
-import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -19,8 +17,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Air
-import androidx.compose.material.icons.filled.CalendarMonth
-import androidx.compose.material.icons.filled.Clear
+import androidx.compose.material.icons.filled.DeleteOutline
 import androidx.compose.material.icons.filled.FormatQuote
 import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.Place
@@ -29,24 +26,14 @@ import androidx.compose.material.icons.filled.Thermostat
 import androidx.compose.material.icons.filled.Videocam
 import androidx.compose.material.icons.filled.WaterDrop
 import androidx.compose.material.icons.filled.WbSunny
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.DatePicker
-import androidx.compose.material3.DatePickerDefaults
-import androidx.compose.material3.DatePickerDialog
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FilterChip
-import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.SelectableDates
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.rememberDatePickerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -73,37 +60,19 @@ import com.hos.happy.plants.ui.theme.Paper
 import com.hos.happy.plants.ui.theme.Sand
 import com.hos.happy.plants.ui.theme.SkyBlue
 import com.hos.happy.plants.ui.theme.SurfaceWarm
+import com.hos.happy.plants.ui.theme.Terracotta
 import java.text.SimpleDateFormat
-import java.util.Calendar
 import java.util.Date
 import java.util.Locale
-import java.util.TimeZone
 
-@OptIn(ExperimentalLayoutApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun SnapshotHistorySection(
     snapshots: List<RoomEnvSnapshotEntity>,
-    distinctRooms: List<String>,
-    recordedTimestamps: List<Long>,
-    selectedRoom: String?,
-    selectedDateMillis: Long?,
-    onSelectRoom: (String?) -> Unit,
-    onSelectDate: (Long?) -> Unit,
+    onDeleteSnapshot: (String) -> Unit = {},
     modifier: Modifier = Modifier
 ) {
-    var showCalendarDialog by remember { mutableStateOf(false) }
-
-    val dateDisplayStr = remember(selectedDateMillis) {
-        if (selectedDateMillis != null) {
-            val sdf = SimpleDateFormat("MMM d, yyyy", Locale.getDefault())
-            sdf.format(Date(selectedDateMillis))
-        } else {
-            null
-        }
-    }
-
     Column(modifier = modifier.fillMaxWidth()) {
-        // Section Header: Shows auto-filtered room name & calendar trigger
+        // Section Header: Room Snapshots (Last snapshot per space)
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -120,71 +89,32 @@ fun SnapshotHistorySection(
                 Column {
                     Text(
                         text = "Room Snapshots",
-                        style = MaterialTheme.typography.headlineSmall,
-                        color = Forest
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.Bold,
+                        color = Forest,
+                        fontSize = 16.sp
                     )
+                    Spacer(modifier = Modifier.height(2.dp))
                     Text(
-                        text = "Filtered for: ${selectedRoom ?: "All Rooms"}",
+                        text = "Last recorded snapshot per space",
                         style = MaterialTheme.typography.labelSmall,
                         color = Bark,
                         fontWeight = FontWeight.Medium
                     )
                 }
             }
-
-            // Calendar trigger button: opens calendar with only snapshot dates enabled
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                OutlinedButton(
-                    onClick = { showCalendarDialog = true },
-                    shape = RoundedCornerShape(10.dp),
-                    border = androidx.compose.foundation.BorderStroke(1.dp, if (selectedDateMillis != null) Moss else Sand),
-                    colors = ButtonDefaults.outlinedButtonColors(
-                        containerColor = if (selectedDateMillis != null) Leaf.copy(alpha = 0.2f) else Color.Transparent
-                    ),
-                    contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 10.dp, vertical = 6.dp)
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.CalendarMonth,
-                        contentDescription = "Calendar",
-                        modifier = Modifier.size(16.dp),
-                        tint = if (selectedDateMillis != null) Forest else Moss
-                    )
-                    Spacer(modifier = Modifier.width(6.dp))
-                    Text(
-                        text = dateDisplayStr ?: "Select Date",
-                        fontSize = 12.sp,
-                        color = if (selectedDateMillis != null) Forest else Bark,
-                        fontWeight = FontWeight.Medium
-                    )
-                }
-
-                if (selectedDateMillis != null) {
-                    Spacer(modifier = Modifier.width(4.dp))
-                    IconButton(
-                        onClick = { onSelectDate(null) },
-                        modifier = Modifier.size(28.dp)
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Clear,
-                            contentDescription = "Clear date filter",
-                            tint = Mute,
-                            modifier = Modifier.size(16.dp)
-                        )
-                    }
-                }
-            }
         }
 
-        Spacer(modifier = Modifier.height(14.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         // Snapshot cards or Empty State
         if (snapshots.isEmpty()) {
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .border(1.dp, Sand, RoundedCornerShape(14.dp)),
+                    .border(1.dp, Sand, RoundedCornerShape(16.dp)),
                 colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
-                shape = RoundedCornerShape(14.dp)
+                shape = RoundedCornerShape(16.dp)
             ) {
                 Column(
                     modifier = Modifier
@@ -193,14 +123,14 @@ fun SnapshotHistorySection(
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Icon(
-                        imageVector = Icons.Default.CalendarMonth,
+                        imageVector = Icons.Default.History,
                         contentDescription = null,
                         tint = Sand,
                         modifier = Modifier.size(36.dp)
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(
-                        text = if (recordedTimestamps.isEmpty()) "No snapshots recorded yet." else "No snapshot recorded for this date and room.",
+                        text = "No snapshots recorded yet.",
                         style = MaterialTheme.typography.bodyMedium,
                         color = Mute
                     )
@@ -209,145 +139,24 @@ fun SnapshotHistorySection(
         } else {
             Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 snapshots.forEach { snapshot ->
-                    SnapshotCardItem(snapshot = snapshot)
+                    SnapshotCardItem(
+                        snapshot = snapshot,
+                        onDeleteSnapshot = onDeleteSnapshot
+                    )
                 }
             }
         }
     }
-
-    // Material 3 DatePickerDialog with only snapshot dates enabled
-    if (showCalendarDialog) {
-        SnapshotCalendarModal(
-            recordedTimestamps = recordedTimestamps,
-            initialSelectedDateMillis = selectedDateMillis,
-            onDateSelected = { timestamp ->
-                onSelectDate(timestamp)
-                showCalendarDialog = false
-            },
-            onDismiss = { showCalendarDialog = false }
-        )
-    }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
+
 @Composable
-private fun SnapshotCalendarModal(
-    recordedTimestamps: List<Long>,
-    initialSelectedDateMillis: Long?,
-    onDateSelected: (Long) -> Unit,
-    onDismiss: () -> Unit
+private fun SnapshotCardItem(
+    snapshot: RoomEnvSnapshotEntity,
+    onDeleteSnapshot: (String) -> Unit
 ) {
-    // Build set of calendar date keys ("YYYY-M-D") for fast lookup
-    val snapshotDateKeys = remember(recordedTimestamps) {
-        recordedTimestamps.map { ts ->
-            val cal = Calendar.getInstance().apply { timeInMillis = ts }
-            "${cal.get(Calendar.YEAR)}-${cal.get(Calendar.MONTH)}-${cal.get(Calendar.DAY_OF_MONTH)}"
-        }.toSet()
-    }
+    var showDeleteDialog by remember { mutableStateOf(false) }
 
-    // SelectableDates: ONLY dates in snapshotDateKeys are enabled, rest are disabled!
-    val selectableDates = remember(snapshotDateKeys) {
-        object : SelectableDates {
-            override fun isSelectableDate(utcTimeMillis: Long): Boolean {
-                val utcCal = Calendar.getInstance(TimeZone.getTimeZone("UTC")).apply {
-                    timeInMillis = utcTimeMillis
-                }
-                val key = "${utcCal.get(Calendar.YEAR)}-${utcCal.get(Calendar.MONTH)}-${utcCal.get(Calendar.DAY_OF_MONTH)}"
-                return snapshotDateKeys.contains(key)
-            }
-
-            override fun isSelectableYear(year: Int): Boolean = true
-        }
-    }
-
-    // Calculate initial date in UTC for the picker
-    val initialPickerDateMillis = remember(initialSelectedDateMillis, recordedTimestamps) {
-        val targetTs = initialSelectedDateMillis ?: recordedTimestamps.firstOrNull() ?: System.currentTimeMillis()
-        val localCal = Calendar.getInstance().apply { timeInMillis = targetTs }
-        Calendar.getInstance(TimeZone.getTimeZone("UTC")).apply {
-            set(localCal.get(Calendar.YEAR), localCal.get(Calendar.MONTH), localCal.get(Calendar.DAY_OF_MONTH), 0, 0, 0)
-            set(Calendar.MILLISECOND, 0)
-        }.timeInMillis
-    }
-
-    val datePickerState = rememberDatePickerState(
-        initialSelectedDateMillis = initialPickerDateMillis,
-        selectableDates = selectableDates
-    )
-
-    DatePickerDialog(
-        onDismissRequest = onDismiss,
-        confirmButton = {
-            Button(
-                onClick = {
-                    datePickerState.selectedDateMillis?.let { utcMillis ->
-                        val utcCal = Calendar.getInstance(TimeZone.getTimeZone("UTC")).apply {
-                            timeInMillis = utcMillis
-                        }
-                        val localCal = Calendar.getInstance().apply {
-                            set(utcCal.get(Calendar.YEAR), utcCal.get(Calendar.MONTH), utcCal.get(Calendar.DAY_OF_MONTH), 0, 0, 0)
-                            set(Calendar.MILLISECOND, 0)
-                        }
-                        onDateSelected(localCal.timeInMillis)
-                    }
-                },
-                colors = ButtonDefaults.buttonColors(containerColor = Moss),
-                shape = RoundedCornerShape(10.dp)
-            ) {
-                Text("Select", color = SurfaceWarm, fontWeight = FontWeight.SemiBold)
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text("Cancel", color = Mute)
-            }
-        },
-        colors = DatePickerDefaults.colors(
-            containerColor = SurfaceWarm
-        ),
-        shape = RoundedCornerShape(18.dp)
-    ) {
-        DatePicker(
-            state = datePickerState,
-            title = {
-                Text(
-                    text = "Snapshot Dates",
-                    style = MaterialTheme.typography.titleMedium,
-                    color = Forest,
-                    modifier = Modifier.padding(start = 24.dp, top = 16.dp)
-                )
-            },
-            headline = {
-                Text(
-                    text = "Select a date with recorded data",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = Mute,
-                    modifier = Modifier.padding(start = 24.dp, bottom = 12.dp)
-                )
-            },
-            colors = DatePickerDefaults.colors(
-                containerColor = SurfaceWarm,
-                titleContentColor = Forest,
-                headlineContentColor = Forest,
-                weekdayContentColor = Bark,
-                subheadContentColor = Forest,
-                yearContentColor = Forest,
-                currentYearContentColor = Moss,
-                selectedYearContentColor = SurfaceWarm,
-                selectedYearContainerColor = Moss,
-                dayContentColor = Ink,
-                disabledDayContentColor = Sand.copy(alpha = 0.35f),
-                selectedDayContentColor = SurfaceWarm,
-                selectedDayContainerColor = Moss,
-                todayContentColor = Leaf,
-                todayDateBorderColor = Leaf
-            )
-        )
-    }
-}
-
-@Composable
-private fun SnapshotCardItem(snapshot: RoomEnvSnapshotEntity) {
     val dateTimeStr = remember(snapshot.recordedAt) {
         val sdf = SimpleDateFormat("MMM d, yyyy • h:mm a", Locale.getDefault())
         sdf.format(Date(snapshot.recordedAt))
@@ -376,7 +185,7 @@ private fun SnapshotCardItem(snapshot: RoomEnvSnapshotEntity) {
                 .fillMaxWidth()
                 .padding(16.dp)
         ) {
-            // Header: Room pill badge & recorded timestamp
+            // Header: Room pill badge & recorded timestamp + Delete action
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -405,10 +214,61 @@ private fun SnapshotCardItem(snapshot: RoomEnvSnapshotEntity) {
                     }
                 }
 
-                Text(
-                    text = dateTimeStr,
-                    style = MaterialTheme.typography.labelSmall,
-                    color = Mute
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        text = dateTimeStr,
+                        style = MaterialTheme.typography.labelSmall,
+                        color = Mute
+                    )
+                    Spacer(modifier = Modifier.width(4.dp))
+                    IconButton(
+                        onClick = { showDeleteDialog = true },
+                        modifier = Modifier.size(28.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.DeleteOutline,
+                            contentDescription = "Delete snapshot",
+                            tint = Mute,
+                            modifier = Modifier.size(16.dp)
+                        )
+                    }
+                }
+            }
+
+            if (showDeleteDialog) {
+                AlertDialog(
+                    onDismissRequest = { showDeleteDialog = false },
+                    title = {
+                        Text(
+                            text = "Delete snapshot?",
+                            fontWeight = FontWeight.Bold,
+                            color = Forest
+                        )
+                    },
+                    text = {
+                        Text(
+                            text = "If deleted, the previous snapshot recorded for ${snapshot.roomTag} will automatically become the active snapshot.",
+                            color = Ink,
+                            fontSize = 14.sp
+                        )
+                    },
+                    confirmButton = {
+                        TextButton(
+                            onClick = {
+                                showDeleteDialog = false
+                                onDeleteSnapshot(snapshot.id)
+                            }
+                        ) {
+                            Text("Delete", color = Terracotta, fontWeight = FontWeight.Bold)
+                        }
+                    },
+                    dismissButton = {
+                        TextButton(onClick = { showDeleteDialog = false }) {
+                            Text("Cancel", color = Forest)
+                        }
+                    },
+                    containerColor = SurfaceWarm,
+                    shape = RoundedCornerShape(16.dp)
                 )
             }
 

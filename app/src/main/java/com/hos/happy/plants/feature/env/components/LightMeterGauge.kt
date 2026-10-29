@@ -101,15 +101,15 @@ fun LightMeterGauge(
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .border(1.dp, Sand, RoundedCornerShape(20.dp)),
+            .border(1.dp, Sand, RoundedCornerShape(16.dp)),
         colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
-        shape = RoundedCornerShape(20.dp),
+        shape = RoundedCornerShape(16.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(20.dp),
+                .padding(18.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             // Top Bar: Sensor/Camera badge + Toggle Button

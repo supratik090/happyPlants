@@ -68,6 +68,15 @@ fun MainScreen(
     val tabs = remember { listOf(NavTab.Task, NavTab.Garden, NavTab.Research, NavTab.Env) }
     var selectedTabIndex by remember { mutableIntStateOf(0) }
 
+    // Track time spent on each individual tab
+    androidx.compose.runtime.DisposableEffect(selectedTabIndex) {
+        val tabName = tabs.getOrNull(selectedTabIndex)?.title ?: "Task"
+        com.hos.happy.plants.data.telemetry.FirebaseTelemetryManager.getInstance()?.onTabEntered(tabName)
+        onDispose {
+            com.hos.happy.plants.data.telemetry.FirebaseTelemetryManager.getInstance()?.onTabExited(tabName)
+        }
+    }
+
     Scaffold(
         bottomBar = {
             NavigationBar(
@@ -135,6 +144,9 @@ fun MainScreen(
                     },
                     onNavigateToGarden = {
                         selectedTabIndex = 1
+                    },
+                    onNavigateToResearch = {
+                        selectedTabIndex = 2
                     },
                     isHighAqi = isHighAqi
                 )

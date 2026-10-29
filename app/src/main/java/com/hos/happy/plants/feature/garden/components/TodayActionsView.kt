@@ -19,18 +19,29 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.CameraAlt
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.ChevronRight
 import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.DoneAll
+import androidx.compose.material.icons.filled.Lightbulb
+import androidx.compose.material.icons.filled.Quiz
 import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Spa
+import androidx.compose.material.icons.filled.SwapHoriz
+import androidx.compose.material.icons.filled.Thermostat
 import androidx.compose.material.icons.filled.WaterDrop
 import androidx.compose.material.icons.filled.Yard
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SwipeToDismissBox
@@ -39,10 +50,15 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberSwipeToDismissBoxState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
@@ -55,6 +71,7 @@ import com.hos.happy.plants.ui.theme.Bark
 import com.hos.happy.plants.ui.theme.Forest
 import com.hos.happy.plants.ui.theme.Ink
 import com.hos.happy.plants.ui.theme.Leaf
+import com.hos.happy.plants.ui.theme.LeafBright
 import com.hos.happy.plants.ui.theme.Moss
 import com.hos.happy.plants.ui.theme.Mute
 import com.hos.happy.plants.ui.theme.Paper
@@ -91,14 +108,17 @@ fun TodayActionsView(
     onMarkAllDoneForSpace: (taskType: String, spaceName: String) -> Unit,
     onOpenSnapshotForSpace: (String) -> Unit = {},
     onAddGardenPhoto: () -> Unit = {},
+    onNavigateToResearch: () -> Unit = {},
+    onNavigateToGarden: () -> Unit = {},
+    onRefreshTasks: () -> Unit = {},
+    onAddPlant: () -> Unit = {},
+    isGardenEmpty: Boolean = false,
+    showSwipeGestureHint: Boolean = false,
     modifier: Modifier = Modifier
 ) {
     val totalTasks = pendingTasks.size + completedTasks.size
-    val progress = if (totalTasks > 0) completedTasks.size.toFloat() / totalTasks.toFloat() else 0f
-
-    val todayDateFormatted = remember {
-        SimpleDateFormat("EEEE, d MMMM", Locale.getDefault()).format(Date())
-    }
+    val progress = if (totalTasks > 0) completedTasks.size.toFloat() / totalTasks.toFloat() else 1f
+    val firstPendingTaskId = pendingTasks.firstOrNull()?.id
 
     // Partition tasks by category
     val waterTasks = pendingTasks.filter { it.taskType == "WATER" }
@@ -112,91 +132,84 @@ fun TodayActionsView(
 
     Column(
         modifier = modifier.fillMaxWidth(),
-        verticalArrangement = Arrangement.spacedBy(22.dp)
+        verticalArrangement = Arrangement.spacedBy(20.dp)
     ) {
         // --- 1. Header Section ---
         Column(
             modifier = Modifier.fillMaxWidth(),
-            verticalArrangement = Arrangement.spacedBy(6.dp)
+            verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
-            Text(
-                text = todayDateFormatted,
-                fontSize = 13.sp,
-                color = TextGrey,
-                fontWeight = FontWeight.Normal
-            )
-
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.Bottom
-            ) {
-                Text(
-                    text = "Today",
-                    fontSize = 28.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = TextDark
-                )
-
-                Column(horizontalAlignment = Alignment.End) {
-                    Text(
-                        text = "${completedTasks.size} / $totalTasks",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = WeeklyGreen
-                    )
-                    Text(
-                        text = "tasks done",
-                        fontSize = 11.sp,
-                        color = TextGrey
-                    )
-                }
-            }
-
-            Spacer(modifier = Modifier.height(2.dp))
-
-            // Progress bar
-            LinearProgressIndicator(
-                progress = { progress },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(6.dp)
-                    .clip(RoundedCornerShape(3.dp)),
-                color = WeeklyGreen,
-                trackColor = TrackColor
-            )
-
-            Spacer(modifier = Modifier.height(2.dp))
-
-            // Subtle swipe guide
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "← Swipe left to skip",
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.Normal,
-                    color = TextGrey
+                    text = "Today",
+                    fontSize = 28.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Forest
                 )
+
+                Column(horizontalAlignment = Alignment.End) {
+                    if (totalTasks == 0) {
+                        Text(
+                            text = "✓ Rest Day",
+                            fontSize = 17.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = WeeklyGreen
+                        )
+                        Text(
+                            text = "all caught up",
+                            fontSize = 11.sp,
+                            color = TextGrey
+                        )
+                    } else {
+                        Text(
+                            text = "${completedTasks.size} / $totalTasks",
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = WeeklyGreen
+                        )
+                        Text(
+                            text = "tasks done",
+                            fontSize = 11.sp,
+                            color = TextGrey
+                        )
+                    }
+                }
+            }
+
+            // Nice botanical green line under Today
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(3.dp)
+                    .clip(RoundedCornerShape(2.dp))
+                    .background(
+                        Brush.horizontalGradient(
+                            colors = listOf(Forest, Moss, Leaf, Sand.copy(alpha = 0.4f))
+                        )
+                    )
+            )
+
+            // Rest day status if all tasks caught up
+            if (pendingTasks.isEmpty()) {
                 Text(
-                    text = "Swipe right to mark done →",
+                    text = "Your plants are rested & happy",
                     fontSize = 12.sp,
-                    fontWeight = FontWeight.Normal,
-                    color = TextGrey
+                    fontWeight = FontWeight.Medium,
+                    color = Forest
                 )
             }
         }
 
         // --- 2. Category: Water ---
         if (waterTasks.isNotEmpty()) {
-            val spacesCount = waterTasks.map { it.spaceName.ifBlank { "Other" } }.distinct().size
             ActivityHeader(
                 icon = Icons.Default.WaterDrop,
                 iconBg = WaterBlue,
-                title = "Water",
-                subtitle = "${waterTasks.size} plants in $spacesCount spaces"
+                title = "Water"
             )
 
             val groupedBySpace = waterTasks.groupBy { it.spaceName.ifBlank { "Other" } }
@@ -212,6 +225,9 @@ fun TodayActionsView(
                             onComplete = { onCompleteTask(task) },
                             onSkip = { onSkipTask(task) }
                         )
+                        if (showSwipeGestureHint && task.id == firstPendingTaskId) {
+                            SwipeGestureVisualBar()
+                        }
                     }
                 }
             }
@@ -219,12 +235,10 @@ fun TodayActionsView(
 
         // --- 3. Category: Clean leaves ---
         if (cleanTasks.isNotEmpty()) {
-            val spacesCount = cleanTasks.map { it.spaceName.ifBlank { "Other" } }.distinct().size
             ActivityHeader(
                 icon = Icons.Default.AutoAwesome,
                 iconBg = CleanPurple,
                 title = "Clean leaves",
-                subtitle = "${cleanTasks.size} plants in $spacesCount spaces",
                 badgeText = if (isHighAqi) "High AQI" else null
             )
 
@@ -241,6 +255,9 @@ fun TodayActionsView(
                             onComplete = { onCompleteTask(task) },
                             onSkip = { onSkipTask(task) }
                         )
+                        if (showSwipeGestureHint && task.id == firstPendingTaskId) {
+                            SwipeGestureVisualBar()
+                        }
                     }
                 }
             }
@@ -248,12 +265,10 @@ fun TodayActionsView(
 
         // --- Category: Feeding Manure (Rule 5 - Priority 3) ---
         if (manureTasks.isNotEmpty()) {
-            val spacesCount = manureTasks.map { it.spaceName.ifBlank { "Other" } }.distinct().size
             ActivityHeader(
                 icon = Icons.Default.Spa,
                 iconBg = CareOchre,
-                title = "Feeding Manure",
-                subtitle = "${manureTasks.size} plants in $spacesCount spaces"
+                title = "Feeding Manure"
             )
 
             val groupedBySpace = manureTasks.groupBy { it.spaceName.ifBlank { "Other" } }
@@ -269,6 +284,9 @@ fun TodayActionsView(
                             onComplete = { onCompleteTask(task) },
                             onSkip = { onSkipTask(task) }
                         )
+                        if (showSwipeGestureHint && task.id == firstPendingTaskId) {
+                            SwipeGestureVisualBar()
+                        }
                     }
                 }
             }
@@ -279,8 +297,7 @@ fun TodayActionsView(
             ActivityHeader(
                 icon = Icons.Default.Yard,
                 iconBg = WeeklyGreen,
-                title = "Plant care",
-                subtitle = "Single-plant tasks, not tied to a space"
+                title = "Plant care"
             )
 
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -290,6 +307,9 @@ fun TodayActionsView(
                         onComplete = { onCompleteTask(task) },
                         onSkip = { onSkipTask(task) }
                     )
+                    if (showSwipeGestureHint && task.id == firstPendingTaskId) {
+                        SwipeGestureVisualBar()
+                    }
                 }
             }
         }
@@ -304,25 +324,49 @@ fun TodayActionsView(
                     .clip(RoundedCornerShape(16.dp))
                     .background(Color.White)
                     .border(1.dp, CardBorderColor, RoundedCornerShape(16.dp))
-                    .padding(24.dp),
+                    .padding(20.dp),
                 contentAlignment = Alignment.Center
             ) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(6.dp)
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    Text("🌿", fontSize = 36.sp)
+                    Text(if (totalTasks == 0) "🌿" else "🌟", fontSize = 34.sp)
                     Text(
-                        text = "All daily tasks completed for today!",
-                        fontSize = 16.sp,
+                        text = if (totalTasks == 0) "All caught up for today!" else "All daily tasks completed!",
+                        fontSize = 17.sp,
                         fontWeight = FontWeight.Bold,
                         color = TextDark
                     )
                     Text(
-                        text = "Your plants are happy and thriving.",
+                        text = if (totalTasks == 0)
+                            "Your plants are well-rested and happy. No watering or routine care due right now."
+                        else
+                            "Great job taking care of your garden today!",
                         fontSize = 13.sp,
-                        color = TextGrey
+                        color = TextGrey,
+                        textAlign = androidx.compose.ui.text.style.TextAlign.Center
                     )
+
+                    Spacer(modifier = Modifier.height(4.dp))
+                    TextButton(
+                        onClick = onRefreshTasks,
+                        shape = RoundedCornerShape(8.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Refresh,
+                            contentDescription = "Re-evaluate",
+                            tint = WeeklyGreen,
+                            modifier = Modifier.size(15.dp)
+                        )
+                        Spacer(modifier = Modifier.width(6.dp))
+                        Text(
+                            text = "Re-evaluate care rules",
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color = WeeklyGreen
+                        )
+                    }
                 }
             }
         }
@@ -391,6 +435,230 @@ fun TodayActionsView(
                 }
             }
         }
+
+        // --- 7. Interactive Botanical Trivia & Plant Identification Quiz ---
+        var triviaTab by remember { mutableStateOf("quiz") } // "quiz" or "fact"
+        var triviaIndex by remember { mutableIntStateOf(0) }
+        val triviaList = remember { PlantTriviaData.items }
+        val currentTrivia = triviaList[triviaIndex % triviaList.size]
+
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            verticalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
+            // Pill switcher between "Identify Plant Quiz" and "Did You Know? Facts"
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(Paper)
+                    .border(1.dp, Sand, RoundedCornerShape(12.dp))
+                    .padding(3.dp),
+                horizontalArrangement = Arrangement.spacedBy(4.dp)
+            ) {
+                Box(
+                    modifier = Modifier
+                        .weight(1f)
+                        .clip(RoundedCornerShape(9.dp))
+                        .background(if (triviaTab == "quiz") Forest else Color.Transparent)
+                        .clickable { triviaTab = "quiz" }
+                        .padding(vertical = 7.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            imageVector = Icons.Default.Quiz,
+                            contentDescription = null,
+                            tint = if (triviaTab == "quiz") Color.White else Forest,
+                            modifier = Modifier.size(14.dp)
+                        )
+                        Spacer(modifier = Modifier.width(6.dp))
+                        Text(
+                            text = "Identify Plant Quiz",
+                            fontSize = 12.sp,
+                            fontWeight = if (triviaTab == "quiz") FontWeight.Bold else FontWeight.Medium,
+                            color = if (triviaTab == "quiz") Color.White else Bark
+                        )
+                    }
+                }
+
+                Box(
+                    modifier = Modifier
+                        .weight(1f)
+                        .clip(RoundedCornerShape(9.dp))
+                        .background(if (triviaTab == "fact") Forest else Color.Transparent)
+                        .clickable { triviaTab = "fact" }
+                        .padding(vertical = 7.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            imageVector = Icons.Default.Lightbulb,
+                            contentDescription = null,
+                            tint = if (triviaTab == "fact") Color.White else Forest,
+                            modifier = Modifier.size(14.dp)
+                        )
+                        Spacer(modifier = Modifier.width(6.dp))
+                        Text(
+                            text = "Did You Know?",
+                            fontSize = 12.sp,
+                            fontWeight = if (triviaTab == "fact") FontWeight.Bold else FontWeight.Medium,
+                            color = if (triviaTab == "fact") Color.White else Bark
+                        )
+                    }
+                }
+            }
+
+            if (triviaTab == "quiz") {
+                PlantIdentificationQuizCard()
+            } else {
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .border(1.dp, Sand, RoundedCornerShape(18.dp)),
+                    colors = CardDefaults.cardColors(containerColor = SurfaceWarm),
+                    shape = RoundedCornerShape(18.dp)
+                ) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(18.dp),
+                        verticalArrangement = Arrangement.spacedBy(10.dp)
+                    ) {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Text(currentTrivia.icon, fontSize = 20.sp)
+                                Spacer(modifier = Modifier.width(8.dp))
+                                Text(
+                                    text = "Did You Know?",
+                                    fontWeight = FontWeight.Bold,
+                                    color = Forest,
+                                    fontSize = 15.sp
+                                )
+                            }
+
+                            Box(
+                                modifier = Modifier
+                                    .clip(RoundedCornerShape(8.dp))
+                                    .background(Leaf.copy(alpha = 0.15f))
+                                    .padding(horizontal = 8.dp, vertical = 3.dp)
+                            ) {
+                                Text(
+                                    text = currentTrivia.category,
+                                    color = Forest,
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+                        }
+
+                        Text(
+                            text = currentTrivia.title,
+                            fontWeight = FontWeight.Bold,
+                            color = Forest,
+                            fontSize = 14.sp
+                        )
+
+                        Text(
+                            text = currentTrivia.fact,
+                            fontSize = 12.sp,
+                            color = Bark,
+                            lineHeight = 18.sp
+                        )
+
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clip(RoundedCornerShape(10.dp))
+                                .background(Paper)
+                                .padding(10.dp)
+                        ) {
+                            Text(
+                                text = "💡 ${currentTrivia.practicalTip}",
+                                fontSize = 11.sp,
+                                color = Forest,
+                                lineHeight = 16.sp
+                            )
+                        }
+
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.End
+                        ) {
+                            TextButton(
+                                onClick = { triviaIndex++ },
+                                shape = RoundedCornerShape(8.dp),
+                                contentPadding = PaddingValues(horizontal = 8.dp, vertical = 2.dp)
+                            ) {
+                                Text("🎲 Next Fact", fontSize = 12.sp, fontWeight = FontWeight.Bold, color = WeeklyGreen)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // --- 8. Explore & Discover: Optional Bonus Activities ---
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            verticalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
+            Text(
+                text = "✨ Explore & Discover",
+                fontSize = 17.sp,
+                fontWeight = FontWeight.Bold,
+                color = TextDark
+            )
+            Text(
+                text = "Things you can do while your plants are resting",
+                fontSize = 12.sp,
+                color = TextGrey
+            )
+
+            // Card 1: Explore 45 species in Research Library
+            OptionalActivityCard(
+                icon = Icons.Default.Search,
+                iconBg = Color(0xFF2E7D32),
+                title = "Explore New Plants",
+                subtitle = "Browse 45 curated indoor varieties in the Research Library",
+                actionLabel = "Open Library",
+                onClick = onNavigateToResearch
+            )
+
+            // Card 2: Environment Lux & Climate Check
+            OptionalActivityCard(
+                icon = Icons.Default.Thermostat,
+                iconBg = Color(0xFFE65100),
+                title = "Test Room Light & Climate",
+                subtitle = "Measure ambient lux with the live light meter to find the best spots",
+                actionLabel = "Check Light",
+                onClick = { onOpenSnapshotForSpace("") }
+            )
+
+            // Card 3: Take a Garden Photo
+            OptionalActivityCard(
+                icon = Icons.Default.CameraAlt,
+                iconBg = Color(0xFF2172E5),
+                title = "Capture Garden Photo",
+                subtitle = "Snap a progress picture of your plants to track leaf growth",
+                actionLabel = "Take Photo",
+                onClick = onAddGardenPhoto
+            )
+
+            // Card 4: AI Disease & Leaf Symptom Check
+            OptionalActivityCard(
+                icon = Icons.Default.Spa,
+                iconBg = Color(0xFFC05621),
+                title = "Plant Health & Disease Scan",
+                subtitle = "Notice any yellow leaves? Upload photos for instant AI pathology diagnosis",
+                actionLabel = "Inspect Plants",
+                onClick = onNavigateToGarden
+            )
+        }
     }
 }
 
@@ -399,7 +667,7 @@ private fun ActivityHeader(
     icon: ImageVector,
     iconBg: Color,
     title: String,
-    subtitle: String,
+    subtitle: String? = null,
     badgeText: String? = null
 ) {
     Row(
@@ -452,11 +720,13 @@ private fun ActivityHeader(
                 }
             }
 
-            Text(
-                text = subtitle,
-                fontSize = 12.sp,
-                color = TextGrey
-            )
+            if (!subtitle.isNullOrBlank()) {
+                Text(
+                    text = subtitle,
+                    fontSize = 12.sp,
+                    color = TextGrey
+                )
+            }
         }
     }
 }
@@ -472,7 +742,7 @@ private fun SpaceSection(
         modifier = Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        // Space header: "Living room  3 plants" | [ Mark all done ]
+        // Space header: "Living"  [1] | [ Mark all done ]
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -482,7 +752,7 @@ private fun SpaceSection(
         ) {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(6.dp)
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 Text(
                     text = spaceName,
@@ -490,27 +760,37 @@ private fun SpaceSection(
                     fontWeight = FontWeight.Bold,
                     color = TextDark
                 )
-                Text(
-                    text = "$plantCount plant${if (plantCount > 1) "s" else ""}",
-                    fontSize = 13.sp,
-                    color = TextGrey
-                )
+                // Symbol with circle containing plant count
+                Box(
+                    modifier = Modifier
+                        .size(20.dp)
+                        .clip(CircleShape)
+                        .background(Moss.copy(alpha = 0.12f)),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = "$plantCount",
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Moss
+                    )
+                }
             }
 
-            // Pill-shaped "Mark all done" button
+            // Circular "Mark all done" sign
             Box(
                 modifier = Modifier
-                    .clip(RoundedCornerShape(50))
-                    .border(1.dp, WeeklyGreen, RoundedCornerShape(50))
-                    .clickable { onMarkAllDone() }
-                    .padding(horizontal = 12.dp, vertical = 4.dp),
+                    .size(28.dp)
+                    .clip(CircleShape)
+                    .background(WeeklyGreen.copy(alpha = 0.12f))
+                    .clickable { onMarkAllDone() },
                 contentAlignment = Alignment.Center
             ) {
-                Text(
-                    text = "Mark all done",
-                    fontSize = 11.sp,
-                    fontWeight = FontWeight.SemiBold,
-                    color = WeeklyGreen
+                Icon(
+                    imageVector = Icons.Default.DoneAll,
+                    contentDescription = "Mark all done",
+                    tint = WeeklyGreen,
+                    modifier = Modifier.size(16.dp)
                 )
             }
         }
@@ -676,6 +956,14 @@ private fun SwipeableTaskRow(
                         color = TextGrey
                     )
                 }
+
+                // Subtle visual cue that card can be swiped horizontally
+                Icon(
+                    imageVector = Icons.Default.SwapHoriz,
+                    contentDescription = null,
+                    tint = TextGrey.copy(alpha = 0.35f),
+                    modifier = Modifier.size(18.dp)
+                )
             }
         }
     }
@@ -872,3 +1160,190 @@ private fun CompletedTaskRow(
         }
     }
 }
+
+@Composable
+private fun OptionalActivityCard(
+    icon: ImageVector,
+    iconBg: Color,
+    title: String,
+    subtitle: String,
+    actionLabel: String,
+    onClick: () -> Unit
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable { onClick() }
+            .border(1.dp, CardBorderColor, RoundedCornerShape(14.dp)),
+        colors = CardDefaults.cardColors(containerColor = Color.White),
+        shape = RoundedCornerShape(14.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(14.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(38.dp)
+                    .clip(RoundedCornerShape(10.dp))
+                    .background(iconBg.copy(alpha = 0.15f)),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    imageVector = icon,
+                    contentDescription = null,
+                    tint = iconBg,
+                    modifier = Modifier.size(20.dp)
+                )
+            }
+
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = title,
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = TextDark
+                )
+                Spacer(modifier = Modifier.height(2.dp))
+                Text(
+                    text = subtitle,
+                    fontSize = 12.sp,
+                    color = TextGrey,
+                    lineHeight = 16.sp
+                )
+            }
+
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(2.dp)
+            ) {
+                Text(
+                    text = actionLabel,
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = iconBg
+                )
+                Icon(
+                    imageVector = Icons.Default.ChevronRight,
+                    contentDescription = null,
+                    tint = iconBg,
+                    modifier = Modifier.size(16.dp)
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun SwipeGestureVisualBar() {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(20.dp))
+            .background(Color.White)
+            .border(1.dp, CardBorderColor, RoundedCornerShape(20.dp))
+            .padding(horizontal = 14.dp, vertical = 6.dp)
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            // Left Skip affordance
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(5.dp)
+            ) {
+                Text(
+                    text = "←",
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = SkipSlate
+                )
+                Box(
+                    modifier = Modifier
+                        .size(16.dp)
+                        .clip(CircleShape)
+                        .background(SkipSlate.copy(alpha = 0.12f)),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Close,
+                        contentDescription = "Skip",
+                        tint = SkipSlate,
+                        modifier = Modifier.size(10.dp)
+                    )
+                }
+                Text(
+                    text = "Skip",
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Medium,
+                    color = SkipSlate
+                )
+            }
+
+            // Center gesture cue
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(4.dp)
+            ) {
+                Box(
+                    modifier = Modifier
+                        .size(3.dp)
+                        .clip(CircleShape)
+                        .background(TextGrey.copy(alpha = 0.35f))
+                )
+                Icon(
+                    imageVector = Icons.Default.SwapHoriz,
+                    contentDescription = "Swipe gesture",
+                    tint = Moss,
+                    modifier = Modifier.size(15.dp)
+                )
+                Box(
+                    modifier = Modifier
+                        .size(3.dp)
+                        .clip(CircleShape)
+                        .background(TextGrey.copy(alpha = 0.35f))
+                )
+            }
+
+            // Right Done affordance
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(5.dp)
+            ) {
+                Text(
+                    text = "Done",
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Medium,
+                    color = WeeklyGreen
+                )
+                Box(
+                    modifier = Modifier
+                        .size(16.dp)
+                        .clip(CircleShape)
+                        .background(WeeklyGreen.copy(alpha = 0.15f)),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Check,
+                        contentDescription = "Done",
+                        tint = WeeklyGreen,
+                        modifier = Modifier.size(10.dp)
+                    )
+                }
+                Text(
+                    text = "→",
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = WeeklyGreen
+                )
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,895 @@
+[
+  {
+    "id": 118,
+    "botanical_name": "Acanthocereus tetragonus",
+    "common_name": "Fairy Castle Cactus",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "फेयरी कैसल कैक्टस",
+      "marathi": "फेअरी कॅसल कॅक्टस",
+      "bengali": "ফেয়ারি ক্যাসেল ক্যাকটাস",
+      "kannada": "ಫೇರಿ ಕ್ಯಾಸಲ್ ಕಳ್ಳಿ",
+      "tamil": "ஃபேரி கேஸில் கற்றாழை",
+      "telugu": "ఫెయిరీ కాజిల్ బ్రహ్మజెముడు"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 7,
+        "max": 10
+      },
+      "monsoon_and_winter": {
+        "min": 14,
+        "max": 25
+      },
+      "note": "Strict soak-and-dry regimen. Allow the entire root ball and potting medium to dry out completely before watering. In monsoon, keep sheltered from rain and water only if stems soften slightly."
+    },
+    "light_lux": {
+      "min_tolerated": 15000,
+      "ideal_min": 35000,
+      "ideal_max": 65000,
+      "max_tolerated": 85000
+    },
+    "humidity_percent": {
+      "min": 25,
+      "max": 50
+    },
+    "temperature_c": {
+      "tolerable_min": 8,
+      "tolerable_max": 40,
+      "ideal_min": 18,
+      "ideal_max": 35
+    },
+    "soil": {
+      "in_simple_words": "Gritty, highly porous, fast-draining cactus mix that holds zero standing water and dries rapidly.",
+      "mix_recipe": "2 parts pumice or volcanic grit + 1 part coarse river sand + 1 part garden soil + 1 part perlite + 0.5 part vermicompost + 1 tbsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to pets and humans, but covered with numerous sharp bristly spines that can cause painful mechanical punctures and skin irritation."
+    },
+    "common_problems": [
+      {
+        "id": "118-etiolation_stretching",
+        "problem": "Etiolation (Skinny, pale, stretched-out tips)",
+        "do_you_see_this_problem": "Are the column tips growing unnaturally narrow, pale yellowish-green, and bending towards windows instead of maintaining tight ribbed turrets?",
+        "solve_it_like_this": [
+          "Gradually move the plant to a brighter spot receiving 4 to 6 hours of morning direct sunlight over 7 to 10 days.",
+          "Avoid placing the cactus deep inside dim rooms or away from direct balcony/window light.",
+          "Severely stretched, weak tips will not thicken; you can carefully snip them off with sterile shears to encourage compact lateral branching."
+        ]
+      },
+      {
+        "id": "118-stem_and_root_rot",
+        "problem": "Basal stem rot and root rot (Overwatering / Monsoon dampness)",
+        "do_you_see_this_problem": "Is the base of the cactus turning brown, black, watery, or mushy, accompanied by a foul smell and collapsing stems?",
+        "solve_it_like_this": [
+          "Immediately unpot the cactus and inspect roots; cut away all soft, blackened, decaying tissue with a sterile blade until only crisp, healthy green/white flesh remains.",
+          "Dust cut surfaces generously with cinnamon powder or systemic fungicide (carbendazim), then let calluses dry in shade for 5 to 7 days.",
+          "Repot healthy uninfected top turrets in fresh, dry gritty succulent soil and withhold water for at least 10 days.",
+          "Never allow rainwater to puddle in pots or leave saucers filled with drainage runoff."
+        ]
+      },
+      {
+        "id": "118-mealybug_infestation",
+        "problem": "Crevice mealybugs (Pseudococcidae)",
+        "do_you_see_this_problem": "Are small, white cottony masses appearing tucked deep between the tight ribs and stem joints?",
+        "solve_it_like_this": [
+          "Dip a cotton bud in 70% isopropyl alcohol and dab directly onto every visible white bug to dissolve their waxy coating instantly.",
+          "Spray a solution of neem oil (5 ml) and mild liquid soap (2 ml) in 1 litre of water during the evening, ensuring it penetrates crevices.",
+          "Isolate the affected cactus from other succulents until completely pest-free."
+        ]
+      },
+      {
+        "id": "118-sunburn_scorching",
+        "problem": "Sunburn and skin bleaching",
+        "do_you_see_this_problem": "Do you see bleached yellow patches or rough brown corky scars on the side facing the blazing afternoon sun?",
+        "solve_it_like_this": [
+          "Provide green shade net (50%) protection during peak Indian summer afternoon hours (12 PM to 4 PM) when temperatures soar above 38°C.",
+          "Always acclimate indoor-grown cacti incrementally before placing them into unshaded open balcony sunlight.",
+          "Scorched patches are permanent scars, but healthy new green growth will emerge from the central apex if lighting is moderated."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Acanthocereus_tetragonus",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Acanthocereus_tetragonus",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Cereus_species_is_it_W_IMG_0744.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Cereus_species_is_it_W_IMG_0744.jpg/330px-Cereus_species_is_it_W_IMG_0744.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/118_fairy_castle_cactus.jpg",
+      "asset_path": "file:///android_asset/images/118_fairy_castle_cactus.jpg"
+    }
+  },
+  {
+    "id": 119,
+    "botanical_name": "Schlumbergera × buckleyi",
+    "common_name": "Christmas Cactus",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "क्रिसमस कैक्टस",
+      "marathi": "ख्रिसमस कॅक्टस",
+      "bengali": "ক্রিসমাস ক্যাকটাস",
+      "kannada": "ಕ್ರಿಸ್‌ಮಸ್ ಕ್ಯಾಕ್ಟಸ್",
+      "tamil": "கிறிஸ்மஸ் கள்ளி",
+      "telugu": "క్రిస్మస్ కాక్టస్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 5
+      },
+      "monsoon_and_winter": {
+        "min": 6,
+        "max": 9
+      },
+      "note": "As a tropical cloud-forest epiphyte, it needs consistently moist but well-drained soil. Never let roots sit in water or dry out bone-dry. Reduce watering slightly in autumn to induce bud set."
+    },
+    "light_lux": {
+      "min_tolerated": 8000,
+      "ideal_min": 15000,
+      "ideal_max": 30000,
+      "max_tolerated": 45000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 35,
+      "ideal_min": 16,
+      "ideal_max": 26
+    },
+    "soil": {
+      "in_simple_words": "Airy, humus-rich, loose epiphytic mix that retains gentle moisture while allowing swift drainage and root oxygenation.",
+      "mix_recipe": "2 parts cocopeat or rich leaf mould + 1 part coarse perlite + 1 part pine bark chips or coconut husk chunks + 1 part vermicompost",
+      "ph_min": 5.5,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to dogs, cats, and humans according to the ASPCA. Has no true sharp spines, making it exceptionally child and pet safe."
+    },
+    "common_problems": [
+      {
+        "id": "119-bud_drop",
+        "problem": "Bud blast (Dropping unopened flower buds)",
+        "do_you_see_this_problem": "Do delicate flower buds suddenly shrivel and drop off before opening?",
+        "solve_it_like_this": [
+          "Keep the plant in a stable location once buds develop; avoid moving, rotating, drafts, air conditioning vents, or drastic temperature changes.",
+          "Maintain evenly moist soil—do not let the pot dry out completely or sit waterlogged while flowering.",
+          "Protect from dry hot wind drafts in early winter."
+        ]
+      },
+      {
+        "id": "119-wrinkled_limp_cladodes",
+        "problem": "Wrinkled, drooping leaf pads",
+        "do_you_see_this_problem": "Are the flattened stem segments looking dehydrated, wrinkled, thin, and limp?",
+        "solve_it_like_this": [
+          "Check root health: if soil is parched, give a thorough deep watering; if soil is wet, roots have rotted from poor drainage.",
+          "If roots have rotted, trim rotten portions, repot into a porous epiphytic bark-perlite mix, and water moderately.",
+          "Increase ambient humidity by placing the pot on a pebble tray filled with water."
+        ]
+      },
+      {
+        "id": "119-failure_to_bloom",
+        "problem": "Failure to produce winter blooms",
+        "do_you_see_this_problem": "Is the cactus producing lush green growth but failing to develop any flower buds in winter?",
+        "solve_it_like_this": [
+          "Provide 6 to 8 weeks of cool autumn nights (13°C to 18°C) along with 12 to 14 hours of continuous, uninterrupted darkness each night starting around October.",
+          "Avoid placing the plant in rooms where artificial indoor lights remain on late into the evening.",
+          "Withhold nitrogen fertilizers during autumn to allow dormant bud initiation."
+        ]
+      },
+      {
+        "id": "119-reddish_purple_sun_stress",
+        "problem": "Reddish or purplish leaf discoloration",
+        "do_you_see_this_problem": "Are the deep green leaf segments turning reddish, maroon, or purple?",
+        "solve_it_like_this": [
+          "Move away from harsh direct sunlight to a bright spot with gentle, filtered morning light or dappled shade.",
+          "Shield the plant from hot afternoon balcony heatwaves exceeding 35°C.",
+          "Check fertiliser balance; mild phosphorus supplementation can help if light is already properly shaded."
+        ]
+      },
+      {
+        "id": "119-stem_and_root_rot",
+        "problem": "Fungal basal rot (Stem collapse at soil level)",
+        "do_you_see_this_problem": "Are lower stem segments turning brown, translucent, watery, and slumping over at soil level?",
+        "solve_it_like_this": [
+          "Cut away rotten segments above healthy green joints with a sterilized blade.",
+          "Re-root healthy green top segments easily in moist perlite or cocopeat.",
+          "Ensure the container has open drainage holes and replace heavy garden soil with airy epiphytic mix."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Schlumbergera",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Schlumbergera",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Cactus_de_no%C3%ABl_rev.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Cactus_de_no%C3%ABl_rev.jpg/330px-Cactus_de_no%C3%ABl_rev.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/119_christmas_cactus.jpg",
+      "asset_path": "file:///android_asset/images/119_christmas_cactus.jpg"
+    }
+  },
+  {
+    "id": 120,
+    "botanical_name": "Rhipsalidopsis gaertneri",
+    "common_name": "Easter Cactus",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "ईस्टर कैक्टस",
+      "marathi": "ईस्टर कॅक्टस",
+      "bengali": "ইস্টার ক্যাকটাস",
+      "kannada": "ಈಸ್ಟರ್ ಕ್ಯಾಕ್ಟಸ್",
+      "tamil": "ஈஸ்டர் கள்ளி",
+      "telugu": "ఈస్టర్ కాక్టస్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 6
+      },
+      "monsoon_and_winter": {
+        "min": 7,
+        "max": 10
+      },
+      "note": "Epiphytic forest cactus requiring evenly moist soil with superior airflow around roots. Reduce watering during winter dormancy (Nov-Jan) to induce flowering, then resume regular watering once buds appear in spring."
+    },
+    "light_lux": {
+      "min_tolerated": 8000,
+      "ideal_min": 15000,
+      "ideal_max": 28000,
+      "max_tolerated": 40000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 35,
+      "ideal_min": 15,
+      "ideal_max": 26
+    },
+    "soil": {
+      "in_simple_words": "Fibrous, well-aerated, moisture-retaining but free-draining organic mix mimicking tropical cloud-forest bark crevices.",
+      "mix_recipe": "2 parts leaf mould or aged cocopeat + 1 part coarse perlite + 1 part orchid bark or coconut husk chips + 1 part vermicompost",
+      "ph_min": 5.5,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to dogs, cats, and humans. Lacks rigid spines, with only tiny soft bristles on segment margins."
+    },
+    "common_problems": [
+      {
+        "id": "120-segment_dropping",
+        "problem": "Segment drop (Stem segments snapping off)",
+        "do_you_see_this_problem": "Are green stem pads falling off at their joints upon the slightest touch or watering disturbance?",
+        "solve_it_like_this": [
+          "Prevent severe moisture stress; never let the root zone dry out completely between waterings.",
+          "Avoid moving, repotting, or changing the plant orientation once floral buds appear.",
+          "Maintain steady ambient humidity and shield from dry hot wind drafts in spring."
+        ]
+      },
+      {
+        "id": "120-bud_shriveling",
+        "problem": "Bud blast (Buds shriveling before opening)",
+        "do_you_see_this_problem": "Do tiny spring buds turn brown, dry up, and drop without unfurling star-shaped flowers?",
+        "solve_it_like_this": [
+          "Do not let soil dry out completely once buds have formed in late winter and early spring.",
+          "Avoid hot dry air blasts from room heaters or AC units.",
+          "Provide consistent bright indirect light without moving the container."
+        ]
+      },
+      {
+        "id": "120-root_rot",
+        "problem": "Root and collar rot (Waterlogged soil)",
+        "do_you_see_this_problem": "Are base segments turning dull, water-soaked, dark brown, and collapsing?",
+        "solve_it_like_this": [
+          "Stop watering immediately and check drainage holes for clogs.",
+          "Use light, chunky epiphytic potting mix with perlite and bark rather than dense clayey garden soil.",
+          "Salvage healthy uninfected top segments by taking cuttings and rooting in fresh moist perlite."
+        ]
+      },
+      {
+        "id": "120-mealybug_infestation",
+        "problem": "Mealybugs in joint crevices",
+        "do_you_see_this_problem": "Are fuzzy white insect clusters settling into the bristled nodes between stem pads?",
+        "solve_it_like_this": [
+          "Dab visible insects with a cotton swab dipped in 70% rubbing alcohol.",
+          "Apply an organic cold-pressed neem oil spray (5 ml neem oil + 2 ml liquid soap per litre of water) in the evening.",
+          "Inspect leaf segment margins regularly and isolate from infected plants."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Rhipsalidopsis_gaertneri",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Rhipsalidopsis_gaertneri",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Hatiora_gaertneri.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Hatiora_gaertneri.jpg/330px-Hatiora_gaertneri.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/120_easter_cactus.jpg",
+      "asset_path": "file:///android_asset/images/120_easter_cactus.jpg"
+    }
+  },
+  {
+    "id": 121,
+    "botanical_name": "Portulacaria afra",
+    "common_name": "Elephant Bush (Mini Jade / Jade Shrub)",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "मिनी जेड / हाथी झाड़ी",
+      "marathi": "मिनी जेड / हत्ती झाड",
+      "bengali": "মিনি জেড / হাতি ঝোপ",
+      "kannada": "ಮಿನಿ ಜೇಡ್ / ಆನೆ ಪೊದೆ",
+      "tamil": "மினி ஜேட் / யானைப் புதர்",
+      "telugu": "మినీ జేడ్ / ఏనుగు పొద"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 5
+      },
+      "monsoon_and_winter": {
+        "min": 7,
+        "max": 12
+      },
+      "note": "Thrives on deep soakings followed by thorough drying of the topsoil. In hot summer balconies, it transpires quickly and needs water twice a week; in monsoon, protect from prolonged rain spells to prevent trunk rot."
+    },
+    "light_lux": {
+      "min_tolerated": 15000,
+      "ideal_min": 35000,
+      "ideal_max": 75000,
+      "max_tolerated": 100000
+    },
+    "humidity_percent": {
+      "min": 25,
+      "max": 60
+    },
+    "temperature_c": {
+      "tolerable_min": 5,
+      "tolerable_max": 45,
+      "ideal_min": 18,
+      "ideal_max": 36
+    },
+    "soil": {
+      "in_simple_words": "Gritty, highly porous, fast-draining succulent soil that prevents water pooling around roots.",
+      "mix_recipe": "2 parts garden loam + 2 parts coarse sand or perlite + 1 part vermicompost + 1 part pumice or gravel grit + 1 tbsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to dogs, cats, and humans. In South Africa, the tart, sour leaves are eaten fresh in salads and traditional cuisine."
+    },
+    "common_problems": [
+      {
+        "id": "121-sudden_leaf_drop",
+        "problem": "Sudden mass leaf shedding",
+        "do_you_see_this_problem": "Are numerous small plump green leaves suddenly littering the soil below the plant?",
+        "solve_it_like_this": [
+          "Identify whether soil is soggy (overwatering) or bone dry (underwatering); Portulacaria afra sheds leaves readily when roots are stressed.",
+          "Avoid sudden dramatic relocation from full balcony sun to dark indoor rooms.",
+          "Ensure proper drainage and water only when the top few centimeters of soil feel dry."
+        ]
+      },
+      {
+        "id": "121-root_rot_black_stems",
+        "problem": "Root rot and black squishy stems",
+        "do_you_see_this_problem": "Are reddish-brown woody stems turning squishy, wrinkled, dark brown or black at the soil line?",
+        "solve_it_like_this": [
+          "Unpot immediately and slice away all rotted stems until healthy green vascular tissue is reached.",
+          "Allow clean branch cuttings to callous in the shade for 3 to 4 days, then root them in dry coarse sand or perlite.",
+          "Ensure the container has open drainage holes and shield from monsoon waterlogging."
+        ]
+      },
+      {
+        "id": "121-etiolation_leggy_growth",
+        "problem": "Leggy, stretched stems with sparse leaves",
+        "do_you_see_this_problem": "Are branches growing long, weak, floppy, with wide spacing between leaf nodes?",
+        "solve_it_like_this": [
+          "Move to a spot receiving at least 4 to 6 hours of direct sunlight daily.",
+          "Prune back weak, elongated branch tips to stimulate dense, compact, bushy bonsai branching.",
+          "Rotate the pot weekly so all sides receive balanced light."
+        ]
+      },
+      {
+        "id": "121-mealybug_infestation",
+        "problem": "Mealybugs on tender leaf nodes",
+        "do_you_see_this_problem": "Are white cotton-like specks clustered tightly around the leaf axils and tender new shoot tips?",
+        "solve_it_like_this": [
+          "Spray with organic neem oil emulsion (5 ml neem oil + 2 ml liquid soap per litre of water) in the evening.",
+          "Dab stubborn clusters directly with 70% isopropyl alcohol on a cotton bud.",
+          "Rinse foliage thoroughly with a gentle stream of water the next morning."
+        ]
+      },
+      {
+        "id": "121-shriveled_deflated_leaves",
+        "problem": "Wrinkled, dull, shriveled foliage",
+        "do_you_see_this_problem": "Are leaves losing their plump gloss and looking crinkled or puckered like raisins?",
+        "solve_it_like_this": [
+          "Deeply soak the pot until water runs freely out of the drainage holes.",
+          "In hot dry summer months (May-June), increase watering frequency to every 3 to 4 days if kept in full sun.",
+          "Foliage will rehydrate and plump up within 24 to 48 hours after watering."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Portulacaria_afra",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Portulacaria_afra",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Portulacaria_afra_02.JPG/3840px-Portulacaria_afra_02.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Portulacaria_afra_02.JPG/330px-Portulacaria_afra_02.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/121_elephant_bush.jpg",
+      "asset_path": "file:///android_asset/images/121_elephant_bush.jpg"
+    }
+  },
+  {
+    "id": 122,
+    "botanical_name": "Delosperma cooperi",
+    "common_name": "Ice Plant (Hardy Ice Plant)",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "आइस प्लांट / बर्फ का पौधा",
+      "marathi": "आईस प्लँट / बर्फ वनस्पती",
+      "bengali": "আইস প্ল্যান্ট",
+      "kannada": "ಐಸ್ ಪ್ಲಾಂಟ್",
+      "tamil": "ஐஸ் செடி",
+      "telugu": "ఐస్ ప్లాంట్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 6
+      },
+      "monsoon_and_winter": {
+        "min": 8,
+        "max": 14
+      },
+      "note": "Extremely drought hardy once established. In summer balconies, water when top 3 cm dries completely. During heavy Indian monsoons, keep sheltered from continuous rains to prevent crown decay."
+    },
+    "light_lux": {
+      "min_tolerated": 20000,
+      "ideal_min": 45000,
+      "ideal_max": 85000,
+      "max_tolerated": 100000
+    },
+    "humidity_percent": {
+      "min": 25,
+      "max": 65
+    },
+    "temperature_c": {
+      "tolerable_min": 2,
+      "tolerable_max": 42,
+      "ideal_min": 16,
+      "ideal_max": 34
+    },
+    "soil": {
+      "in_simple_words": "Ultra-sandy, lean, gritty mineral soil that sheds water instantly and prevents wet roots.",
+      "mix_recipe": "2 parts coarse river sand or fine gravel + 1 part garden loam + 1 part perlite or pumice + 0.5 part vermicompost",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to dogs, cats, and humans. Safe for family balconies and gardens."
+    },
+    "common_problems": [
+      {
+        "id": "122-crown_and_root_rot",
+        "problem": "Crown rot and stem melting during monsoon",
+        "do_you_see_this_problem": "Are trailing succulent stems turning translucent, mushy, black, and dying off near the center crown?",
+        "solve_it_like_this": [
+          "Cut away all decaying stems immediately with clean scissors.",
+          "Move the pot to a rain-sheltered, well-ventilated bright balcony corner.",
+          "Apply a thin layer of coarse gravel or pumice mulch on the soil surface to elevate creeping stems above moist soil.",
+          "Drench sparingly with a copper-based fungicide or systemic carbendazim if fungal rot persists."
+        ]
+      },
+      {
+        "id": "122-failure_to_bloom_closed_flowers",
+        "problem": "Lack of blooms or flowers refusing to open",
+        "do_you_see_this_problem": "Are magenta daisy-like flowers failing to form or refusing to open?",
+        "solve_it_like_this": [
+          "Ensure the plant receives at least 6 hours of full direct sun; blossoms are heliotropic and only open under bright sunlight.",
+          "Avoid high-nitrogen fertilizers which cause excessive leaf growth and inhibit flower buds.",
+          "Feed with a high-potash, low-nitrogen bloom booster fertiliser every 60 days during active spring/summer."
+        ]
+      },
+      {
+        "id": "122-straggly_etiolated_mats",
+        "problem": "Straggly, thin, leggy stems",
+        "do_you_see_this_problem": "Are stems trailing weakly with wide gaps between succulent cylindrical leaves?",
+        "solve_it_like_this": [
+          "Prune back overgrown straggly stems by one-third after flowering to stimulate dense, compact branching.",
+          "Move from partial shade to full unobstructed outdoor balcony sunlight.",
+          "Root pruned tip cuttings directly in sandy soil to fill out bare spots in the pot."
+        ]
+      },
+      {
+        "id": "122-aphids_on_flower_buds",
+        "problem": "Aphids clustering on buds",
+        "do_you_see_this_problem": "Are tiny green or black sap-sucking bugs clustering around tender developing floral calyxes?",
+        "solve_it_like_this": [
+          "Dislodge pests with a sharp spray of water in the morning.",
+          "Spray with organic neem oil solution (5 ml/L + 2 ml mild liquid soap) every 7 days.",
+          "Ensure good air circulation around crowded trailing stems."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Delosperma_cooperi",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Delosperma_cooperi",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Delosperma_March_2015-2.jpg/3840px-Delosperma_March_2015-2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Delosperma_March_2015-2.jpg/330px-Delosperma_March_2015-2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/122_ice_plant.jpg",
+      "asset_path": "file:///android_asset/images/122_ice_plant.jpg"
+    }
+  },
+  {
+    "id": 123,
+    "botanical_name": "Curio talinoides",
+    "common_name": "Blue Chalksticks",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "ब्लू चॉकस्टिक्स / नीला चॉक पौधा",
+      "marathi": "ब्लू चॉकस्टिक्स",
+      "bengali": "ব্লু চকস্টিকস",
+      "kannada": "ಬ್ಲೂ ಚಾಕ್‌ಸ್ಟಿಕ್ಸ್",
+      "tamil": "ப்ளூ சாக்டிக்ஸ்",
+      "telugu": "బ్లూ చాక్‌స్టిక్స్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 5,
+        "max": 8
+      },
+      "monsoon_and_winter": {
+        "min": 10,
+        "max": 18
+      },
+      "note": "Thrives on deep infrequent soakings. Allow entire soil mix to dry completely before watering. Always water at the base to protect the delicate silvery-blue farina coating from washing away."
+    },
+    "light_lux": {
+      "min_tolerated": 15000,
+      "ideal_min": 35000,
+      "ideal_max": 75000,
+      "max_tolerated": 95000
+    },
+    "humidity_percent": {
+      "min": 25,
+      "max": 55
+    },
+    "temperature_c": {
+      "tolerable_min": 5,
+      "tolerable_max": 42,
+      "ideal_min": 18,
+      "ideal_max": 34
+    },
+    "soil": {
+      "in_simple_words": "Mineral-rich, gritty, sandy succulent soil with ultra-fast drainage and low organic matter.",
+      "mix_recipe": "2 parts pumice or crushed gravel + 1 part coarse sand + 1 part garden soil + 0.5 part vermicompost + 1 tbsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Contains pyrrolizidine alkaloids toxic to dogs, cats, and horses if ingested, which can cause liver damage, drooling, lethargy, and vomiting. Keep elevated away from pets."
+    },
+    "common_problems": [
+      {
+        "id": "123-loss_of_blue_color_greening",
+        "problem": "Greening and loss of chalky blue color",
+        "do_you_see_this_problem": "Are the cylindrical upright leaves turning plain dull green and losing their silvery-blue powdery hue?",
+        "solve_it_like_this": [
+          "Move the pot to full direct sunlight for at least 5 to 6 hours daily; the vivid blue epicuticular wax (farina) develops as a natural sun shield.",
+          "Avoid dark indoor placement or heavily shaded balconies.",
+          "Allow potting soil to dry out thoroughly between waterings to encourage compact blue growth."
+        ]
+      },
+      {
+        "id": "123-farina_coating_rubbed_off",
+        "problem": "Damaged or smudged powdery farina wax",
+        "do_you_see_this_problem": "Do leaves have dark shiny fingerprint smudges or water droplet marks where the chalky white powder rubbed off?",
+        "solve_it_like_this": [
+          "Avoid handling the foliage; the delicate powdery farina does not regenerate on mature leaves once wiped off.",
+          "Never use forceful overhead hose sprays or leaf shine chemicals.",
+          "Always bottom-water or use a narrow-spout watering can directed cleanly at the soil surface."
+        ]
+      },
+      {
+        "id": "123-stem_and_root_rot",
+        "problem": "Stem blackening and basal root rot",
+        "do_you_see_this_problem": "Are stems softening, turning dark brown or black at the soil line, and toppling over?",
+        "solve_it_like_this": [
+          "Immediately stop watering and unpot the plant.",
+          "Cut away black decayed stem portions until crisp, clean green tissue is exposed.",
+          "Let healthy stem cuttings callous in shade for 4 to 5 days, then insert into dry gritty sand or pumice to re-root.",
+          "Shelter containers from monsoon downpours."
+        ]
+      },
+      {
+        "id": "123-shriveled_lower_leaves",
+        "problem": "Shriveled lower leaves",
+        "do_you_see_this_problem": "Are bottom leaves shriveling into paper-dry husks while upper leaves remain firm?",
+        "solve_it_like_this": [
+          "Gently pluck away dried paper-like lower leaves to keep the base tidy and prevent pest harbourage.",
+          "Natural lower leaf reabsorption is normal as stems mature upright; if all leaves pucker simultaneously, give a deep watering."
+        ]
+      },
+      {
+        "id": "123-mealybugs_at_leaf_nodes",
+        "problem": "Mealybug infestation at leaf bases",
+        "do_you_see_this_problem": "Are white cottony residues nestled between the upright leaf bases and stems?",
+        "solve_it_like_this": [
+          "Dab individual mealybug colonies with an alcohol-dipped cotton bud to kill pests without wiping farina from surrounding leaves.",
+          "Apply systemic imidacloprid soil drench (0.5 ml/L) if mealybugs hide deep within clustered stems.",
+          "Keep pot in an open, breezy spot to deter sap-sucking insects."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Curio_talinoides",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Curio_talinoides",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Senecio_talinoides.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Senecio_talinoides.jpg/330px-Senecio_talinoides.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/123_blue_chalksticks.jpg",
+      "asset_path": "file:///android_asset/images/123_blue_chalksticks.jpg"
+    }
+  },
+  {
+    "id": 124,
+    "botanical_name": "Graptopetalum paraguayense",
+    "common_name": "Ghost Plant (Mother of Pearl)",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "घोस्ट प्लांट / पर्ल पौधा",
+      "marathi": "घोस्ट प्लँट",
+      "bengali": "ঘোস্ট প্ল্যান্ট",
+      "kannada": "ಘೋಸ್ಟ್ ಪ್ಲಾಂಟ್",
+      "tamil": "கோஸ்ட் செடி",
+      "telugu": "ఘోస్ట్ ప్లాంట్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 5,
+        "max": 8
+      },
+      "monsoon_and_winter": {
+        "min": 10,
+        "max": 18
+      },
+      "note": "Soak and dry regimen. Highly tolerant of neglect. Never allow water to settle inside the central rosette cups during monsoon, as trapped moisture quickly causes black rot."
+    },
+    "light_lux": {
+      "min_tolerated": 12000,
+      "ideal_min": 30000,
+      "ideal_max": 70000,
+      "max_tolerated": 90000
+    },
+    "humidity_percent": {
+      "min": 25,
+      "max": 60
+    },
+    "temperature_c": {
+      "tolerable_min": 4,
+      "tolerable_max": 42,
+      "ideal_min": 16,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Very gritty, porous, fast-draining succulent soil that sheds excess water immediately.",
+      "mix_recipe": "2 parts coarse sand or perlite + 1 part garden loam + 1 part pumice or crushed brick grit + 0.5 part vermicompost + 1 tbsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.5
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to cats, dogs, and children according to ASPCA animal poison control."
+    },
+    "common_problems": [
+      {
+        "id": "124-etiolation_stretching_rosettes",
+        "problem": "Stretched rosettes and leggy stems (Etiolation)",
+        "do_you_see_this_problem": "Are rosettes losing their tight, compact lotus-like shape, stretching out on long weak stems with pale green centers?",
+        "solve_it_like_this": [
+          "Gradually increase direct sunlight to 5 to 6 hours daily; full sun induces gorgeous pinkish-lavender and opalescent hues.",
+          "To fix severely elongated stems, 'behead' the top rosette with 3 cm of stem, let dry for 3 days, and replant in gritty soil.",
+          "Leave the bare rooted stem in the pot—it will produce multiple new baby rosettes along its length."
+        ]
+      },
+      {
+        "id": "124-rosette_crown_rot",
+        "problem": "Crown rot from water trapped in rosettes",
+        "do_you_see_this_problem": "Are central rosette leaves turning black, translucent, watery, and sloughing off at a touch?",
+        "solve_it_like_this": [
+          "Never pour water directly into the center of the rosette cup; always water the soil surface.",
+          "Blow out any trapped rainwater or droplets from the rosette center using a bulb blower after heavy showers.",
+          "Remove rotted leaves immediately with sterilized tweezers and keep in a breezy, dry location."
+        ]
+      },
+      {
+        "id": "124-leaf_drop_brittle_shedding",
+        "problem": "Plump leaves dropping easily when touched",
+        "do_you_see_this_problem": "Are perfectly healthy-looking plump leaves dropping off the stem if bumped or touched?",
+        "solve_it_like_this": [
+          "Avoid frequent handling; brittle leaf detachment is the plant's natural vegetative propagation adaptation.",
+          "If shedding is accompanied by yellowing translucent leaves, check for root rot caused by wet soil.",
+          "Simply place all fallen healthy leaves flat on dry potting mix; each will sprout tiny roots and a baby plant within 2 to 3 weeks!"
+        ]
+      },
+      {
+        "id": "124-mealybug_infestation",
+        "problem": "Mealybug colonies between lower leaves",
+        "do_you_see_this_problem": "Are fuzzy white cotton-like insect colonies hiding between tightly packed lower rosette leaves?",
+        "solve_it_like_this": [
+          "Remove old dried leaves from the base of the stem where mealybugs frequently nest.",
+          "Swab visible pests with 70% rubbing alcohol on a cotton q-tip.",
+          "Spray thoroughly with neem oil emulsion (5 ml neem oil + 2 ml liquid soap per litre) in the evening."
+        ]
+      },
+      {
+        "id": "124-sunburn_blemishes",
+        "problem": "Sunburn patches and thermal scarring",
+        "do_you_see_this_problem": "Are irregular scorched brown or bleached white patches appearing on upper leaves following a heatwave?",
+        "solve_it_like_this": [
+          "Provide 50% green shade net during extreme peak Indian summer heatwaves (temperatures exceeding 40°C in May-June).",
+          "Never move a shade-grown ghost plant directly into harsh unshaded noon sun without a 10-day progressive transition.",
+          "Damaged leaves will eventually be replaced as new healthy rosettes grow from the center."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Graptopetalum_paraguayense",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Graptopetalum_paraguayense",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/%28MHNT%29_Graptopetalum_paraguayense_-_leaves.jpg/3840px-%28MHNT%29_Graptopetalum_paraguayense_-_leaves.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/%28MHNT%29_Graptopetalum_paraguayense_-_leaves.jpg/330px-%28MHNT%29_Graptopetalum_paraguayense_-_leaves.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/124_ghost_plant.jpg",
+      "asset_path": "file:///android_asset/images/124_ghost_plant.jpg"
+    }
+  },
+  {
+    "id": 125,
+    "botanical_name": "Echeveria setosa",
+    "common_name": "Mexican Firecracker (Echeveria)",
+    "popularity_score": 6,
+    "local_names": {
+      "hindi": "मैक्सिकन फायरक्रैकर / रोयेंदार एचिवेरिया",
+      "marathi": "मेक्सिकन फायरक्रॅकर",
+      "bengali": "মেক্সিকান ফায়ারক্র্যাকার",
+      "kannada": "ಮೆಕ್ಸಿಕನ್ ಫೈರ್‌ಕ್ರ್ಯಾಕರ್",
+      "tamil": "மெக்ஸிகன் ஃபயர்கிராக்கர்",
+      "telugu": "మెక్సికన్ ఫైర్‌క్రాకర్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 6,
+        "max": 9
+      },
+      "monsoon_and_winter": {
+        "min": 12,
+        "max": 20
+      },
+      "note": "CRITICAL: Never wet the fuzzy foliage. The dense fine white hairs trap water droplets, leading to lethal crown mold and rot. Water exclusively via bottom-soaking or with a narrow spout at the soil edge."
+    },
+    "light_lux": {
+      "min_tolerated": 12000,
+      "ideal_min": 25000,
+      "ideal_max": 55000,
+      "max_tolerated": 75000
+    },
+    "humidity_percent": {
+      "min": 25,
+      "max": 55
+    },
+    "temperature_c": {
+      "tolerable_min": 7,
+      "tolerable_max": 38,
+      "ideal_min": 16,
+      "ideal_max": 28
+    },
+    "soil": {
+      "in_simple_words": "Ultra-aerated, gritty, quick-drying succulent mix topped with gravel mulch to keep fuzzy lower leaves away from moist soil.",
+      "mix_recipe": "2 parts pumice or fine volcanic gravel + 1 part coarse sand + 1 part perlite + 1 part cocopeat or garden loam + 0.5 part vermicompost",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 60,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Completely non-toxic to dogs, cats, and humans. The soft white hairs are harmless and non-stinging."
+    },
+    "common_problems": [
+      {
+        "id": "125-fuzzy_leaf_fungal_rot",
+        "problem": "Crown rot and fungal mold from wet hairy leaves",
+        "do_you_see_this_problem": "Are fuzzy leaves turning mushy, greyish-brown, or rotting from the center crown outwards?",
+        "solve_it_like_this": [
+          "Strictly bottom-water by placing the pot in a shallow tray of water for 15 to 20 minutes until the base absorbs moisture, or use a squeeze bottle to water the soil beneath leaves.",
+          "Never allow overhead monsoon rains to hit the plant; keep strictly under a roof or balcony awning.",
+          "Remove rotted leaves with tweezers, dusting the wound with cinnamon powder or fungicide.",
+          "Ensure steady air circulation around the pot."
+        ]
+      },
+      {
+        "id": "125-lower_leaf_rot_contact",
+        "problem": "Basal leaf decay from contact with damp soil",
+        "do_you_see_this_problem": "Are the bottom-most fuzzy leaves resting against the soil turning soggy, dark, and disintegrating?",
+        "solve_it_like_this": [
+          "Apply a 1 cm top-dressing of clean coarse gravel, pumice, or baked clay pebbles over the soil so fuzzy leaves rest on dry stones.",
+          "Regularly clear out dead shriveled bottom leaves with tweezers.",
+          "Ensure the potting mix is ultra-gritty and drains within seconds."
+        ]
+      },
+      {
+        "id": "125-etiolation_loose_rosette",
+        "problem": "Etiolation (Flattened, loose rosette with pale center)",
+        "do_you_see_this_problem": "Is the rosette losing its tight, hemispherical shape, flattening out, and stretching upwards with pale green center leaves?",
+        "solve_it_like_this": [
+          "Provide 4 to 6 hours of bright morning sunlight or filtered bright balcony light.",
+          "Avoid hot direct afternoon sun during peak summer which can scorch the leaf tips.",
+          "Rotate the pot every few days to promote symmetrical, compact rosette growth."
+        ]
+      },
+      {
+        "id": "125-mealybug_infestation",
+        "problem": "Mealybugs hidden in hairy foliage",
+        "do_you_see_this_problem": "Are sticky white insects or cottony wax hidden deep within the hair-covered leaves and flower stalks?",
+        "solve_it_like_this": [
+          "Carefully spot-treat colonies with a fine paintbrush or cotton swab dipped in 70% isopropyl alcohol.",
+          "Avoid heavy oily sprays that can mat down the delicate white hair covering.",
+          "Use a systemic imidacloprid root drench if pests persist deep in the rosette core."
+        ]
+      },
+      {
+        "id": "125-heat_dormancy_shriveling",
+        "problem": "Summer heat stress and dormancy collapse",
+        "do_you_see_this_problem": "Is growth completely halted with rosettes closing up tightly and drooping during extreme summer heatwaves (>38°C)?",
+        "solve_it_like_this": [
+          "Echeveria setosa goes semi-dormant during scorching Indian summer heat; move to the coolest, well-ventilated, shaded balcony spot.",
+          "Cease all fertilising during peak heatwaves.",
+          "Water only sparingly around the pot rim in late evening to prevent root desiccation without waterlogging dormant roots."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Echeveria_setosa",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Echeveria_setosa",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Echeveriaciliata.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Echeveriaciliata.jpg/330px-Echeveriaciliata.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/125_mexican_firecracker.jpg",
+      "asset_path": "file:///android_asset/images/125_mexican_firecracker.jpg"
+    }
+  }
+]

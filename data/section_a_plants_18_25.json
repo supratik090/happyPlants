@@ -1,0 +1,813 @@
+[
+  {
+    "id": 18,
+    "botanical_name": "Begonia maculata",
+    "common_name": "Polka Dot Begonia",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "पोल्का डॉट बेगोनिया",
+      "marathi": "पोल्का डॉट बेगोनिया",
+      "bengali": "পোলকা ডট বেগোনিয়া",
+      "kannada": "ಪೋಲ್ಕಾ ಡಾಟ್ ಬೆಗೋನಿಯಾ",
+      "tamil": "போல்கா டாட் பிகோனியா",
+      "telugu": "పోల్కా డాట్ బెగోనియా"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 5
+      },
+      "monsoon_and_winter": {
+        "min": 6,
+        "max": 9
+      },
+      "note": "Check first: water only when the top 2–3 cm of soil feels dry. Never let the pot sit in standing water or splash water directly on foliage."
+    },
+    "light_lux": {
+      "min_tolerated": 800,
+      "ideal_min": 1500,
+      "ideal_max": 4500,
+      "max_tolerated": 9000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 35,
+      "ideal_min": 18,
+      "ideal_max": 28
+    },
+    "soil": {
+      "in_simple_words": "A light, airy, peat-based mix that holds slight moisture but lets excess water drain away instantly.",
+      "mix_recipe": "2 parts cocopeat + 1 part perlite (or coarse sand) + 1 part compost/vermicompost + 1 part garden soil",
+      "ph_min": 6.0,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Toxic to cats and dogs if chewed or ingested due to calcium oxalate crystals."
+    },
+    "common_problems": [
+      {
+        "id": "18-powdery_mildew",
+        "problem": "Powdery mildew (fungal)",
+        "do_you_see_this_problem": "Do you see chalky white or grey powder patches on the leaves or stems, especially during humid monsoon or winter days?",
+        "solve_it_like_this": [
+          "Isolate the plant immediately in a well-ventilated location.",
+          "Snip off heavily infected leaves with clean, sterilized shears.",
+          "Stop spraying or misting water onto the leaves; water only at the soil line.",
+          "Spray with a neem oil solution (5 ml neem oil + 1 ml mild dish soap per litre) or carbendazim fungicide (1 g per litre of water)."
+        ]
+      },
+      {
+        "id": "18-root_rot",
+        "problem": "Root rot (too much water)",
+        "do_you_see_this_problem": "Are lower leaves turning yellow and translucent, does the stem feel mushy near the soil, or does the soil smell sour?",
+        "solve_it_like_this": [
+          "Stop watering immediately and check if drainage holes are blocked.",
+          "Remove the plant from the pot and trim off any mushy, blackened roots.",
+          "Repot in fresh, fast-draining potting mix with perlite or coarse sand.",
+          "Drench the soil with carbendazim (1 g per litre) or copper oxychloride (2 g per litre).",
+          "Water again only when the top 2–3 cm of soil has dried out."
+        ]
+      },
+      {
+        "id": "18-brown_crispy_tips",
+        "problem": "Brown, crispy leaf edges or tips",
+        "do_you_see_this_problem": "Are the edges or pointed tips of the spotted leaves turning dry, brown, and brittle?",
+        "solve_it_like_this": [
+          "Increase ambient humidity around the plant using a pebble tray filled with water or by grouping plants together.",
+          "Keep the plant away from dry air blasts from ceiling fans, hot dry summer winds, or air conditioner vents.",
+          "Use filtered water or let tap water sit uncovered overnight to allow chlorine and fluorides to dissipate."
+        ]
+      },
+      {
+        "id": "18-leaf_drop",
+        "problem": "Sudden leaf drop",
+        "do_you_see_this_problem": "Are mature, otherwise green leaves dropping off the plant abruptly?",
+        "solve_it_like_this": [
+          "Check for sudden temperature swings or drafts from nearby air conditioners.",
+          "Avoid moving the plant back and forth; keep it in a stable location with bright indirect light.",
+          "Ensure the soil is neither completely parched nor waterlogged."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Begonia_maculata",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Begonia_maculata",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Begonia_maculata3073316230.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Begonia_maculata3073316230.jpg/330px-Begonia_maculata3073316230.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/18_polka_dot_begonia.jpg",
+      "asset_path": "file:///android_asset/images/18_polka_dot_begonia.jpg"
+    }
+  },
+  {
+    "id": 19,
+    "botanical_name": "Begonia semperflorens",
+    "common_name": "Wax Begonia",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "वैक्स बेगोनिया",
+      "marathi": "वॅक्स बेगोनिया",
+      "bengali": "ওয়াক্স বেগোনিয়া",
+      "kannada": "ವ್ಯಾಕ್ಸ್ ಬೆಗೋನಿಯಾ",
+      "tamil": "வாக்ஸ் பிகோனியா",
+      "telugu": "వాక్స్ బెగోనియా"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 4
+      },
+      "monsoon_and_winter": {
+        "min": 5,
+        "max": 8
+      },
+      "note": "Check first: water when the top 2 cm of soil feels dry. Fleshy stems hold water, so avoid overwatering and water directly at the base without soaking flowers or leaves."
+    },
+    "light_lux": {
+      "min_tolerated": 800,
+      "ideal_min": 1500,
+      "ideal_max": 12000,
+      "max_tolerated": 25000
+    },
+    "humidity_percent": {
+      "min": 45,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 35,
+      "ideal_min": 16,
+      "ideal_max": 26
+    },
+    "soil": {
+      "in_simple_words": "A rich, loose, porous potting soil that drains quickly so fleshy stems do not sit in water.",
+      "mix_recipe": "1 part garden soil + 1 part cocopeat + 1 part compost/vermicompost + 1 part coarse sand or perlite",
+      "ph_min": 5.5,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 25,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Toxic to dogs and cats; contains soluble calcium oxalates, with highest concentrations in underground parts and stems."
+    },
+    "common_problems": [
+      {
+        "id": "19-stem_and_root_rot",
+        "problem": "Stem and root rot (damping off)",
+        "do_you_see_this_problem": "Are stems turning soft, dark, or translucent at soil level and toppling over?",
+        "solve_it_like_this": [
+          "Immediately cut back on watering and allow the top layer to dry out.",
+          "Remove infected, mushy stems promptly to prevent the spread of fungal pathogens.",
+          "Ensure pots have unobstructed drainage holes and never sit in pooled saucer water.",
+          "Drench the soil with carbendazim or mancozeb fungicide (1 g per litre of water)."
+        ]
+      },
+      {
+        "id": "19-powdery_mildew",
+        "problem": "Powdery mildew",
+        "do_you_see_this_problem": "Do you see a white powdery dusting on flower buds, stems, and leaf surfaces?",
+        "solve_it_like_this": [
+          "Move the pot to a well-ventilated spot with brighter morning sunlight or indirect light.",
+          "Avoid watering from overhead; keep flowers and foliage completely dry.",
+          "Spray diluted neem oil (5 ml neem oil + 1 ml mild soap in 1 litre water) or copper fungicide."
+        ]
+      },
+      {
+        "id": "19-flower_bud_drop",
+        "problem": "Flower bud drop or lack of blooms",
+        "do_you_see_this_problem": "Are flower buds falling off unopened, or has the plant stopped producing flowers altogether?",
+        "solve_it_like_this": [
+          "Move the plant to a brighter location receiving gentle morning sunlight or bright indirect light.",
+          "Feed with a balanced liquid fertilizer or seaweed extract diluted to half strength every 2–3 weeks.",
+          "Protect the plant from harsh summer heat above 35°C by moving it to cooler shade."
+        ]
+      },
+      {
+        "id": "19-mealybugs",
+        "problem": "Mealybugs",
+        "do_you_see_this_problem": "Do you notice white, fuzzy, cotton-like clusters tucked into leaf axils or under flower stems?",
+        "solve_it_like_this": [
+          "Dab individual mealybugs using a cotton swab dipped in rubbing alcohol diluted 1:1 with water.",
+          "Spray the foliage and stem joints with neem oil spray (5 ml per litre of water) weekly for 3 weeks.",
+          "Isolate the plant until the infestation is fully cleared."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Begonia_semperflorens",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Begonia_semperflorens",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Begonia_cucullata_%2817996084090%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Begonia_cucullata_%2817996084090%29.jpg/330px-Begonia_cucullata_%2817996084090%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/19_wax_begonia.jpg",
+      "asset_path": "file:///android_asset/images/19_wax_begonia.jpg"
+    }
+  },
+  {
+    "id": 20,
+    "botanical_name": "Saxifraga stolonifera",
+    "common_name": "Strawberry Begonia",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "स्ट्रॉबेरी बेगोनिया",
+      "marathi": "स्ट्रॉबेरी बेगोनिया",
+      "bengali": "স্ট্রবেরি বেগোনিয়া",
+      "kannada": "ಸ್ಟ್ರಾಬೆರಿ ಬೆಗೋನಿಯಾ",
+      "tamil": "ஸ்ட்ராபெரி பிகோனியா",
+      "telugu": "స్ట్రాబెర్రీ బెగోనియా"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 5
+      },
+      "monsoon_and_winter": {
+        "min": 6,
+        "max": 9
+      },
+      "note": "Check first: water when the top 2 cm of soil feels dry. Avoid wetting the fuzzy leaves or the crown directly, which can invite fungal rot."
+    },
+    "light_lux": {
+      "min_tolerated": 600,
+      "ideal_min": 1200,
+      "ideal_max": 4500,
+      "max_tolerated": 10000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 8,
+      "tolerable_max": 32,
+      "ideal_min": 15,
+      "ideal_max": 24
+    },
+    "soil": {
+      "in_simple_words": "A light, loose, well-draining soil mix that holds gentle moisture without becoming heavy or waterlogged.",
+      "mix_recipe": "2 parts garden soil + 1 part cocopeat + 1 part coarse sand or perlite + 1 part vermicompost",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Pet-safe; non-toxic to dogs and cats (ASPCA confirmed) and completely safe around children."
+    },
+    "common_problems": [
+      {
+        "id": "20-crown_rot",
+        "problem": "Crown and root rot",
+        "do_you_see_this_problem": "Are the base of the plant and central leaf rosettes turning dark brown, mushy, and pulling away easily?",
+        "solve_it_like_this": [
+          "Stop watering immediately and check that drainage holes are not blocked.",
+          "Never pour water into the central rosette; water only around the rim of the pot.",
+          "Remove rotting leaves and crown sections cleanly.",
+          "Repot into a shallow, fast-draining porous terracotta container."
+        ]
+      },
+      {
+        "id": "20-scorched_leaves",
+        "problem": "Leaf scorch and bleached foliage",
+        "do_you_see_this_problem": "Are fuzzy leaf surfaces looking bleached, pale, or developing crispy dry patches?",
+        "solve_it_like_this": [
+          "Move the plant out of direct afternoon sunlight into bright, filtered or indirect light.",
+          "Provide shelter under a 50% shade net if kept in a balcony.",
+          "Ensure the plant is not placed next to hot metal railings or glass panes."
+        ]
+      },
+      {
+        "id": "20-spider_mites",
+        "problem": "Spider mites",
+        "do_you_see_this_problem": "Do you see fine silky webs beneath the hairy leaves with tiny yellow stippling on leaf tops?",
+        "solve_it_like_this": [
+          "Gently rinse the undersides of the leaves with a fine spray of tepid water.",
+          "Raise the ambient humidity using a pebble tray or room humidifier.",
+          "Apply organic neem oil solution (5 ml neem oil + 1 ml mild dish soap per litre) every 5–7 days for 3 weeks."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Saxifraga_stolonifera",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Saxifraga_stolonifera",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Saxifraga_stolonifera_%28flower_s5%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Saxifraga_stolonifera_%28flower_s5%29.jpg/330px-Saxifraga_stolonifera_%28flower_s5%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/20_strawberry_begonia.jpg",
+      "asset_path": "file:///android_asset/images/20_strawberry_begonia.jpg"
+    }
+  },
+  {
+    "id": 21,
+    "botanical_name": "Nematanthus gregarius",
+    "common_name": "Goldfish Plant",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "गोल्डफिश प्लांट",
+      "marathi": "गोल्डफिश प्लांट",
+      "bengali": "গোল্ডফিশ প্ল্যান্ট",
+      "kannada": "ಗೋಲ್ಡ್‌ಫಿಶ್ ಪ್ಲಾಂಟ್",
+      "tamil": "கோல்ட்ஃபிஷ் பிளாண்ட்",
+      "telugu": "గోల్డ్‌ఫిష్ ప్లాంట్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 5
+      },
+      "monsoon_and_winter": {
+        "min": 6,
+        "max": 9
+      },
+      "note": "Check first: water when the top 2–3 cm of soil feels dry to the touch. Avoid letting the roots sit in waterlogged soil as succulent roots easily rot."
+    },
+    "light_lux": {
+      "min_tolerated": 800,
+      "ideal_min": 1800,
+      "ideal_max": 5500,
+      "max_tolerated": 12000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 35,
+      "ideal_min": 18,
+      "ideal_max": 26
+    },
+    "soil": {
+      "in_simple_words": "An epiphytic, chunky, and well-aerated soil mix that drains rapidly while keeping roots lightly humid.",
+      "mix_recipe": "1 part cocopeat + 1 part perlite + 1 part orchid bark or charcoal chips + 1 part vermicompost",
+      "ph_min": 6.0,
+      "ph_max": 6.8
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Pet-safe; non-toxic to cats, dogs, and humans (ASPCA confirmed safe)."
+    },
+    "common_problems": [
+      {
+        "id": "21-root_rot",
+        "problem": "Root rot (overwatering)",
+        "do_you_see_this_problem": "Are lower glossy leaves turning dull, yellow, and falling off, while stems feel limp?",
+        "solve_it_like_this": [
+          "Stop watering immediately and let the soil dry out thoroughly.",
+          "Unpot the plant, inspect the root ball, and snip away black, decaying roots.",
+          "Repot into fresh, coarse epiphytic potting mix in a pot with generous drainage holes.",
+          "Drench lightly with carbendazim or copper oxychloride solution (1 g per litre)."
+        ]
+      },
+      {
+        "id": "21-lack_of_blooms",
+        "problem": "No flowers / failure to bloom",
+        "do_you_see_this_problem": "Is the plant producing green leaves but no orange goldfish-shaped flowers?",
+        "solve_it_like_this": [
+          "Move the plant to a spot with brighter indirect light or gentle morning sunlight.",
+          "Do not over-pot; goldfish plants bloom best when slightly root-bound.",
+          "Apply a phosphorus-rich or balanced flowering fertilizer diluted to half strength monthly during spring and summer."
+        ]
+      },
+      {
+        "id": "21-leaf_drop_cold_water",
+        "problem": "Leaf drop from cold water or thermal shock",
+        "do_you_see_this_problem": "Are leaves dropping suddenly or turning brown after watering or exposure to AC air?",
+        "solve_it_like_this": [
+          "Always use room-temperature water; never apply chilling tap or refrigerated water.",
+          "Relocate away from direct air-conditioner vents or cold winter drafts.",
+          "Maintain steady warm temperatures above 15°C."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Nematanthus_gregarius",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Nematanthus_gregarius",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Nematanthus_gregarius_-_Kew_Gardens.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Nematanthus_gregarius_-_Kew_Gardens.JPG/330px-Nematanthus_gregarius_-_Kew_Gardens.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/21_goldfish_plant.jpg",
+      "asset_path": "file:///android_asset/images/21_goldfish_plant.jpg"
+    }
+  },
+  {
+    "id": 22,
+    "botanical_name": "Aeschynanthus radicans",
+    "common_name": "Lipstick Plant",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "लिपस्टिक प्लांट",
+      "marathi": "लिपस्टिक प्लांट",
+      "bengali": "লিপস্টিক প্ল্যান্ট",
+      "kannada": "ಲಿಪ್‌ಸ್ಟಿಕ್ ಪ್ಲಾಂಟ್",
+      "tamil": "லிப்ஸ்டிக் பிளாண்ட்",
+      "telugu": "లిప్‌స్టిక్ ప్లాంట్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 5
+      },
+      "monsoon_and_winter": {
+        "min": 6,
+        "max": 9
+      },
+      "note": "Check first: water when the top 2–3 cm of soil feels dry. Provide moderate moisture during active growth but ensure water drains away completely."
+    },
+    "light_lux": {
+      "min_tolerated": 800,
+      "ideal_min": 1800,
+      "ideal_max": 5500,
+      "max_tolerated": 12000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 35,
+      "ideal_min": 18,
+      "ideal_max": 28
+    },
+    "soil": {
+      "in_simple_words": "An airy, chunky, epiphyte-friendly blend that holds light moisture while allowing root aeration.",
+      "mix_recipe": "1 part cocopeat + 1 part perlite + 1 part orchid bark/coco chips + 1 part compost/leaf mold",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Pet-safe; non-toxic to cats, dogs, and children (ASPCA verified)."
+    },
+    "common_problems": [
+      {
+        "id": "22-bud_and_leaf_drop",
+        "problem": "Flower bud drop or sudden leaf loss",
+        "do_you_see_this_problem": "Are newly formed flower buds or leaves dropping before opening or fully maturing?",
+        "solve_it_like_this": [
+          "Check for sudden temperature drops or drafts from air conditioners.",
+          "Ensure the soil never dries out completely during bud formation, but is never waterlogged.",
+          "Avoid moving the plant around when buds have started forming.",
+          "Increase humidity around the plant using a water pebble tray or light room misting."
+        ]
+      },
+      {
+        "id": "22-root_rot",
+        "problem": "Root rot (waterlogged soil)",
+        "do_you_see_this_problem": "Are leaves yellowing, dropping, and stems turning dark brown and soft at the base?",
+        "solve_it_like_this": [
+          "Stop watering immediately and inspect the drainage holes.",
+          "Remove the plant from the pot and trim rotten, mushy roots.",
+          "Repot into a coarse, bark-and-perlite enriched mix.",
+          "Apply a mild systemic fungicide such as carbendazim (1 g per litre)."
+        ]
+      },
+      {
+        "id": "22-mealybugs",
+        "problem": "Mealybugs",
+        "do_you_see_this_problem": "Do you find small white cottony residues and sticky honeydew along stems and leaf axils?",
+        "solve_it_like_this": [
+          "Isolate the plant from other houseplants.",
+          "Remove visible bugs with a cotton swab soaked in rubbing alcohol.",
+          "Spray weekly with neem oil solution (5 ml neem oil + 1 ml mild soap per litre of water)."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Aeschynanthus_radicans",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Aeschynanthus_radicans",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Aeschynanthus_radicans.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Aeschynanthus_radicans.jpg/330px-Aeschynanthus_radicans.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/22_lipstick_plant.jpg",
+      "asset_path": "file:///android_asset/images/22_lipstick_plant.jpg"
+    }
+  },
+  {
+    "id": 23,
+    "botanical_name": "Hoya carnosa",
+    "common_name": "Wax Plant",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "वैक्स प्लांट / होया",
+      "marathi": "वॅक्स प्लांट",
+      "bengali": "ওয়াক্স প্ল্যান্ট",
+      "kannada": "ವ್ಯಾಕ್ಸ್ ಪ್ಲಾಂಟ್",
+      "tamil": "வாக்ஸ் பிளாண்ட்",
+      "telugu": "వాక్స్ ప్లాంట్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 6,
+        "max": 9
+      },
+      "monsoon_and_winter": {
+        "min": 12,
+        "max": 16
+      },
+      "note": "Check first: water only when the potting mix is dry almost all the way through. Waxy succulent leaves store plenty of water; overwatering quickly kills roots."
+    },
+    "light_lux": {
+      "min_tolerated": 1000,
+      "ideal_min": 2000,
+      "ideal_max": 8000,
+      "max_tolerated": 20000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 38,
+      "ideal_min": 18,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "A very chunky, airy, fast-draining orchid-style mix that never stays wet or dense.",
+      "mix_recipe": "1 part cocochips / orchid bark + 1 part perlite + 1 part cocopeat + 1 part vermicompost",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Pet-safe; non-toxic to cats and dogs (ASPCA confirmed) and completely safe around children."
+    },
+    "common_problems": [
+      {
+        "id": "23-root_rot",
+        "problem": "Root rot (overwatering)",
+        "do_you_see_this_problem": "Are thick waxy leaves puckering, turning yellow, or falling off, while the soil remains wet?",
+        "solve_it_like_this": [
+          "Stop watering immediately and take the plant out of its pot.",
+          "Inspect roots and cut away all dark, hollow, or decaying root threads.",
+          "Repot into a chunky, well-draining epiphytic mix with generous perlite and bark.",
+          "Let the mix remain dry for a few days before lightly watering."
+        ]
+      },
+      {
+        "id": "23-mealybugs",
+        "problem": "Mealybugs",
+        "do_you_see_this_problem": "Do you see white fluffy cotton-like specks on leaf nodes, peduncles, or the underside of leaves?",
+        "solve_it_like_this": [
+          "Isolate the plant immediately.",
+          "Dab visible pests with a cotton bud soaked in 70% isopropyl alcohol.",
+          "Spray thoroughly with neem oil solution (5 ml neem oil + 1 ml mild liquid soap per litre) every 7 days for 3 weeks."
+        ]
+      },
+      {
+        "id": "23-failure_to_bloom",
+        "problem": "No flowers / failure to bloom",
+        "do_you_see_this_problem": "Is the vine growing healthily but never producing flower spurs or star-shaped blooms?",
+        "solve_it_like_this": [
+          "Move to a much brighter location receiving filtered morning sun or high indirect light.",
+          "Never cut off old flowering stems (peduncles), as new blooms re-emerge from the same spurs.",
+          "Do not over-pot; allow the plant to remain snug and slightly root-bound."
+        ]
+      },
+      {
+        "id": "23-wrinkled_leaves",
+        "problem": "Wrinkled, shriveled leaves",
+        "do_you_see_this_problem": "Are the leaves losing their plumpness and showing fine wrinkles on the surface?",
+        "solve_it_like_this": [
+          "Check the soil: if bone dry, give the plant a thorough soak until water drains freely.",
+          "If the soil is wet, inspect for root rot which prevents water uptake by damaged roots."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Hoya_carnosa",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Hoya_carnosa",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/NKN-2007-06-13_114250_Hoya_Carnosa_%28Yvan_Leduc_author_for_Wikipedia%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/NKN-2007-06-13_114250_Hoya_Carnosa_%28Yvan_Leduc_author_for_Wikipedia%29.jpg/330px-NKN-2007-06-13_114250_Hoya_Carnosa_%28Yvan_Leduc_author_for_Wikipedia%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/23_wax_plant.jpg",
+      "asset_path": "file:///android_asset/images/23_wax_plant.jpg"
+    }
+  },
+  {
+    "id": 24,
+    "botanical_name": "Hoya pubicalyx",
+    "common_name": "Purple Hoya",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "पर्पल होया",
+      "marathi": "पर्पल होया",
+      "bengali": "পার্পল হোয়া",
+      "kannada": "ಪರ್ಪಲ್ ಹೊಯಾ",
+      "tamil": "பர்பிள் ஹோயா",
+      "telugu": "పర్పుల్ హోయా"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 6,
+        "max": 9
+      },
+      "monsoon_and_winter": {
+        "min": 12,
+        "max": 16
+      },
+      "note": "Check first: water when the top two-thirds of soil feels dry. Leaves store water, making the plant very drought-tolerant but intolerant of waterlogged soil."
+    },
+    "light_lux": {
+      "min_tolerated": 1000,
+      "ideal_min": 2200,
+      "ideal_max": 8500,
+      "max_tolerated": 20000
+    },
+    "humidity_percent": {
+      "min": 45,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 38,
+      "ideal_min": 18,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "A very airy, coarse epiphytic mixture of bark, perlite, and cocopeat that dries evenly.",
+      "mix_recipe": "1 part orchid bark / cocochips + 1 part perlite + 1 part cocopeat + 1 part compost",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Pet-safe; non-toxic to dogs, cats, and humans (ASPCA confirmed safe)."
+    },
+    "common_problems": [
+      {
+        "id": "24-root_rot",
+        "problem": "Root rot from soggy soil",
+        "do_you_see_this_problem": "Are leaves turning yellow, limp, or falling off in succession with dark soft roots?",
+        "solve_it_like_this": [
+          "Stop watering immediately and ensure drainage holes are completely open.",
+          "Unpot the plant, cut away diseased roots with sterile scissors, and treat with carbendazim or fungicide.",
+          "Repot into fresh, chunky, well-draining epiphytic substrate.",
+          "Wait until the substrate dries before watering lightly."
+        ]
+      },
+      {
+        "id": "24-mealybugs",
+        "problem": "Mealybugs",
+        "do_you_see_this_problem": "Do you see white waxy insects hiding in leaf crevices or under silver-splashed leaves?",
+        "solve_it_like_this": [
+          "Isolate the plant to prevent spreading.",
+          "Dab the insects directly with a cotton swab dipped in rubbing alcohol.",
+          "Spray weekly with a neem oil solution (5 ml neem oil + 1 ml mild dish soap per litre of water)."
+        ]
+      },
+      {
+        "id": "24-fading_splashes",
+        "problem": "Loss of silver leaf splashing or lack of flowers",
+        "do_you_see_this_problem": "Are new leaves turning solid green with fewer silver flecks, and is the plant failing to flower?",
+        "solve_it_like_this": [
+          "Move the plant to a location with brighter, indirect sunlight or gentle morning sun.",
+          "Do not trim older flower spurs (peduncles) after flowering finishes.",
+          "Feed with a balanced liquid fertilizer diluted to half strength monthly during warm growing months."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Hoya_pubicalyx",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Hoya_pubicalyx",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Hoya_pubicalyx_-_77.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Hoya_pubicalyx_-_77.jpg/330px-Hoya_pubicalyx_-_77.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/24_purple_hoya.jpg",
+      "asset_path": "file:///android_asset/images/24_purple_hoya.jpg"
+    }
+  },
+  {
+    "id": 25,
+    "botanical_name": "Aglaonema commutatum 'Silver Queen'",
+    "common_name": "Silver Queen Chinese Evergreen",
+    "popularity_score": 8,
+    "local_names": {
+      "hindi": "सिल्वर क्वीन चाइनीज़ एवरग्रीन",
+      "marathi": "सिल्व्हर क्वीन चायनीज एव्हरग्रीन",
+      "bengali": "সিলভার কুইন চাইনিজ এভারগ্রিন",
+      "kannada": "ಸಿಲ್ವರ್ ಕ್ವೀನ್ ಚೈನೀಸ್ ಎವರ್‌ಗ್ರೀನ್",
+      "tamil": "சில்வர் குயின் சைனீஸ் எவர்கிரீன்",
+      "telugu": "సిల్వర్ క్వీన్ చైనీస్ ఎవర్ గ్రీన్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 5,
+        "max": 7
+      },
+      "monsoon_and_winter": {
+        "min": 10,
+        "max": 14
+      },
+      "note": "Check first: water only when the top 3–5 cm of soil is dry. Aglaonemas are very susceptible to root rot if watered too frequently."
+    },
+    "light_lux": {
+      "min_tolerated": 300,
+      "ideal_min": 800,
+      "ideal_max": 3500,
+      "max_tolerated": 8000
+    },
+    "humidity_percent": {
+      "min": 45,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 38,
+      "ideal_min": 18,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "A loose, porous potting soil rich in organic matter that drains freely while holding gentle moisture.",
+      "mix_recipe": "2 parts garden soil + 1 part cocopeat + 1 part compost/vermicompost + 1 part coarse sand or perlite",
+      "ph_min": 5.6,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 45,
+    "refresh_top_soil_every_days": 180,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Toxic to cats and dogs if ingested due to insoluble calcium oxalate crystals."
+    },
+    "common_problems": [
+      {
+        "id": "25-root_rot",
+        "problem": "Root rot (overwatering)",
+        "do_you_see_this_problem": "Are lower leaves turning yellow, stems becoming soft or foul-smelling near the soil line, and soil staying soggy?",
+        "solve_it_like_this": [
+          "Stop watering immediately.",
+          "Take the plant out of the pot and cut away all black, soft, decayed roots with clean scissors.",
+          "Repot in fresh, well-draining soil in a clean pot with drainage holes.",
+          "Drench the soil with carbendazim (1 g per litre of water) or copper oxychloride (2 g per litre).",
+          "Water again only when the top 3–5 cm of soil is thoroughly dry."
+        ]
+      },
+      {
+        "id": "25-cold_damage",
+        "problem": "Cold damage and thermal shock",
+        "do_you_see_this_problem": "Did leaves turn dark, translucent, or droop limp following exposure to direct AC vents or chilly winter air?",
+        "solve_it_like_this": [
+          "Move the plant away from direct drafts of air conditioners, coolers, or cold window sills.",
+          "Maintain indoor room temperature comfortably above 15°C.",
+          "Trim away blackened or collapsed foliage to help the plant recover."
+        ]
+      },
+      {
+        "id": "25-mealybugs",
+        "problem": "Mealybugs",
+        "do_you_see_this_problem": "Do you see white cotton-like fluff along leaf sheaths, stems, or leaf undersides?",
+        "solve_it_like_this": [
+          "Isolate the plant from other houseplants.",
+          "Wipe off visible clusters with a cotton swab dipped in rubbing alcohol (diluted 1:1 with water).",
+          "Spray neem oil (5 ml neem oil + 1 ml mild dish soap per litre) every 7 days for 3 weeks."
+        ]
+      },
+      {
+        "id": "25-brown_crisp_tips",
+        "problem": "Brown leaf tips or scorched patches",
+        "do_you_see_this_problem": "Are leaf tips turning brown and crispy, or are large dry bleached patches appearing on silver leaves?",
+        "solve_it_like_this": [
+          "Move the plant out of harsh direct sunlight; Silver Queen prefers bright indirect or medium light.",
+          "Use filtered water or let tap water stand for 24 hours before watering to avoid fluoride and salt burn.",
+          "Increase humidity with a pebble tray or light misting in dry weather."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Aglaonema_commutatum",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Aglaonema_commutatum",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Aglaonema_commutatum_kz1.jpg/3840px-Aglaonema_commutatum_kz1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Aglaonema_commutatum_kz1.jpg/330px-Aglaonema_commutatum_kz1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/25_silver_queen_chinese_evergreen.jpg",
+      "asset_path": "file:///android_asset/images/25_silver_queen_chinese_evergreen.jpg"
+    }
+  }
+]

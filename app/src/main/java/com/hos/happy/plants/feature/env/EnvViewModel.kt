@@ -62,8 +62,7 @@ data class EnvUiState(
     val highlightLightMeter: Boolean = false,
     
     // History filtering (auto-synced with selected room)
-    val historyFilterRoom: String? = "Living",
-    val historyFilterDateMillis: Long? = null // timestamp representing start of day
+    val historyFilterRoom: String? = "Living"
 )
 
 @OptIn(kotlinx.coroutines.ExperimentalCoroutinesApi::class)
@@ -112,42 +111,11 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
         }
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), null)
 
-    val recordedSnapshotTimestamps: StateFlow<List<Long>> = _uiState.flatMapLatest { state ->
+    val latestSnapshotsPerSpace: StateFlow<List<RoomEnvSnapshotEntity>> = _uiState.flatMapLatest { state ->
         val profileId = state.currentProfileId ?: ""
-        val roomTag = state.historyFilterRoom
-        snapshotDao.getRecordedTimestampsFlow(profileId, roomTag)
-    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
-
-    val filteredSnapshots: StateFlow<List<RoomEnvSnapshotEntity>> = _uiState.flatMapLatest { state ->
-        val profileId = state.currentProfileId ?: ""
-        val roomTag = state.historyFilterRoom
-        val dateMillis = state.historyFilterDateMillis
-
-        val (startOfDay, endOfDay) = if (dateMillis != null) {
-            val cal = Calendar.getInstance().apply {
-                timeInMillis = dateMillis
-                set(Calendar.HOUR_OF_DAY, 0)
-                set(Calendar.MINUTE, 0)
-                set(Calendar.SECOND, 0)
-                set(Calendar.MILLISECOND, 0)
-            }
-            val start = cal.timeInMillis
-            cal.set(Calendar.HOUR_OF_DAY, 23)
-            cal.set(Calendar.MINUTE, 59)
-            cal.set(Calendar.SECOND, 59)
-            cal.set(Calendar.MILLISECOND, 999)
-            val end = cal.timeInMillis
-            Pair(start, end)
-        } else {
-            Pair(null, null)
+        snapshotDao.getAllSnapshotsForProfileFlow(profileId).map { allSnapshots ->
+            allSnapshots.distinctBy { it.roomTag }
         }
-
-        snapshotDao.filterSnapshotsFlow(
-            profileId = profileId,
-            roomTag = roomTag,
-            startTimeMillis = startOfDay,
-            endTimeMillis = endOfDay
-        )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
     init {
@@ -221,6 +189,23 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun switchOffCameraMode() {
+        viewModelScope.launch {
+            if (_uiState.value.lightSettings.hasHardwareSensor) {
+                prefs.setPreferredMode(LightMeterMode.SENSOR)
+            }
+        }
+    }
+
+    fun finishCameraReading() {
+        val reading = _uiState.value.liveLightReading
+        _uiState.value = _uiState.value.copy(
+            isLightFrozen = true,
+            frozenLightReading = reading
+        )
+        switchOffCameraMode()
+    }
+
     fun toggleLightFreeze() {
         val currentlyFrozen = _uiState.value.isLightFrozen
         if (currentlyFrozen) {
@@ -233,6 +218,9 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
                 isLightFrozen = true,
                 frozenLightReading = _uiState.value.liveLightReading
             )
+            if (_uiState.value.lightSettings.preferredMode == LightMeterMode.CAMERA) {
+                switchOffCameraMode()
+            }
         }
     }
 
@@ -423,11 +411,94 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
                 snapshotSavedSuccess = true,
                 snapshotConfirmation = confirmation
             )
+
+            // Once snapshot reading is saved, turn off camera mode if active
+            if (state.lightSettings.preferredMode == LightMeterMode.CAMERA) {
+                switchOffCameraMode()
+            }
         }
     }
 
     fun dismissSnapshotConfirmation() {
         _uiState.value = _uiState.value.copy(snapshotConfirmation = null)
+    }
+
+    fun deleteSnapshot(snapshotId: String) {
+        val state = _uiState.value
+        val profileId = state.currentProfileId ?: return
+        viewModelScope.launch {
+            val snapshotToDelete = snapshotDao.getSnapshotById(snapshotId) ?: return@launch
+            val roomTag = snapshotToDelete.roomTag
+
+            snapshotDao.deleteSnapshotById(snapshotId)
+
+            if (_uiState.value.snapshotConfirmation?.snapshot?.id == snapshotId) {
+                dismissSnapshotConfirmation()
+            }
+
+            // After deletion, find the new latest snapshot for this room (if any)
+            val newLatestSnapshot = snapshotDao.getLatestSnapshotForRoom(profileId, roomTag)
+            if (newLatestSnapshot != null) {
+                try {
+                    val allMasterPlants = masterRepo.getAllPlants()
+                    val existingGardenPlants = plantDao.getPlantsForProfile(profileId)
+                    val suggestionEntity = RoomPlantSuggestionEvaluator.evaluate(
+                        profileId = profileId,
+                        roomTag = roomTag,
+                        snapshot = newLatestSnapshot,
+                        allMasterPlants = allMasterPlants,
+                        existingGardenPlants = existingGardenPlants
+                    )
+                    roomPlantSuggestionDao.upsertSuggestion(suggestionEntity)
+                } catch (e: Exception) {
+                    // Ignore suggestion recalc failure
+                }
+            } else {
+                try {
+                    roomPlantSuggestionDao.deleteForRoom(profileId, roomTag)
+                } catch (e: Exception) {
+                    // Ignore
+                }
+            }
+
+            // Recalculate room analytics for today
+            val todayCal = Calendar.getInstance().apply {
+                set(Calendar.HOUR_OF_DAY, 0)
+                set(Calendar.MINUTE, 0)
+                set(Calendar.SECOND, 0)
+                set(Calendar.MILLISECOND, 0)
+            }
+            val todayStart = todayCal.timeInMillis
+            val allRoomSnaps = snapshotDao.getAllSnapshotsForRoomFlow(profileId, roomTag).first()
+            val todaySnaps = allRoomSnaps.filter { it.recordedAt >= todayStart }
+
+            if (todaySnaps.size >= 3) {
+                val vpd = EnvCalculators.calculateAverageVpd(todaySnaps)
+                val dli = EnvCalculators.calculateDliMol(
+                    todaySnaps.map { it.lightLux },
+                    todaySnaps.mapNotNull { it.daylightHours }.firstOrNull()
+                )
+                if (vpd != null && dli != null) {
+                    val analyticsEntity = RoomAnalyticsEntity(
+                        id = "${profileId}_${roomTag}",
+                        profileId = profileId,
+                        roomTag = roomTag,
+                        calculatedAt = System.currentTimeMillis(),
+                        calculatedDateStr = SimpleDateFormat("MMM d, yyyy", Locale.getDefault()).format(Date()),
+                        vpdKpa = vpd,
+                        dliMol = dli,
+                        snapshotCount = todaySnaps.size
+                    )
+                    roomAnalyticsDao.upsertAnalytics(analyticsEntity)
+                }
+            } else {
+                try {
+                    roomAnalyticsDao.deleteAnalyticsForRoom(profileId, roomTag)
+                } catch (e: Exception) {
+                    // Ignore
+                }
+            }
+        }
     }
 
     fun addLeafCleaningTaskForRoom() {
@@ -495,10 +566,6 @@ class EnvViewModel(application: Application) : AndroidViewModel(application) {
 
     fun setHistoryFilterRoom(room: String?) {
         _uiState.value = _uiState.value.copy(historyFilterRoom = room)
-    }
-
-    fun setHistoryFilterDate(dateMillis: Long?) {
-        _uiState.value = _uiState.value.copy(historyFilterDateMillis = dateMillis)
     }
 
     private fun computeRoomAnalytics(

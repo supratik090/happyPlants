@@ -31,17 +31,24 @@ object RoomPlantSuggestionEvaluator {
             mp.botanicalName.trim().lowercase() !in existingBotanicalNames
         }
 
-        val scoredPlants = candidatePlants.mapNotNull { plant ->
+        val scoredPlants = candidatePlants.map { plant ->
             val score = scorePlantMatch(plant, snapshot.lightLux, snapshot.temperatureCelsius, snapshot.humidityPercentage)
-            if (score != null && score >= 40) {
-                Pair(plant, score)
-            } else {
-                null
-            }
-        }.sortedByDescending { it.second }
+            Pair(plant, score)
+        }
 
-        // Top suggestions limited to up to 5
-        val topSuggestions = scoredPlants.take(5).map { it.first }
+        // Filter plants that are suitable for this space (score >= 35, fallback to >= 25, then any)
+        val suitablePlants = scoredPlants.filter { it.second >= 35 }
+            .ifEmpty { scoredPlants.filter { it.second >= 25 } }
+            .ifEmpty { scoredPlants }
+
+        // Sort suitable plants by popularity score first (highest first), then by environmental match score
+        val topSuggestions = suitablePlants
+            .sortedWith(
+                compareByDescending<Pair<MasterPlant, Int>> { it.first.popularityScore }
+                    .thenByDescending { it.second }
+            )
+            .take(5)
+            .map { it.first }
         val idsJson = JSONArray(topSuggestions.map { it.id }).toString()
 
         return RoomPlantSuggestionEntity(
@@ -62,65 +69,79 @@ object RoomPlantSuggestionEvaluator {
         lux: Float,
         tempC: Float?,
         hum: Float?
-    ): Int? {
-        val lightInfo = plant.lightLux ?: return null
-        val minTol = lightInfo.minTolerated ?: 200f
-        val maxTol = lightInfo.maxTolerated ?: 30000f
-        val idealMin = lightInfo.idealMin ?: minTol
-        val idealMax = lightInfo.idealMax ?: maxTol
+    ): Int {
+        val lightInfo = plant.lightLux
+        val minTol = lightInfo?.minTolerated ?: 300f
+        val maxTol = lightInfo?.maxTolerated ?: 25000f
+        val idealMin = lightInfo?.idealMin ?: minTol
+        val idealMax = lightInfo?.idealMax ?: maxTol
 
-        // Light check: must be tolerably close to survivable range
-        if (lux < minTol * 0.8f || lux > maxTol * 1.25f) {
-            return null // Incompatible light condition
-        }
-
-        var score = 0
-
-        // Light Score (0 - 50)
-        score += when {
+        // --- 1. LIGHT SCORE (0 - 50 points) ---
+        // Light is the #1 driving factor for indoor plant survival.
+        val lightScore = when {
             lux in idealMin..idealMax -> 50
-            lux in minTol..maxTol -> 35
-            else -> 20
+            lux in minTol..maxTol -> 40
+            lux < minTol -> {
+                val ratio = (lux / minTol).coerceIn(0f, 1f)
+                if (minTol <= 400f) {
+                    // Naturally shade / low-light tolerant species (e.g. ZZ, Snake, Pothos, Chinese Evergreen)
+                    // Even in low light (100 - 300 lux), these plants adapt better than any other.
+                    (20 + (18 * ratio)).toInt()
+                } else {
+                    // Plants needing medium/bright light get penalized progressively as light drops
+                    (5 + (15 * ratio)).toInt()
+                }
+            }
+            else -> {
+                // lux > maxTol: too much light / scorch risk
+                val excessRatio = ((lux - maxTol) / maxTol).coerceIn(0f, 1f)
+                (35 - (20 * excessRatio)).toInt().coerceAtLeast(5)
+            }
         }
 
-        // Temperature Score (0 - 25)
-        if (tempC != null && plant.temperature != null) {
+        // --- 2. TEMPERATURE SCORE (0 - 25 points) ---
+        val tempScore = if (tempC != null && plant.temperature != null) {
             val tTolMin = plant.temperature.tolerableMin ?: 10f
-            val tTolMax = plant.temperature.tolerableMax ?: 38f
+            val tTolMax = plant.temperature.tolerableMax ?: 35f
             val tIdealMin = plant.temperature.idealMin ?: tTolMin
             val tIdealMax = plant.temperature.idealMax ?: tTolMax
 
-            if (tempC < tTolMin - 3f || tempC > tTolMax + 3f) {
-                return null // Incompatible temperature
-            }
-
-            score += when {
+            when {
                 tempC in tIdealMin..tIdealMax -> 25
-                tempC in tTolMin..tTolMax -> 15
-                else -> 10
+                tempC in tTolMin..tTolMax -> 20
+                tempC > tTolMax -> {
+                    val diff = tempC - tTolMax
+                    (20 - (diff * 2.5f)).toInt().coerceIn(5, 20)
+                }
+                else -> {
+                    val diff = tTolMin - tempC
+                    (20 - (diff * 2.5f)).toInt().coerceIn(5, 20)
+                }
             }
         } else {
-            score += 20 // Neutral if not recorded
+            18 // Neutral default
         }
 
-        // Humidity Score (0 - 25)
-        if (hum != null && plant.humidity != null) {
+        // --- 3. HUMIDITY SCORE (0 - 25 points) ---
+        val humScore = if (hum != null && plant.humidity != null) {
             val hMin = plant.humidity.min ?: 30f
             val hMax = plant.humidity.max ?: 70f
 
-            if (hum < hMin - 18f || hum > hMax + 25f) {
-                return null // Incompatible humidity
-            }
-
-            score += when {
+            when {
                 hum in hMin..hMax -> 25
-                hum in (hMin - 10f)..(hMax + 12f) -> 18
-                else -> 10
+                hum < hMin -> {
+                    val diff = hMin - hum
+                    (22 - (diff * 0.9f)).toInt().coerceIn(5, 22)
+                }
+                else -> {
+                    val diff = hum - hMax
+                    (22 - (diff * 0.7f)).toInt().coerceIn(5, 22)
+                }
             }
         } else {
-            score += 20 // Neutral if not recorded
+            18 // Neutral default
         }
 
-        return score
+        return lightScore + tempScore + humScore
     }
 }

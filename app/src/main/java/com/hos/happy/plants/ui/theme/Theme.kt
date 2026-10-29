@@ -38,10 +38,8 @@ fun HappyPlantsTheme(
         SideEffect {
             val window = (view.context as? Activity)?.window
             window?.let {
-                it.statusBarColor = Forest.toArgb()
-                it.navigationBarColor = PaperDark.toArgb()
                 WindowCompat.getInsetsController(it, view).apply {
-                    isAppearanceLightStatusBars = false
+                    isAppearanceLightStatusBars = true
                     isAppearanceLightNavigationBars = true
                 }
             }

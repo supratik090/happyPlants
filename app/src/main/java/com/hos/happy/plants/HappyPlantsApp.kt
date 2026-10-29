@@ -20,5 +20,12 @@ class HappyPlantsApp : Application() {
         applicationScope.launch {
             prefs.getOrInitializeLightMeterSettings()
         }
+
+        // Initialize daily duty notification channel and schedule 7:00 AM alarm
+        com.hos.happy.plants.data.notification.DailyNotificationScheduler.createNotificationChannel(this)
+        com.hos.happy.plants.data.notification.DailyNotificationScheduler.scheduleDailyDutyAlarm(this)
+
+        // Initialize Firebase Telemetry & Session Lifecycle Tracker
+        com.hos.happy.plants.data.telemetry.FirebaseTelemetryManager.initialize(this)
     }
 }

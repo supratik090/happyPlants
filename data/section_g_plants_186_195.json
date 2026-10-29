@@ -1,0 +1,992 @@
+[
+  {
+    "id": 186,
+    "botanical_name": "Hippeastrum compact cultivars",
+    "common_name": "Dwarf Amaryllis",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "ड्वार्फ अमरीलिस",
+      "marathi": "ड्वार्फ अमॅरिलिस",
+      "bengali": "ডোয়ার্ফ অ্যামারিলিস",
+      "kannada": "ಡ್ವಾರ್ಫ್ ಅಮರಿಲ್ಲಿಸ್",
+      "tamil": "குள்ள அமரிலீஸ்",
+      "telugu": "డ్వార్ఫ్ అమరిల్లిస్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 5
+      },
+      "monsoon_and_winter": {
+        "min": 10,
+        "max": 18
+      },
+      "note": "Water around the pot perimeter, never pouring directly into the exposed bulb neck or crown to prevent basal rot. During winter dormancy (Oct–Nov), withhold water almost entirely for 6–8 weeks to trigger flower bud initiation."
+    },
+    "light_lux": {
+      "min_tolerated": 3000,
+      "ideal_min": 10000,
+      "ideal_max": 30000,
+      "max_tolerated": 50000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 38,
+      "ideal_min": 18,
+      "ideal_max": 28
+    },
+    "soil": {
+      "in_simple_words": "Light, highly porous, fast-draining potting soil that never holds stagnant water around the fleshy bulb.",
+      "mix_recipe": "1 part garden soil + 1 part coarse river sand or perlite + 1 part vermicompost + 1 part cocopeat or leaf mould + 1 tbsp bonemeal",
+      "ph_min": 6.0,
+      "ph_max": 6.8
+    },
+    "fertilise_or_manure_every_days": 21,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Contains toxic alkaloids including lycorine in all parts, especially concentrated in the bulb. Ingestion causes drooling, severe vomiting, abdominal pain, diarrhea, and tremors in dogs and cats."
+    },
+    "common_problems": [
+      {
+        "id": "186-bulb_rot_overwatering",
+        "problem": "Bulb neck soft and mushy (Basal bulb rot)",
+        "do_you_see_this_problem": "Is the bulb neck soft, brown, and foul-smelling, with yellowing, collapsing foliage and soggy potting soil?",
+        "solve_it_like_this": [
+          "Stop watering immediately and gently unpot the bulb.",
+          "Cut away all soft, rotten tissues with a sterilized knife until only clean, firm white tissue remains.",
+          "Dust the cut wounds and bulb thoroughly with carbendazim or cinnamon powder and let dry in the shade for 2 days.",
+          "Repot into fresh, dry, sandy potting soil, leaving the top one-third of the bulb exposed above soil level.",
+          "Water strictly around the edges and only when the top 3–5 cm of soil is completely dry."
+        ]
+      },
+      {
+        "id": "186-no_blooms_improper_dormancy",
+        "problem": "Lush foliage but failure to bloom",
+        "do_you_see_this_problem": "Does the plant produce plenty of long green leaves year after year but never sends up a flowering scape in spring?",
+        "solve_it_like_this": [
+          "Induce a mandatory 6–8 week dry dormancy period starting in October or November.",
+          "Move the pot to a cool, shaded spot and stop watering completely, allowing all leaves to naturally wither and dry.",
+          "Cut back dried yellow leaves to 5 cm above the bulb neck; do not apply fertilizer.",
+          "In January or February, bring the pot back into bright morning sunlight and give a thorough watering to awaken the flower bud."
+        ]
+      },
+      {
+        "id": "186-red_blotch_fungus",
+        "problem": "Red blotch or red spots on leaves and bulb (Stagonospora curtisii)",
+        "do_you_see_this_problem": "Do you see bright red or rust-coloured spots, streaks, or lesions on the leaf bases, flower scape, or bulb scales?",
+        "solve_it_like_this": [
+          "Isolate the plant from other bulbs to prevent fungal spore transmission.",
+          "Prune off heavily infected leaves with sterilized shears.",
+          "Spray foliage and drench soil with systemic fungicide (mancozeb 2 g/L or carbendazim 1 g/L).",
+          "Improve airflow and avoid misting or splashing water onto the leaves and bulb neck."
+        ]
+      },
+      {
+        "id": "186-amaryllis_caterpillar",
+        "problem": "Amaryllis caterpillar or borer attack",
+        "do_you_see_this_problem": "Are striped black-and-yellow caterpillars (Brithys crini) rapidly chewing large holes through leaves and boring into the flower stalk?",
+        "solve_it_like_this": [
+          "Handpick and destroy caterpillars immediately upon noticing initial damage.",
+          "Check leaf undersides for clusters of tiny spherical eggs and crush or wipe them away with a wet cloth.",
+          "Spray the plant thoroughly with neem oil solution (5 ml/L + 2 ml mild liquid soap) or Bacillus thuringiensis (Bt).",
+          "If infestation is severe, apply a targeted bio-insecticide or spinosad in the evening."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Hippeastrum",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Hippeastrum",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Hippeastrum_reginae.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Hippeastrum_reginae.jpg/330px-Hippeastrum_reginae.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/186_dwarf_amaryllis.jpg",
+      "asset_path": "file:///android_asset/images/186_dwarf_amaryllis.jpg"
+    }
+  },
+  {
+    "id": 187,
+    "botanical_name": "Lilium dwarf cultivars",
+    "common_name": "Dwarf Lily",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "ड्वार्फ लिली",
+      "marathi": "ड्वार्फ लिली",
+      "bengali": "ডোয়ার্ফ লিলি",
+      "kannada": "ಡ್ವಾರ್ಫ್ ಲಿಲಿ",
+      "tamil": "குள்ள லில்லி",
+      "telugu": "డ్వార్ఫ్ లిల్లీ"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 4
+      },
+      "monsoon_and_winter": {
+        "min": 6,
+        "max": 10
+      },
+      "note": "Lilies are stem-rooting bulbs that need consistent moisture around the root zone without sitting in waterlogged mud. Water when top 2–3 cm of soil is dry. Move pots under shelter during heavy monsoon downpours to prevent bulb scale rot."
+    },
+    "light_lux": {
+      "min_tolerated": 4000,
+      "ideal_min": 15000,
+      "ideal_max": 35000,
+      "max_tolerated": 60000
+    },
+    "humidity_percent": {
+      "min": 45,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 8,
+      "tolerable_max": 34,
+      "ideal_min": 15,
+      "ideal_max": 25
+    },
+    "soil": {
+      "in_simple_words": "Rich, porous, fast-draining potting soil in a deep pot to support roots growing along the stem above the bulb.",
+      "mix_recipe": "2 parts leaf mould or vermicompost + 1 part garden soil + 1 part coarse sand or perlite + 1 part cocopeat + 1 tsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 6.8
+    },
+    "fertilise_or_manure_every_days": 14,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "EXTREMELY LETHAL TO CATS: All True Lilies (Lilium species) cause acute, fatal renal failure in felines even in microscopic amounts. Ingesting parts of a leaf, petal, or licking pollen from their fur can be fatal within 24–72 hours. Also causes vomiting and diarrhea in dogs and humans."
+    },
+    "common_problems": [
+      {
+        "id": "187-bulb_scale_rot",
+        "problem": "Bulb scale rot (Basal rot from excess moisture)",
+        "do_you_see_this_problem": "Is the stem stunted, yellowing prematurely, and the underground bulb scales soft, brown, and detaching easily?",
+        "solve_it_like_this": [
+          "Ensure potting mix contains at least 30% coarse grit or perlite for fast drainage.",
+          "Never allow pots to sit in saucers filled with runoff water.",
+          "Drench soil with carbendazim or copper oxychloride solution (2 g/L) at planting time and upon first signs of rot.",
+          "Plant bulbs at a depth roughly 2.5 to 3 times the height of the bulb to protect stem roots while ensuring drainage below."
+        ]
+      },
+      {
+        "id": "187-bud_blast_drop",
+        "problem": "Bud blast (Buds shriveling and dropping)",
+        "do_you_see_this_problem": "Are flower buds turning yellow or dry brown and falling off before opening into bloom?",
+        "solve_it_like_this": [
+          "Protect the plant from sudden dry heatwaves, hot balcony winds, or direct midday scorching sun.",
+          "Maintain even soil moisture; do not allow root balls to dry out completely while buds are swelling.",
+          "Ensure the plant receives at least 5–6 hours of cool morning sunshine; inadequate light causes bud abortion."
+        ]
+      },
+      {
+        "id": "187-botrytis_grey_mould",
+        "problem": "Botrytis blight (Grey mould on foliage)",
+        "do_you_see_this_problem": "Do you see circular brown water-soaked spots on leaves that develop a fuzzy grey mould during humid monsoon or foggy winter weather?",
+        "solve_it_like_this": [
+          "Remove and safely discard all infected leaves immediately.",
+          "Water the potting soil directly without wetting leaves or flower buds.",
+          "Increase air circulation around pots and space plants apart.",
+          "Spray a systemic fungicide such as carbendazim or azoxystrobin early in the morning."
+        ]
+      },
+      {
+        "id": "187-aphids_flower_distortion",
+        "problem": "Aphid infestation on tender flower buds",
+        "do_you_see_this_problem": "Are clusters of tiny green or black soft-bodied insects crowding around new bud tips, causing curled distorted leaves and sticky honeydew?",
+        "solve_it_like_this": [
+          "Dislodge aphids with a sharp spray of water from a garden hose or spray bottle.",
+          "Spray thoroughly with neem oil solution (5 ml cold-pressed neem oil + 2 ml liquid soap per litre of water).",
+          "Repeat spray every 4–5 days until the infestation clears."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Lilium",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Lilium",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Lilium_candidum_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Lilium_candidum_1.jpg/330px-Lilium_candidum_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/187_dwarf_lily.jpg",
+      "asset_path": "file:///android_asset/images/187_dwarf_lily.jpg"
+    }
+  },
+  {
+    "id": 188,
+    "botanical_name": "Zantedeschia compact cultivars",
+    "common_name": "Dwarf Calla Lily",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "ड्वार्फ कैला लिली",
+      "marathi": "ड्वार्फ कॅला लिली",
+      "bengali": "ডোয়ার্ফ ক্যালা লিলি",
+      "kannada": "ಡ್ವಾರ್ಫ್ ಕಾಲಾ ಲಿಲಿ",
+      "tamil": "குள்ள காலா லில்லி",
+      "telugu": "డ్వార్ఫ్ కాలా లిల్లీ"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 5
+      },
+      "monsoon_and_winter": {
+        "min": 7,
+        "max": 14
+      },
+      "note": "Keep soil moderately moist during active growth and bloom. When leaves naturally yellow and wither in autumn/winter, withhold water completely to allow the tubers to rest dormant in dry soil for 8–10 weeks."
+    },
+    "light_lux": {
+      "min_tolerated": 2500,
+      "ideal_min": 8000,
+      "ideal_max": 20000,
+      "max_tolerated": 35000
+    },
+    "humidity_percent": {
+      "min": 50,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 35,
+      "ideal_min": 16,
+      "ideal_max": 26
+    },
+    "soil": {
+      "in_simple_words": "Rich, loamy, well-aerated soil that holds gentle moisture while draining excess water freely away from tubers.",
+      "mix_recipe": "1 part garden loam + 1 part leaf compost/vermicompost + 1 part cocopeat + 1 part coarse sand or perlite",
+      "ph_min": 6.0,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 21,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Contains insoluble needle-like calcium oxalate crystals (raphides) in all tissues. Chewing on foliage or flowers causes intense burning pain, severe swelling of the mouth, tongue and throat, excessive drooling, vomiting, and difficulty breathing in pets and humans."
+    },
+    "common_problems": [
+      {
+        "id": "188-bacterial_soft_rot",
+        "problem": "Bacterial soft rot (Erwinia carotovora)",
+        "do_you_see_this_problem": "Are petiole bases and underground tubers turning into a foul-smelling, water-soaked, slimy pulp during hot, humid weather?",
+        "solve_it_like_this": [
+          "Unpot the plant immediately and discard severely liquefied tubers.",
+          "Cut out small lesions with a sterile blade and soak firm tuber parts in a 10% bleaching solution or 0.1% potassium permanganate for 15 minutes.",
+          "Dust with fungicide powder and allow the tuber surface to dry completely in a ventilated shade for 2 days before replanting.",
+          "Use a gritty, fast-draining potting medium and avoid warm stagnant waterlogged soil conditions."
+        ]
+      },
+      {
+        "id": "188-leaf_yellowing_dormancy",
+        "problem": "Natural post-bloom yellowing vs overwatering rot",
+        "do_you_see_this_problem": "Are lower leaves turning uniformly yellow after the flowering season ends while the tuber remains firm?",
+        "solve_it_like_this": [
+          "Check the tuber firmness: if firm and scentless, this is normal post-flowering dormancy, not disease.",
+          "Gradually reduce watering and cease completely once all foliage has dried.",
+          "Cut away dry dead foliage and store the potted tuber in a dry, cool, sheltered location for its resting period.",
+          "Resume light watering in spring when new green sprouts start pushing through the soil."
+        ]
+      },
+      {
+        "id": "188-leaf_margin_burn",
+        "problem": "Brown crispy leaf tips and edges",
+        "do_you_see_this_problem": "Are the tips and outer margins of arrow-shaped leaves turning brown, scorched, and brittle?",
+        "solve_it_like_this": [
+          "Move the pot out of intense afternoon sun into bright, filtered light or morning sun only.",
+          "Flush the potting mix thoroughly with clean water to wash out accumulated fertilizer salts.",
+          "Maintain consistent moisture; avoid letting the pot dry out to the point of severe wilting."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Zantedeschia",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Zantedeschia",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Zantedeschia_aethiopica_South_Africa.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Zantedeschia_aethiopica_South_Africa.jpg/330px-Zantedeschia_aethiopica_South_Africa.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/188_dwarf_calla_lily.jpg",
+      "asset_path": "file:///android_asset/images/188_dwarf_calla_lily.jpg"
+    }
+  },
+  {
+    "id": 189,
+    "botanical_name": "Ranunculus asiaticus",
+    "common_name": "Persian Buttercup",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "फारसी बटरकप (रैननकुलस)",
+      "marathi": "पर्शियन बटरकप (रॅनंक्युलस)",
+      "bengali": "পার্সিয়ান বাটারকাপ (রেনানকুলাস)",
+      "kannada": "ಪರ್ಷಿಯನ್ ಬಟರ್‌ಕಪ್ (ರನನ್ಕ್ಯುಲಸ್)",
+      "tamil": "பாரசீக பட்டர்கப் (ரனன்குலஸ்)",
+      "telugu": "పర్షియన్ బటర్‌కప్ (రణన్‌క్యులస్)"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 7,
+        "max": 14
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 6
+      },
+      "note": "Water moderately during cool winter vegetative growth and flowering, allowing top 2–3 cm of soil to dry between waterings. As soon as temperatures climb in March–April and leaves turn yellow, stop watering completely so tuber claws can cure for dry summer storage."
+    },
+    "light_lux": {
+      "min_tolerated": 4000,
+      "ideal_min": 15000,
+      "ideal_max": 35000,
+      "max_tolerated": 50000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 5,
+      "tolerable_max": 28,
+      "ideal_min": 10,
+      "ideal_max": 20
+    },
+    "soil": {
+      "in_simple_words": "Gritty, highly porous, fast-draining potting soil with rich organic leaf mould; tuber claws rot quickly if soil holds water.",
+      "mix_recipe": "2 parts coarse river sand or perlite + 2 parts well-rotted leaf mould/vermicompost + 1 part garden loam + 1 tbsp neem cake powder",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 14,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Contains ranunculin which converts into protoanemonin upon chewing or crushing, causing intense oral burning, excessive salivation, vomiting, severe colic, and blistering of mucous membranes in pets and children. Plant sap can cause contact skin blisters."
+    },
+    "common_problems": [
+      {
+        "id": "189-tuber_claw_rot",
+        "problem": "Tuber claw rot (Pythium/Rhizoctonia fungal rot)",
+        "do_you_see_this_problem": "Did newly planted tuber claws fail to sprout and turn into black, squishy, smelly mush underground?",
+        "solve_it_like_this": [
+          "Pre-soak dry tuber claws for only 3–4 hours in lukewarm water with a pinch of fungicide before planting; never soak overnight.",
+          "Plant claws pointing downwards in barely damp, gritty mix; do not water heavily until green shoots emerge.",
+          "Ensure pot drainage holes are completely unblocked and soil never stays waterlogged."
+        ]
+      },
+      {
+        "id": "189-premature_wilting_heat",
+        "problem": "Sudden wilting and bloom fading from rising spring heat",
+        "do_you_see_this_problem": "Are rose-like flower petals dropping rapidly and foliage yellowing as daytime temperatures exceed 26–28°C in late February or March?",
+        "solve_it_like_this": [
+          "Move pots into bright morning sunlight and protect from hot midday and afternoon heat.",
+          "Mulch the soil surface with a thin layer of dry coco chips to keep root claws cool.",
+          "Accept that Ranunculus is an obligate cool-season plant; as temperatures rise, allow foliage to dry naturally to harvest mature tubers."
+        ]
+      },
+      {
+        "id": "189-powdery_mildew",
+        "problem": "Powdery mildew on lower leaves",
+        "do_you_see_this_problem": "Is there a white talcum-like powdery coating covering the lobed leaves during humid, foggy winter periods?",
+        "solve_it_like_this": [
+          "Water the potting soil directly in the morning without wetting the foliage.",
+          "Prune off severely coated lower leaves to improve ventilation.",
+          "Spray with potassium bicarbonate solution (3 g/L) or a mild systemic fungicide like carbendazim (1 g/L)."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Ranunculus_asiaticus",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Ranunculus_asiaticus",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Persian_Buttercup_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Persian_Buttercup_01.jpg/330px-Persian_Buttercup_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/189_persian_buttercup.jpg",
+      "asset_path": "file:///android_asset/images/189_persian_buttercup.jpg"
+    }
+  },
+  {
+    "id": 190,
+    "botanical_name": "Hyacinthus orientalis",
+    "common_name": "Hyacinth",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "हयासिंथ",
+      "marathi": "ह्यासिनथ",
+      "bengali": "হায়াসিন্থ",
+      "kannada": "ಹಯಾಸಿಂತ್",
+      "tamil": "ஹயாசிந்த்",
+      "telugu": "హయాసింత్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 10,
+        "max": 20
+      },
+      "monsoon_and_winter": {
+        "min": 4,
+        "max": 7
+      },
+      "note": "Water sparingly around the pot perimeter, keeping moisture away from the bulb nose and crown. For water-forced hyacinths in bulb vases, keep the water level just 2 mm below the bulb base so only emerging roots touch water to avoid rotting."
+    },
+    "light_lux": {
+      "min_tolerated": 2500,
+      "ideal_min": 8000,
+      "ideal_max": 20000,
+      "max_tolerated": 35000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 65
+    },
+    "temperature_c": {
+      "tolerable_min": 2,
+      "tolerable_max": 25,
+      "ideal_min": 10,
+      "ideal_max": 18
+    },
+    "soil": {
+      "in_simple_words": "Gritty, sandy, well-aerated potting mix that drains instantaneously, or forced soillessly in water over pebbles.",
+      "mix_recipe": "2 parts coarse river sand + 1 part perlite + 1 part cocopeat + 1 part sifted leaf compost",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 21,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Contains toxic alkaloids and high concentrations of oxalic acid crystals, especially concentrated in the bulb. Ingestion causes intense oral irritation, profuse drooling, vomiting, diarrhea, and depression in pets. Handling dry bulbs can trigger severe allergic dermatitis and intense skin itching ('hyacinth itch'); wear gloves when potting."
+    },
+    "common_problems": [
+      {
+        "id": "190-flower_stem_stunted",
+        "problem": "Stunted flower stalk opening down in leaves",
+        "do_you_see_this_problem": "Are the fragrant flower florets opening deep inside the foliage rosette without the central flower spike elongating properly?",
+        "solve_it_like_this": [
+          "Bulbs require 8–12 weeks of chilling at 5–9°C before forcing to properly elongate flower scapes; purchase pre-chilled bulbs or chill in refrigerator crisper (away from fruits) before planting.",
+          "Keep newly potted bulbs in complete cool darkness until shoots are 5–7 cm tall before introducing to bright light.",
+          "Place a rolled paper cone or cardboard cup over the shoot for 7–10 days to encourage stem elongation upwards towards light."
+        ]
+      },
+      {
+        "id": "190-bulb_basal_rot",
+        "problem": "Bulb basal rot and root decay",
+        "do_you_see_this_problem": "Is the base of the bulb soft, dark brown, and smelly, with roots turning brown and detaching?",
+        "solve_it_like_this": [
+          "In water forcing jars, ensure the water level is 2 mm below the bulb base; never submerge the bulb itself in water.",
+          "In soil pots, use sandy free-draining mix and water only when top 3 cm feels completely dry.",
+          "Discard severely decayed bulbs immediately and disinfect containers before reuse."
+        ]
+      },
+      {
+        "id": "190-toppling_flower_head",
+        "problem": "Top-heavy flower spike toppling over",
+        "do_you_see_this_problem": "Is the dense, heavy flower spike leaning heavily to one side or snapping under its own weight?",
+        "solve_it_like_this": [
+          "Insert a slim bamboo skewer or floral stake next to the bulb and secure the spike loosely with soft horticultural yarn.",
+          "Rotate the pot a quarter turn daily so the stem grows straight instead of bending towards a single window light source.",
+          "Keep the plant in cool room conditions (14–18°C) to keep stems compact and sturdy."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Hyacinthus_orientalis",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Hyacinthus_orientalis",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Hyacinth_flower.jpg/1920px-Hyacinth_flower.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Hyacinth_flower.jpg/330px-Hyacinth_flower.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/190_hyacinth.jpg",
+      "asset_path": "file:///android_asset/images/190_hyacinth.jpg"
+    }
+  },
+  {
+    "id": 191,
+    "botanical_name": "Tulipa gesneriana",
+    "common_name": "Dwarf Tulip",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "ड्वार्फ ट्यूलिप",
+      "marathi": "ड्वार्फ ट्यूलिप",
+      "bengali": "ডোয়ার্ফ টিউলিপ",
+      "kannada": "ಡ್ವಾರ್ಫ್ ಟುಲಿಪ್",
+      "tamil": "குள்ள டியூலிப்",
+      "telugu": "డ్వార్ఫ్ ట్యూలిప్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 10,
+        "max": 20
+      },
+      "monsoon_and_winter": {
+        "min": 4,
+        "max": 7
+      },
+      "note": "Water gently at the soil base only when top 3 cm is completely dry. Soggy soil is the main killer of tulip bulbs. After blooming finishes and leaves dry out in early spring, stop watering entirely so bulbs can dry out."
+    },
+    "light_lux": {
+      "min_tolerated": 4000,
+      "ideal_min": 12000,
+      "ideal_max": 30000,
+      "max_tolerated": 50000
+    },
+    "humidity_percent": {
+      "min": 35,
+      "max": 65
+    },
+    "temperature_c": {
+      "tolerable_min": 0,
+      "tolerable_max": 24,
+      "ideal_min": 8,
+      "ideal_max": 18
+    },
+    "soil": {
+      "in_simple_words": "Light, exceptionally fast-draining, gritty soil mix that never retains stagnant water around the bulb coat.",
+      "mix_recipe": "2 parts coarse river sand or pumice + 1 part perlite + 1 part garden soil + 1 part leaf mould/vermicompost",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Contains allergenic lactones known as tuliposides (tulipalin A and B) and alkaloid toxins, highest in the bulb. Ingestion by pets causes intense salivation, oral irritation, nausea, persistent vomiting, diarrhea, and heart rate elevation. Handling bulbs can trigger contact dermatitis ('tulip fingers')."
+    },
+    "common_problems": [
+      {
+        "id": "191-blind_bulbs_no_flower",
+        "problem": "Blind bulbs (Foliage emerges but no flower bud forms)",
+        "do_you_see_this_problem": "Are broad leaves growing normally, but the central flower bud is completely absent or aborted as a tiny dry white speck?",
+        "solve_it_like_this": [
+          "Tulips require 12–14 weeks of uninterrupted cold stratification at 4–7°C before planting in North Indian winter (November).",
+          "Never store tulip bulbs in a refrigerator alongside ripening apples, bananas, or tomatoes, as ethylene gas destroys embryonic flower buds.",
+          "In Indian plains with short mild winters, treat tulips strictly as single-season winter showcase annuals using pre-chilled bulbs."
+        ]
+      },
+      {
+        "id": "191-bulb_rot_waterlogging",
+        "problem": "Bulb rot from waterlogged soil",
+        "do_you_see_this_problem": "Is the bulb soft, discolored, and decomposing underground, causing leaves to wilt and collapse?",
+        "solve_it_like_this": [
+          "Ensure potting mix contains 40–50% grit/sand/perlite for rapid drainage.",
+          "Water only when the soil feels dry beneath the surface; avoid watering during overcast, chilly winter days.",
+          "Always pot bulbs in containers with unobstructed drainage holes and never leave sitting in catch trays."
+        ]
+      },
+      {
+        "id": "191-rapid_petal_drop_heat",
+        "problem": "Flowers opening widely and petals dropping within 2–3 days",
+        "do_you_see_this_problem": "Do tulip flowers bloom briefly and drop their petals within 48 to 72 hours under warm balcony conditions?",
+        "solve_it_like_this": [
+          "Keep flowering pots in the coolest available location on your balcony, receiving gentle morning sun only.",
+          "Move pots indoors to an air-conditioned or cool shaded room during hot afternoons (>22°C).",
+          "Tulip blossoms last 10–14 days in cool conditions (12–16°C) but blow open rapidly in warm Indian spring weather."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Tulipa_gesneriana",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Tulipa_gesneriana",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/%D7%A6%D7%91%D7%A2%D7%95%D7%A0%D7%99%D7%9D.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/%D7%A6%D7%91%D7%A2%D7%95%D7%A0%D7%99%D7%9D.JPG/330px-%D7%A6%D7%91%D7%A2%D7%95%D7%A0%D7%99%D7%9D.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/191_dwarf_tulip.jpg",
+      "asset_path": "file:///android_asset/images/191_dwarf_tulip.jpg"
+    }
+  },
+  {
+    "id": 192,
+    "botanical_name": "Narcissus papyraceus",
+    "common_name": "Paperwhite Narcissus",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "पेपरव्हाइट नर्गिस",
+      "marathi": "पेपरव्हाइट नार्सीसस",
+      "bengali": "পেপারহোয়াইট নার্সিসাস",
+      "kannada": "ಪೇಪರ್‌ವೈಟ್ ನಾರ್ಸಿಸಸ್",
+      "tamil": "பேப்பர்ஒயிட் நார்சிசஸ்",
+      "telugu": "పేపర్‌వైట్ నార్సిసస్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 10,
+        "max": 20
+      },
+      "monsoon_and_winter": {
+        "min": 3,
+        "max": 6
+      },
+      "note": "Unlike tulips and hyacinths, Paperwhites are Mediterranean bulbs that need NO chilling period. In water/pebble bowls, keep water level touching only the basal root plate (not submerging the bulb body) to prevent rot. In soil, water when top 2–3 cm is dry."
+    },
+    "light_lux": {
+      "min_tolerated": 3000,
+      "ideal_min": 10000,
+      "ideal_max": 25000,
+      "max_tolerated": 45000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 70
+    },
+    "temperature_c": {
+      "tolerable_min": 5,
+      "tolerable_max": 28,
+      "ideal_min": 12,
+      "ideal_max": 22
+    },
+    "soil": {
+      "in_simple_words": "Light sandy potting mix, or forced soillessly anchored in decorative pebbles, gravel, or glass beads with clean water.",
+      "mix_recipe": "1 part coarse sand + 1 part perlite + 1 part cocopeat + 1 part garden loam (or simply anchored in clean gravel with fresh water)",
+      "ph_min": 6.0,
+      "ph_max": 7.0
+    },
+    "fertilise_or_manure_every_days": 30,
+    "refresh_top_soil_every_days": 90,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Contains toxic phenanthridine alkaloids such as lycorine as well as needle-like calcium oxalate crystals throughout the plant, heavily concentrated in the bulb. Ingestion causes severe gastrointestinal distress, vomiting, excessive drooling, diarrhea, abdominal spasms, and low blood pressure in cats and dogs."
+    },
+    "common_problems": [
+      {
+        "id": "192-floppy_leggy_stems",
+        "problem": "Floppy, overly tall, leggy flower stems",
+        "do_you_see_this_problem": "Are flower stems growing excessively tall, weak, and falling over under the weight of bloom clusters?",
+        "solve_it_like_this": [
+          "Provide maximum bright direct winter sunlight (4–6 hours daily); low indoor light causes weak stretching.",
+          "Keep growing temperatures cool (15–18°C); warm rooms accelerate leggy elongation.",
+          "Use the horticultural alcohol technique: when shoots reach 5 cm tall, replace pure water with a 4–5% alcohol solution (1 part 40% clear spirit to 7–9 parts water) to stunt stem height by 30% without affecting bloom size.",
+          "Support stems with a decorative ribbon or thin bamboo stakes inserted into the pebble base."
+        ]
+      },
+      {
+        "id": "192-bulb_rot_water_submersion",
+        "problem": "Bulb rotting in pebble forcing dish",
+        "do_you_see_this_problem": "Is the bulb turning brown, slimy, and emitting a sour smell in the pebble tray?",
+        "solve_it_like_this": [
+          "Ensure water touches only the root tips and the basal plate; the bulb scales must remain high and dry above the water line.",
+          "Empty and replace standing water every 4–5 days to keep it clear and oxygenated.",
+          "Discard any rotting bulb immediately so it does not contaminate neighboring bulbs."
+        ]
+      },
+      {
+        "id": "192-overpowering_scent_headache",
+        "problem": "Overpowering floral scent in closed rooms",
+        "do_you_see_this_problem": "Does the intense, musky-sweet perfume cause headaches or feel overwhelming in closed bedrooms?",
+        "solve_it_like_this": [
+          "Move the blooming container to a well-ventilated living room, open verandah, or sunny balcony.",
+          "Ensure good fresh air circulation around the plants during peak evening blooming."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Narcissus_papyraceus",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Narcissus_papyraceus",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Narcissus_papyraceus_%27Paperwhite%27_02.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Narcissus_papyraceus_%27Paperwhite%27_02.JPG/330px-Narcissus_papyraceus_%27Paperwhite%27_02.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/192_paperwhite_narcissus.jpg",
+      "asset_path": "file:///android_asset/images/192_paperwhite_narcissus.jpg"
+    }
+  },
+  {
+    "id": 193,
+    "botanical_name": "Oxalis triangularis",
+    "common_name": "Purple Shamrock",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "पर्पल शैमरॉक",
+      "marathi": "पर्पल शामरॉक",
+      "bengali": "পার্পল শ্যামরক",
+      "kannada": "ಪರ್ಪಲ್ ಶಾಮ್ರಾಕ್",
+      "tamil": "பர்பிள் ஷாம்ராக்",
+      "telugu": "పర్పుల్ షామ్రాక్"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 4
+      },
+      "monsoon_and_winter": {
+        "min": 5,
+        "max": 8
+      },
+      "note": "Oxalis leaves exhibit nyctinasty: they naturally fold closed like umbrellas every evening or in low light and reopen with morning brightness—this is normal sleep movement, NOT wilting! Water when top 2–3 cm of soil feels dry. If the plant enters cyclic or summer heat dormancy, withhold water completely until new shoots emerge."
+    },
+    "light_lux": {
+      "min_tolerated": 1500,
+      "ideal_min": 5000,
+      "ideal_max": 15000,
+      "max_tolerated": 25000
+    },
+    "humidity_percent": {
+      "min": 45,
+      "max": 80
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 35,
+      "ideal_min": 16,
+      "ideal_max": 26
+    },
+    "soil": {
+      "in_simple_words": "Light, airy, fast-draining potting soil that retains gentle moisture without waterlogging the small scaly corms.",
+      "mix_recipe": "1 part cocopeat + 1 part vermicompost + 1 part coarse river sand or perlite + 1 part garden soil",
+      "ph_min": 6.0,
+      "ph_max": 6.8
+    },
+    "fertilise_or_manure_every_days": 28,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "mildly_toxic",
+      "note": "Contains soluble calcium oxalates and oxalic acid, giving leaves a sharp sour taste that discourages animals from ingesting large quantities. Consuming large amounts can cause oral irritation, drooling, vomiting, diarrhea, and potential kidney strain in pets."
+    },
+    "common_problems": [
+      {
+        "id": "193-nyctinasty_evening_folding",
+        "problem": "Leaves folding shut every evening (Nyctinasty / sleep movement)",
+        "do_you_see_this_problem": "Are the purple triangular leaves drooping and folding tightly downwards along their midrib at dusk, resembling closed umbrellas?",
+        "solve_it_like_this": [
+          "Understand that this is a completely healthy, natural photonastic/nyctinastic circadian movement of the plant.",
+          "Do not overwater or panic; the leaves will open wide and upright within an hour of morning light exposure.",
+          "If leaves stay folded during the daytime, check whether the plant is in deep shade or suffering from extreme soil desiccation."
+        ]
+      },
+      {
+        "id": "193-foliage_dieback_dormancy",
+        "problem": "Complete foliage collapse and dieback (Cyclic dormancy)",
+        "do_you_see_this_problem": "Are all purple leaves suddenly yellowing, wilting, and dying back simultaneously after months of vigorous growth or during summer heat (>35°C)?",
+        "solve_it_like_this": [
+          "Recognize this as natural dormancy: the underground scaly corms are alive and recharging.",
+          "Cut back all withered leaves to soil level.",
+          "Move the pot to a cool, shaded corner and stop watering completely for 2 to 4 weeks.",
+          "When tiny fresh pink-purple shoots appear at the soil surface, resume regular watering and return to bright indirect light."
+        ]
+      },
+      {
+        "id": "193-etiolation_leggy_pale_leaves",
+        "problem": "Leggy, weak stems and dull purple color",
+        "do_you_see_this_problem": "Are leaf petioles stretching out long, weak, and floppy, with leaves turning greenish instead of rich deep purple?",
+        "solve_it_like_this": [
+          "Move the pot to a location receiving bright indirect light or 2–3 hours of gentle morning sun.",
+          "Prune off long stretched-out weak petioles; new compact purple leaves will rapidly sprout from the corms.",
+          "Avoid keeping the plant in dark interior corners or far from natural window light."
+        ]
+      },
+      {
+        "id": "193-corm_rot_soggy_soil",
+        "problem": "Corm rot from waterlogged potting mix",
+        "do_you_see_this_problem": "Is the soil staying wet and soggy for over a week, accompanied by mushy, blackened scaly corms and sparse failing shoots?",
+        "solve_it_like_this": [
+          "Unpot the plant and inspect underground corms; discard blackened squishy corms.",
+          "Replant healthy firm orange-brown scaly corms into a light, airy, well-draining potting mix.",
+          "Ensure the pot has adequate drainage holes and water only when the top 2–3 cm of soil is dry."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Oxalis_triangularis",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Oxalis_triangularis",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Oxalis_triangularis6.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Oxalis_triangularis6.jpg/330px-Oxalis_triangularis6.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/193_purple_shamrock.jpg",
+      "asset_path": "file:///android_asset/images/193_purple_shamrock.jpg"
+    }
+  },
+  {
+    "id": 194,
+    "botanical_name": "Achimenes longiflora",
+    "common_name": "Hot Water Plant",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "हॉट वॉटर प्लांट (अकिमेनीस)",
+      "marathi": "हॉट वॉटर प्लांट (अकिमेनेस)",
+      "bengali": "হট ওয়াটার প্ল্যান্ট (একিমেনিস)",
+      "kannada": "ಹಾಟ್ ವಾಟರ್ ಪ್ಲಾಂಟ್ (ಅಕಿಮೆನಿಸ್)",
+      "tamil": "ஹாட் வாட்டர் பிளான்ட் (அக்கிமெனிஸ்)",
+      "telugu": "హాట్ వాటర్ ప్లాంట్ (అకిమెనిస్)"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 2,
+        "max": 4
+      },
+      "monsoon_and_winter": {
+        "min": 10,
+        "max": 20
+      },
+      "note": "Historically nicknamed 'Hot Water Plant' from a Victorian myth that warm water stimulated flowering. Always use room-temperature water (~22–26°C); cold water shocks the roots and spots the leaves. Water regularly during monsoon blooming, but cease watering completely during winter dormancy (Nov–Feb)."
+    },
+    "light_lux": {
+      "min_tolerated": 2000,
+      "ideal_min": 6000,
+      "ideal_max": 15000,
+      "max_tolerated": 25000
+    },
+    "humidity_percent": {
+      "min": 55,
+      "max": 85
+    },
+    "temperature_c": {
+      "tolerable_min": 12,
+      "tolerable_max": 36,
+      "ideal_min": 20,
+      "ideal_max": 30
+    },
+    "soil": {
+      "in_simple_words": "Feather-light, humus-rich, porous potting mix that stays gently moist like a wrung-out sponge without any sogginess.",
+      "mix_recipe": "2 parts cocopeat or leaf mould + 1 part perlite/coarse sand + 1 part vermicompost + 1/2 part garden soil",
+      "ph_min": 5.5,
+      "ph_max": 6.5
+    },
+    "fertilise_or_manure_every_days": 14,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 365,
+    "pet_and_child_safety": {
+      "level": "safe",
+      "note": "Non-toxic to cats, dogs, and children. Belonging to the Gesneriaceae family (relatives of African Violets), Achimenes contains no harmful toxins."
+    },
+    "common_problems": [
+      {
+        "id": "194-leaf_spotting_cold_water",
+        "problem": "Brown spots and blemishes on velvety leaves",
+        "do_you_see_this_problem": "Are there circular yellow or pale brown bleached spots on the fuzzy leaves following watering?",
+        "solve_it_like_this": [
+          "Never use cold tap water; always use ambient room-temperature water.",
+          "Water the potting soil directly around the base, keeping water off the velvety leaves.",
+          "Avoid watering during bright sunny hours when water droplets act like magnifying lenses."
+        ]
+      },
+      {
+        "id": "194-winter_dormancy_dieback",
+        "problem": "Stems and leaves drying up in late autumn (Winter dormancy)",
+        "do_you_see_this_problem": "Are leaves turning brown and entire stems drying out completely as winter arrives in November?",
+        "solve_it_like_this": [
+          "Do not panic: this is obligate post-flowering winter dormancy for Achimenes.",
+          "Cut back dried stems to the soil line and stop all watering completely.",
+          "Store the dry pot in a cool, shaded, dry spot (15–20°C) through the winter months.",
+          "In late February or March, unpot the small scaly pinecone-like rhizomes, repot into fresh mix 2 cm deep, and resume light watering."
+        ]
+      },
+      {
+        "id": "194-flower_drop_dry_heat",
+        "problem": "Buds shriveling and dropping during dry heat",
+        "do_you_see_this_problem": "Are flower buds failing to open and dropping prematurely during hot dry spells before the monsoon sets in?",
+        "solve_it_like_this": [
+          "Increase ambient humidity by grouping pots together or placing on a wide pebble water tray.",
+          "Shield from hot dry afternoon winds on balconies by moving to an east-facing shaded verandah.",
+          "Maintain steady soil moisture without letting the root ball desiccate."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Achimenes_longiflora",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Achimenes_longiflora",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Achimenes_longiflora.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Achimenes_longiflora.jpg/330px-Achimenes_longiflora.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/194_hot_water_plant.jpg",
+      "asset_path": "file:///android_asset/images/194_hot_water_plant.jpg"
+    }
+  },
+  {
+    "id": 195,
+    "botanical_name": "Sprekelia formosissima",
+    "common_name": "Aztec Lily",
+    "popularity_score": 5,
+    "local_names": {
+      "hindi": "एज़्टेक लिली",
+      "marathi": "अ‍ॅझटेक लिली",
+      "bengali": "অ্যাজটেক লিলি",
+      "kannada": "ಅಜ್ಟೆಕ್ ಲಿಲಿ",
+      "tamil": "அஸ்டெக் லில்லி",
+      "telugu": "అజ్టెక్ లిల్లీ"
+    },
+    "watering_every_days": {
+      "hot_dry_months_mar_jun": {
+        "min": 3,
+        "max": 5
+      },
+      "monsoon_and_winter": {
+        "min": 10,
+        "max": 18
+      },
+      "note": "Plant with the top one-third of the bulb neck protruding above the soil line. Water around the edge of the pot, avoiding wetting the exposed bulb neck. Withhold water completely during the winter dormancy period (Nov–Jan) until new flower scapes emerge in spring."
+    },
+    "light_lux": {
+      "min_tolerated": 4000,
+      "ideal_min": 15000,
+      "ideal_max": 35000,
+      "max_tolerated": 55000
+    },
+    "humidity_percent": {
+      "min": 40,
+      "max": 75
+    },
+    "temperature_c": {
+      "tolerable_min": 10,
+      "tolerable_max": 40,
+      "ideal_min": 20,
+      "ideal_max": 32
+    },
+    "soil": {
+      "in_simple_words": "Gritty, sharply draining loam mix; bulb easily rots if submerged in heavy clay or saturated soil.",
+      "mix_recipe": "2 parts coarse river sand or perlite + 1 part garden loam + 1 part well-aged compost/vermicompost + 1 tbsp bonemeal",
+      "ph_min": 6.0,
+      "ph_max": 7.2
+    },
+    "fertilise_or_manure_every_days": 21,
+    "refresh_top_soil_every_days": 120,
+    "repot_every_days": 730,
+    "pet_and_child_safety": {
+      "level": "toxic",
+      "note": "Contains toxic amaryllidaceous alkaloids including lycorine and tazettine in all tissues, especially concentrated in the bulb. Ingestion by pets causes gastrointestinal inflammation, vomiting, excessive drooling, diarrhea, and lethargy."
+    },
+    "common_problems": [
+      {
+        "id": "195-bulb_neck_rot",
+        "problem": "Bulb neck rot from deep planting or crown wetting",
+        "do_you_see_this_problem": "Is the neck or base of the bulb turning soft, brown, and rotting away after watering?",
+        "solve_it_like_this": [
+          "Ensure the top one-third to one-half of the bulb neck is positioned above the soil line; never bury the entire bulb.",
+          "Pour water around the rim of the pot only, keeping the bulb neck dry.",
+          "Dust any slightly softened scales with fungicide (carbendazim) and let the soil dry out thoroughly."
+        ]
+      },
+      {
+        "id": "195-foliage_without_blooms",
+        "problem": "Lush foliage without any flowers",
+        "do_you_see_this_problem": "Does the bulb produce healthy strap-shaped leaves year after year but fails to send up its iconic crimson orchid-like flowers?",
+        "solve_it_like_this": [
+          "Provide a strict dry winter dormancy period (Nov–Jan) with no water and no fertilizer.",
+          "Ensure the plant receives 5–6 hours of direct morning or filtered all-day sunlight; low light prevents bud initiation.",
+          "Keep the bulb in a relatively snug container; Aztec lilies flower best when slightly pot-bound."
+        ]
+      },
+      {
+        "id": "195-leaf_scorching_harsh_sun",
+        "problem": "Leaf tip burn during intense summer heatwaves",
+        "do_you_see_this_problem": "Are leaf tips turning dry, brown, and scorched during extreme 40°C+ summer afternoons?",
+        "solve_it_like_this": [
+          "Provide green shade netting or move to an east-facing balcony during peak summer heat in May and June.",
+          "Ensure soil is watered regularly during extreme heat, never allowing the pot to bake bone-dry while leaves are actively photosynthesizing."
+        ]
+      }
+    ],
+    "image": {
+      "wikipedia_page": "https://en.wikipedia.org/wiki/Zephyranthes_formosissima",
+      "resolver_api_url": "https://en.wikipedia.org/api/rest_v1/page/summary/Sprekelia_formosissima",
+      "direct_image_json_path": "originalimage.source",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Sprekelia_formosissima_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Sprekelia_formosissima_1.jpg/330px-Sprekelia_formosissima_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "local_file": "images/195_aztec_lily.jpg",
+      "asset_path": "file:///android_asset/images/195_aztec_lily.jpg"
+    }
+  }
+]
