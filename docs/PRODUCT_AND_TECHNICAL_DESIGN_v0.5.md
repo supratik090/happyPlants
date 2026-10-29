@@ -1,15 +1,16 @@
-# Happy Plants — Product & Technical Design Document (v0.5)
+# Metro Greens — Product & Technical Design Document (v0.5)
 
-**Working Title / Package**: *Happy Plants* (`com.hos.happy.plants`)  
-**Version**: 0.5 (Updated with Implemented Architecture & Features)  
-**Platform**: Android (Target SDK 35, Min SDK 26)  
+**Application Name**: *Metro Greens*  
+**Application ID / Package**: `com.hos.happy.plants`  
+**Version**: 1.0.12 (Updated with Implemented Architecture & Features)  
+**Platform**: Android (Target SDK 36, Min SDK 26)  
 **Architecture**: Offline-First, Clean Architecture + MVVM, Jetpack Compose, Material 3 Botanical Design System, Room DB (Schema v7), DataStore Preferences  
 
 ---
 
 ## 1. Executive Summary & Vision
 
-*Happy Plants* is an offline-first companion application tailored for indoor, balcony, and desk plant care in Indian urban environments (Mumbai, Delhi, Bengaluru, Kolkata, Pune, etc.). The app eliminates anxiety around plant care through:
+*Metro Greens* is an offline-first companion application tailored for indoor, balcony, and desk plant care in urban environments (Mumbai, Delhi, Bengaluru, Kolkata, Pune, etc.). The app eliminates anxiety around plant care through:
 
 1. **A Calm, Actionable Daily Care Dashboard**: Separating what is **Essential** (e.g. Watering) from what is **Good to Have** (e.g. rotating pots, leaf cleaning).
 2. **Environment & Micro-climate Tracking**: Real-time ambient light measurement (hardware lux sensor + CameraX fallback), weather integration, and room-level Vapor Pressure Deficit (VPD) and Daily Light Integral (DLI) calculations.
